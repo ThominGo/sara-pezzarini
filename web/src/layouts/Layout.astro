@@ -13,6 +13,18 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <script is:inline>
+      // Mise à l'échelle de la maquette 1512 px à la largeur de la fenêtre
+      (function () {
+        var html = document.documentElement;
+        function fit() {
+          html.style.zoom = '1';
+          html.style.zoom = String(html.clientWidth / 1512);
+        }
+        fit();
+        addEventListener('resize', fit);
+      })();
+    </script>
     <link rel="preload" href="/fonts/Lexend-Variable.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin />
   </head>

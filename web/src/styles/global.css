@@ -14,7 +14,9 @@
 }
 
 html, body { margin: 0; background: var(--grey); }
-body { min-width: 1512px; }
+/* La maquette fait 1512 px : la page est mise à l'échelle de la fenêtre (voir Layout.astro) */
+html { overflow-x: clip; }
+body { width: 1512px; }
 a { color: inherit; text-decoration: none; }
 
 /* Dégradés : forme en niveaux de gris (petite image floutée) */
