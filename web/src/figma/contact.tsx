@@ -1,3 +1,4 @@
+import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import { site } from '../utils/site';
@@ -64,31 +65,31 @@ export default function Contact() {
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex gap-[8px] h-[40px] items-center overflow-clip px-[16px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
                   <div className="relative shrink-0 size-[16px]"><img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/radio-off.svg" /></div>
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">Je suis une organisation</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">{t("pageContact", "vertical_card_1", "Je suis une organisation")}</p>
                 </div>
                 <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex gap-[8px] h-[40px] items-center overflow-clip px-[16px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
                   <div className="relative shrink-0 size-[16px]"><img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/radio-on.svg" /></div>
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">Je suis une personne ou un proche</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">{t("pageContact", "vertical_card_2", "Je suis une personne ou un proche")}</p>
                 </div>
               </div>
-              <Field first l="Nom" p="Votre nom" />
-              <Field first l="Organisation" p="Votre organisation" />
-              <Field l="Fonction" p="Votre Fonction" />
-              <Field l="Mail" p="Votre Mail" />
-              <Field l="Téléphone" p="Votre Téléphone" />
+              <Field first l={t("pageContact", "champ_nom", "Nom")} p={t("pageContact", "champ_nom_exemple", "Votre nom")} />
+              <Field first l={t("pageContact", "champ_organisation", "Organisation")} p={t("pageContact", "champ_organisation_exemple", "Votre organisation")} />
+              <Field l={t("pageContact", "champ_fonction", "Fonction")} p={t("pageContact", "champ_fonction_exemple", "Votre Fonction")} />
+              <Field l={t("pageContact", "champ_mail", "Mail")} p={t("pageContact", "champ_mail_exemple", "Votre Mail")} />
+              <Field l={t("pageContact", "champ_telephone", "Téléphone")} p={t("pageContact", "champ_telephone_exemple", "Votre Téléphone")} />
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-                <p className={label} style={FV}>Votre besoin</p>
+                <p className={label} style={FV}>{t("pageContact", "vertical_card_3", "Votre besoin")}</p>
                 <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-between overflow-clip px-[16px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">Sélectionnez votre besoin</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap">{t("pageContact", "vertical_card_4", "Sélectionnez votre besoin")}</p>
                   <div className="h-[6px] relative shrink-0 w-[12px]" data-name="Flèche de liste">
                     <div className="absolute inset-[-8.84%_-4.42%_-17.68%_-4.42%]"><img alt="" className="block max-w-none size-full" src="/assets/select.svg" /></div>
                   </div>
                 </div>
               </div>
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-                <p className={label} style={FV}>Message</p>
+                <p className={label} style={FV}>{t("pageContact", "vertical_card_5", "Message")}</p>
                 <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[220px] items-start overflow-clip p-[16px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
-                  <p className={ph}>Votre Message</p>
+                  <p className={ph}>{t("pageContact", "vertical_card_6", "Votre Message")}</p>
                 </div>
               </div>
             </div>
@@ -97,23 +98,19 @@ export default function Contact() {
                 <div className="content-stretch flex items-center pt-px relative shrink-0">
                   <div className="border border-[var(--black-70\%,rgba(9,15,12,0.7))] border-solid relative shrink-0 size-[16px]" />
                 </div>
-                <p className={`[word-break:break-word] flex-[1_0_0] font-['Lexend:Regular'] font-normal leading-[1.1] min-w-px relative text-[16px] ${black70} text-balance`}>
-                  J’accepte que les informations saisies soient utilisées pour répondre à ma demande. Pour en savoir plus, consultez la politique de confidentialité.
-                </p>
+                <p className={`[word-break:break-word] flex-[1_0_0] font-['Lexend:Regular'] font-normal leading-[1.1] min-w-px relative text-[16px] ${black70} text-balance`}>{t("pageContact", "vertical_card_7", "J’accepte que les informations saisies soient utilisées pour répondre à ma demande. Pour en savoir plus, consultez la politique de confidentialité.")}</p>
               </div>
               <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap">Envoyer le message</p>
+                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap">{t("pageContact", "vertical_card_8", "Envoyer le message")}</p>
               </div>
             </div>
           </form>
           <div className="absolute bottom-0 h-[1236px] left-[-123px] pointer-events-none top-[-168px]">
             <div className="content-stretch flex flex-col gap-[8px] h-[436px] items-center justify-center pb-[112px] pointer-events-auto pr-[40px] pt-[178px] sticky top-0 w-[561px]">
-              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-full" style={FV}>Parlons de votre projet</p>
+              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-full" style={FV}>{t("pageContact", "vertical_card_9", "Parlons de votre projet")}</p>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative">
-                  <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-full`}>
-                    Un projet, une situation ou une question ? Que vous représentiez une organisation ou que vous cherchiez un accompagnement pour vous ou un proche, parlons de vos besoins.
-                  </p>
+                  <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-full`}>{t("pageContact", "vertical_card_10", "Un projet, une situation ou une question ? Que vous représentiez une organisation ou que vous cherchiez un accompagnement pour vous ou un proche, parlons de vos besoins.")}</p>
                 </div>
               </div>
             </div>
@@ -124,13 +121,13 @@ export default function Contact() {
       {/* text : me contacter autrement */}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
-          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV}>Me contacter autrement</p>
+          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV}>{t("pageContact", "text_1", "Me contacter autrement")}</p>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full">
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[461px]">
               {[
-                ['E-mail', site.settings.email || 'sara.pezzarini@gmail.com'],
-                ['Téléphone', site.settings.phone || '06 10 05 71 09'],
-                ['Doctolib', 'Voir sur Doctolib'],
+                [t('pageContact', 'autrement_email', 'E-mail'), site.settings.email || 'sara.pezzarini@gmail.com'],
+                [t('pageContact', 'autrement_telephone', 'Téléphone'), site.settings.phone || '06 10 05 71 09'],
+                [t('pageContact', 'autrement_doctolib', 'Doctolib'), t('pageContact', 'autrement_doctolib_lien', 'Voir sur Doctolib')],
               ].map(([k, v], i) => (
                 <div key={k} className="contents">
                   {i > 0 && <div className="bg-[rgba(9,15,12,0.2)] h-px relative shrink-0 w-full" />}
@@ -149,11 +146,11 @@ export default function Contact() {
       <div className="bg-[#f2f2f2] content-stretch flex gap-[24px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-name="image-text">
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px p-[40px] relative">
           <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full">
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" style={FV}>Ma zone d’intervention</p>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" style={FV}>{t("pageContact", "image_text_1", "Ma zone d’intervention")}</p>
             <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full">
               <div className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[0] min-w-full relative shrink-0 text-[18px] ${black70} w-[min-content]`}>
-                <p className="leading-[1.3] mb-0 text-pretty">Autour de Mézy-sur-Seine</p>
-                <p className="leading-[1.3] text-pretty">Yvelines, Val-d’Oise, Eure</p>
+                <p className="leading-[1.3] mb-0 text-pretty">{t("pageContact", "image_text_2", "Autour de Mézy-sur-Seine")}</p>
+                <p className="leading-[1.3] text-pretty">{t("pageContact", "image_text_3", "Yvelines, Val-d’Oise, Eure")}</p>
               </div>
             </div>
           </div>
@@ -164,7 +161,7 @@ export default function Contact() {
               <div className="flex-none rotate-180">
                 <div className="h-[887px] relative rounded-[8px] w-[979px]" data-name="image 10">
                   <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                    <img alt="" className="absolute inset-0 max-w-none size-full rounded-[8px]" src="/assets/placeholder.svg" />
+                    <img alt="" className="absolute inset-0 max-w-none size-full rounded-[8px]" src={img("pageContact", "image_text_image_1", "/assets/placeholder.svg")} />
                     <div className="absolute bg-[#292929] inset-0 mix-blend-difference rounded-[8px]" />
                     <div className="absolute bg-[#4f47c1] inset-0 mix-blend-color rounded-[8px]" />
                   </div>

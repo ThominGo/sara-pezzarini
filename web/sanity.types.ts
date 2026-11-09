@@ -22,6 +22,713 @@ export type SanityImageAssetReference = {
   [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
 };
 
+export type Commun = {
+  _id: string;
+  _type: "commun";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  push_contact_1?: string;
+  push_contact_2?: string;
+  push_contact_3?: string;
+  push_contact_4?: string;
+  push_contact_5?: string;
+  push_contact_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  push_contact_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  footer_1?: string;
+  footer_2?: string;
+  footer_3?: string;
+  footer_4?: string;
+  footer_5?: string;
+  footer_6?: string;
+  footer_7?: string;
+  footer_8?: string;
+  footer_9?: string;
+  footer_10?: string;
+  footer_11?: string;
+  footer_12?: string;
+  footer_13?: string;
+  footer_14?: string;
+  footer_15?: string;
+  footer_16?: string;
+  footer_17?: string;
+  footer_18?: string;
+  footer_19?: string;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
+export type PageProjets = {
+  _id: string;
+  _type: "pageProjets";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  text_1?: string;
+  text_2?: string;
+  text_3?: string;
+  text_4?: string;
+};
+
+export type PageContact = {
+  _id: string;
+  _type: "pageContact";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  champ_nom?: string;
+  champ_nom_exemple?: string;
+  champ_organisation?: string;
+  champ_organisation_exemple?: string;
+  champ_fonction?: string;
+  champ_fonction_exemple?: string;
+  champ_mail?: string;
+  champ_mail_exemple?: string;
+  champ_telephone?: string;
+  champ_telephone_exemple?: string;
+  vertical_card_1?: string;
+  vertical_card_2?: string;
+  vertical_card_3?: string;
+  vertical_card_4?: string;
+  vertical_card_5?: string;
+  vertical_card_6?: string;
+  vertical_card_7?: string;
+  vertical_card_8?: string;
+  vertical_card_9?: string;
+  vertical_card_10?: string;
+  text_1?: string;
+  autrement_email?: string;
+  autrement_telephone?: string;
+  autrement_doctolib?: string;
+  autrement_doctolib_lien?: string;
+  image_text_1?: string;
+  image_text_2?: string;
+  image_text_3?: string;
+  image_text_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type PageParcours = {
+  _id: string;
+  _type: "pageParcours";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  hero_1?: string;
+  hero_2?: string;
+  hero_3?: string;
+  hero_4?: string;
+  hero_5?: string;
+  hero_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_1?: string;
+  vertical_card_2?: string;
+  vertical_card_3?: string;
+  experiences_1_titre?: string;
+  experiences_1_texte?: string;
+  experiences_2_titre?: string;
+  experiences_2_texte?: string;
+  experiences_3_titre?: string;
+  experiences_3_texte?: string;
+  experiences_4_titre?: string;
+  experiences_4_texte?: string;
+  annee_1?: string;
+  annee_2?: string;
+  annee_3?: string;
+  text_1?: string;
+  text_2?: string;
+  text_3?: string;
+  slider_1?: string;
+  slider_2?: string;
+  slider_3?: string;
+  slider_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  carrousel_1_annee?: string;
+  carrousel_1_titre?: string;
+  carrousel_1_texte?: string;
+  carrousel_2_annee?: string;
+  carrousel_2_titre?: string;
+  carrousel_2_texte?: string;
+  carrousel_3_annee?: string;
+  carrousel_3_titre?: string;
+  carrousel_3_texte?: string;
+  carrousel_4_annee?: string;
+  carrousel_4_titre?: string;
+  carrousel_4_texte?: string;
+  contenu_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type PageTarifs = {
+  _id: string;
+  _type: "pageTarifs";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  tarifs_1?: string;
+  tarifs_2?: string;
+  tarifs_3?: string;
+  tarifs_4?: string;
+  tarifs_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_1?: string;
+  image_text_2?: string;
+  image_text_3?: string;
+  image_text_4?: string;
+  image_text_5?: string;
+  image_text_6?: string;
+  image_text_7?: string;
+  image_text_8?: string;
+  image_text_9?: string;
+  image_text_10?: string;
+  image_text_11?: string;
+  image_text_12?: string;
+  image_text_13?: string;
+  image_text_14?: string;
+  image_text_15?: string;
+  image_text_16?: string;
+  image_text_17?: string;
+  image_text_18?: string;
+  image_text_19?: string;
+  image_text_20?: string;
+  image_text_21?: string;
+  image_text_22?: string;
+  image_text_23?: string;
+  image_text_24?: string;
+  image_text_25?: string;
+  image_text_26?: string;
+  image_text_27?: string;
+  image_text_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_1?: string;
+  cartes_2?: string;
+  cartes_3?: string;
+  cartes_4?: string;
+  cartes_5?: string;
+  cartes_6?: string;
+  cartes_7?: string;
+  cartes_8?: string;
+  cartes_9?: string;
+  cartes_10?: string;
+  cartes_11?: string;
+  cartes_12?: string;
+  cartes_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  faq_accord_on_statique_ouvert_1?: string;
+  faq_accord_on_statique_ouvert_2?: string;
+  faq_accord_on_statique_ouvert_3?: string;
+  faq_accord_on_statique_ouvert_4?: string;
+  faq_accord_on_statique_ouvert_5?: string;
+  faq_accord_on_statique_ouvert_6?: string;
+  faq_accord_on_statique_ouvert_7?: string;
+  faq_accord_on_statique_ouvert_8?: string;
+  faq_accord_on_statique_ouvert_9?: string;
+  faq_accord_on_statique_ouvert_10?: string;
+  faq_accord_on_statique_ouvert_11?: string;
+  faq_accord_on_statique_ouvert_12?: string;
+  faq_accord_on_statique_ouvert_13?: string;
+  faq_accord_on_statique_ouvert_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  faq_accord_on_statique_ouvert_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  faq_accord_on_statique_ouvert_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type PagePourQui = {
+  _id: string;
+  _type: "pagePourQui";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  hero_1?: string;
+  hero_2?: string;
+  hero_3?: string;
+  hero_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_1?: string;
+  image_text_2?: string;
+  image_text_3?: string;
+  image_text_4?: string;
+  image_text_5?: string;
+  image_text_6?: string;
+  image_text_7?: string;
+  image_text_8?: string;
+  image_text_9?: string;
+  image_text_10?: string;
+  image_text_11?: string;
+  image_text_12?: string;
+  image_text_13?: string;
+  image_text_14?: string;
+  image_text_15?: string;
+  image_text_16?: string;
+  image_text_17?: string;
+  image_text_18?: string;
+  image_text_19?: string;
+  image_text_20?: string;
+  image_text_21?: string;
+  image_text_22?: string;
+  image_text_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_5?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_6?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_7?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type PageApproche = {
+  _id: string;
+  _type: "pageApproche";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  hero_1?: string;
+  hero_2?: string;
+  hero_3?: string;
+  hero_4?: string;
+  hero_5?: string;
+  hero_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_1?: string;
+  cartes_2?: string;
+  cartes_3?: string;
+  cartes_4?: string;
+  cartes_5?: string;
+  cartes_6?: string;
+  cartes_7?: string;
+  cartes_8?: string;
+  cartes_9?: string;
+  cartes_10?: string;
+  cartes_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  points_1?: string;
+  points_2?: string;
+  points_3?: string;
+  points_4?: string;
+  points_5?: string;
+  points_6?: string;
+  points_7?: string;
+  points_8?: string;
+  points_9?: string;
+  points_10?: string;
+  vertical_card_1?: string;
+  vertical_card_2?: string;
+  vertical_card_3?: string;
+  vertical_card_4?: string;
+  vertical_card_5?: string;
+  vertical_card_6?: string;
+  vertical_card_7?: string;
+  vertical_card_8?: string;
+  vertical_card_9?: string;
+  vertical_card_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_1?: string;
+  image_text_2?: string;
+  image_text_3?: string;
+  image_text_4?: string;
+  image_text_5?: string;
+  image_text_6?: string;
+  image_text_7?: string;
+  image_text_8?: string;
+  image_text_9?: string;
+  image_text_10?: string;
+  image_text_11?: string;
+  image_text_12?: string;
+  image_text_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
+export type PageAccueil = {
+  _id: string;
+  _type: "pageAccueil";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  hero_1?: string;
+  hero_2?: string;
+  hero_3?: string;
+  hero_4?: string;
+  hero_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  text_1?: string;
+  text_2?: string;
+  cartes_1?: string;
+  cartes_2?: string;
+  cartes_3?: string;
+  cartes_4?: string;
+  cartes_5?: string;
+  cartes_6?: string;
+  cartes_7?: string;
+  cartes_8?: string;
+  cartes_9?: string;
+  cartes_10?: string;
+  cartes_11?: string;
+  cartes_12?: string;
+  cartes_13?: string;
+  cartes_14?: string;
+  cartes_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  cartes_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_1?: string;
+  vertical_card_2?: string;
+  vertical_card_3?: string;
+  vertical_card_4?: string;
+  vertical_card_5?: string;
+  vertical_card_6?: string;
+  vertical_card_7?: string;
+  vertical_card_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  vertical_card_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  push_project_1?: string;
+  push_project_2?: string;
+  push_project_3?: string;
+  push_project_4?: string;
+  push_project_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  push_project_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  push_project_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  points_1?: string;
+  points_2?: string;
+  points_3?: string;
+  points_4?: string;
+  points_5?: string;
+  points_6?: string;
+  points_7?: string;
+  points_8?: string;
+  points_9?: string;
+  points_10?: string;
+  points_11?: string;
+  slider_1?: string;
+  slider_2?: string;
+  slider_3?: string;
+  slider_4?: string;
+  slider_5?: string;
+  slider_6?: string;
+  slider_7?: string;
+  slider_8?: string;
+  slider_9?: string;
+  slider_10?: string;
+  slider_11?: string;
+  slider_12?: string;
+  slider_13?: string;
+  slider_14?: string;
+  slider_15?: string;
+  slider_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  slider_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  slider_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  slider_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+};
+
 export type Project = {
   _id: string;
   _type: "project";
@@ -75,22 +782,6 @@ export type Project = {
     _type: "image";
     _key: string;
   }>;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
-};
-
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
 };
 
 export type Slug = {
@@ -216,9 +907,17 @@ export type Geopoint = {
 
 export type AllSanitySchemaTypes =
   | SanityImageAssetReference
-  | Project
+  | Commun
   | SanityImageCrop
   | SanityImageHotspot
+  | PageProjets
+  | PageContact
+  | PageParcours
+  | PageTarifs
+  | PagePourQui
+  | PageApproche
+  | PageAccueil
+  | Project
   | Slug
   | Settings
   | SanityImagePaletteSwatch

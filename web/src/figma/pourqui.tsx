@@ -1,3 +1,4 @@
+import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
@@ -44,19 +45,13 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-end relative shrink-0 w-[794px]" data-node-id="I414:6775;146:4274">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-node-id="I414:6775;146:4275">
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0" data-node-id="I414:6775;146:4277">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:6775;146:4278">
-                    Pour qui
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:6775;146:4278">{t("pagePourQui", "hero_1", "Pour qui")}</p>
                 </div>
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" data-node-id="I414:6775;146:4279" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  L’ergothérapie au service de l’inclusion, au-delà du soin
-                </p>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" data-node-id="I414:6775;146:4279" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>{t("pagePourQui", "hero_2", "L’ergothérapie au service de l’inclusion, au-delà du soin")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6775;146:4280">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6775;146:4281">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6775;146:4282">
-                    J’accompagne les organisations, les personnes et leurs proches pour comprendre les obstacles du quotidien et co-construire des solutions adaptées à leurs activités et à leurs environnements.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6775;146:4282">{t("pagePourQui", "hero_3", "J’accompagne les organisations, les personnes et leurs proches pour comprendre les obstacles du quotidien et co-construire des solutions adaptées à leurs activités et à leurs environnements.")}</p>
                 </div>
               </div>
             </div>
@@ -64,7 +59,7 @@ export default function PourQui() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6775;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src="/assets/placeholder.svg" />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={img("pagePourQui", "hero_image_1", "/assets/placeholder.svg")} />
               </div>
             </div>
           </div>
@@ -75,15 +70,11 @@ export default function PourQui() {
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:6778">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6779">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:6780">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:6781" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  Structures médico-sociales
-                </p>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:6781" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>{t("pagePourQui", "image_text_1", "Structures médico-sociales")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6782">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6783">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6784">
-                    Directeurs, chefs de service et équipes : je vous propose de réfléchir ensemble aux activités et aux environnements des personnes accompagnées, notamment des adultes et adolescents avec TSA ou handicap psychique.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6784">{t("pagePourQui", "image_text_2", "Directeurs, chefs de service et équipes : je vous propose de réfléchir ensemble aux activités et aux environnements des personnes accompagnées, notamment des adultes et adolescents avec TSA ou handicap psychique.")}</p>
                   <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
@@ -92,42 +83,36 @@ export default function PourQui() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6786" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6787" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/assets/placeholder.svg" />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img("pagePourQui", "image_text_image_1", "/assets/placeholder.svg")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6788">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6789" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6790">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6791" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/icon-placeholder.svg" />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={img("pagePourQui", "image_text_image_2", "/assets/icon-placeholder.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6794">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6795">
-                    Des bilans pour comprendre les besoins au quotidien.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6795">{t("pagePourQui", "image_text_3", "Des bilans pour comprendre les besoins au quotidien.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6796" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6797">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6798" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/icon-placeholder.svg" />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={img("pagePourQui", "image_text_image_3", "/assets/icon-placeholder.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6803">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6804">
-                    Les transitions entre activités sont difficiles à vivre.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6804">{t("pagePourQui", "image_text_4", "Les transitions entre activités sont difficiles à vivre.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6805" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6806">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6807" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/icon-placeholder.svg" />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={img("pagePourQui", "image_text_image_4", "/assets/icon-placeholder.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6812">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6813">
-                    Des sensibilisations et formations pour les équipes.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6813">{t("pagePourQui", "image_text_5", "Des sensibilisations et formations pour les équipes.")}</p>
                 </div>
               </div>
             </div>
@@ -137,7 +122,7 @@ export default function PourQui() {
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6814" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6815" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6816" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/assets/placeholder.svg" />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img("pagePourQui", "image_text_image_5", "/assets/placeholder.svg")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6817">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6818" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6819">
@@ -146,9 +131,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6820">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6821">
-                    Des conseils pour adapter les espaces et les activités.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6821">{t("pagePourQui", "image_text_6", "Des conseils pour adapter les espaces et les activités.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6822" data-name="Bouton">
@@ -158,9 +141,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6824">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6825">
-                    Des ateliers et programmes de prévention adaptés.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6825">{t("pagePourQui", "image_text_7", "Des ateliers et programmes de prévention adaptés.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6826" data-name="Bouton">
@@ -170,9 +151,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6828">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6829">
-                    Des sensibilisations pour construire des pratiques inclusives.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6829">{t("pagePourQui", "image_text_8", "Des sensibilisations pour construire des pratiques inclusives.")}</p>
                 </div>
               </div>
             </div>
@@ -182,15 +161,11 @@ export default function PourQui() {
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:6831">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6832">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:6833">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:6834" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  Entreprises et collectivités
-                </p>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:6834" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>{t("pagePourQui", "image_text_9", "Entreprises et collectivités")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6835">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6836">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6837">
-                    RH, responsables, élus et équipes de CCAS : l’inclusion se pense aussi au travail et dans les services de proximité. Je vous accompagne pour repérer les obstacles à la participation et envisager des adaptations concrètes.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6837">{t("pagePourQui", "image_text_10", "RH, responsables, élus et équipes de CCAS : l’inclusion se pense aussi au travail et dans les services de proximité. Je vous accompagne pour repérer les obstacles à la participation et envisager des adaptations concrètes.")}</p>
                   <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
@@ -204,15 +179,13 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6842">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:6843">
                 <div className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] w-[465px] whitespace-pre-wrap" data-node-id="414:6844" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  <p className="leading-none mb-0 text-balance">{`Écoles et `}</p>
-                  <p className="leading-none text-balance">lieux culturels</p>
+                  <p className="leading-none mb-0 text-balance">{t("pagePourQui", "image_text_11", "Écoles et")}</p>
+                  <p className="leading-none text-balance">{t("pagePourQui", "image_text_12", "lieux culturels")}</p>
                 </div>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6845">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6846">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6847">
-                    Équipes éducatives, bibliothèques, musées et lieux culturels : je vous propose de penser l’accès aux apprentissages, aux loisirs et à la culture à partir des besoins des publics et des réalités de vos espaces.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6847">{t("pagePourQui", "image_text_13", "Équipes éducatives, bibliothèques, musées et lieux culturels : je vous propose de penser l’accès aux apprentissages, aux loisirs et à la culture à partir des besoins des publics et des réalités de vos espaces.")}</p>
                   <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
@@ -221,7 +194,7 @@ export default function PourQui() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6849" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6850" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/assets/placeholder.svg" />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img("pagePourQui", "image_text_image_6", "/assets/placeholder.svg")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6851">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6852" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6853">
@@ -230,9 +203,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6854">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6855">
-                    Des conseils sur l’organisation des espaces et des activités.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6855">{t("pagePourQui", "image_text_14", "Des conseils sur l’organisation des espaces et des activités.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6856" data-name="Bouton">
@@ -242,9 +213,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6858">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6859">
-                    Des supports adaptés pour se repérer et participer.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6859">{t("pagePourQui", "image_text_15", "Des supports adaptés pour se repérer et participer.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6860" data-name="Bouton">
@@ -254,9 +223,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6862">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6863">
-                    Des sensibilisations et des projets co-construits avec l’équipe.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6863">{t("pagePourQui", "image_text_16", "Des sensibilisations et des projets co-construits avec l’équipe.")}</p>
                 </div>
               </div>
             </div>
@@ -266,7 +233,7 @@ export default function PourQui() {
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6864" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6865" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6866" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/assets/placeholder.svg" />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img("pagePourQui", "image_text_image_7", "/assets/placeholder.svg")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6867">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6868" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6869">
@@ -275,9 +242,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6870">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6871">
-                    Un bilan centré sur vos activités, vos besoins et vos choix.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6871">{t("pagePourQui", "image_text_17", "Un bilan centré sur vos activités, vos besoins et vos choix.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6872" data-name="Bouton">
@@ -287,9 +252,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6874">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6875">
-                    Un suivi, des stratégies et des outils sur mesure.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6875">{t("pagePourQui", "image_text_18", "Un suivi, des stratégies et des outils sur mesure.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6876" data-name="Bouton">
@@ -299,9 +262,7 @@ export default function PourQui() {
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6878">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6879">
-                    Des adaptations du quotidien, construites avec l’entourage.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6879">{t("pagePourQui", "image_text_19", "Des adaptations du quotidien, construites avec l’entourage.")}</p>
                 </div>
               </div>
             </div>
@@ -312,15 +273,13 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6882">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:6883">
                 <div className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] w-[465px] whitespace-pre-wrap" data-node-id="414:6884" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  <p className="leading-none mb-0 text-balance">{`Personnes `}</p>
-                  <p className="leading-none text-balance">et familles</p>
+                  <p className="leading-none mb-0 text-balance">{t("pagePourQui", "image_text_20", "Personnes")}</p>
+                  <p className="leading-none text-balance">{t("pagePourQui", "image_text_21", "et familles")}</p>
                 </div>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6885">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6886">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6887">
-                    Adultes, adolescents et proches, notamment concernés par un TSA ou un handicap psychique : je pars de vos priorités et de vos habitudes pour explorer, avec vous, ce qui facilite ou freine les activités qui comptent dans votre vie.
-                  </p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6887">{t("pagePourQui", "image_text_22", "Adultes, adolescents et proches, notamment concernés par un TSA ou un handicap psychique : je pars de vos priorités et de vos habitudes pour explorer, avec vous, ce qui facilite ou freine les activités qui comptent dans votre vie.")}</p>
                   <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>

@@ -27,6 +27,14 @@ npm run typegen          # après chaque changement de schéma ou de requête
 - `web/public/assets/icon-placeholder.svg` : emplacement des icônes (à fournir).
 - `studio/` : Studio Sanity (réglages du site, projets).
 
+## Modifier les contenus
+Tout se fait dans le Studio (https://sara-pezzarini.sanity.studio) :
+- **Pages** : une fiche par page, préremplie avec les textes de la maquette, rangée par blocs (Haut de page, Cartes, etc.). Chaque champ texte ou image correspond à un élément de la maquette.
+- **Projets** : liste et pages détail.
+- **Réglages du site** : e-mail, téléphone, Calendly, Doctolib.
+Après « Publish », le site se reconstruit (webhook Sanity vers le deploy hook Cloudflare).
+
+Côté code, les textes de la maquette restent écrits en repli dans `web/src/figma/` : `t("page", "clé", "texte")` et `img("page", "clé", "image")`. Le schéma des pages est dans `studio/schemas/pages.ts`.
+
 ## À faire
-- Brancher les textes des pages sur Sanity (déjà fait : projets, e-mail, téléphone, lien Calendly).
 - Version mobile (après validation des tests mobile dans Figma).

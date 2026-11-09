@@ -1,8 +1,5 @@
 ---
 import '../styles/global.css';
-import { getSettings } from '../utils/sanity';
-import { site } from '../utils/site';
-site.settings = (await getSettings()) ?? {};
 interface Props { title: string; description?: string }
 const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure)." } = Astro.props;
 ---
