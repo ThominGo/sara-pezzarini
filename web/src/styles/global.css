@@ -150,25 +150,35 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
    image dans une carte = 4 px (les cartes passent toutes à 8 px dans le code) */
 [data-name="Bouton"][class*="rounded-"] :is([data-name^="image"], [data-name^="image"] *, .rounded-\[2px\]) { border-radius: 4px; }
 
-/* Transition de page « fenêtre masquée » (inspirée de Osmo, Masked Window) avec les View Transitions natives :
-   la nouvelle page apparaît dans une petite fenêtre aux coins arrondis, au centre, qui s'agrandit jusqu'à tout l'écran
-   par-dessus l'ancienne page. La nav reste fixe au-dessus. Sans JavaScript.
+/* Transition de page (storyboard de Thomas, 5 étapes) avec les View Transitions natives :
+   1. la nouvelle page arrive en carte sous l'écran ; 2. l'ancienne recule (bord blanc) et la carte monte ;
+   3. l'ancienne continue de reculer, la carte s'élargit et recouvre le bas ; 4. la carte prend presque tout l'écran
+   (fin bord blanc) ; 5. plein écran. La nav reste fixe au-dessus. Sans JavaScript.
    Navigateurs non compatibles (Firefox) : changement de page classique. */
 @view-transition { navigation: auto; }
 [data-name="nav"] { view-transition-name: nav; }
-@keyframes mw-in {
-  from { clip-path: inset(48% 36% 14% 36% round 16px); }
-  to   { clip-path: inset(0 0 0 0 round 0); }
+::view-transition { background: #fff; }
+@keyframes tr-old {
+  0%   { transform: none; }
+  25%  { transform: scale(.96); }
+  55%  { transform: translateY(9.5%) scale(.81); }
+  100% { transform: translateY(9.5%) scale(.81); }
 }
-@keyframes mw-out { to { transform: scale(.96); filter: brightness(.85); } }
-::view-transition-group(root) { animation-duration: 1.2s; }
-::view-transition-old(root) { animation: mw-out 1.2s cubic-bezier(.65, 0, .25, 1) both; }
-::view-transition-new(root) { animation: mw-in 1.2s cubic-bezier(.65, 0, .25, 1) both; }
+@keyframes tr-new {
+  0%   { transform: translateY(100%); clip-path: inset(0 16% 60% 16%); }
+  25%  { transform: translateY(87%);  clip-path: inset(0 16% 60% 16%); }
+  55%  { transform: translateY(45%);  clip-path: inset(0 2.6% 43% 2.6%); }
+  85%  { transform: none;             clip-path: inset(1.7% 1.7% 1.7% 1.7%); }
+  100% { transform: none;             clip-path: inset(0 0 0 0); }
+}
+::view-transition-group(root) { animation-duration: 1.5s; }
+::view-transition-old(root) { animation: tr-old 1.5s cubic-bezier(.45, 0, .25, 1) both; }
+::view-transition-new(root) { animation: tr-new 1.5s cubic-bezier(.45, 0, .25, 1) both; }
 ::view-transition-group(nav) { animation: none; }
 ::view-transition-old(nav) { display: none; }
 ::view-transition-new(nav) { animation: none; }
 /* Les animations du hero attendent la fin de la transition (classe posée par interactions.ts) */
-.vt { --vt-delay: .5s; }
+.vt { --vt-delay: .9s; }
 /* arrivée par la fenêtre : le dégradé est déjà en couleur (pas de voile clair dans la fenêtre) */
 .vt .hero-veil { display: none; }
 @media (prefers-reduced-motion: reduce) {
