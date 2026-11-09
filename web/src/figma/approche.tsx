@@ -192,8 +192,8 @@ export default function MonApproche() {
           </p>
           <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative" data-node-id="414:6692">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6693">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6694">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_1")} src={img("pageApproche", "vertical_card_image_1", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6694">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_1")} src={img("pageApproche", "vertical_card_image_1", "/illustrations/approche-1.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6697">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6698" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_1")}>{t("pageApproche", "vertical_card_1", "1. Se rencontrer et comprendre vos besoins")}</p>
@@ -202,8 +202,8 @@ export default function MonApproche() {
             </div>
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6700" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6701">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6702">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_2")} src={img("pageApproche", "vertical_card_image_2", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6702">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_2")} src={img("pageApproche", "vertical_card_image_2", "/illustrations/approche-2.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6704">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6705" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_3")}>{t("pageApproche", "vertical_card_3", "2. Découvrir le terrain et les équipes")}</p>
@@ -212,8 +212,8 @@ export default function MonApproche() {
             </div>
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6707" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6708">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6709">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_3")} src={img("pageApproche", "vertical_card_image_3", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6709">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_3")} src={img("pageApproche", "vertical_card_image_3", "/illustrations/approche-3.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6716">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6717" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_5")}>{t("pageApproche", "vertical_card_5", "3. Construire et mettre en place l’accompagnement")}</p>
@@ -221,8 +221,8 @@ export default function MonApproche() {
               </div>
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6719">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6720" data-name="5">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_4")} src={img("pageApproche", "vertical_card_image_4", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6720" data-name="5">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_4")} src={img("pageApproche", "vertical_card_image_4", "/illustrations/approche-4.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6724">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6725" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_7")}>{t("pageApproche", "vertical_card_7", "4. Ajuster et faire le point régulièrement")}</p>

@@ -287,8 +287,8 @@ export default function SaraPezzarini() {
           </p>
           <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative" data-node-id="414:6643">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6644">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6645" data-name="11">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_1")} src={img("pageAccueil", "vertical_card_image_1", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6645" data-name="11">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_1")} src={img("pageAccueil", "vertical_card_image_1", "/illustrations/accueil-1.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6651">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6652" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_1")}>{t("pageAccueil", "vertical_card_1", "1. Accompagnement individuel")}</p>
@@ -297,8 +297,8 @@ export default function SaraPezzarini() {
             </div>
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6654" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6655">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6656" data-name="11">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_2")} src={img("pageAccueil", "vertical_card_image_2", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6656" data-name="11">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_2")} src={img("pageAccueil", "vertical_card_image_2", "/illustrations/accueil-2.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6663">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6664" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_3")}>{t("pageAccueil", "vertical_card_3", "2. Projets et programmes")}</p>
@@ -307,8 +307,8 @@ export default function SaraPezzarini() {
             </div>
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6666" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6667">
-              <div className="relative shrink-0 size-[459px]" data-node-id="414:6668" data-name="12">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_3")} src={img("pageAccueil", "vertical_card_image_3", "/assets/icon-placeholder.svg")} />
+              <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6668" data-name="12">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_3")} src={img("pageAccueil", "vertical_card_image_3", "/illustrations/accueil-3.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6674">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6675" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_5")}>{t("pageAccueil", "vertical_card_5", "3. Sensibilisation des équipes")}</p>
