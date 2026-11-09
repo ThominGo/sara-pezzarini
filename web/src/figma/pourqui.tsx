@@ -1,20 +1,23 @@
 import { ds } from '../utils/preview';
 import { t, img } from '../utils/content';
+import { site } from '../utils/site';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
 
 type CtaProps = {
+  href?: string;
   className?: string;
   label?: string;
   state?: "default";
   variants?: "primary" | "secondary";
 };
 
-function Cta({ className, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+function Cta({ className, href, label = "button label", state = "default", variants = "primary" }: CtaProps) {
   const isSecondary = variants === "secondary";
+  const Tag: any = href ? "a" : "div";
   return (
-    <div className={className || `border border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] ${isSecondary ? "bg-[var(--white,white)] border-[#c2c2c2]" : "bg-[var(--black,#090f0c)] border-[#3a3f3d]"}`} id={isSecondary ? "node-133_3436" : "node-133_3437"}>
+    <Tag href={href} data-name="Cta" className={className || `border border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] ${isSecondary ? "bg-[var(--white,white)] border-[#c2c2c2]" : "bg-[var(--black,#090f0c)] border-[#3a3f3d]"}`} id={isSecondary ? "node-133_3436" : "node-133_3437"}>
       {variants === "primary" && (
         <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="133:3431">
           {label}
@@ -25,7 +28,7 @@ function Cta({ className, label = "button label", state = "default", variants = 
           {label}
         </p>
       )}
-    </div>
+    </Tag>
   );
 }
 
@@ -66,7 +69,7 @@ export default function PourQui() {
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6776" data-name="image-text">
+      <div id="structures" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6776" data-name="image-text">
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:6777">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:6778">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6779">
@@ -76,7 +79,7 @@ export default function PourQui() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6782">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6783">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6784" data-sanity={ds("pagePourQui", "image_text_2")}>{t("pagePourQui", "image_text_2", "Directeurs, chefs de service et équipes : je vous propose de réfléchir ensemble aux activités et aux environnements des personnes accompagnées, notamment des adultes et adolescents avec TSA ou handicap psychique.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>
@@ -86,7 +89,7 @@ export default function PourQui() {
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6787" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_1")} src={img("pagePourQui", "image_text_image_1", "/images/1cb515894f.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6788">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6789" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6789" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6790">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6791" data-name="Frame">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_2")} src={img("pagePourQui", "image_text_image_2", "/assets/icon-placeholder.svg")} />
@@ -96,7 +99,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6795" data-sanity={ds("pagePourQui", "image_text_3")}>{t("pagePourQui", "image_text_3", "Des bilans pour comprendre les besoins au quotidien.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6796" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6796" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6797">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6798" data-name="Frame">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_3")} src={img("pagePourQui", "image_text_image_3", "/assets/icon-placeholder.svg")} />
@@ -106,7 +109,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6804" data-sanity={ds("pagePourQui", "image_text_4")}>{t("pagePourQui", "image_text_4", "Les transitions entre activités sont difficiles à vivre.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6805" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6805" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6806">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6807" data-name="Frame">
                     <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_4")} src={img("pagePourQui", "image_text_image_4", "/assets/icon-placeholder.svg")} />
@@ -120,12 +123,12 @@ export default function PourQui() {
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6814" data-name="image-text">
+      <div id="entreprises" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6814" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6815" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6816" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_5")} src={img("pagePourQui", "image_text_image_5", "/images/9e02fa80b6.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6817">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6818" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6818" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6819">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -135,7 +138,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6821" data-sanity={ds("pagePourQui", "image_text_6")}>{t("pagePourQui", "image_text_6", "Des conseils pour adapter les espaces et les activités.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6822" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6822" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6823">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -145,7 +148,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6825" data-sanity={ds("pagePourQui", "image_text_7")}>{t("pagePourQui", "image_text_7", "Des ateliers et programmes de prévention adaptés.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6826" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6826" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6827">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -167,14 +170,14 @@ export default function PourQui() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6835">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6836">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6837" data-sanity={ds("pagePourQui", "image_text_10")}>{t("pagePourQui", "image_text_10", "RH, responsables, élus et équipes de CCAS : l’inclusion se pense aussi au travail et dans les services de proximité. Je vous accompagne pour repérer les obstacles à la participation et envisager des adaptations concrètes.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6839" data-name="image-text">
+      <div id="ecoles" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6839" data-name="image-text">
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:6840">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:6841">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6842">
@@ -187,7 +190,7 @@ export default function PourQui() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6845">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6846">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6847" data-sanity={ds("pagePourQui", "image_text_13")}>{t("pagePourQui", "image_text_13", "Équipes éducatives, bibliothèques, musées et lieux culturels : je vous propose de penser l’accès aux apprentissages, aux loisirs et à la culture à partir des besoins des publics et des réalités de vos espaces.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>
@@ -197,7 +200,7 @@ export default function PourQui() {
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6850" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_6")} src={img("pagePourQui", "image_text_image_6", "/images/4a0b9d7ee1.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6851">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6852" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6852" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6853">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -207,7 +210,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6855" data-sanity={ds("pagePourQui", "image_text_14")}>{t("pagePourQui", "image_text_14", "Des conseils sur l’organisation des espaces et des activités.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6856" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6856" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6857">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -217,7 +220,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6859" data-sanity={ds("pagePourQui", "image_text_15")}>{t("pagePourQui", "image_text_15", "Des supports adaptés pour se repérer et participer.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6860" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6860" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6861">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -231,12 +234,12 @@ export default function PourQui() {
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6864" data-name="image-text">
+      <div id="personnes" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6864" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6865" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6866" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_7")} src={img("pagePourQui", "image_text_image_7", "/images/3045a0aeb8.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6867">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6868" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6868" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6869">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -246,7 +249,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6871" data-sanity={ds("pagePourQui", "image_text_17")}>{t("pagePourQui", "image_text_17", "Un bilan centré sur vos activités, vos besoins et vos choix.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6872" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6872" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6873">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -256,7 +259,7 @@ export default function PourQui() {
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6875" data-sanity={ds("pagePourQui", "image_text_18")}>{t("pagePourQui", "image_text_18", "Un suivi, des stratégies et des outils sur mesure.")}</p>
                 </div>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6876" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6876" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6877">
                   <div className="-scale-y-100 flex-none rotate-180">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -281,7 +284,7 @@ export default function PourQui() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6885">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6886">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6887" data-sanity={ds("pagePourQui", "image_text_22")}>{t("pagePourQui", "image_text_22", "Adultes, adolescents et proches, notamment concernés par un TSA ou un handicap psychique : je pars de vos priorités et de vos habitudes pour explorer, avec vous, ce qui facilite ou freine les activités qui comptent dans votre vie.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>
@@ -290,7 +293,6 @@ export default function PourQui() {
       </div>
       <PushContact />
       <Footer />
-      <Nav />
       <Nav />
     </div>
   );

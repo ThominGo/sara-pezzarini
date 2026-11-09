@@ -1,6 +1,6 @@
 // Navigation : classes copiées de Figma (nav, Property 1=Variant2). Seuls les liens sont ajoutés.
 const link =
-  "[word-break:break-word] block cursor-pointer font-['Lexend:Regular'] font-normal leading-[0] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] whitespace-nowrap";
+  "lien [word-break:break-word] block cursor-pointer font-['Lexend:Regular'] font-normal leading-[0] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] whitespace-nowrap";
 
 const items = [
   { label: 'Mon approche', href: '/mon-approche' },

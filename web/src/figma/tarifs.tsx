@@ -1,23 +1,53 @@
 import { ds } from '../utils/preview';
 import { t, img } from '../utils/content';
+import { site } from '../utils/site';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
 
 
 type CtaProps = {
+  href?: string;
   className?: string;
   label?: string;
   state?: "default";
   variants?: "primary";
 };
 
-function Cta({ className, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+function Cta({ className, href, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+  const Tag: any = href ? "a" : "div";
   return (
-    <div className={className || "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px]"} data-node-id="133:3437">
+    <Tag href={href} data-name="Cta" className={className || "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px]"} data-node-id="133:3437">
       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="133:3431">
         {label}
       </p>
+    </Tag>
+  );
+}
+
+// FAQ : classes reprises de la question ouverte de la maquette (414:6486). Les réponses s'ouvrent et se ferment (voir interactions.ts).
+function FaqItem({ q, qf, a, af, i, open = false }: { q: string; qf: string; a: string; af: string; i: string; open?: boolean }) {
+  return (
+    <div className="border-[#ccc] border-b border-solid content-stretch flex flex-col items-start overflow-clip py-[16px] relative shrink-0 w-full" data-name="Bouton" data-faq data-open={open ? '' : undefined}>
+      <button type="button" aria-expanded={open} className="faq-q bg-transparent border-0 content-stretch cursor-pointer flex items-center p-0 relative shrink-0 text-left w-full">
+        <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+          <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px relative">
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", q)}>{t("pageTarifs", q, qf)}</p>
+          </div>
+        </div>
+        <div className="faq-icon relative shrink-0 size-[24px]" data-name="Frame">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", i)} src={img("pageTarifs", i, "/assets/icon-placeholder.svg")} />
+        </div>
+      </button>
+      <div className="faq-a">
+        <div className="faq-a-in">
+          <div className="content-stretch flex items-start pl-[120px] pt-[8px] relative shrink-0 w-full">
+            <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative">
+              <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-sanity={ds("pageTarifs", a)}>{t("pageTarifs", a, af)}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -43,12 +73,12 @@ export default function TarifsEtFinancement() {
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6356;146:4281">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6356;146:4282" data-sanity={ds("pageTarifs", "tarifs_2")}>{t("pageTarifs", "tarifs_2", "Des tarifs clairs pour les personnes et les familles, des formats sur mesure pour les organisations.")}</p>
                   <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="I414:6356;146:4283" data-name="Actions principales">
-                    <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6356;148:4594" data-name="Cta">
+                    <a href="#personnes" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6356;148:4594" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="I414:6356;148:4594;133:3431" data-sanity={ds("pageTarifs", "tarifs_3")}>{t("pageTarifs", "tarifs_3", "Je suis une personne")}</p>
-                    </div>
-                    <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6356;148:4597" data-name="Cta">
+                    </a>
+                    <a href="#organisations" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6356;148:4597" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6356;148:4597;133:3433" data-sanity={ds("pageTarifs", "tarifs_4")}>{t("pageTarifs", "tarifs_4", "Je suis une organisation")}</p>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -63,7 +93,7 @@ export default function TarifsEtFinancement() {
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6357" data-name="image-text">
+      <div id="personnes" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6357" data-name="image-text">
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:6358">
           <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6359">
             <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:6360">
@@ -118,7 +148,7 @@ export default function TarifsEtFinancement() {
                     <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance text-right w-[81px]" data-node-id="414:6389" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", "image_text_16")}>{t("pageTarifs", "image_text_16", "XX €")}</p>
                   </div>
                 </div>
-                <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
               </div>
             </div>
           </div>
@@ -129,7 +159,7 @@ export default function TarifsEtFinancement() {
           </div>
         </div>
       </div>
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6393" data-name="image-text">
+      <div id="organisations" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6393" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6394" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:6395" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_2")} src={img("pageTarifs", "image_text_image_2", "/images/9e02fa80b6.webp")} />
@@ -172,7 +202,7 @@ export default function TarifsEtFinancement() {
                     <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance text-right w-[120px]" data-node-id="414:6418" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", "image_text_27")}>{t("pageTarifs", "image_text_27", "À partir de XX € la session.")}</p>
                   </div>
                 </div>
-                <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
               </div>
             </div>
           </div>
@@ -271,64 +301,16 @@ export default function TarifsEtFinancement() {
         </div>
         <div className="content-stretch flex flex-[1_0_0] flex-col gap-[24px] items-start justify-center min-w-px relative" data-node-id="414:6484">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:6485">
-            <div className="border-[#ccc] border-b border-solid content-stretch flex flex-col gap-[8px] items-start overflow-clip py-[16px] relative shrink-0 w-full" data-node-id="414:6486" data-name="Bouton">
-              <div className="content-stretch flex items-center relative shrink-0 w-full" data-node-id="414:6487">
-                <div className="flex flex-[1_0_0] flex-row items-center self-stretch" data-node-id="414:6488">
-                  <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px relative">
-                    <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6489" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_3")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_3", "Puis-je être remboursé·e ?")}</p>
-                  </div>
-                </div>
-                <div className="relative shrink-0 size-[24px]" data-node-id="414:6490" data-name="Frame">
-                  <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_image_1")} src={img("pageTarifs", "faq_accord_on_statique_ouvert_image_1", "/assets/icon-placeholder.svg")} />
-                </div>
-              </div>
-              <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6493">
-                <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:6494">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-node-id="414:6495" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_4")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_4", "L'ergothérapie en libéral n'est pas remboursée par la Sécurité sociale, mais plusieurs aides peuvent couvrir tout ou partie des séances.")}</p>
-                </div>
-              </div>
-            </div>
-            <div className="border-[#ccc] border-b border-solid content-stretch flex items-center justify-between overflow-clip py-[16px] relative shrink-0 w-full" data-node-id="414:6496" data-name="Bouton">
-              <div className="flex flex-[1_0_0] flex-row items-center self-stretch" data-node-id="414:6497">
-                <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px relative">
-                  <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6498" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_5")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_5", "Comment obtenir un devis ?")}</p>
-                </div>
-              </div>
-              <div className="relative shrink-0 size-[24px]" data-node-id="414:6499" data-name="Frame">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_image_2")} src={img("pageTarifs", "faq_accord_on_statique_ouvert_image_2", "/assets/icon-placeholder.svg")} />
-              </div>
-            </div>
-            <div className="border-[#ccc] border-b border-solid content-stretch flex items-center justify-between overflow-clip py-[16px] relative shrink-0 w-full" data-node-id="414:6502" data-name="Bouton">
-              <div className="flex flex-[1_0_0] flex-row items-center self-stretch" data-node-id="414:6503">
-                <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px relative">
-                  <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6504" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_6")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_6", "Quels moyens de paiement acceptez-vous ?")}</p>
-                </div>
-              </div>
-              <div className="relative shrink-0 size-[24px]" data-node-id="414:6505" data-name="Frame">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_image_3")} src={img("pageTarifs", "faq_accord_on_statique_ouvert_image_3", "/assets/icon-placeholder.svg")} />
-              </div>
-            </div>
+            <FaqItem open q="faq_accord_on_statique_ouvert_3" qf="Puis-je être remboursé·e ?" i="faq_accord_on_statique_ouvert_image_1" a="faq_accord_on_statique_ouvert_4" af="L'ergothérapie en libéral n'est pas remboursée par la Sécurité sociale, mais plusieurs aides peuvent couvrir tout ou partie des séances." />
+            <FaqItem q="faq_accord_on_statique_ouvert_5" qf="Comment obtenir un devis ?" i="faq_accord_on_statique_ouvert_image_2" a="faq_reponse_2" af="Après un premier échange, je vous envoie un devis détaillé adapté à votre situation et à vos besoins." />
+            <FaqItem q="faq_accord_on_statique_ouvert_6" qf="Quels moyens de paiement acceptez-vous ?" i="faq_accord_on_statique_ouvert_image_3" a="faq_reponse_3" af="Vous pouvez régler par virement, chèque ou espèces. Une facture vous est remise après chaque séance." />
           </div>
-          <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="D’autre questions ?" />
+          <Cta href="/contact" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="D’autre questions ?" />
         </div>
       </div>
       <PushContact />
       <Footer />
-      <div className="absolute content-stretch flex items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px]" data-node-id="414:6511" data-name="Navigation">
-        <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px]" data-node-id="I414:6511;203:6146">
-          <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6137" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_7")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_7", "Sara Pezzarini")}</p>
-          <div className="content-stretch flex gap-[28px] items-center overflow-clip relative shrink-0" data-node-id="I414:6511;203:6138" data-name="Liens de navigation">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6139" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_8")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_8", "Mon approche")}</p>
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6140" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_9")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_9", "Pour qui")}</p>
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6141" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_10")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_10", "Projets")}</p>
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6142" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_11")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_11", "Tarifs")}</p>
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6143" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_12")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_12", "Mon parcours")}</p>
-            <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6511;203:6144" data-name="Cta">
-              <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="I414:6511;203:6144;133:3431" data-sanity={ds("pageTarifs", "faq_accord_on_statique_ouvert_13")}>{t("pageTarifs", "faq_accord_on_statique_ouvert_13", "Me contacter")}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Nav />
     </div>
   );
 }

@@ -1,24 +1,27 @@
 import { ds } from '../utils/preview';
 import { t, img } from '../utils/content';
+import { site } from '../utils/site';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
 
 
 type CtaProps = {
+  href?: string;
   className?: string;
   label?: string;
   state?: "default";
   variants?: "primary";
 };
 
-function Cta({ className, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+function Cta({ className, href, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+  const Tag: any = href ? "a" : "div";
   return (
-    <div className={className || "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px]"} data-node-id="133:3437">
+    <Tag href={href} data-name="Cta" className={className || "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px]"} data-node-id="133:3437">
       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="133:3431">
         {label}
       </p>
-    </div>
+    </Tag>
   );
 }
 
@@ -46,12 +49,12 @@ export default function MonApproche() {
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6686;146:4281">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6686;146:4282" data-sanity={ds("pageApproche", "hero_3")}>{t("pageApproche", "hero_3", "Avec elle, son entourage et les équipes, je co-construis des pistes adaptées aux besoins du quotidien, pour une inclusion concrète, au-delà du soin.")}</p>
                   <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="I414:6686;146:4283" data-name="Actions principales">
-                    <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6686;148:4594" data-name="Cta">
+                    <a href="#collaboration" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6686;148:4594" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="I414:6686;148:4594;133:3431" data-sanity={ds("pageApproche", "hero_4")}>{t("pageApproche", "hero_4", "Comment ça se passe ?")}</p>
-                    </div>
-                    <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6686;148:4597" data-name="Cta">
+                    </a>
+                    <a href="/contact" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6686;148:4597" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6686;148:4597;133:3433" data-sanity={ds("pageApproche", "hero_5")}>{t("pageApproche", "hero_5", "Une question ?")}</p>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -185,7 +188,7 @@ export default function MonApproche() {
           </div>
         </div>
       </div>
-      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-node-id="414:6689" data-name="vertical-card">
+      <div id="collaboration" className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-node-id="414:6689" data-name="vertical-card">
         <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[942px]" data-node-id="414:6690">
           <p className="[word-break:break-word] flex-[1_0_0] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-px relative text-[40px] text-[transparent] text-balance" data-node-id="414:6691" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
             Trois façons de travailler ensemble
@@ -247,7 +250,7 @@ export default function MonApproche() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6735">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6736">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6737" data-sanity={ds("pageApproche", "image_text_2")}>{t("pageApproche", "image_text_2", "Adultes, adolescents et proches, notamment concernés par un TSA ou un handicap psychique : je pars de vos priorités et de vos habitudes pour explorer, avec vous, ce qui facilite ou freine les activités qui comptent dans votre vie.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>
@@ -257,16 +260,16 @@ export default function MonApproche() {
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative w-full" data-node-id="414:6740" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_1")} src={img("pageApproche", "image_text_image_1", "/images/8076d6f385.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6741">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6742" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6742" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-node-id="414:6743" data-sanity={ds("pageApproche", "image_text_3")}>{t("pageApproche", "image_text_3", "Bilans et compréhension des besoins")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6744" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6744" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_4")}>{t("pageApproche", "image_text_4", "Suivis et stratégies sur mesure")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6746" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6746" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_5")}>{t("pageApproche", "image_text_5", "Outils pour l’autonomie au quotidien")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6748" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6748" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_6")}>{t("pageApproche", "image_text_6", "Accompagnement avec l’entourage")}</p>
               </div>
             </div>
@@ -278,16 +281,16 @@ export default function MonApproche() {
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6752" data-name="bg">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_2")} src={img("pageApproche", "image_text_image_2", "/images/a739a88dca.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6753">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6754" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6754" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_7")}>{t("pageApproche", "image_text_7", "Ateliers et programmes de prévention")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6756" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6756" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_8")}>{t("pageApproche", "image_text_8", "Sensibilisation et formation des équipes")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6758" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6758" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_9")}>{t("pageApproche", "image_text_9", "Conseils pour adapter les environnements")}</p>
               </div>
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6760" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6760" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_10")}>{t("pageApproche", "image_text_10", "Co-construction de projets et d’outils inclusifs")}</p>
               </div>
             </div>
@@ -302,7 +305,7 @@ export default function MonApproche() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6767">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6768">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6769" data-sanity={ds("pageApproche", "image_text_12")}>{t("pageApproche", "image_text_12", "Équipes éducatives, bibliothèques, musées et lieux culturels : je vous propose de penser l’accès aux apprentissages, aux loisirs et à la culture à partir des besoins des publics et des réalités de vos espaces.")}</p>
-                  <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
+                  <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>
             </div>

@@ -5,16 +5,18 @@ import PushContact from './components/PushContact';
 
 
 type CtaProps = {
+  href?: string;
   className?: string;
   label?: string;
   state?: "default";
   variants?: "primary" | "secondary";
 };
 
-function Cta({ className, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+function Cta({ className, href, label = "button label", state = "default", variants = "primary" }: CtaProps) {
   const isSecondary = variants === "secondary";
+  const Tag: any = href ? "a" : "div";
   return (
-    <div className={className || `border border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] ${isSecondary ? "bg-[var(--white,white)] border-[#c2c2c2]" : "bg-[var(--black,#090f0c)] border-[#3a3f3d]"}`} id={isSecondary ? "node-133_3436" : "node-133_3437"}>
+    <Tag href={href} data-name="Cta" className={className || `border border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] ${isSecondary ? "bg-[var(--white,white)] border-[#c2c2c2]" : "bg-[var(--black,#090f0c)] border-[#3a3f3d]"}`} id={isSecondary ? "node-133_3436" : "node-133_3437"}>
       {variants === "primary" && (
         <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="133:3431">
           {label}
@@ -25,7 +27,7 @@ function Cta({ className, label = "button label", state = "default", variants = 
           {label}
         </p>
       )}
-    </div>
+    </Tag>
   );
 }
 
@@ -333,7 +335,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="absolute bg-[#958a7e] inset-0 mix-blend-color rounded-[8px]" />
             </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7058">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[320px]" data-node-id="414:7059" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[320px]" data-node-id="414:7059" data-name="Bouton">
                 <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="414:7060">
                   <div className="-scale-y-100 flex-none h-full rotate-180">
                     <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">
@@ -350,7 +352,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                   </p>
                 </div>
               </div>
-              <Cta className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
+              <Cta href="/projets/exemple" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
             </div>
           </div>
         </div>
@@ -361,7 +363,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="absolute bg-[#788d9a] inset-0 mix-blend-color rounded-[8px]" />
             </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7066">
-              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[320px]" data-node-id="414:7067" data-name="Bouton">
+              <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[320px]" data-node-id="414:7067" data-name="Bouton">
                 <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="414:7068">
                   <div className="-scale-y-100 flex-none h-full rotate-180">
                     <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">
@@ -378,7 +380,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                   </p>
                 </div>
               </div>
-              <Cta className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
+              <Cta href="/projets/exemple" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
             </div>
           </div>
         </div>

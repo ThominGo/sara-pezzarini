@@ -92,17 +92,19 @@ function Slider({ className }: { className?: string }) {
 }
 
 type CtaProps = {
+  href?: string;
   className?: string;
   label?: string;
   state?: "default";
   variants?: "primary" | "secondary" | "tertiary";
 };
 
-function Cta({ className, label = "button label", state = "default", variants = "primary" }: CtaProps) {
+function Cta({ className, href, label = "button label", state = "default", variants = "primary" }: CtaProps) {
   const isSecondary = variants === "secondary";
   const isTertiary = variants === "tertiary";
+  const Tag: any = href ? "a" : "div";
   return (
-    <div className={className || `content-stretch flex h-[40px] items-center justify-center overflow-clip relative rounded-[4px] ${isTertiary ? "gap-[8px]" : isSecondary ? "bg-[var(--white,white)] border border-[#c2c2c2] border-solid px-[24px]" : "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid px-[24px]"}`} id={isTertiary ? "node-148_4793" : isSecondary ? "node-133_3436" : "node-133_3437"}>
+    <Tag href={href} data-name="Cta" className={className || `content-stretch flex h-[40px] items-center justify-center overflow-clip relative rounded-[4px] ${isTertiary ? "gap-[8px]" : isSecondary ? "bg-[var(--white,white)] border border-[#c2c2c2] border-solid px-[24px]" : "bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid px-[24px]"}`} id={isTertiary ? "node-148_4793" : isSecondary ? "node-133_3436" : "node-133_3437"}>
       {["secondary", "tertiary"].includes(variants) && (
         <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[#090f0c] text-[18px] text-pretty whitespace-nowrap" data-node-id="133:3433">
           {label}
@@ -120,7 +122,7 @@ function Cta({ className, label = "button label", state = "default", variants = 
           </div>
         </div>
       )}
-    </div>
+    </Tag>
   );
 }
 
@@ -140,7 +142,7 @@ function Component4Cards({ className }: { className?: string }) {
         </div>
         <div className="content-stretch flex items-end justify-end relative self-stretch shrink-0" data-node-id="146:4302">
           <div className="gap-x-[8px] gap-y-[8px] grid-cols-[repeat(2,fit-content(100%))] grid-rows-[repeat(2,fit-content(100%))] inline-grid relative shrink-0" data-node-id="146:4303">
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4304" data-name="Bouton">
+            <a href="/pour-qui#structures" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4304" data-name="Bouton">
               <div className="content-stretch flex flex-[1_0_0] flex-col items-end justify-between min-h-px p-[16px] relative w-full" data-node-id="146:4305">
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4306">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4307">
@@ -158,8 +160,8 @@ function Component4Cards({ className }: { className?: string }) {
                 </div>
                 <Cta className="content-stretch flex gap-[8px] h-[40px] items-center justify-center overflow-clip relative rounded-[4px] shrink-0" label="En savoir plus" variants="tertiary" />
               </div>
-            </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4317" data-name="Bouton">
+            </a>
+            <a href="/pour-qui#entreprises" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4317" data-name="Bouton">
               <div className="content-stretch flex flex-[1_0_0] flex-col items-end justify-between min-h-px p-[16px] relative w-full" data-node-id="146:4318">
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4319">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4320">
@@ -177,8 +179,8 @@ function Component4Cards({ className }: { className?: string }) {
                 </div>
                 <Cta className="content-stretch flex gap-[8px] h-[40px] items-center justify-center overflow-clip relative rounded-[4px] shrink-0" label="En savoir plus" variants="tertiary" />
               </div>
-            </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4333" data-name="Bouton">
+            </a>
+            <a href="/pour-qui#ecoles" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4333" data-name="Bouton">
               <div className="content-stretch flex flex-[1_0_0] flex-col items-end justify-between min-h-px p-[16px] relative w-full" data-node-id="146:4334">
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4335">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4336">
@@ -196,8 +198,8 @@ function Component4Cards({ className }: { className?: string }) {
                 </div>
                 <Cta className="content-stretch flex gap-[8px] h-[40px] items-center justify-center overflow-clip relative rounded-[4px] shrink-0" label="En savoir plus" variants="tertiary" />
               </div>
-            </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4351" data-name="Bouton">
+            </a>
+            <a href="/pour-qui#personnes" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col items-center overflow-clip relative rounded-[8px] shrink-0 size-[348px]" data-node-id="146:4351" data-name="Bouton">
               <div className="content-stretch flex flex-[1_0_0] flex-col items-end justify-between min-h-px p-[16px] relative w-full" data-node-id="146:4352">
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4353">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4354">
@@ -215,7 +217,7 @@ function Component4Cards({ className }: { className?: string }) {
                 </div>
                 <Cta className="content-stretch flex gap-[8px] h-[40px] items-center justify-center overflow-clip relative rounded-[4px] shrink-0" label="En savoir plus" variants="tertiary" />
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -260,10 +262,10 @@ export default function SaraPezzarini() {
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6637;146:4281">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6637;146:4282" data-sanity={ds("pageAccueil", "hero_3")}>{t("pageAccueil", "hero_3", "Ergothérapeute en libéral, j'accompagne les personnes et les organisations vers une inclusion concrète, au-delà du soin.")}</p>
                   <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="I414:6637;146:4283" data-name="Actions principales">
-                    <Cta className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Travailler ensemble" />
-                    <div className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6637;148:4597" data-name="Cta">
+                    <Cta href="/contact" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Travailler ensemble" />
+                    <a href="/projets" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6637;148:4597" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6637;148:4597;133:3433" data-sanity={ds("pageAccueil", "hero_4")}>{t("pageAccueil", "hero_4", "Voir mes projets")}</p>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -328,7 +330,7 @@ export default function SaraPezzarini() {
           <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance text-center w-[338px]" data-node-id="I414:6679;146:4393" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "push_project_1")}>{t("pageAccueil", "push_project_1", "Ce que j'ai déjà construit")}</p>
           <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-node-id="I414:6679;146:4394">
             <div className="content-stretch cursor-pointer flex gap-[8px] h-[480px] items-center relative shrink-0 w-full" data-node-id="I414:6679;146:4395">
-              <a className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[4px]" data-node-id="I414:6679;146:4396" data-name="Bouton">
+              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4396" data-name="Bouton">
                 <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4397">
                   <div className="-scale-y-100 flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
@@ -348,7 +350,7 @@ export default function SaraPezzarini() {
                   </div>
                 </div>
               </a>
-              <a className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[4px]" data-node-id="I414:6679;146:4401" data-name="Bouton">
+              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4401" data-name="Bouton">
                 <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4402">
                   <div className="flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
@@ -368,7 +370,7 @@ export default function SaraPezzarini() {
                   </div>
                 </div>
               </a>
-              <a className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[4px]" data-node-id="I414:6679;146:4406" data-name="Bouton">
+              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4406" data-name="Bouton">
                 <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4407">
                   <div className="flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
@@ -390,7 +392,7 @@ export default function SaraPezzarini() {
                 </div>
               </a>
             </div>
-            <Cta className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-[392px]" label="Voir tous mes projets" variants="secondary" />
+            <Cta href="/projets" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-[392px]" label="Voir tous mes projets" variants="secondary" />
           </div>
         </div>
       </div>
@@ -403,15 +405,15 @@ export default function SaraPezzarini() {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6680;146:4418">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6680;146:4419">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6680;146:4420" data-sanity={ds("pageAccueil", "points_2")}>{t("pageAccueil", "points_2", "Je pars de son fonctionnement pour construire avec elle et son entourage.")}</p>
-                  <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6680;148:4935" data-name="Cta">
+                  <a href="/mon-approche" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6680;148:4935" data-name="Cta">
                     <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-node-id="I414:6680;148:4935;133:3433" data-sanity={ds("pageAccueil", "points_3")}>{t("pageAccueil", "points_3", "Découvrir mon approche")}</p>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="I414:6680;146:4424">
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4425" data-name="Bouton">
+            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4425" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4426">
                 <div className="-scale-y-100 flex-none rotate-180">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -422,7 +424,7 @@ export default function SaraPezzarini() {
                 <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6680;146:4429" data-sanity={ds("pageAccueil", "points_5")}>{t("pageAccueil", "points_5", "En respectant ses choix et son rythme.")}</p>
               </div>
             </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4430" data-name="Bouton">
+            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4430" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4431">
                 <div className="-scale-y-100 flex-none rotate-180">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -433,7 +435,7 @@ export default function SaraPezzarini() {
                 <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6680;146:4434" data-sanity={ds("pageAccueil", "points_7")}>{t("pageAccueil", "points_7", "Pour construire des pistes adaptées au terrain.")}</p>
               </div>
             </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4435" data-name="Bouton">
+            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4435" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4436">
                 <div className="-scale-y-100 flex-none rotate-180">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
@@ -444,7 +446,7 @@ export default function SaraPezzarini() {
                 <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6680;146:4439" data-sanity={ds("pageAccueil", "points_9")}>{t("pageAccueil", "points_9", "Pour identifier les besoins et les obstacles.")}</p>
               </div>
             </div>
-            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4440" data-name="Bouton">
+            <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4440" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4441">
                 <div className="-scale-y-100 flex-none rotate-180">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />

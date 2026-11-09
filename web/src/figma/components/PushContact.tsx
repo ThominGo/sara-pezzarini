@@ -20,7 +20,7 @@ export default function PushContact() {
             </div>
           </div>
           <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0 w-[340px]" data-node-id="I414:6682;146:4494">
-            <a href={"/contact"} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-full" data-node-id="I414:6682;146:4495" data-name="Bouton">
+            <a href={"/contact"} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-full" data-node-id="I414:6682;146:4495" data-name="Bouton">
               <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="I414:6682;146:4496">
                 <div className="-scale-y-100 flex-none h-full rotate-180">
                   <div className="h-full relative rounded-[2px] w-[121px]" data-name="image 13">
@@ -37,7 +37,7 @@ export default function PushContact() {
                 </div>
               </div>
             </a>
-            <a href={site.settings.calendly || "/contact"} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[4px] shrink-0 w-full" data-node-id="I414:6682;146:4500" data-name="Bouton">
+            <a href={site.settings.calendly || "/contact"} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-full" data-node-id="I414:6682;146:4500" data-name="Bouton">
               <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="I414:6682;146:4501">
                 <div className="-scale-y-100 flex-none h-full rotate-180">
                   <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">

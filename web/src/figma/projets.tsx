@@ -17,17 +17,17 @@ const Arrow = () => (
 );
 
 export const defaultCards: ProjectCard[] = [
-  { title: 'Découvrir mes projets', href: '/projets', image: '/images/a935537276.webp', image: '/images/61c0fecc5b.webp', image: '/images/1553e744ae.webp', image: '/images/368c5e286a.webp', image: '/images/76cd837fbd.webp', image: '/images/1fbf0de407.webp', color: '#958a7e', flip: true },
-  { title: 'Jeu pour gamifier le quotidien', href: '/projets/exemple', color: '#788d9a' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#454545', color: '#181336' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#0c0c0c', color: '#957e7e' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#444', color: '#957e8b' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#474747', color: '#8e7e95' },
+  { title: 'Découvrir mes projets', image: '/images/a935537276.webp', href: '/projets', color: '#958a7e', flip: true },
+  { title: 'Jeu pour gamifier le quotidien', image: '/images/61c0fecc5b.webp', href: '/projets/exemple', color: '#788d9a' },
+  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/1553e744ae.webp', href: '/projets/exemple', difference: '#454545', color: '#181336' },
+  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/368c5e286a.webp', href: '/projets/exemple', difference: '#0c0c0c', color: '#957e7e' },
+  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/76cd837fbd.webp', href: '/projets/exemple', difference: '#444', color: '#957e8b' },
+  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/1fbf0de407.webp', href: '/projets/exemple', difference: '#474747', color: '#8e7e95' },
 ];
 
 function Card({ c, first }: { c: ProjectCard; first: boolean }) {
   return (
-    <a href={c.href} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col gap-[4px] h-[480px] items-start justify-self-stretch overflow-clip p-[8px] relative rounded-[4px] shrink-0" data-name="Bouton">
+    <a href={c.href} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col gap-[4px] h-[480px] items-start justify-self-stretch overflow-clip p-[8px] relative rounded-[8px] shrink-0" data-name="Bouton">
       <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full">
         <div className={`${c.flip ? '-scale-y-100 ' : ''}flex-none rotate-180 size-full`}>
           <div className="relative rounded-[8px] size-full" data-name="image 13">
