@@ -149,3 +149,18 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
 /* Rayons homogènes : 4 px = petits éléments (boutons, tags, champs) ; 8 px = cartes, images, blocs ;
    image dans une carte = 4 px (les cartes passent toutes à 8 px dans le code) */
 [data-name="Bouton"][class*="rounded-"] :is([data-name^="image"], [data-name^="image"] *, .rounded-\[2px\]) { border-radius: 4px; }
+
+/* Transitions de page : fondu enchaîné natif du navigateur (View Transitions, sans JavaScript).
+   La nav ne bouge pas d'une page à l'autre. Navigateurs non compatibles : changement de page classique. */
+@view-transition { navigation: auto; }
+[data-name="nav"] { view-transition-name: nav; }
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; } }
+::view-transition-old(root) { animation: vt-out .3s ease both; }
+::view-transition-new(root) { animation: vt-in .5s ease .1s both; }
+::view-transition-group(nav) { animation: none; }
+::view-transition-old(nav) { display: none; }
+::view-transition-new(nav) { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
