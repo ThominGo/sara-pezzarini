@@ -34,3 +34,6 @@ div[aria-hidden]:has(> .mix-blend-soft-light)::after {
   opacity: 0.22;
 }
 div[aria-hidden]:has(> .mix-blend-soft-light) { overflow: hidden; }
+
+/* Éléments de 911 px dans Figma = hauteur de l'écran (corrigée de la mise à l'échelle) */
+.h-screen-fig { height: calc(100svh / var(--zoom, 1)); }

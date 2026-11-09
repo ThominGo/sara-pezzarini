@@ -23,7 +23,7 @@ function Cta({ className, label = "button label", state = "default", variants = 
 export default function MonApproche() {
   return (
     <div className="content-stretch flex flex-col items-start relative size-full" data-node-id="414:6685" data-name="Mon approche">
-      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-[911px] items-start overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6686" data-name="hero">
+      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-screen-fig items-start overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6686" data-name="hero">
         <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px p-[8px] relative w-full" data-node-id="I414:6686;146:4271">
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6686;146:4272">
             <div className="flex-none rotate-180 size-full">

@@ -19,7 +19,9 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
         var html = document.documentElement;
         function fit() {
           html.style.zoom = '1';
-          html.style.zoom = String(html.clientWidth / 1512);
+          var z = html.clientWidth / 1512;
+          html.style.zoom = String(z);
+          html.style.setProperty('--zoom', String(z));
         }
         fit();
         addEventListener('resize', fit);
