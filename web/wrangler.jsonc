@@ -1,0 +1,9 @@
+{
+  // Hébergement Cloudflare (Workers, fichiers statiques) : le site Astro est compilé dans dist/
+  "name": "sara-pezzarini",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
