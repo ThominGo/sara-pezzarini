@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/mobile.css';
 import { VisualEditing } from '@sanity/astro/visual-editing';
 import { PREVIEW } from '../utils/preview';
 import { ClientRouter } from 'astro:transitions';
@@ -15,11 +16,12 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <meta name="description" content={description} />
     <script is:inline>
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
-      // Mise à l'échelle de la maquette 1512 px à la largeur de la fenêtre
+      // Mise à l'échelle de la maquette (1512 px ou 390 px) à la largeur de la fenêtre
       (function () {
         var html = document.documentElement;
         function fit() {
-          var z = html.clientWidth / 1512;
+          // maquette desktop 1512 px, maquette mobile 390 px (sous 768 px)
+          var z = html.clientWidth / (html.clientWidth < 768 ? 390 : 1512);
           html.style.setProperty('--zoom', String(z));
         }
         fit();

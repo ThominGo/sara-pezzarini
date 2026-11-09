@@ -279,10 +279,28 @@ function samePageLinks() {
 
 samePageLinks();
 
+/* ---------------- Menu mobile ---------------- */
+function mobileMenu() {
+  const btn = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+  const panel = document.querySelector<HTMLElement>('[data-menu-panel]');
+  if (!btn || !panel) return;
+  const label = btn.querySelector<HTMLElement>('[data-menu-label]');
+  const set = (open: boolean) => {
+    panel.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.classList.toggle('is-open', open);
+    if (label) label.textContent = open ? 'Fermer' : 'Menu';
+  };
+  btn.addEventListener('click', () => set(!panel.classList.contains('is-open')));
+  panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); }, { signal: page.signal });
+}
+
 // Initialisation de chaque page : au premier chargement puis après chaque changement de page
 function init() {
   page.abort();
   page = new AbortController();
+  mobileMenu();
   heroTexts();
   underlines();
   heroes();
