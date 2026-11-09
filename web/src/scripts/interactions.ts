@@ -2,6 +2,8 @@
 // Le style des états (hover, ouvert, inactif) est dans styles/global.css.
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Écouteurs posés sur window pour la page en cours : retirés quand on change de page (navigation sans rechargement)
+let page = new AbortController();
 const zoom = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--zoom')) || 1;
 
 /** Rend un élément non-lien activable au clavier comme un bouton */
@@ -109,7 +111,7 @@ function sliders() {
     track.addEventListener('pointercancel', end);
     track.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
     track.addEventListener('dragstart', (e) => e.preventDefault());
-    addEventListener('resize', () => go(x));
+    addEventListener('resize', () => go(x), { signal: page.signal });
     render();
   });
 }
@@ -146,8 +148,8 @@ function parallax() {
     });
   };
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-  addEventListener('scroll', onScroll, { passive: true });
-  addEventListener('resize', onScroll);
+  addEventListener('scroll', onScroll, { passive: true, signal: page.signal });
+  addEventListener('resize', onScroll, { signal: page.signal });
   setTimeout(update, 50);
 }
 
@@ -264,21 +266,31 @@ function underlines() {
 /* ---------------- Lien vers la page actuelle : simple retour en haut, sans transition ---------------- */
 function samePageLinks() {
   const norm = (p: string) => p.replace(/\/+$/, '') || '/';
-  document.addEventListener('click', (e) => {
+  // phase de capture : passe avant le routeur d'Astro, qui ignore un clic déjà annulé
+  addEventListener('click', (e) => {
     const a = (e.target as Element).closest?.('a[href]') as HTMLAnchorElement | null;
     if (!a || a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
     const url = new URL(a.href, location.href);
     if (url.origin !== location.origin || url.hash || norm(url.pathname) !== norm(location.pathname)) return;
     e.preventDefault();
     scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
-  });
+  }, true);
 }
 
 samePageLinks();
-heroTexts();
-underlines();
-heroes();
-sliders();
-parallax();
-faq();
-contactForm();
+
+// Initialisation de chaque page : au premier chargement puis après chaque changement de page
+function init() {
+  page.abort();
+  page = new AbortController();
+  heroTexts();
+  underlines();
+  heroes();
+  sliders();
+  parallax();
+  faq();
+  contactForm();
+}
+document.addEventListener('astro:page-load', init);
+// sans le routeur (aperçu Sanity) l'événement n'existe pas : on initialise directement
+if (!document.querySelector('meta[name="astro-view-transitions-enabled"]')) init();

@@ -155,7 +155,6 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
    3. l'ancienne continue de reculer, la carte s'élargit et recouvre le bas ; 4. la carte prend presque tout l'écran
    (fin bord blanc) ; 5. plein écran. La nav reste fixe au-dessus. Sans JavaScript.
    Navigateurs non compatibles (Firefox) : changement de page classique. */
-@view-transition { navigation: auto; }
 [data-name="nav"] { view-transition-name: nav; }
 ::view-transition { background: #fff; }
 /* marge grise autour des heros (8 px dans la maquette) : cachée pendant la transition, coins arrondis.

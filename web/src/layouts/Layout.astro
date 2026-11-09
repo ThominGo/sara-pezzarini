@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { VisualEditing } from '@sanity/astro/visual-editing';
 import { PREVIEW } from '../utils/preview';
+import { ClientRouter } from 'astro:transitions';
 interface Props { title: string; description?: string }
 const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure)." } = Astro.props;
 ---
@@ -14,8 +15,6 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <meta name="description" content={description} />
     <script is:inline>
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
-      // arrivée par une transition de page : le dégradé du hero arrive déjà en couleur (classe gardée, sinon le voile réapparaît)
-      addEventListener('pagereveal', function (e) { if (e.viewTransition) document.documentElement.classList.add('vt'); });
       // Mise à l'échelle de la maquette 1512 px à la largeur de la fenêtre
       (function () {
         var html = document.documentElement;
@@ -25,8 +24,18 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
         }
         fit();
         addEventListener('resize', fit);
+        // Changement de page sans rechargement : Astro remplace les attributs de <html>, on remet l'échelle et les classes.
+        // .vt : arrivée par une transition, le dégradé du hero arrive déjà en couleur.
+        document.addEventListener('astro:after-swap', function () {
+          fit();
+          if (!matchMedia('(prefers-reduced-motion: reduce)').matches) html.classList.add('anim');
+          html.classList.add('vt');
+        });
       })();
     </script>
+    <!-- Changement de page sans rechargement, avec la transition (fiable sur tous les navigateurs).
+         Pas dans l'aperçu Sanity, pour ne pas gêner l'édition visuelle. -->
+    {!PREVIEW && <ClientRouter fallback="none" />}
     <link rel="preload" href="/fonts/Lexend-Variable.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin />
   </head>
