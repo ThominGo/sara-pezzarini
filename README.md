@@ -15,7 +15,7 @@ Première mise en route du Studio :
 cd studio
 npx sanity login
 npx sanity schemas deploy
-npx sanity deploy        # Studio en ligne pour Sara
+npx sanity deploy        # Studio en ligne : https://sara-pezzarini.sanity.studio
 npm run typegen          # après chaque changement de schéma ou de requête
 ```
 
