@@ -25,7 +25,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4454">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4455" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_1")} src={img("pageAccueil", "slider_image_1", "/assets/placeholder.svg")} />
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_1")} src={img("pageAccueil", "slider_image_1", "/images/9bf7649c41.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4456">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4457" data-sanity={ds("pageAccueil", "slider_4")}>{t("pageAccueil", "slider_4", "2019")}</p>
@@ -41,7 +41,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4462">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4463" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_2")} src={img("pageAccueil", "slider_image_2", "/assets/placeholder.svg")} />
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_2")} src={img("pageAccueil", "slider_image_2", "/images/2dcedd3025.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4464">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4465" data-sanity={ds("pageAccueil", "slider_7")}>{t("pageAccueil", "slider_7", "2020")}</p>
@@ -57,7 +57,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4470">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4471" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_3")} src={img("pageAccueil", "slider_image_3", "/assets/placeholder.svg")} />
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_3")} src={img("pageAccueil", "slider_image_3", "/images/f858df2fd5.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4472">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4473" data-sanity={ds("pageAccueil", "slider_10")}>{t("pageAccueil", "slider_10", "2020 ▸ 2023")}</p>
@@ -73,7 +73,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4478">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4479" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_4")} src={img("pageAccueil", "slider_image_4", "/assets/placeholder.svg")} />
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_4")} src={img("pageAccueil", "slider_image_4", "/images/0bed7bf1e7.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4480">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4481" data-sanity={ds("pageAccueil", "slider_13")}>{t("pageAccueil", "slider_13", "2023 ▸ 2026")}</p>
@@ -272,7 +272,7 @@ export default function SaraPezzarini() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6637;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "hero_image_1")} src={img("pageAccueil", "hero_image_1", "/assets/placeholder.svg")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "hero_image_1")} src={img("pageAccueil", "hero_image_1", "/images/22638ffa4c.webp")} />
               </div>
             </div>
           </div>
@@ -333,7 +333,7 @@ export default function SaraPezzarini() {
                   <div className="-scale-y-100 flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
                       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_1")} src={img("pageAccueil", "push_project_image_1", "/assets/placeholder.svg")} />
+                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_1")} src={img("pageAccueil", "push_project_image_1", "/images/a935537276.webp")} />
                         <div className="absolute bg-[#958a7e] inset-0 mix-blend-color rounded-[8px]" />
                       </div>
                     </div>
@@ -353,7 +353,7 @@ export default function SaraPezzarini() {
                   <div className="flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
                       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_2")} src={img("pageAccueil", "push_project_image_2", "/assets/placeholder.svg")} />
+                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_2")} src={img("pageAccueil", "push_project_image_2", "/images/61c0fecc5b.webp")} />
                         <div className="absolute bg-[#788d9a] inset-0 mix-blend-color rounded-[8px]" />
                       </div>
                     </div>
@@ -373,7 +373,7 @@ export default function SaraPezzarini() {
                   <div className="flex-none rotate-180 size-full">
                     <div className="relative rounded-[8px] size-full" data-name="image 13">
                       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_3")} src={img("pageAccueil", "push_project_image_3", "/assets/placeholder.svg")} />
+                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_3")} src={img("pageAccueil", "push_project_image_3", "/images/1553e744ae.webp")} />
                         <div className="absolute bg-[#454545] inset-0 mix-blend-difference rounded-[8px]" />
                         <div className="absolute bg-[#181336] inset-0 mix-blend-color rounded-[8px]" />
                       </div>

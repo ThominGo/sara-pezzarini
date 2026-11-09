@@ -162,7 +162,7 @@ export default function Contact() {
               <div className="flex-none rotate-180">
                 <div className="h-[887px] relative rounded-[8px] w-[979px]" data-name="image 10">
                   <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                    <img alt="" className="absolute inset-0 max-w-none size-full rounded-[8px]" data-sanity={ds("pageContact", "image_text_image_1")} src={img("pageContact", "image_text_image_1", "/assets/placeholder.svg")} />
+                    <img alt="" className="absolute inset-0 max-w-none size-full rounded-[8px]" data-sanity={ds("pageContact", "image_text_image_1")} src={img("pageContact", "image_text_image_1", "/images/76cd837fbd.webp")} />
                     <div className="absolute bg-[#292929] inset-0 mix-blend-difference rounded-[8px]" />
                     <div className="absolute bg-[#4f47c1] inset-0 mix-blend-color rounded-[8px]" />
                   </div>

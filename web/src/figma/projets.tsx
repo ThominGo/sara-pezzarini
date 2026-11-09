@@ -17,7 +17,7 @@ const Arrow = () => (
 );
 
 export const defaultCards: ProjectCard[] = [
-  { title: 'Découvrir mes projets', href: '/projets', color: '#958a7e', flip: true },
+  { title: 'Découvrir mes projets', href: '/projets', image: '/images/a935537276.webp', image: '/images/61c0fecc5b.webp', image: '/images/1553e744ae.webp', image: '/images/368c5e286a.webp', image: '/images/76cd837fbd.webp', image: '/images/1fbf0de407.webp', color: '#958a7e', flip: true },
   { title: 'Jeu pour gamifier le quotidien', href: '/projets/exemple', color: '#788d9a' },
   { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#454545', color: '#181336' },
   { title: "Site d'aide à l'autonomie pour personnes autistes", href: '/projets/exemple', difference: '#0c0c0c', color: '#957e7e' },

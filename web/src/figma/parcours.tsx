@@ -9,26 +9,26 @@ const FV = { fontVariationSettings: '"opsz" 14, "wdth" 100' };
 const black70 = 'text-[color:var(--black-70\\%,rgba(9,15,12,0.7))]';
 
 const timeline = () => [
-  { title: t("pageParcours", "experiences_1_titre", "Stage"), text: t("pageParcours", "experiences_1_texte", "Bilans, suivis, stratégies sur mesure pour soutenir l’autonomie dans les activités du quotidien.") },
-  { title: t("pageParcours", "experiences_2_titre", "Service de psychiatrie du GHNE"), text: t("pageParcours", "experiences_2_texte", "Ateliers, programme de prévention, outils adaptés : des projets construits au plus près des besoins.") },
-  { title: t("pageParcours", "experiences_3_titre", "Les amis de l’atelier"), text: t("pageParcours", "experiences_3_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
-  { title: t("pageParcours", "experiences_4_titre", "Libérale"), text: t("pageParcours", "experiences_4_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
+  { image: '/images/2dcedd3025.webp', title: t("pageParcours", "experiences_1_titre", "Stage"), text: t("pageParcours", "experiences_1_texte", "Bilans, suivis, stratégies sur mesure pour soutenir l’autonomie dans les activités du quotidien.") },
+  { image: '/images/f858df2fd5.webp', title: t("pageParcours", "experiences_2_titre", "Service de psychiatrie du GHNE"), text: t("pageParcours", "experiences_2_texte", "Ateliers, programme de prévention, outils adaptés : des projets construits au plus près des besoins.") },
+  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_3_titre", "Les amis de l’atelier"), text: t("pageParcours", "experiences_3_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
+  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_4_titre", "Libérale"), text: t("pageParcours", "experiences_4_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
 ];
 
 const slides = () => [
-  { year: t("pageParcours", "carrousel_1_annee", "2019"), title: t("pageParcours", "carrousel_1_titre", "Stages"), sub: t("pageParcours", "carrousel_1_texte", "SAMSAH TC 40") },
-  { year: t("pageParcours", "carrousel_2_annee", "2020"), title: t("pageParcours", "carrousel_2_titre", "EHPAD"), sub: t("pageParcours", "carrousel_2_texte", "Jeanne Mauléon") },
-  { year: t("pageParcours", "carrousel_3_annee", "2020 ▸ 2023"), title: t("pageParcours", "carrousel_3_titre", "Psychiatrie GHNE"), sub: t("pageParcours", "carrousel_3_texte", "Service de psychiatrie du GHNE") },
-  { year: t("pageParcours", "carrousel_4_annee", "2023 ▸ 2026"), title: t("pageParcours", "carrousel_4_titre", "SAMSAH spécialisé TSA"), sub: t("pageParcours", "carrousel_4_texte", "SAMSAH spécialisé TSA") },
+  { image: '/images/9bf7649c41.webp', year: t("pageParcours", "carrousel_1_annee", "2019"), title: t("pageParcours", "carrousel_1_titre", "Stages"), sub: t("pageParcours", "carrousel_1_texte", "SAMSAH TC 40") },
+  { image: '/images/2dcedd3025.webp', year: t("pageParcours", "carrousel_2_annee", "2020"), title: t("pageParcours", "carrousel_2_titre", "EHPAD"), sub: t("pageParcours", "carrousel_2_texte", "Jeanne Mauléon") },
+  { image: '/images/f858df2fd5.webp', year: t("pageParcours", "carrousel_3_annee", "2020 ▸ 2023"), title: t("pageParcours", "carrousel_3_titre", "Psychiatrie GHNE"), sub: t("pageParcours", "carrousel_3_texte", "Service de psychiatrie du GHNE") },
+  { image: '/images/0bed7bf1e7.webp', year: t("pageParcours", "carrousel_4_annee", "2023 ▸ 2026"), title: t("pageParcours", "carrousel_4_titre", "SAMSAH spécialisé TSA"), sub: t("pageParcours", "carrousel_4_texte", "SAMSAH spécialisé TSA") },
 ];
 
-function Item({ t, row = false }: { t: { title: string; text: string }; row?: boolean }) {
+function Item({ t, row = false }: { t: { image: string; title: string; text: string }; row?: boolean }) {
   return (
     <div className={row ? 'content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative' : 'content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full'}>
       <div className="flex items-center justify-center relative shrink-0 w-full">
         <div className="-scale-y-100 flex-none rotate-180 w-full">
           <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", t.image)} />
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function Parcours() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/assets/placeholder.svg")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/images/3e60ebbcd7.webp")} />
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function Parcours() {
                 <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
                     <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-name="image 13">
-                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "slider_image_1")} src={img("pageParcours", "slider_image_1", "/assets/placeholder.svg")} />
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "slider_image_1")} src={img("pageParcours", "slider_image_1", s.image)} />
                     </div>
                     <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{s.year}</p>

@@ -60,7 +60,7 @@ export default function MonApproche() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6686;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageApproche", "hero_image_1")} src={img("pageApproche", "hero_image_1", "/assets/placeholder.svg")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageApproche", "hero_image_1")} src={img("pageApproche", "hero_image_1", "/images/8076d6f385.webp")} />
               </div>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function MonApproche() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-center justify-center p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6739" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative w-full" data-node-id="414:6740" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_1")} src={img("pageApproche", "image_text_image_1", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_1")} src={img("pageApproche", "image_text_image_1", "/images/8076d6f385.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6741">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6742" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-node-id="414:6743" data-sanity={ds("pageApproche", "image_text_3")}>{t("pageApproche", "image_text_3", "Bilans et compréhension des besoins")}</p>
@@ -276,7 +276,7 @@ export default function MonApproche() {
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6750" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6751" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6752" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_2")} src={img("pageApproche", "image_text_image_2", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_2")} src={img("pageApproche", "image_text_image_2", "/images/a739a88dca.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6753">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[4px] shrink-0 w-[321px]" data-node-id="414:6754" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_7")}>{t("pageApproche", "image_text_7", "Ateliers et programmes de prévention")}</p>

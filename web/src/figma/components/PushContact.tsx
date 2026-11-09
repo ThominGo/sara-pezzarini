@@ -24,7 +24,7 @@ export default function PushContact() {
               <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="I414:6682;146:4496">
                 <div className="-scale-y-100 flex-none h-full rotate-180">
                   <div className="h-full relative rounded-[2px] w-[121px]" data-name="image 13">
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[2px] size-full" data-sanity={ds("commun", "push_contact_image_1")} src={img("commun", "push_contact_image_1", "/assets/placeholder.svg")} />
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[2px] size-full" data-sanity={ds("commun", "push_contact_image_1")} src={img("commun", "push_contact_image_1", "/images/22638ffa4c.webp")} />
                   </div>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function PushContact() {
               <div className="flex h-full items-center justify-center relative shrink-0" data-node-id="I414:6682;146:4501">
                 <div className="-scale-y-100 flex-none h-full rotate-180">
                   <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full" data-sanity={ds("commun", "push_contact_image_2")} src={img("commun", "push_contact_image_2", "/assets/placeholder.svg")} />
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[4px] size-full" data-sanity={ds("commun", "push_contact_image_2")} src={img("commun", "push_contact_image_2", "/images/7a44e9a9c0.webp")} />
                   </div>
                 </div>
               </div>

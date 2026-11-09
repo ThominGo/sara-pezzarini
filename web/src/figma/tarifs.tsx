@@ -57,7 +57,7 @@ export default function TarifsEtFinancement() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6356;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "tarifs_image_1")} src={img("pageTarifs", "tarifs_image_1", "/assets/placeholder.svg")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "tarifs_image_1")} src={img("pageTarifs", "tarifs_image_1", "/images/153b127964.webp")} />
               </div>
             </div>
           </div>
@@ -125,14 +125,14 @@ export default function TarifsEtFinancement() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6391" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:6392" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_1")} src={img("pageTarifs", "image_text_image_1", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_1")} src={img("pageTarifs", "image_text_image_1", "/images/3045a0aeb8.webp")} />
           </div>
         </div>
       </div>
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6393" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6394" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:6395" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_2")} src={img("pageTarifs", "image_text_image_2", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_2")} src={img("pageTarifs", "image_text_image_2", "/images/9e02fa80b6.webp")} />
           </div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:6396">
