@@ -56,7 +56,7 @@ function FaqItem({ q, qf, a, af, open = false }: { q: string; qf: string; a: str
 export default function TarifsEtFinancement() {
   return (
     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-start relative size-full" data-node-id="414:6355" data-name="Tarifs et financement">
-      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-screen-fig items-start overflow-clip relative shrink-0 w-full" data-node-id="414:6356" data-name="Tarifs">
+      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-screen-fig items-start overflow-clip relative shrink-0 w-full" data-node-id="414:6356" data-name="Tarifs" data-hero>
         <div className="content-stretch flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px p-[8px] relative w-full" data-node-id="I414:6356;146:4271">
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6356;146:4272">
             <div className="flex-none rotate-180 size-full">

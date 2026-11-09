@@ -49,9 +49,9 @@ html { scroll-behavior: smooth; }
 
 /* CTA : états de la page Composants (Cta 133:3438) */
 [data-name="Cta"] { transition: background-color .3s ease, border-color .3s ease, opacity .3s ease; }
-/* primary : hover = bordure pleine, on-clic = fond noir 70 % */
-:is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { border-color: #090f0c; }
-:is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:active { background-color: rgba(9, 15, 12, .7); border-color: #090f0c; }
+/* primary : hover = fond noir 72 % et bordure plus claire (plus visible que la maquette, demandé par Thomas), on-clic = 55 % */
+:is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { background-color: rgba(9, 15, 12, .72); border-color: rgba(255, 255, 255, .35); }
+:is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:active { background-color: rgba(9, 15, 12, .55); border-color: rgba(255, 255, 255, .35); }
 /* secondary : hover = fond gris 70 %, on-clic = fond gris */
 :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:hover { background-color: rgba(242, 242, 242, .7); border-color: #f2f2f2; }
 :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:active { background-color: #f2f2f2; border-color: #f2f2f2; }
@@ -96,14 +96,19 @@ img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0
 /* Photos : parallaxe au scroll */
 img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.16); }
 
-/* Apparition des dégradés des heros (lancée quand la forme est chargée, voir interactions.ts) */
+/* Apparition des dégradés des heros : du foncé vers le clair (la forme apparaît sur un fond sombre).
+   Lancée quand la forme est chargée, voir interactions.ts */
 @keyframes hero-bloom {
-  from { opacity: .4; transform: scale(1.9) rotate(-10deg); }
-  to   { opacity: 1;  transform: scale(1.08) rotate(0deg); }
+  from { opacity: 0; transform: scale(1.35); }
+  to   { opacity: 1; transform: scale(1.08); }
 }
-[data-name="hero"] .gshape { opacity: .4; transform: scale(1.9) rotate(-10deg); }
-[data-name="hero"] .gshape.is-ready { animation: hero-bloom 2.2s cubic-bezier(.2, .7, .2, 1) both; }
-[data-name="hero"] .gshape.is-done { animation: none; opacity: 1; transform: scale(1.08); }
+[data-hero] div[aria-hidden]:has(> .gshape) { background-color: #090f0c; }
+[data-hero] .gshape { opacity: 0; transform: scale(1.35); }
+[data-hero] .gshape.is-ready { animation: hero-bloom 2.4s cubic-bezier(.25, .6, .25, 1) both; }
+[data-hero] .gshape.is-done { animation: none; opacity: 1; transform: scale(1.08); }
+
+/* Pas de scintillement : chaque bloc dégradé est mélangé dans sa propre couche, stable */
+div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: translateZ(0); backface-visibility: hidden; }
 
 /* Formulaire : survol des champs */
 .champ { transition: border-color .3s ease; }
@@ -117,7 +122,7 @@ img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py,
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-name="hero"] .gshape { animation: none !important; opacity: 1; transform: scale(1.08); }
+  [data-hero] .gshape { animation: none !important; opacity: 1; transform: scale(1.08); }
   img[data-parallax] { transform: none; }
   [data-slider-track], .faq-a, .faq-a-in { transition: none; }
 }

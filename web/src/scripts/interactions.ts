@@ -221,7 +221,7 @@ function contactForm() {
 
 /* ---------------- Apparition des dégradés des heros ---------------- */
 function heroes() {
-  document.querySelectorAll<HTMLImageElement>('[data-name="hero"] .gshape').forEach((im) => {
+  document.querySelectorAll<HTMLImageElement>('[data-hero] .gshape').forEach((im) => {
     const start = () => requestAnimationFrame(() => im.classList.add('is-ready'));
     // la forme finale est redessinée nette une fois l'animation finie
     im.addEventListener('animationend', () => im.classList.add('is-done'), { once: true });
