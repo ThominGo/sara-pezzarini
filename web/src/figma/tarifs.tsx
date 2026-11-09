@@ -26,7 +26,7 @@ function Cta({ className, href, label = "button label", state = "default", varia
 }
 
 // FAQ : classes reprises de la question ouverte de la maquette (414:6486). Les réponses s'ouvrent et se ferment (voir interactions.ts).
-function FaqItem({ q, qf, a, af, i, open = false }: { q: string; qf: string; a: string; af: string; i: string; open?: boolean }) {
+function FaqItem({ q, qf, a, af, open = false }: { q: string; qf: string; a: string; af: string; i?: string; open?: boolean }) {
   return (
     <div className="border-[#ccc] border-b border-solid content-stretch flex flex-col items-start overflow-clip py-[16px] relative shrink-0 w-full" data-name="Bouton" data-faq data-open={open ? '' : undefined}>
       <button type="button" aria-expanded={open} className="faq-q bg-transparent border-0 content-stretch cursor-pointer flex items-center p-0 relative shrink-0 text-left w-full">
@@ -35,8 +35,9 @@ function FaqItem({ q, qf, a, af, i, open = false }: { q: string; qf: string; a: 
             <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageTarifs", q)}>{t("pageTarifs", q, qf)}</p>
           </div>
         </div>
-        <div className="faq-icon relative shrink-0 size-[24px]" data-name="Frame">
-          <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", i)} src={img("pageTarifs", i, "/assets/icon-placeholder.svg")} />
+        <div className="faq-icon relative shrink-0 size-[24px]" data-name="Frame" aria-hidden>
+          <span className="faq-bar" />
+          <span className="faq-bar faq-bar-v" />
         </div>
       </button>
       <div className="faq-a">

@@ -21,8 +21,8 @@ html { overflow-y: scroll; }
 #page { width: 1512px; zoom: var(--zoom, 1); }
 @layer base { a { color: inherit; text-decoration: none; } }
 
-/* Dégradés : forme en niveaux de gris (petite image floutée) */
-.gshape { filter: blur(24px); transform: scale(1.08); }
+/* Dégradés : forme en niveaux de gris, déjà floutée et tramée (scripts/gradients.py) */
+.gshape { transform: scale(1.08); }
 
 /* Grain (effet Noise Figma, blanc 25 %) sur les blocs dégradés */
 div[aria-hidden]:has(> .mix-blend-soft-light)::after {
@@ -48,7 +48,7 @@ html { scroll-behavior: smooth; }
 :is(a, button, label, [role="button"]) { cursor: pointer; }
 
 /* CTA : états de la page Composants (Cta 133:3438) */
-[data-name="Cta"] { transition: background-color .2s ease, border-color .2s ease, opacity .2s ease; }
+[data-name="Cta"] { transition: background-color .3s ease, border-color .3s ease, opacity .3s ease; }
 /* primary : hover = bordure pleine, on-clic = fond noir 70 % */
 :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { border-color: #090f0c; }
 :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:active { background-color: rgba(9, 15, 12, .7); border-color: #090f0c; }
@@ -59,20 +59,22 @@ html { scroll-behavior: smooth; }
 [data-name="Cta"][aria-disabled="true"], [data-name="Cta"]:disabled { opacity: .4; pointer-events: none; }
 
 /* Liens texte (nav, pied de page, contact, CTA tertiary) : souligné + gris */
-.lien, a[data-name="Cta"]:not([class*="bg-"]) p, .faq-q p { transition: color .2s ease; text-decoration: underline transparent; text-underline-offset: .15em; }
+.lien, a[data-name="Cta"]:not([class*="bg-"]) p, .faq-q p { transition: color .3s ease, text-decoration-color .3s ease; text-decoration: underline transparent; text-underline-offset: .15em; }
 .lien:hover, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p { color: rgba(9, 15, 12, .7); text-decoration-color: currentColor; }
-.lien:hover p { color: rgba(9, 15, 12, .7); text-decoration: underline; text-underline-offset: .15em; }
+.lien p { text-decoration: underline transparent; text-underline-offset: .15em; transition: color .3s ease, text-decoration-color .3s ease; }
+.lien:hover p { color: rgba(9, 15, 12, .7); text-decoration-color: currentColor; }
 
 /* Cards cliquables : fond gris + titre souligné */
-a[data-name="Bouton"] { transition: background-color .2s ease; }
+a[data-name="Bouton"] { transition: background-color .3s ease; }
 a[data-name="Bouton"]:hover { background-color: var(--grey); }
-a[data-name="Bouton"] p[class*="Bricolage"] { text-decoration: underline transparent; text-underline-offset: .15em; transition: text-decoration-color .2s ease; }
+a[data-name="Bouton"] p[class*="Bricolage"] { text-decoration: underline transparent; text-underline-offset: .15em; transition: text-decoration-color .3s ease; }
 a[data-name="Bouton"]:hover p[class*="Bricolage"] { text-decoration-color: currentColor; }
-a[data-name="Bouton"]:hover [data-name="Cta"] p { text-decoration: underline; text-underline-offset: .15em; color: rgba(9, 15, 12, .7); }
+a[data-name="Bouton"] [data-name="Cta"] p { text-decoration: underline transparent; text-underline-offset: .15em; transition: color .3s ease, text-decoration-color .3s ease; }
+a[data-name="Bouton"]:hover [data-name="Cta"] p { text-decoration-color: currentColor; color: rgba(9, 15, 12, .7); }
 
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }
-.credit > span { grid-area: 1 / 1; transition: opacity .2s ease; }
+.credit > span { grid-area: 1 / 1; transition: opacity .3s ease; }
 .credit > span:last-child { opacity: 0; text-decoration: underline; text-underline-offset: .15em; }
 .credit:hover > span:first-child { opacity: 0; }
 .credit:hover > span:last-child { opacity: 1; }
@@ -82,29 +84,40 @@ a[data-name="Bouton"]:hover [data-name="Cta"] p { text-decoration: underline; te
 [data-faq][data-open] .faq-a { grid-template-rows: 1fr; }
 .faq-a-in { overflow: hidden; min-height: 0; opacity: 0; transition: opacity .3s ease; }
 [data-faq][data-open] .faq-a-in { opacity: 1; transition-delay: .1s; }
-.faq-icon { transition: transform .3s ease; }
-[data-faq][data-open] .faq-icon { transform: rotate(45deg); }
 
 /* Sliders : glisser + flèches (voir scripts/interactions.ts) */
 [data-slider-track] { transition: transform .6s cubic-bezier(.2, .7, .2, 1); touch-action: pan-y; cursor: grab; user-select: none; }
-/* les cartes ne débordent qu'à droite (comme dans la maquette), jamais à gauche du titre */
-[data-slider-clip] { clip-path: inset(-200px -3000px -200px 0); }
 [data-slider-track].is-dragging { transition: none; cursor: grabbing; }
 [data-slider-track] img { -webkit-user-drag: none; }
+/* parallaxe horizontale des photos quand les cartes défilent */
+img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0px), 0, 0) scale(1.16); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+[data-slider-track].is-dragging img[data-hparallax] { transition: none; }
 
 /* Photos : parallaxe au scroll */
 img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.16); }
 
-/* Apparition des dégradés des heros */
+/* Apparition des dégradés des heros (lancée quand la forme est chargée, voir interactions.ts) */
 @keyframes hero-bloom {
-  from { opacity: .55; transform: scale(1.9) rotate(-10deg); filter: blur(90px); }
-  to   { opacity: 1;   transform: scale(1.08) rotate(0deg);  filter: blur(24px); }
+  from { opacity: .4; transform: scale(1.9) rotate(-10deg); }
+  to   { opacity: 1;  transform: scale(1.08) rotate(0deg); }
 }
-[data-name="hero"] .gshape { animation: hero-bloom 2.2s cubic-bezier(.2, .7, .2, 1) both; }
+[data-name="hero"] .gshape { opacity: .4; transform: scale(1.9) rotate(-10deg); }
+[data-name="hero"] .gshape.is-ready { animation: hero-bloom 2.2s cubic-bezier(.2, .7, .2, 1) both; }
+[data-name="hero"] .gshape.is-done { animation: none; opacity: 1; transform: scale(1.08); }
+
+/* Formulaire : survol des champs */
+.champ { transition: border-color .3s ease; }
+.champ:hover { border-color: rgba(9, 15, 12, .4); }
+.champ:focus, .champ:focus-within { border-color: #090f0c; }
+
+/* FAQ : plus / moins */
+.faq-bar { position: absolute; left: 5px; right: 5px; top: 50%; height: 1.5px; margin-top: -.75px; background: #090f0c; border-radius: 1px; transition: transform .3s ease; }
+.faq-bar-v { transform: rotate(90deg); }
+[data-faq][data-open] .faq-bar-v { transform: rotate(0deg); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-name="hero"] .gshape { animation: none; }
+  [data-name="hero"] .gshape { animation: none !important; opacity: 1; transform: scale(1.08); }
   img[data-parallax] { transform: none; }
   [data-slider-track], .faq-a, .faq-a-in { transition: none; }
 }

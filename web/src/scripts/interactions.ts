@@ -14,6 +14,19 @@ function asButton(el: HTMLElement, onClick: () => void) {
   });
 }
 
+/** Prépare le cadre d'une photo : il coupe l'image agrandie et porte des coins arrondis */
+function frame(im: HTMLImageElement) {
+  const parent = im.parentElement!;
+  parent.style.overflow = 'hidden';
+  const pr = getComputedStyle(parent).borderTopLeftRadius;
+  const ir = getComputedStyle(im).borderTopLeftRadius;
+  if (pr === '0px') parent.style.borderRadius = ir !== '0px' ? ir : '8px';
+}
+const isPhoto = (im: HTMLImageElement) => {
+  const src = im.getAttribute('src') || '';
+  return /\/images\/|cdn\.sanity\.io/.test(src) && !/\.svg(\?|$)/.test(src) && !im.hasAttribute('data-no-parallax');
+};
+
 /* ---------------- Sliders : flèches + glisser ---------------- */
 function sliders() {
   document.querySelectorAll<HTMLElement>('[data-name="slider"]').forEach((slider) => {
@@ -24,12 +37,25 @@ function sliders() {
     const track = header.nextElementSibling as HTMLElement | null;
     if (!track || track.children.length < 2) return;
     track.dataset.sliderTrack = '';
-    (header.parentElement as HTMLElement).dataset.sliderClip = '';
     prev.classList.remove('opacity-40');
     next.classList.remove('opacity-40');
 
     const items = Array.from(track.children) as HTMLElement[];
     let x = 0;
+    // parallaxe horizontale : chaque photo glisse un peu moins vite que sa carte
+    const photos = items.map((it) => Array.from(it.querySelectorAll('img')).find(isPhoto)).map((im) => {
+      if (!im || reduce) return null;
+      frame(im);
+      im.dataset.hparallax = '';
+      return im;
+    });
+    const shift = () => photos.forEach((im, i) => {
+      if (!im) return;
+      const it = items[i];
+      const off = it.offsetLeft - items[0].offsetLeft - x + it.offsetWidth / 2 - header.offsetWidth / 2;
+      const max = it.offsetWidth * 0.075;
+      im.style.setProperty('--px', `${Math.max(-max, Math.min(max, -off * 0.05)).toFixed(1)}px`);
+    });
     const step = () => items[1].offsetLeft - items[0].offsetLeft;
     const max = () => {
       const last = items[items.length - 1];
@@ -37,6 +63,7 @@ function sliders() {
     };
     const render = () => {
       track.style.transform = `translate3d(${-x}px,0,0)`;
+      shift();
       prev.setAttribute('aria-disabled', String(x <= 0));
       next.setAttribute('aria-disabled', String(x >= max() - 1));
     };
@@ -67,6 +94,7 @@ function sliders() {
       if (to > max()) to = max() + (to - max()) / 3;
       x = to;
       track.style.transform = `translate3d(${-x}px,0,0)`;
+      shift();
     });
     const end = (e: PointerEvent) => {
       if (id !== e.pointerId) return;
@@ -88,24 +116,20 @@ function sliders() {
 
 /* ---------------- Parallaxe des photos ---------------- */
 function parallax() {
-  if (reduce) return;
-  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('img')).filter((im) => {
-    const src = im.getAttribute('src') || '';
-    if (im.hasAttribute('data-no-parallax')) return false;
-    if (!/\/images\/|cdn\.sanity\.io/.test(src) || /\.svg(\?|$)/.test(src)) return false;
-    return !im.closest('.size-\\[459px\\]');
-  });
+  if (reduce) {
+    document.querySelectorAll<HTMLImageElement>('img').forEach((im) => isPhoto(im) && frame(im));
+    return;
+  }
+  const imgs = Array.from(document.querySelectorAll<HTMLImageElement>('img')).filter(
+    (im) => isPhoto(im) && !im.closest('[data-slider-track]') && !im.closest('.size-\\[459px\\]'),
+  );
   const visible = new Set<HTMLImageElement>();
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => (en.isIntersecting ? visible.add(en.target as HTMLImageElement) : visible.delete(en.target as HTMLImageElement)));
   }, { rootMargin: '20% 0px' });
 
   imgs.forEach((im) => {
-    const parent = im.parentElement!;
-    const cs = getComputedStyle(parent);
-    // le cadre doit couper l'image agrandie, avec les mêmes coins arrondis
-    parent.style.overflow = 'hidden';
-    if (cs.borderTopLeftRadius === '0px') parent.style.borderRadius = getComputedStyle(im).borderRadius;
+    frame(im);
     im.dataset.parallax = '';
     io.observe(im);
   });
@@ -195,6 +219,18 @@ function contactForm() {
   });
 }
 
+/* ---------------- Apparition des dégradés des heros ---------------- */
+function heroes() {
+  document.querySelectorAll<HTMLImageElement>('[data-name="hero"] .gshape').forEach((im) => {
+    const start = () => requestAnimationFrame(() => im.classList.add('is-ready'));
+    // la forme finale est redessinée nette une fois l'animation finie
+    im.addEventListener('animationend', () => im.classList.add('is-done'), { once: true });
+    if (im.complete && im.naturalWidth) start();
+    else { im.addEventListener('load', start, { once: true }); im.addEventListener('error', () => im.classList.add('is-done'), { once: true }); }
+  });
+}
+
+heroes();
 sliders();
 parallax();
 faq();

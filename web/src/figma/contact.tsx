@@ -13,11 +13,11 @@ const ph = "[word-break:break-word] font-['Lexend:Regular'] font-normal leading-
 
 // Les deux premiers champs ont gap 4 et largeur 459, les suivants gap 8 (comme dans Figma)
 // Champs réels : mêmes classes que la maquette, le texte d'exemple devient le placeholder
-const input = `${box} font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] outline-none placeholder:text-[rgba(9,15,12,0.5)] focus:border-[#090f0c]`;
+const input = `${box} champ font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] outline-none placeholder:text-[rgba(9,15,12,0.5)] focus:border-[#090f0c]`;
 const Field = ({ l, p, first, name, type = 'text', required, auto }: { l: string; p: string; first?: boolean; name: string; type?: string; required?: boolean; auto?: string }) => {
   const field = (
     <label className="contents">
-      <p className={label} style={FV}>{l}</p>
+      <p className={label} style={FV}>{l}{required && ' *'}</p>
       <input className={input} name={name} type={type} placeholder={p} required={required} autoComplete={auto} />
     </label>
   );
@@ -32,7 +32,7 @@ const Field = ({ l, p, first, name, type = 'text', required, auto }: { l: string
 
 const radio = 'bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch cursor-pointer flex gap-[8px] h-[40px] items-center overflow-clip px-[16px] relative rounded-[4px] shrink-0 w-full';
 const Radio = ({ value, checked, children }: { value: string; checked?: boolean; children: any }) => (
-  <label className={radio} data-name="Cta">
+  <label className={`${radio} champ`}>
     <input type="radio" name="profil" value={value} defaultChecked={checked} className="peer sr-only" />
     <div className="relative shrink-0 size-[16px] peer-checked:hidden"><img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/radio-off.svg" /></div>
     <div className="relative shrink-0 size-[16px] hidden peer-checked:block"><img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/radio-on.svg" /></div>
@@ -88,7 +88,7 @@ export default function Contact() {
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_3")}>{t("pageContact", "vertical_card_3", "Votre besoin")}</p>
                 <div className="relative shrink-0 w-full">
-                  <select name="besoin" defaultValue="" className={`${box} font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] appearance-none cursor-pointer outline-none pr-[40px] focus:border-[#090f0c]`} data-sanity={ds("pageContact", "vertical_card_4")}>
+                  <select name="besoin" defaultValue="" className={`${box} font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] champ appearance-none cursor-pointer outline-none pr-[40px] focus:border-[#090f0c]`} data-sanity={ds("pageContact", "vertical_card_4")}>
                     <option value="" disabled>{t("pageContact", "vertical_card_4", "Sélectionnez votre besoin")}</option>
                     {[
                       t("pageContact", "besoin_option_1", "Accompagnement individuel"),
@@ -103,8 +103,8 @@ export default function Contact() {
                 </div>
               </div>
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
-                <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_5")}>{t("pageContact", "vertical_card_5", "Message")}</p>
-                <textarea name="message" required placeholder={t("pageContact", "vertical_card_6", "Votre Message")} data-sanity={ds("pageContact", "vertical_card_6")} className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid font-['Lexend:Regular'] font-normal h-[220px] leading-[1.3] outline-none overflow-auto p-[16px] placeholder:text-[rgba(9,15,12,0.5)] relative resize-none rounded-[4px] shrink-0 text-[#090f0c] text-[18px] w-full focus:border-[#090f0c]" />
+                <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_5")}>{t("pageContact", "vertical_card_5", "Message")} *</p>
+                <textarea name="message" required placeholder={t("pageContact", "vertical_card_6", "Votre Message")} data-sanity={ds("pageContact", "vertical_card_6")} className="champ bg-[var(--white,white)] border border-[#c2c2c2] border-solid font-['Lexend:Regular'] font-normal h-[220px] leading-[1.3] outline-none overflow-auto p-[16px] placeholder:text-[rgba(9,15,12,0.5)] relative resize-y rounded-[4px] min-h-[220px] shrink-0 text-[#090f0c] text-[18px] w-full focus:border-[#090f0c]" />
               </div>
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
@@ -112,7 +112,7 @@ export default function Contact() {
                 <div className="content-stretch flex items-center pt-px relative shrink-0">
                   <input type="checkbox" name="consentement" required className="appearance-none border border-[var(--black-70\%,rgba(9,15,12,0.7))] border-solid cursor-pointer m-0 relative shrink-0 size-[16px] checked:bg-[var(--black,#090f0c)] checked:border-[var(--black,#090f0c)]" />
                 </div>
-                <p className={`[word-break:break-word] flex-[1_0_0] font-['Lexend:Regular'] font-normal leading-[1.1] min-w-px relative text-[16px] ${black70} text-balance`} data-sanity={ds("pageContact", "vertical_card_7")}>{t("pageContact", "vertical_card_7", "J’accepte que les informations saisies soient utilisées pour répondre à ma demande. Pour en savoir plus, consultez la politique de confidentialité.")}</p>
+                <p className={`[word-break:break-word] flex-[1_0_0] font-['Lexend:Regular'] font-normal leading-[1.1] min-w-px relative text-[16px] ${black70} text-balance`} data-sanity={ds("pageContact", "vertical_card_7")}>{t("pageContact", "vertical_card_7", "J’accepte que les informations saisies soient utilisées pour répondre à ma demande. Pour en savoir plus, consultez la politique de confidentialité.")} *</p>
               </label>
               <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
               <button type="submit" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch cursor-pointer flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" data-name="Cta">
@@ -177,8 +177,7 @@ export default function Contact() {
               <div className="flex-none rotate-180">
                 <div className="h-[887px] relative rounded-[8px] w-[979px]" data-name="image 10">
                   <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                    <img alt="" className="absolute inset-0 max-w-none size-full rounded-[8px]" data-sanity={ds("pageContact", "image_text_image_1")} data-no-parallax src={img("pageContact", "image_text_image_1", "/images/76cd837fbd.webp")} />
-                    <div className="absolute bg-[#292929] inset-0 mix-blend-difference rounded-[8px]" />
+                    <img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-zone.png" />
                     <div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(129.8873323028124deg, rgb(239, 125, 79) 0%, rgb(214, 60, 92) 83.333%)" }} />
                     <div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" />
                   </div>
