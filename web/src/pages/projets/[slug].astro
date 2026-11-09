@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Page from '../../figma/projet';
+import { getProjects, getProject, urlFor } from '../../utils/sanity';
+
+export async function getStaticPaths() {
+  const projects = (await getProjects()) ?? [];
+  // « exemple » : page de la maquette, gardée tant qu'aucun projet n'est publié
+  return [{ params: { slug: 'exemple' } }, ...projects.filter((p) => p.slug !== 'exemple').map((p) => ({ params: { slug: p.slug } }))];
+}
+
+const { slug } = Astro.params;
+const data = slug === 'exemple' ? null : await getProject(slug!);
+const img = (s: any) => (s ? urlFor(s).width(1600).auto('format').url() : undefined);
+const p = data
+  ? {
+      ...data,
+      coverUrl: img(data.cover),
+      steps: data.steps?.map((s: any) => ({ ...s, imageUrl: img(s.image) })),
+    }
+  : {};
+---
+<Layout title={`${p.title ?? 'Projet'} · Sara Pezzarini`}><Page p={p} /></Layout>

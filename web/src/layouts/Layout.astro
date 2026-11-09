@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+import { getSettings } from '../utils/sanity';
+import { site } from '../utils/site';
+site.settings = (await getSettings()) ?? {};
+interface Props { title: string; description?: string }
+const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure)." } = Astro.props;
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preload" href="/fonts/Lexend-Variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
