@@ -1,6 +1,6 @@
-import { sanityClient } from 'sanity:client';
-import { urlFor, getSettings } from './sanity';
+import { urlFor, getSettings, safeFetch, PAGES_QUERY } from './sanity';
 import { site } from './site';
+import { PREVIEW } from './preview';
 
 // Contenus des pages (une fiche Sanity par page). Repli sur les textes de la maquette.
 export const content: Record<string, Record<string, any>> = {};
@@ -8,16 +8,16 @@ export const content: Record<string, Record<string, any>> = {};
 export const PAGE_TYPES = ['pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun'];
 
 let loaded: Promise<void> | null = null;
+async function load() {
+  site.settings = (await getSettings()) ?? {};
+  const docs = (await safeFetch<any[]>(PAGES_QUERY, { types: PAGE_TYPES })) ?? [];
+  for (const k of Object.keys(content)) delete content[k];
+  for (const d of docs) content[d._type] = d;
+}
+// Site statique : lecture une seule fois au build. Aperçu : relecture à chaque requête (brouillons à jour).
 export function loadContent() {
-  loaded ??= (async () => {
-    site.settings = (await getSettings()) ?? {};
-    try {
-      const docs = await sanityClient.fetch<any[]>(`*[_type in $types && !(_id in path("drafts.**"))]`, { types: PAGE_TYPES });
-      for (const d of docs ?? []) content[d._type] = d;
-    } catch (e) {
-      console.warn('[sanity] pages non lues, contenu de la maquette utilisé :', (e as Error).message);
-    }
-  })();
+  if (PREVIEW) return load();
+  loaded ??= load();
   return loaded;
 }
 

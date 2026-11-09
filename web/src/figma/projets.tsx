@@ -1,3 +1,4 @@
+import { ds } from '../utils/preview';
 import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -54,13 +55,13 @@ export default function Projets({ cards = defaultCards }: { cards?: ProjectCard[
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col gap-[64px] items-center justify-center overflow-clip pb-[120px] pt-[220px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex items-end justify-between relative shrink-0 w-[1190px]">
           <div className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] relative shrink-0 text-[40px] text-black w-[673px] whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-            <p className="leading-none mb-0 text-balance">{t("pageProjets", "text_1", "Mes différents")}</p>
-            <p className="leading-none text-balance">{t("pageProjets", "text_2", "projets")}</p>
+            <p className="leading-none mb-0 text-balance" data-sanity={ds("pageProjets", "text_1")}>{t("pageProjets", "text_1", "Mes différents")}</p>
+            <p className="leading-none text-balance" data-sanity={ds("pageProjets", "text_2")}>{t("pageProjets", "text_2", "projets")}</p>
           </div>
           <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px pr-[122px] relative">
             <div className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[0] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-[461px]">
-              <p className="leading-[1.3] mb-0 text-pretty">{t("pageProjets", "text_3", "Des outils et des accompagnements pensés")}</p>
-              <p className="leading-[1.3] text-pretty">{t("pageProjets", "text_4", "avec et pour les personnes.")}</p>
+              <p className="leading-[1.3] mb-0 text-pretty" data-sanity={ds("pageProjets", "text_3")}>{t("pageProjets", "text_3", "Des outils et des accompagnements pensés")}</p>
+              <p className="leading-[1.3] text-pretty" data-sanity={ds("pageProjets", "text_4")}>{t("pageProjets", "text_4", "avec et pour les personnes.")}</p>
             </div>
           </div>
         </div>

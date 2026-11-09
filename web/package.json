@@ -6,12 +6,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "build:preview": "PUBLIC_SANITY_PREVIEW=true astro build",
+    "deploy:preview": "wrangler deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.4.6",
     "@astrojs/react": "^7.1.4",
     "@sanity/astro": "^3.6.0",
     "@sanity/image-url": "^2.1.1",
+    "@sanity/visual-editing": "^6.2.0",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.7",
     "astro-portabletext": "^1.0.1",
@@ -23,6 +27,7 @@
   "devDependencies": {
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "wrangler": "^4.158.0"
   }
 }

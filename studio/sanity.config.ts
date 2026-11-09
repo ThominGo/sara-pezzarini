@@ -1,5 +1,7 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
+import { presentationTool } from 'sanity/presentation';
+import { resolve } from './presentation';
 import { schemaTypes } from './schemas';
 
 const singletons = ['settings', 'pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun'];
@@ -10,6 +12,14 @@ export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'h4rgggeo',
   dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   plugins: [
+    // Onglet « Presentation » : le site en aperçu, cliquer sur un élément ouvre son champ
+    presentationTool({
+      title: 'Modifier le site',
+      resolve,
+      previewUrl: {
+        initial: process.env.SANITY_STUDIO_PREVIEW_URL || 'https://sara-pezzarini-preview.thomas-marilleau.workers.dev',
+      },
+    }),
     structureTool({
       structure: (S) =>
         S.list()

@@ -36,5 +36,11 @@ Après « Publish », le site se reconstruit (webhook Sanity vers le deploy hook
 
 Côté code, les textes de la maquette restent écrits en repli dans `web/src/figma/` : `t("page", "clé", "texte")` et `img("page", "clé", "image")`. Le schéma des pages est dans `studio/schemas/pages.ts`.
 
+## Modifier en cliquant sur le site (Presentation)
+Dans le Studio, l'onglet **Modifier le site** affiche la version « aperçu » du site : un clic sur un texte ou une image ouvre le champ correspondant.
+- Version aperçu : worker Cloudflare `sara-pezzarini-preview` (rendu à la demande, lit les brouillons avec le secret `SANITY_API_READ_TOKEN`).
+  - Build command : `npm run build:preview` · Deploy command : `npm run deploy:preview` · Path : `/web`
+- Le site de production reste statique et ne contient aucun outil d'édition.
+
 ## À faire
 - Version mobile (après validation des tests mobile dans Figma).

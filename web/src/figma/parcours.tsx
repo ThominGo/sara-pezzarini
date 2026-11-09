@@ -1,3 +1,4 @@
+import { ds } from '../utils/preview';
 import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -27,7 +28,7 @@ function Item({ t, row = false }: { t: { title: string; text: string }; row?: bo
       <div className="flex items-center justify-center relative shrink-0 w-full">
         <div className="-scale-y-100 flex-none rotate-180 w-full">
           <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={img("pageParcours", "contenu_image_1", "/assets/placeholder.svg")} />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", "/assets/placeholder.svg")} />
           </div>
         </div>
       </div>
@@ -65,19 +66,19 @@ export default function Parcours() {
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-end relative shrink-0 w-[794px]">
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{t("pageParcours", "hero_1", "Mon parcours")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-sanity={ds("pageParcours", "hero_1")}>{t("pageParcours", "hero_1", "Mon parcours")}</p>
                 </div>
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" style={FV}>{t("pageParcours", "hero_2", "Explication de ton parcours")}</p>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" style={FV} data-sanity={ds("pageParcours", "hero_2")}>{t("pageParcours", "hero_2", "Explication de ton parcours")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]">{t("pageParcours", "hero_3", "Ergothérapeute, je place l’inclusion au cœur de ma pratique, au-delà du soin. J’accompagne les personnes et les organisations, notamment autour du TSA et du handicap psychique.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-sanity={ds("pageParcours", "hero_3")}>{t("pageParcours", "hero_3", "Ergothérapeute, je place l’inclusion au cœur de ma pratique, au-delà du soin. J’accompagne les personnes et les organisations, notamment autour du TSA et du handicap psychique.")}</p>
                   <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-name="Actions principales">
                     <a href="/mon-approche" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                      <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap">{t("pageParcours", "hero_4", "Comment ça se passe ?")}</p>
+                      <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "hero_4")}>{t("pageParcours", "hero_4", "Comment ça se passe ?")}</p>
                     </a>
                     <a href="/contact" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                      <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap">{t("pageParcours", "hero_5", "Une question ?")}</p>
+                      <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "hero_5")}>{t("pageParcours", "hero_5", "Une question ?")}</p>
                     </a>
                   </div>
                 </div>
@@ -87,7 +88,7 @@ export default function Parcours() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={img("pageParcours", "hero_image_1", "/assets/placeholder.svg")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/assets/placeholder.svg")} />
               </div>
             </div>
           </div>
@@ -114,24 +115,24 @@ export default function Parcours() {
           <div className="absolute bottom-0 h-[2864px] left-[-123px] pointer-events-none top-[-400px]">
             <div className="content-stretch flex items-center justify-center pb-[112px] pointer-events-auto pt-[400px] sticky top-0 w-[561px]">
               <div className="[word-break:break-word] flex-[1_0_0] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] min-w-px relative text-[40px] text-[color:var(--black,#090f0c)]" style={FV}>
-                <p className="leading-none mb-0 text-balance">{t("pageParcours", "vertical_card_1", "Expériences")}</p>
-                <p className="leading-none text-balance">{t("pageParcours", "vertical_card_2", "professionnelles")}</p>
+                <p className="leading-none mb-0 text-balance" data-sanity={ds("pageParcours", "vertical_card_1")}>{t("pageParcours", "vertical_card_1", "Expériences")}</p>
+                <p className="leading-none text-balance" data-sanity={ds("pageParcours", "vertical_card_2")}>{t("pageParcours", "vertical_card_2", "professionnelles")}</p>
               </div>
             </div>
           </div>
         </div>
-        <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV}>{t("pageParcours", "vertical_card_3", "Maintenant")}</p>
+        <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV} data-sanity={ds("pageParcours", "vertical_card_3")}>{t("pageParcours", "vertical_card_3", "Maintenant")}</p>
       </div>
 
       {/* text : formation et mémoire */}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
-          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV}>{t("pageParcours", "text_1", "Blabla Formation + cmémoire")}</p>
+          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV} data-sanity={ds("pageParcours", "text_1")}>{t("pageParcours", "text_1", "Blabla Formation + cmémoire")}</p>
           <div className="content-stretch flex flex-col items-end justify-center pr-[122px] relative shrink-0 w-full">
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0">
-              <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-[461px]`}>{t("pageParcours", "text_2", "Mushrooms chicken personal onions thin platter spinach Chicago parmesan. Lasagna pineapple pie hand pesto deep. Thin sautéed Hawaiian meat sauce white tomatoes style. Mayo bbq pesto Aussie pie green meatball.")}</p>
+              <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-[461px]`} data-sanity={ds("pageParcours", "text_2")}>{t("pageParcours", "text_2", "Mushrooms chicken personal onions thin platter spinach Chicago parmesan. Lasagna pineapple pie hand pesto deep. Thin sautéed Hawaiian meat sauce white tomatoes style. Mayo bbq pesto Aussie pie green meatball.")}</p>
               <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap">{t("pageParcours", "text_3", "Télécharger mon mémoire")}</p>
+                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "text_3")}>{t("pageParcours", "text_3", "Télécharger mon mémoire")}</p>
               </div>
             </div>
           </div>
@@ -142,13 +143,13 @@ export default function Parcours() {
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-name="slider">
         <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-[1190px]">
           <div className="content-stretch flex items-end justify-between relative shrink-0 w-full">
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" style={FV}>{t("pageParcours", "slider_1", "Ils ont travaillé avec moi")}</p>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" style={FV} data-sanity={ds("pageParcours", "slider_1")}>{t("pageParcours", "slider_1", "Ils ont travaillé avec moi")}</p>
             <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex h-[40px] items-center justify-center opacity-40 overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap">{t("pageParcours", "slider_2", "Précédent")}</p>
+                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "slider_2")}>{t("pageParcours", "slider_2", "Précédent")}</p>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap">{t("pageParcours", "slider_3", "Suivant")}</p>
+                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "slider_3")}>{t("pageParcours", "slider_3", "Suivant")}</p>
               </div>
             </div>
           </div>
@@ -158,7 +159,7 @@ export default function Parcours() {
                 <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
                     <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-name="image 13">
-                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={img("pageParcours", "slider_image_1", "/assets/placeholder.svg")} />
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "slider_image_1")} src={img("pageParcours", "slider_image_1", "/assets/placeholder.svg")} />
                     </div>
                     <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{s.year}</p>

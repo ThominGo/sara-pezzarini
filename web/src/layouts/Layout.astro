@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { VisualEditing } from '@sanity/astro/visual-editing';
+import { PREVIEW } from '../utils/preview';
 interface Props { title: string; description?: string }
 const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure)." } = Astro.props;
 ---
@@ -29,5 +31,6 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
   </head>
   <body>
     <slot />
+    <VisualEditing enabled={PREVIEW} />
   </body>
 </html>

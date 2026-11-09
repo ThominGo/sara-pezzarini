@@ -1,3 +1,4 @@
+import { ds } from '../utils/preview';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
@@ -40,7 +41,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               </p>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6986;196:5467">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6986;196:5468">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:6986;196:5469">{p.intro ?? `Beaucoup d’adultes avec un TSA, diagnostiqués récemment ou de longue date, manquent d’un support clair et accessible pour comprendre leurs difficultés au quotidien (attention, planification, fatigue…) et trouver des stratégies adaptées. `}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:6986;196:5469" data-sanity={ds(p._id, "intro", "project")}>{p.intro ?? `Beaucoup d’adultes avec un TSA, diagnostiqués récemment ou de longue date, manquent d’un support clair et accessible pour comprendre leurs difficultés au quotidien (attention, planification, fatigue…) et trouver des stratégies adaptées. `}</p>
                 </div>
               </div>
             </div>
