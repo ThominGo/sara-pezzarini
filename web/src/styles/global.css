@@ -150,32 +150,27 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
    image dans une carte = 4 px (les cartes passent toutes à 8 px dans le code) */
 [data-name="Bouton"][class*="rounded-"] :is([data-name^="image"], [data-name^="image"] *, .rounded-\[2px\]) { border-radius: 4px; }
 
-/* Transitions de page « côte à côte » (inspirée de Osmo, Side by Side) avec les View Transitions natives :
-   la page se réduit en carte arrondie sur fond sombre, glisse à gauche pendant que la suivante arrive de la droite,
-   puis la nouvelle reprend tout l'écran. La nav reste fixe au-dessus. Sans JavaScript.
+/* Transition de page « fenêtre masquée » (inspirée de Osmo, Masked Window) avec les View Transitions natives :
+   la nouvelle page apparaît dans une petite fenêtre aux coins arrondis, au centre, qui s'agrandit jusqu'à tout l'écran
+   par-dessus l'ancienne page. La nav reste fixe au-dessus. Sans JavaScript.
    Navigateurs non compatibles (Firefox) : changement de page classique. */
 @view-transition { navigation: auto; }
 [data-name="nav"] { view-transition-name: nav; }
-::view-transition { background: #090f0c; }
-::view-transition-group(root) { animation-duration: 1.3s; }
-::view-transition-old(root), ::view-transition-new(root) { border-radius: 16px; overflow: hidden; mix-blend-mode: normal; }
-@keyframes sbs-out {
-  0%   { transform: translateX(0) scale(1); border-radius: 0; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
-  35%  { transform: translateX(0) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
-  70%, 100% { transform: translateX(-118%) scale(.62); border-radius: 16px; }
+@keyframes mw-in {
+  from { clip-path: inset(48% 36% 14% 36% round 16px); }
+  to   { clip-path: inset(0 0 0 0 round 0); }
 }
-@keyframes sbs-in {
-  0%, 35% { transform: translateX(118%) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
-  70%  { transform: translateX(0) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
-  100% { transform: translateX(0) scale(1); border-radius: 0; }
-}
-::view-transition-old(root) { animation: sbs-out 1.3s both; }
-::view-transition-new(root) { animation: sbs-in 1.3s both; }
+@keyframes mw-out { to { transform: scale(.96); filter: brightness(.85); } }
+::view-transition-group(root) { animation-duration: 1.2s; }
+::view-transition-old(root) { animation: mw-out 1.2s cubic-bezier(.65, 0, .25, 1) both; }
+::view-transition-new(root) { animation: mw-in 1.2s cubic-bezier(.65, 0, .25, 1) both; }
 ::view-transition-group(nav) { animation: none; }
 ::view-transition-old(nav) { display: none; }
 ::view-transition-new(nav) { animation: none; }
 /* Les animations du hero attendent la fin de la transition (classe posée par interactions.ts) */
-.vt { --vt-delay: 1.2s; }
+.vt { --vt-delay: .5s; }
+/* arrivée par la fenêtre : le dégradé est déjà en couleur (pas de voile clair dans la fenêtre) */
+.vt .hero-veil { display: none; }
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }
