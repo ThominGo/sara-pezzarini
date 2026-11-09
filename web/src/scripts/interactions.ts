@@ -261,6 +261,20 @@ function underlines() {
   });
 }
 
+/* ---------------- Lien vers la page actuelle : simple retour en haut, sans transition ---------------- */
+function samePageLinks() {
+  const norm = (p: string) => p.replace(/\/+$/, '') || '/';
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element).closest?.('a[href]') as HTMLAnchorElement | null;
+    if (!a || a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin || url.hash || norm(url.pathname) !== norm(location.pathname)) return;
+    e.preventDefault();
+    scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+}
+
+samePageLinks();
 heroTexts();
 underlines();
 heroes();
