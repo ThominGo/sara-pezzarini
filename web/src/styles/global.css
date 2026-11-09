@@ -59,23 +59,27 @@ html { scroll-behavior: smooth; }
 [data-name="Cta"][aria-disabled="true"], [data-name="Cta"]:disabled { opacity: .4; pointer-events: none; }
 
 /* Liens texte (nav, pied de page, contact, CTA tertiary) : souligné + gris */
-.lien, a[data-name="Cta"]:not([class*="bg-"]) p, .faq-q p { transition: color .3s ease, text-decoration-color .3s ease; text-decoration: underline transparent; text-underline-offset: .15em; }
-.lien:hover, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p { color: rgba(9, 15, 12, .7); text-decoration-color: currentColor; }
-.lien p { text-decoration: underline transparent; text-underline-offset: .15em; transition: color .3s ease, text-decoration-color .3s ease; }
-.lien:hover p { color: rgba(9, 15, 12, .7); text-decoration-color: currentColor; }
+/* Liens texte (nav, pied de page, contact, CTA tertiary) : gris + soulignement qui apparaît de gauche à droite.
+   Le texte est enveloppé dans un <span class="u"> par interactions.ts */
+.lien, .lien p, a[data-name="Cta"]:not([class*="bg-"]) p, .faq-q p { transition: color .3s ease; }
+.lien:hover, .lien:hover p, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p { color: rgba(9, 15, 12, .7); }
+.u {
+  background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat;
+  background-position: 0 100%; background-size: 0% 1px; padding-bottom: .06em;
+  transition: background-size .45s cubic-bezier(.2, .7, .2, 1);
+}
+:is(.lien, a[data-name="Cta"], a[data-name="Bouton"], .faq-q, .credit):hover .u { background-size: 100% 1px; }
 
 /* Cards cliquables : fond gris + titre souligné */
 a[data-name="Bouton"] { transition: background-color .3s ease; }
 a[data-name="Bouton"]:hover { background-color: var(--grey); }
-a[data-name="Bouton"] p[class*="Bricolage"] { text-decoration: underline transparent; text-underline-offset: .15em; transition: text-decoration-color .3s ease; }
-a[data-name="Bouton"]:hover p[class*="Bricolage"] { text-decoration-color: currentColor; }
-a[data-name="Bouton"] [data-name="Cta"] p { text-decoration: underline transparent; text-underline-offset: .15em; transition: color .3s ease, text-decoration-color .3s ease; }
-a[data-name="Bouton"]:hover [data-name="Cta"] p { text-decoration-color: currentColor; color: rgba(9, 15, 12, .7); }
+a[data-name="Bouton"] [data-name="Cta"] p { transition: color .3s ease; }
+a[data-name="Bouton"]:hover [data-name="Cta"] p { color: rgba(9, 15, 12, .7); }
 
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }
 .credit > span { grid-area: 1 / 1; transition: opacity .3s ease; }
-.credit > span:last-child { opacity: 0; text-decoration: underline; text-underline-offset: .15em; }
+.credit > span:last-child { opacity: 0; }
 .credit:hover > span:first-child { opacity: 0; }
 .credit:hover > span:last-child { opacity: 1; }
 
@@ -90,14 +94,14 @@ a[data-name="Bouton"]:hover [data-name="Cta"] p { text-decoration-color: current
 [data-slider-track].is-dragging { transition: none; cursor: grabbing; }
 [data-slider-track] img { -webkit-user-drag: none; }
 /* parallaxe horizontale des photos quand les cartes défilent */
-img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0px), 0, 0) scale(1.16); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0px), 0, 0) scale(1.3); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
 [data-slider-track].is-dragging img[data-hparallax] { transition: none; }
 
 /* Photos : parallaxe au scroll */
-img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.16); }
+img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.3); }
 
-/* Apparition des dégradés des heros : du foncé vers le clair.
-   Un voile sombre posé AU-DESSUS des couleurs (et sous le grain) s'efface : on assombrit la couleur finale,
+/* Apparition des dégradés des heros : depuis le gris clair du fond.
+   Un voile clair posé AU-DESSUS des couleurs (et sous le grain) s'efface : on assombrit la couleur finale,
    ce qui évite les stries (assombrir la forme en niveaux de gris, sous le calque Color, les faisait apparaître).
    Lancée quand la forme est chargée, voir interactions.ts */
 @keyframes hero-shape { from { transform: scale(1.35); } to { transform: scale(1.08); } }
@@ -105,9 +109,20 @@ img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py,
 [data-hero] .gshape { transform: scale(1.35); }
 [data-hero] .gshape.is-ready { animation: hero-shape 4s cubic-bezier(.3, .5, .2, 1) both; }
 [data-hero] .gshape.is-done { animation: none; transform: scale(1.08); }
-.hero-veil { position: absolute; inset: 0; background: #090f0c; border-radius: inherit; pointer-events: none; }
+.hero-veil { position: absolute; inset: 0; background: var(--grey, #f2f2f2); border-radius: inherit; pointer-events: none; }
 .hero-veil.is-ready { animation: hero-veil 4s cubic-bezier(.3, .5, .2, 1) both; }
 .hero-veil.is-done { display: none; }
+
+/* Apparition des textes du hero (décalés un par un, voir interactions.ts) et de la photo (masque du bas vers le haut).
+   La classe .anim est posée dans <head> : rien ne clignote avant le lancement. */
+@keyframes hero-text { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@keyframes hero-mask { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+.anim [data-hero] :is(p, [data-name="Cta"], div[class*="bg-[var(--white"]:has(> p)):not([data-name="Cta"] p):not(div[class*="bg-[var(--white"] > p):not([aria-hidden] *) {
+  animation: hero-text 1.1s cubic-bezier(.2, .7, .2, 1) var(--d, .9s) both;
+}
+.anim [data-hero] :has(> img[src*="/images/"]), .anim [data-hero] :has(> img[src*="cdn.sanity.io"]) {
+  animation: hero-mask 1.4s cubic-bezier(.65, 0, .25, 1) 1.1s both;
+}
 
 /* Pas de scintillement : chaque bloc dégradé est mélangé dans sa propre couche, stable */
 div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: translateZ(0); backface-visibility: hidden; }
@@ -126,6 +141,7 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
   html { scroll-behavior: auto; }
   [data-hero] .gshape { animation: none !important; transform: scale(1.08); }
   .hero-veil { display: none; }
+  .anim [data-hero] * { animation: none !important; }
   img[data-parallax] { transform: none; }
   [data-slider-track], .faq-a, .faq-a-in { transition: none; }
 }

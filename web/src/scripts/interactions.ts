@@ -53,8 +53,8 @@ function sliders() {
       if (!im) return;
       const it = items[i];
       const off = it.offsetLeft - items[0].offsetLeft - x + it.offsetWidth / 2 - header.offsetWidth / 2;
-      const max = it.offsetWidth * 0.075;
-      im.style.setProperty('--px', `${Math.max(-max, Math.min(max, -off * 0.05)).toFixed(1)}px`);
+      const max = it.offsetWidth * 0.13;
+      im.style.setProperty('--px', `${Math.max(-max, Math.min(max, -off * 0.11)).toFixed(1)}px`);
     });
     const step = () => items[1].offsetLeft - items[0].offsetLeft;
     const max = () => {
@@ -142,7 +142,7 @@ function parallax() {
       const r = im.parentElement!.getBoundingClientRect();
       // -1 quand le cadre entre par le bas, +1 quand il sort par le haut
       const p = Math.max(-1, Math.min(1, (vh / 2 - (r.top + r.height / 2)) / (vh / 2 + r.height / 2)));
-      im.style.setProperty('--py', `${(p * 6).toFixed(2)}%`);
+      im.style.setProperty('--py', `${(p * 11).toFixed(2)}%`);
     });
   };
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
@@ -235,6 +235,34 @@ function heroes() {
   });
 }
 
+/* ---------------- Textes du hero : décalage d'apparition ---------------- */
+function heroTexts() {
+  document.querySelectorAll<HTMLElement>('[data-hero]').forEach((hero) => {
+    const els = hero.querySelectorAll<HTMLElement>(':is(p, [data-name="Cta"], div[class*="bg-[var(--white"]:has(> p)):not([data-name="Cta"] p):not(div[class*="bg-[var(--white"] > p):not([aria-hidden] *)');
+    els.forEach((el, i) => el.style.setProperty('--d', `${(0.9 + i * 0.12).toFixed(2)}s`));
+  });
+}
+
+/* ---------------- Soulignement de gauche à droite ---------------- */
+function underlines() {
+  const targets = document.querySelectorAll<HTMLElement>(
+    '.lien, a[data-name="Cta"]:not([class*="bg-"]) p, a[data-name="Bouton"] p[class*="Bricolage"], a[data-name="Bouton"] [data-name="Cta"] p, .faq-q p, .credit > span:last-child',
+  );
+  targets.forEach((el) => {
+    if (el.classList.contains('underline')) return; // souligné en permanence dans la maquette
+    const inner = el.querySelector(':scope > p') as HTMLElement | null;
+    const box = inner ?? el;
+    if (Array.from(box.childNodes).some((n) => n.nodeType === 1 && (n as Element).tagName !== 'BR')) return;
+    if (box.querySelector(':scope > .u')) return;
+    const span = document.createElement('span');
+    span.className = 'u';
+    while (box.firstChild) span.appendChild(box.firstChild);
+    box.appendChild(span);
+  });
+}
+
+heroTexts();
+underlines();
 heroes();
 sliders();
 parallax();

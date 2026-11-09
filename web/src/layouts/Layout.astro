@@ -13,6 +13,7 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <title>{title}</title>
     <meta name="description" content={description} />
     <script is:inline>
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
       // Mise à l'échelle de la maquette 1512 px à la largeur de la fenêtre
       (function () {
         var html = document.documentElement;
