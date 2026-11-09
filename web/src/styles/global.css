@@ -16,7 +16,9 @@
 html, body { margin: 0; background: var(--grey); }
 /* La maquette fait 1512 px : la page est mise à l'échelle de la fenêtre (voir Layout.astro) */
 html { overflow-x: clip; }
-body { width: 1512px; }
+/* Le zoom s'applique au contenu seulement (pas à l'outil d'édition visuelle, qui calcule ses cadres à l'échelle 1) */
+html { overflow-y: scroll; }
+#page { width: 1512px; zoom: var(--zoom, 1); }
 a { color: inherit; text-decoration: none; }
 
 /* Dégradés : forme en niveaux de gris (petite image floutée) */

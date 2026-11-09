@@ -17,9 +17,7 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
       (function () {
         var html = document.documentElement;
         function fit() {
-          html.style.zoom = '1';
           var z = html.clientWidth / 1512;
-          html.style.zoom = String(z);
           html.style.setProperty('--zoom', String(z));
         }
         fit();
@@ -30,7 +28,7 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <link rel="preload" href="/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin />
   </head>
   <body>
-    <slot />
+    <div id="page"><slot /></div>
     <VisualEditing enabled={PREVIEW} />
   </body>
 </html>
