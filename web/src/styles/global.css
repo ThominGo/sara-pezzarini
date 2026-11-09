@@ -107,10 +107,10 @@ img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py,
 @keyframes hero-shape { from { transform: scale(1.35); } to { transform: scale(1.08); } }
 @keyframes hero-veil { from { opacity: 1; } to { opacity: 0; } }
 [data-hero] .gshape { transform: scale(1.35); }
-[data-hero] .gshape.is-ready { animation: hero-shape 4s cubic-bezier(.3, .5, .2, 1) both; }
+[data-hero] .gshape.is-ready { animation: hero-shape 4s cubic-bezier(.3, .5, .2, 1) var(--vt-delay, 0s) both; }
 [data-hero] .gshape.is-done { animation: none; transform: scale(1.08); }
 .hero-veil { position: absolute; inset: 0; background: var(--grey, #f2f2f2); border-radius: inherit; pointer-events: none; }
-.hero-veil.is-ready { animation: hero-veil 4s cubic-bezier(.3, .5, .2, 1) both; }
+.hero-veil.is-ready { animation: hero-veil 4s cubic-bezier(.3, .5, .2, 1) var(--vt-delay, 0s) both; }
 .hero-veil.is-done { display: none; }
 
 /* Apparition des textes du hero (décalés un par un, voir interactions.ts) et de la photo (masque du bas vers le haut).
@@ -118,10 +118,10 @@ img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py,
 @keyframes hero-text { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 @keyframes hero-mask { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
 .anim [data-hero] :is(p, [data-name="Cta"], div[class*="bg-[var(--white"]:has(> p)):not([data-name="Cta"] p):not(div[class*="bg-[var(--white"] > p):not([aria-hidden] *) {
-  animation: hero-text 1.1s cubic-bezier(.2, .7, .2, 1) var(--d, .9s) both;
+  animation: hero-text 1.1s cubic-bezier(.2, .7, .2, 1) calc(var(--d, .9s) + var(--vt-delay, 0s)) both;
 }
 .anim [data-hero] :has(> img[src*="/images/"]), .anim [data-hero] :has(> img[src*="cdn.sanity.io"]) {
-  animation: hero-mask 1.4s cubic-bezier(.65, 0, .25, 1) 1.1s both;
+  animation: hero-mask 1.4s cubic-bezier(.65, 0, .25, 1) calc(1.1s + var(--vt-delay, 0s)) both;
 }
 
 /* Pas de scintillement : chaque bloc dégradé est mélangé dans sa propre couche, stable */
@@ -150,17 +150,32 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
    image dans une carte = 4 px (les cartes passent toutes à 8 px dans le code) */
 [data-name="Bouton"][class*="rounded-"] :is([data-name^="image"], [data-name^="image"] *, .rounded-\[2px\]) { border-radius: 4px; }
 
-/* Transitions de page : fondu enchaîné natif du navigateur (View Transitions, sans JavaScript).
-   La nav ne bouge pas d'une page à l'autre. Navigateurs non compatibles : changement de page classique. */
+/* Transitions de page « côte à côte » (inspirée de Osmo, Side by Side) avec les View Transitions natives :
+   la page se réduit en carte arrondie sur fond sombre, glisse à gauche pendant que la suivante arrive de la droite,
+   puis la nouvelle reprend tout l'écran. La nav reste fixe au-dessus. Sans JavaScript.
+   Navigateurs non compatibles (Firefox) : changement de page classique. */
 @view-transition { navigation: auto; }
 [data-name="nav"] { view-transition-name: nav; }
-@keyframes vt-out { to { opacity: 0; } }
-@keyframes vt-in { from { opacity: 0; } }
-::view-transition-old(root) { animation: vt-out .3s ease both; }
-::view-transition-new(root) { animation: vt-in .5s ease .1s both; }
+::view-transition { background: #090f0c; }
+::view-transition-group(root) { animation-duration: 1.3s; }
+::view-transition-old(root), ::view-transition-new(root) { border-radius: 16px; overflow: hidden; mix-blend-mode: normal; }
+@keyframes sbs-out {
+  0%   { transform: translateX(0) scale(1); border-radius: 0; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
+  35%  { transform: translateX(0) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
+  70%, 100% { transform: translateX(-118%) scale(.62); border-radius: 16px; }
+}
+@keyframes sbs-in {
+  0%, 35% { transform: translateX(118%) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
+  70%  { transform: translateX(0) scale(.62); border-radius: 16px; animation-timing-function: cubic-bezier(.65, 0, .35, 1); }
+  100% { transform: translateX(0) scale(1); border-radius: 0; }
+}
+::view-transition-old(root) { animation: sbs-out 1.3s both; }
+::view-transition-new(root) { animation: sbs-in 1.3s both; }
 ::view-transition-group(nav) { animation: none; }
 ::view-transition-old(nav) { display: none; }
 ::view-transition-new(nav) { animation: none; }
+/* Les animations du hero attendent la fin de la transition (classe posée par interactions.ts) */
+.vt { --vt-delay: 1.2s; }
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }

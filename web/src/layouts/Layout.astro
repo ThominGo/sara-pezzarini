@@ -14,6 +14,8 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <meta name="description" content={description} />
     <script is:inline>
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
+      // arrivée par une transition de page : les animations du hero attendent qu'elle se termine
+      addEventListener('pagereveal', function (e) { if (e.viewTransition) { document.documentElement.classList.add('vt'); e.viewTransition.finished.finally(function () { setTimeout(function () { document.documentElement.classList.remove('vt'); }, 3000); }); } });
       // Mise à l'échelle de la maquette 1512 px à la largeur de la fenêtre
       (function () {
         var html = document.documentElement;
