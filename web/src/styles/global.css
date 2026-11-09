@@ -197,23 +197,23 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
   20.8% { transform: translateY(93.34%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(16.00% + calc(var(--g) * 1.000)) 0 calc(16.00% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
   25.0% { transform: translateY(90.43%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(16.00% + calc(var(--g) * 1.000)) 0 calc(16.00% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
   29.2% { transform: translateY(87.10%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(16.00% + calc(var(--g) * 1.000)) 0 calc(16.00% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  33.3% { transform: translateY(82.71%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(15.18% + calc(var(--g) * 1.000)) 0 calc(15.18% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  37.5% { transform: translateY(76.60%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(12.90% + calc(var(--g) * 1.000)) 0 calc(12.90% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  41.7% { transform: translateY(69.18%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(9.75% + calc(var(--g) * 1.000)) 0 calc(9.75% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  45.8% { transform: translateY(60.99%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(6.44% + calc(var(--g) * 1.000)) 0 calc(6.44% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  50.0% { transform: translateY(52.62%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(3.79% + calc(var(--g) * 1.000)) 0 calc(3.79% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  54.2% { transform: translateY(44.71%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(2.59% + calc(var(--g) * 1.000)) 0 calc(2.59% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  58.3% { transform: translateY(35.97%); clip-path: inset(calc(0.14% + calc(var(--g) * 1.000)) calc(2.36% + calc(var(--g) * 1.000)) 0 calc(2.36% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  62.5% { transform: translateY(26.04%); clip-path: inset(calc(0.47% + calc(var(--g) * 1.000)) calc(2.22% + calc(var(--g) * 1.000)) 0 calc(2.22% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  66.7% { transform: translateY(16.37%); clip-path: inset(calc(0.88% + calc(var(--g) * 1.000)) calc(2.12% + calc(var(--g) * 1.000)) 0 calc(2.12% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  70.8% { transform: translateY(8.24%); clip-path: inset(calc(1.27% + calc(var(--g) * 1.000)) calc(2.03% + calc(var(--g) * 1.000)) 0 calc(2.03% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  75.0% { transform: translateY(2.61%); clip-path: inset(calc(1.56% + calc(var(--g) * 1.000)) calc(1.91% + calc(var(--g) * 1.000)) 0 calc(1.91% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  79.2% { transform: translateY(0.10%); clip-path: inset(calc(1.69% + calc(var(--g) * 1.000)) calc(1.75% + calc(var(--g) * 1.000)) 0 calc(1.75% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
-  83.3% { transform: translateY(0.00%); clip-path: inset(calc(1.61% + calc(var(--g) * 0.940)) calc(1.50% + calc(var(--g) * 0.940)) 0 calc(1.50% + calc(var(--g) * 0.940)) round 15.0px 15.0px 0 0); }
-  87.5% { transform: translateY(0.00%); clip-path: inset(calc(1.28% + calc(var(--g) * 0.734)) calc(1.13% + calc(var(--g) * 0.734)) 0 calc(1.13% + calc(var(--g) * 0.734)) round 11.7px 11.7px 0 0); }
-  91.7% { transform: translateY(0.00%); clip-path: inset(calc(0.84% + calc(var(--g) * 0.470)) calc(0.72% + calc(var(--g) * 0.470)) 0 calc(0.72% + calc(var(--g) * 0.470)) round 7.5px 7.5px 0 0); }
-  95.8% { transform: translateY(0.00%); clip-path: inset(calc(0.39% + calc(var(--g) * 0.213)) calc(0.33% + calc(var(--g) * 0.213)) 0 calc(0.33% + calc(var(--g) * 0.213)) round 3.4px 3.4px 0 0); }
-  100.0% { transform: translateY(0.00%); clip-path: inset(calc(-0.00% + calc(var(--g) * 0.000)) calc(-0.00% + calc(var(--g) * 0.000)) 0 calc(-0.00% + calc(var(--g) * 0.000)) round 0.0px 0.0px 0 0); }
+  33.3% { transform: translateY(82.71%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(15.23% + calc(var(--g) * 1.000)) 0 calc(15.23% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  37.5% { transform: translateY(76.60%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(13.08% + calc(var(--g) * 1.000)) 0 calc(13.08% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  41.7% { transform: translateY(69.18%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(10.07% + calc(var(--g) * 1.000)) 0 calc(10.07% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  45.8% { transform: translateY(60.99%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(6.84% + calc(var(--g) * 1.000)) 0 calc(6.84% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  50.0% { transform: translateY(52.62%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(4.10% + calc(var(--g) * 1.000)) 0 calc(4.10% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  54.2% { transform: translateY(44.71%); clip-path: inset(calc(0.00% + calc(var(--g) * 1.000)) calc(2.57% + calc(var(--g) * 1.000)) 0 calc(2.57% + calc(var(--g) * 1.000)) round 16.0px 16.0px 0 0); }
+  58.3% { transform: translateY(35.97%); clip-path: inset(calc(0.14% + calc(var(--g) * 1.000)) calc(1.86% + calc(var(--g) * 0.916)) 0 calc(1.86% + calc(var(--g) * 0.916)) round 16.0px 16.0px 0 0); }
+  62.5% { transform: translateY(26.04%); clip-path: inset(calc(0.47% + calc(var(--g) * 1.000)) calc(1.23% + calc(var(--g) * 0.721)) 0 calc(1.23% + calc(var(--g) * 0.721)) round 16.0px 16.0px 0 0); }
+  66.7% { transform: translateY(16.37%); clip-path: inset(calc(0.88% + calc(var(--g) * 1.000)) calc(0.72% + calc(var(--g) * 0.481)) 0 calc(0.72% + calc(var(--g) * 0.481)) round 16.0px 16.0px 0 0); }
+  70.8% { transform: translateY(8.24%); clip-path: inset(calc(1.27% + calc(var(--g) * 1.000)) calc(0.34% + calc(var(--g) * 0.253)) 0 calc(0.34% + calc(var(--g) * 0.253)) round 16.0px 16.0px 0 0); }
+  75.0% { transform: translateY(2.61%); clip-path: inset(calc(1.56% + calc(var(--g) * 1.000)) calc(0.10% + calc(var(--g) * 0.083)) 0 calc(0.10% + calc(var(--g) * 0.083)) round 16.0px 16.0px 0 0); }
+  79.2% { transform: translateY(0.10%); clip-path: inset(calc(1.69% + calc(var(--g) * 1.000)) calc(0.00% + calc(var(--g) * 0.003)) 0 calc(0.00% + calc(var(--g) * 0.003)) round 16.0px 16.0px 0 0); }
+  83.3% { transform: translateY(0.00%); clip-path: inset(calc(1.61% + calc(var(--g) * 0.940)) calc(0.00% + calc(var(--g) * 0.000)) 0 calc(0.00% + calc(var(--g) * 0.000)) round 15.0px 15.0px 0 0); }
+  87.5% { transform: translateY(0.00%); clip-path: inset(calc(1.28% + calc(var(--g) * 0.734)) calc(0.00% + calc(var(--g) * 0.000)) 0 calc(0.00% + calc(var(--g) * 0.000)) round 11.7px 11.7px 0 0); }
+  91.7% { transform: translateY(0.00%); clip-path: inset(calc(0.84% + calc(var(--g) * 0.470)) calc(0.00% + calc(var(--g) * 0.000)) 0 calc(0.00% + calc(var(--g) * 0.000)) round 7.5px 7.5px 0 0); }
+  95.8% { transform: translateY(0.00%); clip-path: inset(calc(0.39% + calc(var(--g) * 0.213)) calc(0.00% + calc(var(--g) * 0.000)) 0 calc(0.00% + calc(var(--g) * 0.000)) round 3.4px 3.4px 0 0); }
+  100.0% { transform: translateY(0.00%); clip-path: inset(calc(0.00% + calc(var(--g) * 0.000)) calc(0.00% + calc(var(--g) * 0.000)) 0 calc(0.00% + calc(var(--g) * 0.000)) round 0.0px 0.0px 0 0); }
 }
 ::view-transition-group(root) { animation-duration: 1.5s; }
 ::view-transition-old(root) { animation: tr-old 1.5s linear both; }
@@ -222,7 +222,7 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
 ::view-transition-old(nav) { display: none; }
 ::view-transition-new(nav) { animation: none; }
 /* Arrivée par une transition (classe .vt posée dans <head>) : les animations du hero démarrent pendant la transition */
-.vt { --vt-delay: 0s; }
+.vt { --vt-delay: .7s; }
 /* arrivée par la fenêtre : le dégradé est déjà en couleur (pas de voile clair dans la fenêtre) */
 .vt .hero-veil { display: none; }
 @media (prefers-reduced-motion: reduce) {
