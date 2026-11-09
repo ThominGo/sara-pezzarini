@@ -96,16 +96,18 @@ img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0
 /* Photos : parallaxe au scroll */
 img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.16); }
 
-/* Apparition des dégradés des heros : du foncé vers le clair (la forme apparaît sur un fond sombre).
+/* Apparition des dégradés des heros : du foncé vers le clair.
+   Un voile sombre posé AU-DESSUS des couleurs (et sous le grain) s'efface : on assombrit la couleur finale,
+   ce qui évite les stries (assombrir la forme en niveaux de gris, sous le calque Color, les faisait apparaître).
    Lancée quand la forme est chargée, voir interactions.ts */
-@keyframes hero-bloom {
-  from { opacity: 0; transform: scale(1.35); }
-  to   { opacity: 1; transform: scale(1.08); }
-}
-[data-hero] div[aria-hidden]:has(> .gshape) { background-color: #090f0c; }
-[data-hero] .gshape { opacity: 0; transform: scale(1.35); }
-[data-hero] .gshape.is-ready { animation: hero-bloom 4s cubic-bezier(.3, .5, .2, 1) both; }
-[data-hero] .gshape.is-done { animation: none; opacity: 1; transform: scale(1.08); }
+@keyframes hero-shape { from { transform: scale(1.35); } to { transform: scale(1.08); } }
+@keyframes hero-veil { from { opacity: 1; } to { opacity: 0; } }
+[data-hero] .gshape { transform: scale(1.35); }
+[data-hero] .gshape.is-ready { animation: hero-shape 4s cubic-bezier(.3, .5, .2, 1) both; }
+[data-hero] .gshape.is-done { animation: none; transform: scale(1.08); }
+.hero-veil { position: absolute; inset: 0; background: #090f0c; border-radius: inherit; pointer-events: none; }
+.hero-veil.is-ready { animation: hero-veil 4s cubic-bezier(.3, .5, .2, 1) both; }
+.hero-veil.is-done { display: none; }
 
 /* Pas de scintillement : chaque bloc dégradé est mélangé dans sa propre couche, stable */
 div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: translateZ(0); backface-visibility: hidden; }
@@ -122,7 +124,8 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  [data-hero] .gshape { animation: none !important; opacity: 1; transform: scale(1.08); }
+  [data-hero] .gshape { animation: none !important; transform: scale(1.08); }
+  .hero-veil { display: none; }
   img[data-parallax] { transform: none; }
   [data-slider-track], .faq-a, .faq-a-in { transition: none; }
 }

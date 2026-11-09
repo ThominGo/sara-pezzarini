@@ -222,11 +222,16 @@ function contactForm() {
 /* ---------------- Apparition des dégradés des heros ---------------- */
 function heroes() {
   document.querySelectorAll<HTMLImageElement>('[data-hero] .gshape').forEach((im) => {
-    const start = () => requestAnimationFrame(() => im.classList.add('is-ready'));
+    // voile sombre au-dessus des couleurs, sous le grain (le grain est le ::after du conteneur)
+    const veil = document.createElement('div');
+    veil.className = 'hero-veil';
+    im.parentElement!.appendChild(veil);
+    const start = () => requestAnimationFrame(() => { im.classList.add('is-ready'); veil.classList.add('is-ready'); });
+    const done = () => { im.classList.add('is-done'); veil.classList.add('is-done'); };
     // la forme finale est redessinée nette une fois l'animation finie
-    im.addEventListener('animationend', () => im.classList.add('is-done'), { once: true });
+    veil.addEventListener('animationend', done, { once: true });
     if (im.complete && im.naturalWidth) start();
-    else { im.addEventListener('load', start, { once: true }); im.addEventListener('error', () => im.classList.add('is-done'), { once: true }); }
+    else { im.addEventListener('load', start, { once: true }); im.addEventListener('error', done, { once: true }); }
   });
 }
 
