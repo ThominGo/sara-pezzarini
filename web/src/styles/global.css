@@ -104,7 +104,7 @@ img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py,
 }
 [data-hero] div[aria-hidden]:has(> .gshape) { background-color: #090f0c; }
 [data-hero] .gshape { opacity: 0; transform: scale(1.35); }
-[data-hero] .gshape.is-ready { animation: hero-bloom 2.4s cubic-bezier(.25, .6, .25, 1) both; }
+[data-hero] .gshape.is-ready { animation: hero-bloom 4s cubic-bezier(.3, .5, .2, 1) both; }
 [data-hero] .gshape.is-done { animation: none; opacity: 1; transform: scale(1.08); }
 
 /* Pas de scintillement : chaque bloc dégradé est mélangé dans sa propre couche, stable */
