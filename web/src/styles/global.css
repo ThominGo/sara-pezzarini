@@ -73,11 +73,12 @@ html { scroll-behavior: smooth; }
 /* Cards cliquables : fond gris + titre souligné */
 a[data-name="Bouton"] { transition: background-color .3s ease; }
 a[data-name="Bouton"]:not(:has([data-name="Cta"])):hover { background-color: var(--grey); }
-/* Cards avec un CTA « En savoir plus » (4-cards) : seul le CTA se souligne */
+/* Cards avec un CTA « En savoir plus » (4-cards) : seul le CTA se souligne, jamais le titre */
+a[data-name="Bouton"]:has([data-name="Cta"]) p[class*="Bricolage"] .u { background-size: 0 1px !important; }
 
 /* Cards avec flèche : la flèche se décale vers la gauche au survol */
 a[data-name="Bouton"] img[src$="/assets/arrow.svg"] { transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
-a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-6px); }
+a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-4px); }
 
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }
@@ -87,9 +88,9 @@ a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translate
 .credit:hover > span:last-child { opacity: 1; }
 
 /* FAQ : ouverture / fermeture animée */
-.faq-a { display: grid; grid-template-rows: 0fr; width: 100%; transition: grid-template-rows .45s cubic-bezier(.2, .7, .2, 1); }
-[data-faq][data-open] .faq-a { grid-template-rows: 1fr; }
-.faq-a-in { overflow: hidden; min-height: 0; opacity: 0; transition: opacity .3s ease; }
+/* hauteur animée en JS (0 → hauteur du contenu → auto) : fonctionne dans tous les navigateurs */
+.faq-a { height: 0; overflow: hidden; width: 100%; transition: height .45s cubic-bezier(.2, .7, .2, 1); }
+.faq-a-in { opacity: 0; transition: opacity .3s ease; }
 [data-faq][data-open] .faq-a-in { opacity: 1; transition-delay: .1s; }
 
 /* Sliders : glisser + flèches (voir scripts/interactions.ts) */

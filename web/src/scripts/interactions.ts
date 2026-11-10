@@ -157,12 +157,23 @@ function parallax() {
 function faq() {
   // tout est fermé au départ ; une seule réponse ouverte à la fois
   const items = Array.from(document.querySelectorAll<HTMLElement>('[data-faq]'));
-  const set = (item: HTMLElement, open: boolean) => {
+  const set = (item: HTMLElement, open: boolean, instant = false) => {
+    const a = item.querySelector<HTMLElement>('.faq-a');
+    const was = item.hasAttribute('data-open');
     item.toggleAttribute('data-open', open);
     item.querySelector('.faq-q')?.setAttribute('aria-expanded', String(open));
+    if (!a || (was === open && !instant)) return;
+    clearTimeout((a as any)._t);
+    if (instant) { a.style.height = open ? 'auto' : '0px'; return; }
+    // part de la hauteur actuelle en px, puis va vers la hauteur du contenu (ou 0)
+    a.style.height = a.getBoundingClientRect().height + 'px';
+    void a.offsetHeight;
+    a.style.height = open ? a.scrollHeight + 'px' : '0px';
+    // une fois ouvert, hauteur libre (le texte peut changer de taille avec la fenêtre)
+    if (open) (a as any)._t = setTimeout(() => { if (item.hasAttribute('data-open')) a.style.height = 'auto'; }, 480);
   };
   items.forEach((item) => {
-    set(item, false);
+    set(item, false, true);
     item.querySelector<HTMLButtonElement>('.faq-q')?.addEventListener('click', () => {
       const open = !item.hasAttribute('data-open');
       items.forEach((other) => other !== item && set(other, false));
