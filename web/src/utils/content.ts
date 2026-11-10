@@ -5,7 +5,7 @@ import { PREVIEW } from './preview';
 // Contenus des pages (une fiche Sanity par page). Repli sur les textes de la maquette.
 export const content: Record<string, Record<string, any>> = {};
 
-export const PAGE_TYPES = ['pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun'];
+export const PAGE_TYPES = ['pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun', 'pageMentions', 'pageConfidentialite', 'page404'];
 
 let loaded: Promise<void> | null = null;
 async function load() {

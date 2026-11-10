@@ -92,7 +92,7 @@ export default function PourQui() {
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6789" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6790">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6791" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_2")} src={img("pagePourQui", "image_text_image_2", "/assets/icon-placeholder.svg")} />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_2")} src={img("pagePourQui", "image_text_image_2", "/assets/icons/book-check.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6794">
@@ -102,7 +102,7 @@ export default function PourQui() {
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6796" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6797">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6798" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_3")} src={img("pagePourQui", "image_text_image_3", "/assets/icon-placeholder.svg")} />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_3")} src={img("pagePourQui", "image_text_image_3", "/assets/icons/arrow-right-left.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6803">
@@ -112,7 +112,7 @@ export default function PourQui() {
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6805" data-name="Bouton">
                 <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6806">
                   <div className="relative shrink-0 size-[24px]" data-node-id="414:6807" data-name="Frame">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_4")} src={img("pagePourQui", "image_text_image_4", "/assets/icon-placeholder.svg")} />
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_image_4")} src={img("pagePourQui", "image_text_image_4", "/assets/icons/book-search.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6812">

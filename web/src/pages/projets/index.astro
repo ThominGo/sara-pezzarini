@@ -2,18 +2,9 @@
 import { loadContent } from '../../utils/content';
 await loadContent();
 import Layout from '../../layouts/Layout.astro';
-import Page, { defaultCards } from '../../figma/projets';
-import { getProjects, urlFor } from '../../utils/sanity';
+import Page from '../../figma/projets';
+import { getProjectCards } from '../../utils/projectCards';
 
-const projects = (await getProjects()) ?? [];
-// Styles des vignettes repris de la maquette, dans l'ordre
-const cards = projects.length
-  ? projects.map((p, i) => ({
-      ...defaultCards[i % defaultCards.length],
-      title: p.title,
-      href: `/projets/${p.slug}`,
-      image: p.cover ? urlFor(p.cover).width(1200).auto('format').url() : undefined,
-    }))
-  : defaultCards;
+const cards = await getProjectCards();
 ---
 <Layout title="Projets · Sara Pezzarini"><Page cards={cards} /></Layout>

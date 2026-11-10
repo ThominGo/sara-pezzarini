@@ -25,9 +25,9 @@ export default function Footer({ className }: { className?: string }) {
           <p className="leading-[1.3] relative shrink-0 text-[rgba(0,0,0,0)]" data-node-id="146:4515">
             Les pages
           </p>
-          <p className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4516" data-sanity={ds("commun", "footer_7")}>{t("commun", "footer_7", "Mentions Légales")}</p>
-          <p className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4517" data-sanity={ds("commun", "footer_8")}>{t("commun", "footer_8", "Confidentialité")}</p>
-          <p className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4518" data-sanity={ds("commun", "footer_9")}>{t("commun", "footer_9", "Plan du site")}</p>
+          <L href="/mentions-legales" className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4516" data-sanity={ds("commun", "footer_7")}>{t("commun", "footer_7", "Mentions Légales")}</L>
+          <L href="/confidentialite" className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4517" data-sanity={ds("commun", "footer_8")}>{t("commun", "footer_8", "Confidentialité")}</L>
+          <L href="/plan-du-site" className="leading-[1.1] relative shrink-0 text-[color:var(--black-70\%,rgba(9,15,12,0.7))]" data-node-id="146:4518" data-sanity={ds("commun", "footer_9")}>{t("commun", "footer_9", "Plan du site")}</L>
         </div>
         <div className="content-stretch flex flex-col gap-[8px] items-start justify-self-stretch leading-[1.1] relative self-start shrink-0 whitespace-nowrap" data-node-id="146:4520">
           <p className="relative shrink-0 text-[color:var(--black,#090f0c)]" data-node-id="146:4521" data-sanity={ds("commun", "footer_10")}>{t("commun", "footer_10", "Me retrouver")}</p>

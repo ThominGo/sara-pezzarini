@@ -72,9 +72,12 @@ html { scroll-behavior: smooth; }
 
 /* Cards cliquables : fond gris + titre souligné */
 a[data-name="Bouton"] { transition: background-color .3s ease; }
-a[data-name="Bouton"]:hover { background-color: var(--grey); }
-a[data-name="Bouton"] [data-name="Cta"] p { transition: color .3s ease; }
-a[data-name="Bouton"]:hover [data-name="Cta"] p { color: rgba(9, 15, 12, .7); }
+a[data-name="Bouton"]:not(:has([data-name="Cta"])):hover { background-color: var(--grey); }
+/* Cards avec un CTA « En savoir plus » (4-cards) : seul le CTA se souligne */
+
+/* Cards avec flèche : la flèche se décale vers la gauche au survol */
+a[data-name="Bouton"] img[src$="/assets/arrow.svg"] { transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
+a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-6px); }
 
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }

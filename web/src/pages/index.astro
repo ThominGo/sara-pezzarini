@@ -3,5 +3,8 @@ import { loadContent } from '../utils/content';
 await loadContent();
 import Layout from '../layouts/Layout.astro';
 import Page from '../figma/accueil';
+import { getProjectCards } from '../utils/projectCards';
+
+const cards = await getProjectCards();
 ---
-<Layout title="Sara Pezzarini, ergothérapeute"><Page /></Layout>
+<Layout title="Sara Pezzarini, ergothérapeute"><Page cards={cards} /></Layout>

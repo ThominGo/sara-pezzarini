@@ -1,0 +1,8 @@
+---
+import { loadContent } from '../utils/content';
+await loadContent();
+import Layout from '../layouts/Layout.astro';
+import Page from '../figma/legal';
+import { mentions } from '../data/legal';
+---
+<Layout title="Mentions légales · Sara Pezzarini"><Page type="pageMentions" fallback={mentions} /></Layout>

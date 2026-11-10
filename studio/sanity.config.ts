@@ -4,7 +4,7 @@ import { presentationTool } from 'sanity/presentation';
 import { resolve } from './presentation';
 import { schemaTypes } from './schemas';
 
-const singletons = ['settings', 'pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun'];
+const singletons = ['settings', 'pageAccueil', 'pageApproche', 'pagePourQui', 'pageTarifs', 'pageParcours', 'pageContact', 'pageProjets', 'commun', 'pageMentions', 'pageConfidentialite', 'page404'];
 
 export default defineConfig({
   name: 'default',
@@ -35,6 +35,9 @@ export default defineConfig({
                 S.listItem().title("Contact").id('pageContact').child(S.document().schemaType('pageContact').documentId('pageContact')),
                 S.listItem().title("Projets (haut de page)").id('pageProjets').child(S.document().schemaType('pageProjets').documentId('pageProjets')),
                 S.listItem().title("Éléments communs (bloc contact, pied de page)").id('commun').child(S.document().schemaType('commun').documentId('commun')),
+                S.listItem().title("Mentions légales").id('pageMentions').child(S.document().schemaType('pageMentions').documentId('pageMentions')),
+                S.listItem().title("Politique de confidentialité").id('pageConfidentialite').child(S.document().schemaType('pageConfidentialite').documentId('pageConfidentialite')),
+                S.listItem().title("Page 404").id('page404').child(S.document().schemaType('page404').documentId('page404')),
               ]),
             ),
             S.documentTypeListItem('project').title('Projets'),

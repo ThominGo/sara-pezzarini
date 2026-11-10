@@ -12,6 +12,9 @@ export const resolve: PresentationPluginOptions['resolve'] = {
     pageParcours: page('Parcours', '/parcours'),
     pageContact: page('Contact', '/contact'),
     pageProjets: page('Projets', '/projets'),
+    pageMentions: page('Mentions légales', '/mentions-legales'),
+    pageConfidentialite: page('Politique de confidentialité', '/confidentialite'),
+    page404: page('Page 404', '/404'),
     commun: defineLocations({
       locations: [
         { title: 'Accueil', href: '/' },

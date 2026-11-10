@@ -1,0 +1,10 @@
+---
+import { loadContent } from '../utils/content';
+await loadContent();
+import Layout from '../layouts/Layout.astro';
+import Page from '../figma/plan';
+import { getProjectCards } from '../utils/projectCards';
+
+const projets = await getProjectCards();
+---
+<Layout title="Plan du site · Sara Pezzarini"><Page projets={projets} /></Layout>

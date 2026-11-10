@@ -25,9 +25,9 @@ export const defaultCards: ProjectCard[] = [
   { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/1fbf0de407.webp', href: '/projets/exemple', difference: '#474747', color: '#8e7e95' },
 ];
 
-function Card({ c, first }: { c: ProjectCard; first: boolean }) {
+export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }: { c: ProjectCard; first: boolean; className?: string }) {
   return (
-    <a href={c.href} className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col gap-[4px] h-[480px] items-start justify-self-stretch overflow-clip p-[8px] relative rounded-[8px] shrink-0" data-name="Bouton">
+    <a href={c.href} className={`${className} bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col gap-[4px] items-start overflow-clip p-[8px] relative rounded-[8px] shrink-0`} data-name="Bouton">
       <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full">
         <div className={`${c.flip ? '-scale-y-100 ' : ''}flex-none rotate-180 size-full`}>
           <div className="relative rounded-[8px] size-full" data-name="image 13">

@@ -100,7 +100,7 @@ DEFS_COMMON = """
 </filter>"""
 
 
-def build(name, shapes):
+def build(name, shapes, grain=0.3, suffix=""):
     defs, body = [DEFS_COMMON], []
     for i, (d, tr, pal) in enumerate(shapes):
         stops = PAL[pal].split(",")
@@ -115,7 +115,7 @@ def build(name, shapes):
             f'<path d="{d}" fill="{BG}" stroke="{BG}" stroke-width="4" stroke-linejoin="round"/>'
             f'<path d="{d}" fill="url(#g{i})"/>'
             f'<path d="{d}" fill="#FF9A4D" fill-opacity="0.4" style="mix-blend-mode:soft-light"/>'
-            f'<path d="{d}" fill="#fff" opacity="0.3" filter="url(#grain)"/>'
+            f'<path d="{d}" fill="#fff" opacity="{grain}" filter="url(#grain)"/>'
             f"</g>"
         )
     svg = (
@@ -125,10 +125,11 @@ def build(name, shapes):
         + "".join(body)
         + "</svg>\n"
     )
-    (OUT / f"{name}.svg").write_text(svg)
+    (OUT / f"{name}{suffix}.svg").write_text(svg)
 
 
 OUT.mkdir(parents=True, exist_ok=True)
 for k, v in ILLUS.items():
     build(k, v)
+    build(k, v, grain=0.14, suffix="-m")  # version mobile : grain plus discret
 print("ok", len(ILLUS))

@@ -155,13 +155,19 @@ function parallax() {
 
 /* ---------------- FAQ ---------------- */
 function faq() {
-  document.querySelectorAll<HTMLElement>('[data-faq]').forEach((item) => {
-    const q = item.querySelector<HTMLButtonElement>('.faq-q');
-    q?.addEventListener('click', () => {
+  // tout est fermé au départ ; une seule réponse ouverte à la fois
+  const items = Array.from(document.querySelectorAll<HTMLElement>('[data-faq]'));
+  const set = (item: HTMLElement, open: boolean) => {
+    item.toggleAttribute('data-open', open);
+    item.querySelector('.faq-q')?.setAttribute('aria-expanded', String(open));
+  };
+  items.forEach((item) => {
+    set(item, false);
+    item.querySelector<HTMLButtonElement>('.faq-q')?.addEventListener('click', () => {
       const open = !item.hasAttribute('data-open');
-      item.toggleAttribute('data-open', open);
-      q.setAttribute('aria-expanded', String(open));
-    });
+      items.forEach((other) => other !== item && set(other, false));
+      set(item, open);
+    }, { signal: page.signal });
   });
 }
 
@@ -248,7 +254,7 @@ function heroTexts() {
 /* ---------------- Soulignement de gauche à droite ---------------- */
 function underlines() {
   const targets = document.querySelectorAll<HTMLElement>(
-    '.lien, a[data-name="Cta"]:not([class*="bg-"]) p, a[data-name="Bouton"] p[class*="Bricolage"], a[data-name="Bouton"] [data-name="Cta"] p, .faq-q p, .credit > span:last-child',
+    '.lien, a[data-name="Cta"]:not([class*="bg-"]) p, a[data-name="Bouton"]:not(:has([data-name="Cta"])) p[class*="Bricolage"], a[data-name="Bouton"] [data-name="Cta"] p, .faq-q p, .credit > span:last-child',
   );
   targets.forEach((el) => {
     if (el.classList.contains('underline')) return; // souligné en permanence dans la maquette
@@ -297,10 +303,26 @@ function mobileMenu() {
 }
 
 // Initialisation de chaque page : au premier chargement puis après chaque changement de page
+/* ---------------- Illustrations : grain plus discret en mobile (fichiers *-m.svg) ---------------- */
+function illustrations() {
+  const mq = matchMedia('(max-width: 767.98px)');
+  const apply = () => {
+    document.querySelectorAll<HTMLImageElement>('img[src*="/illustrations/"]').forEach((im) => {
+      const src = im.getAttribute('src')!;
+      const base = src.replace(/-m\.svg$/, '.svg');
+      const want = mq.matches ? base.replace(/\.svg$/, '-m.svg') : base;
+      if (want !== src) im.setAttribute('src', want);
+    });
+  };
+  apply();
+  mq.addEventListener('change', apply, { signal: page.signal });
+}
+
 function init() {
   page.abort();
   page = new AbortController();
   mobileMenu();
+  illustrations();
   heroTexts();
   underlines();
   heroes();

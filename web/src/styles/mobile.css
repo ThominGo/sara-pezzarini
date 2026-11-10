@@ -122,7 +122,7 @@
   [data-name="image-text"] > .p-\[40px\] { flex: none; padding: 8px 8px 40px; }
   [data-name="image-text"] > .p-\[40px\] > div { width: 100%; }
   [data-name="image-text"] p[class*="Bricolage"]:is([class*="text-[40px]"], [class*="text-[56px]"], [class*="text-[64px]"], [class*="text-[80px]"]) { font-size: 32px; line-height: 1; width: 100%; }
-  [data-name="image-text"] p[class*="text-[18px]"] { font-size: 16px; }
+  [data-name="image-text"] p[class*="text-[18px]"]:not([class*="Bricolage"]) { font-size: 16px; }
   [data-name="image-text"] p[class*="text-[18px]"]:not(.text-right):not([class*="whitespace-nowrap"]) { width: 100%; }
 }
 
@@ -155,7 +155,10 @@
   [data-name="text"]:has(> .grid) > div:first-child > div:last-child > div { width: 100%; font-size: 16px; }
   [data-name="text"] > .grid { grid-template-columns: minmax(0, 1fr); gap: 8px; width: 100%; }
   [data-name="text"] > .grid > [data-name="Bouton"] { height: 422px; padding: 8px; gap: 4px; border-radius: 4px; }
-  [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"] { border-radius: 4px; }
+  [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"], [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"] > div { border-radius: 4px; }
+  /* mêmes vignettes que le push-project de l'accueil */
+  [data-name="text"] > .grid > [data-name="Bouton"] > div:last-child { height: auto; }
+  [data-name="text"] > .grid > [data-name="Bouton"] > div:last-child > p { width: auto; }
 }
 
 @media (max-width: 767.98px) {
@@ -167,4 +170,23 @@
 @media (max-width: 767.98px) {
   /* blocs de texte en plusieurs paragraphes (largeur fixe de la maquette desktop) */
   [data-name="4-cards"] > div > div:first-child [class*="w-["]:not([class*="Bricolage"]) { width: 100%; font-size: 16px; }
+}
+
+@media (max-width: 767.98px) {
+  /* ---------- pages légales et plan du site (sans maquette mobile) ---------- */
+  [data-name="legal"] { padding: 120px 16px 80px; }
+  [data-name="legal"] > div { flex-direction: column; width: 100%; gap: 40px; }
+  [data-name="legal"] > div > p:first-child { display: none; }
+  [data-name="legal"] [data-name="Titre légal"] { position: static; order: -1; width: 100%; height: auto; }
+  [data-name="legal"] [data-name="Titre légal"] > div { position: static; width: 100%; height: auto; padding: 0; align-items: flex-start; gap: 16px; }
+  [data-name="legal"] h1 { font-size: 32px; }
+  [data-name="legal"] [data-name="Titre légal"] .pl-\[120px\] { padding-left: 64px; }
+  [data-name="legal"] [data-name="Rubriques"] { width: 100%; flex: none; gap: 32px; }
+  [data-name="legal"] p[class*="text-[24px]"] { font-size: 20px; }
+  [data-name="legal"] :is(p, a)[class*="text-[18px]"] { font-size: 16px; }
+
+  /* ---------- 404 : texte centré sur le dégradé ---------- */
+  [data-hero].hero-404 > div > div:nth-child(2) { position: absolute; left: 50%; top: calc(50% + 29px); order: 0; width: calc(100% - 48px); padding: 0; gap: 24px; }
+  [data-hero].hero-404 > div > div:nth-child(2) > div:first-child p { font-size: 40px; line-height: 1; }
+  [data-hero].hero-404 [data-name="Cta"] p { font-size: 16px; }
 }

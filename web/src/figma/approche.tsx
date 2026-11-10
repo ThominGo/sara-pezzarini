@@ -88,7 +88,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4306">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4307">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4308" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_1")} src={img("pageApproche", "cartes_image_1", "/assets/icon-placeholder.svg")} />
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_1")} src={img("pageApproche", "cartes_image_1", "/assets/icons/house-heart.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4311">
@@ -103,7 +103,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4319">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4320">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4321" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_2")} src={img("pageApproche", "cartes_image_2", "/assets/icon-placeholder.svg")} />
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_2")} src={img("pageApproche", "cartes_image_2", "/assets/icons/building-2.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4327">
@@ -118,7 +118,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4335">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4336">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4337" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_3")} src={img("pageApproche", "cartes_image_3", "/assets/icon-placeholder.svg")} />
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_3")} src={img("pageApproche", "cartes_image_3", "/assets/icons/school.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4345">
@@ -133,7 +133,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4353">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4354">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4355" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_4")} src={img("pageApproche", "cartes_image_4", "/assets/icon-placeholder.svg")} />
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_4")} src={img("pageApproche", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4362">

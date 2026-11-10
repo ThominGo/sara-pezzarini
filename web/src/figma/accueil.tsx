@@ -3,6 +3,7 @@ import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
+import { Card, defaultCards, type ProjectCard } from './projets';
 
 
 function Slider({ className }: { className?: string }) {
@@ -147,7 +148,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4306">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4307">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4308" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_1")} src={img("pageAccueil", "cartes_image_1", "/assets/icon-placeholder.svg")} />
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_1")} src={img("pageAccueil", "cartes_image_1", "/assets/icons/house-heart.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4311">
@@ -166,7 +167,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4319">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4320">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4321" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_2")} src={img("pageAccueil", "cartes_image_2", "/assets/icon-placeholder.svg")} />
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_2")} src={img("pageAccueil", "cartes_image_2", "/assets/icons/building-2.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4327">
@@ -185,7 +186,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4335">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4336">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4337" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_3")} src={img("pageAccueil", "cartes_image_3", "/assets/icon-placeholder.svg")} />
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_3")} src={img("pageAccueil", "cartes_image_3", "/assets/icons/school.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4345">
@@ -204,7 +205,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4353">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4354">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4355" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_4")} src={img("pageAccueil", "cartes_image_4", "/assets/icon-placeholder.svg")} />
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_4")} src={img("pageAccueil", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4362">
@@ -238,7 +239,7 @@ function Text({ className }: { className?: string }) {
   );
 }
 
-export default function SaraPezzarini() {
+export default function SaraPezzarini({ cards = defaultCards }: { cards?: ProjectCard[] }) {
   return (
     <div className="content-stretch flex flex-col items-start relative size-full" data-node-id="414:6636" data-name="Sara Pezzarini">
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-screen-fig items-start overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6637" data-name="hero" data-hero>
@@ -330,67 +331,7 @@ export default function SaraPezzarini() {
           <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance text-center w-[338px]" data-node-id="I414:6679;146:4393" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "push_project_1")}>{t("pageAccueil", "push_project_1", "Ce que j'ai déjà construit")}</p>
           <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full" data-node-id="I414:6679;146:4394">
             <div className="content-stretch cursor-pointer flex gap-[8px] h-[480px] items-center relative shrink-0 w-full" data-node-id="I414:6679;146:4395">
-              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4396" data-name="Bouton">
-                <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4397">
-                  <div className="-scale-y-100 flex-none rotate-180 size-full">
-                    <div className="relative rounded-[8px] size-full" data-name="image 13">
-                      <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_1")} src={img("pageAccueil", "push_project_image_1", "/images/a935537276.webp")} />
-                        <div className="absolute bg-[#958a7e] inset-0 mix-blend-color rounded-[8px]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="content-stretch flex items-start justify-between p-[8px] relative shrink-0 w-full" data-node-id="I414:6679;146:4398">
-                  <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance text-left w-[120px]" data-node-id="I414:6679;146:4399" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "push_project_2")}>{t("pageAccueil", "push_project_2", "Lorem ipsum dolore")}</p>
-                  <div className="h-[10px] relative shrink-0 w-[11px]" data-node-id="I414:6679;146:4400">
-                    <div className="absolute inset-[-4.95%_-9%_-4.95%_0]">
-                      <img alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4401" data-name="Bouton">
-                <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4402">
-                  <div className="flex-none rotate-180 size-full">
-                    <div className="relative rounded-[8px] size-full" data-name="image 13">
-                      <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_2")} src={img("pageAccueil", "push_project_image_2", "/images/61c0fecc5b.webp")} />
-                        <div className="absolute bg-[#788d9a] inset-0 mix-blend-color rounded-[8px]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="content-stretch flex h-[60px] items-start justify-between p-[8px] relative shrink-0 w-full" data-node-id="I414:6679;146:4403">
-                  <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance text-left w-[172px]" data-node-id="I414:6679;146:4404" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "push_project_3")}>{t("pageAccueil", "push_project_3", "Jeu pour gamifier le quotidien")}</p>
-                  <div className="h-[10px] relative shrink-0 w-[11px]" data-node-id="I414:6679;146:4405">
-                    <div className="absolute inset-[-4.95%_-9%_-4.95%_0]">
-                      <img alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="/projets/exemple" className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[4px] h-full items-start min-w-px overflow-clip p-[8px] relative rounded-[8px]" data-node-id="I414:6679;146:4406" data-name="Bouton">
-                <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6679;146:4407">
-                  <div className="flex-none rotate-180 size-full">
-                    <div className="relative rounded-[8px] size-full" data-name="image 13">
-                      <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" data-sanity={ds("pageAccueil", "push_project_image_3")} src={img("pageAccueil", "push_project_image_3", "/images/1553e744ae.webp")} />
-                        <div className="absolute bg-[#454545] inset-0 mix-blend-difference rounded-[8px]" />
-                        <div className="absolute bg-[#181336] inset-0 mix-blend-color rounded-[8px]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="content-stretch flex h-[60px] items-start justify-between p-[8px] relative shrink-0 w-full" data-node-id="I414:6679;146:4408">
-                  <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance text-left w-[240px]" data-node-id="I414:6679;146:4409" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "push_project_4")}>{t("pageAccueil", "push_project_4", "Site d'aide à l'autonomie pour personnes autistes")}</p>
-                  <div className="h-[10px] relative shrink-0 w-[11px]" data-node-id="I414:6679;146:4410">
-                    <div className="absolute inset-[-4.95%_-9%_-4.95%_0]">
-                      <img alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
-                    </div>
-                  </div>
-                </div>
-              </a>
+              {cards.slice(0, 3).map((c, i) => <Card key={i} c={c} first={i === 0} className="flex-[1_0_0] h-full min-w-px" />)}
             </div>
             <Cta href="/projets" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-[392px]" label="Voir tous mes projets" variants="secondary" />
           </div>
