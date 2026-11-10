@@ -19,8 +19,8 @@ const ctaText =
 export default function Nav() {
   return (
     <div className="fixed content-stretch flex flex-col items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px] z-50 max-md:p-[8px] max-md:w-[390px]" data-name="nav">
-      <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px] max-md:w-[374px]">
-        <a href="/" className={link}>
+      <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px] max-md:w-[374px] max-md:p-[4px] max-md:pl-[8px]">
+        <a href="/" className={`${link} max-md:text-[16px]`}>
           <p className="leading-[1.3] text-pretty">Sara Pezzarini</p>
         </a>
         <div className="content-stretch flex gap-[28px] items-center overflow-clip relative shrink-0 max-md:hidden" data-name="Liens de navigation">
@@ -34,8 +34,8 @@ export default function Nav() {
           </a>
         </div>
         {/* Mobile : bouton Menu (device=mobile, 522:9191) */}
-        <button type="button" className={`${cta} gap-[8px] md:hidden`} data-name="Cta" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile">
-          <p className={ctaText} data-menu-label>Menu</p>
+        <button type="button" className={`${cta} gap-[8px] md:hidden max-md:px-[16px]`} data-name="Cta" data-menu-toggle aria-expanded="false" aria-controls="menu-mobile">
+          <p className={`${ctaText} max-md:text-[16px]`} data-menu-label>Menu</p>
           <span className="menu-icon content-stretch flex flex-col gap-[4px] h-[40px] items-center justify-center relative shrink-0 w-[16px]" aria-hidden>
             <span className="bg-[var(--grey,#f2f2f2)] block h-px shrink-0 w-full" />
             <span className="bg-[var(--grey,#f2f2f2)] block h-px shrink-0 w-full" />

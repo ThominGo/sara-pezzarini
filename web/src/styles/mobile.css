@@ -1,7 +1,7 @@
 /* ==================================================================
    Version mobile (< 768 px) : maquette de 390 px mise à l'échelle de l'écran.
    Composants avec maquette mobile (page Composants) : nav, hero, text, 4-cards,
-   push-project, slider, push-contact, image-text. Les autres blocs sont improvisés
+   vertical-card, push-project, slider, points, push-contact, image-text. Les autres blocs sont improvisés
    (marqués « sans maquette »).
    ================================================================== */
 @media (max-width: 767.98px) {
@@ -13,83 +13,97 @@
 
 @media (max-width: 767.98px) {
   /* ---------- hero (maquette mobile 522:9149) ---------- */
-  [data-hero] > div { justify-content: flex-end; gap: 18px; }
-  [data-hero] > div > div:first-child { position: absolute; inset: 8px; width: auto; }
+  [data-hero] > div { justify-content: flex-end; gap: 24px; padding: 66px 8px 8px; }
+  [data-hero] > div > div:first-child { position: absolute; inset: 66px 8px 8px; width: auto; height: auto; }
   [data-hero] > div > div:nth-child(2) { position: relative; left: auto; bottom: auto; order: 2; width: 100%; padding: 0 8px 8px; }
   [data-hero] > div > div:nth-child(2) > div { width: 100%; gap: 24px; }
   [data-hero] > div > div:nth-child(2) > div > div:first-child p { font-size: 14px; }
   [data-hero] > div > div:nth-child(2) > div > div:first-child > p { font-size: 40px; line-height: 1; }
   [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) { padding-left: 64px; }
-  [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div { gap: 24px; }
+  [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div { gap: 16px; }
   [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div > p { font-size: 16px; width: 100%; }
-  [data-hero] [data-name="Actions principales"] { margin-left: -64px; width: calc(100% + 64px); gap: 8px; flex-wrap: wrap; }
-  [data-hero] [data-name="Actions principales"] > * { flex: 1 1 auto; padding: 0 12px; min-width: 0; }
+  [data-hero] [data-name="Actions principales"] { margin-left: -64px; width: calc(100% + 64px); gap: 8px; flex-wrap: wrap; overflow: visible; }
+  [data-hero] [data-name="Actions principales"] > * { flex: 1 1 auto; padding: 0 12px; }
   [data-hero] [data-name="Actions principales"] p { font-size: 16px; }
-  [data-hero] > div > div:nth-child(3) { position: relative; right: auto; bottom: auto; order: 1; align-self: flex-end; margin-right: 8px; width: 183px; height: 244px; }
+  [data-hero] > div > div:nth-child(3) { position: relative; right: auto; bottom: auto; order: 1; align-self: flex-end; margin-right: 8px; width: 175px; height: 234px; }
   [data-hero] > div > div:nth-child(3) > div { width: 100%; height: 100%; }
-  [data-hero] [data-name="image 13"] { width: 183px; height: 244px; }
+  [data-hero] [data-name="image 13"] { width: 175px; height: 234px; }
 
+  /* titres de section : 32 px dans toutes les maquettes mobile */
   /* ---------- text (maquette mobile 522:9213) ---------- */
-  [data-name="text"] { padding: 140px 8px; }
-  [data-name="text"] > div { width: 100%; }
-  [data-name="text"] > div > p:first-child { font-size: 24px; line-height: 1.2; width: 100%; }
-  [data-name="text"] > div > div { padding: 0 0 0 64px; justify-content: flex-start; }
-  [data-name="text"] > div > div { align-items: flex-start; }
+  [data-name="text"] { padding: 140px 16px; }
+  [data-name="text"] > div { width: 100%; gap: 24px; }
+  [data-name="text"] > div > p:first-child { font-size: 32px; line-height: 1; width: 100%; }
+  [data-name="text"] > div > div { padding: 0 0 0 61px; justify-content: flex-start; align-items: flex-start; }
   [data-name="text"] > div > div > div { width: 100%; }
   [data-name="text"] p[class*="text-[18px]"] { font-size: 16px; }
   [data-name="text"] > div > div > p, [data-name="text"] > div > div > div > p { width: 100%; }
 
   /* ---------- 4-cards (maquette mobile 522:9232) ---------- */
-  [data-name="4-cards"] { padding: 40px 8px; }
+  [data-name="4-cards"] { padding: 40px 16px; }
   [data-name="4-cards"] > div { flex-direction: column; gap: 40px; }
   [data-name="4-cards"] > div > div:first-child { align-items: flex-start; width: 100%; flex: none; }
   [data-name="4-cards"] > div > div:first-child > div { width: 100%; gap: 16px; }
-  [data-name="4-cards"] > div > div:first-child > div > p { font-size: 24px; line-height: 1.2; }
+  [data-name="4-cards"] > div > div:first-child > div > p { font-size: 32px; line-height: 1; }
   [data-name="4-cards"] > div > div:first-child > div > div { padding-left: 64px; }
   [data-name="4-cards"] > div > div:first-child p[class*="text-[18px]"] { font-size: 16px; width: 100%; }
   [data-name="4-cards"] > div > div:last-child { width: 100%; align-self: auto; }
   [data-name="4-cards"] > div > div:last-child > div { display: flex; flex-direction: column; gap: 8px; width: 100%; }
   [data-name="4-cards"] [data-name="Bouton"] { width: 100%; height: auto; }
   [data-name="4-cards"] [data-name="Bouton"] > div { flex: none; gap: 16px; }
+  [data-name="4-cards"] [data-name="Bouton"] p[class*="text-[24px]"] { font-size: 20px; width: 100%; }
+  [data-name="4-cards"] [data-name="Bouton"] [class*="text-[18px]"] { font-size: 16px; }
 
-  /* ---------- vertical-card (sans maquette mobile) ---------- */
-  [data-name="vertical-card"] { padding: 80px 8px; }
-  [data-name="vertical-card"] > div { flex-direction: column; width: 100%; gap: 32px; }
-  [data-name="vertical-card"] { padding-top: 120px; }
+  /* ---------- vertical-card (maquette mobile 541:9479) ---------- */
+  [data-name="vertical-card"] { padding: 80px 16px; }
+  [data-name="vertical-card"] > div { flex-direction: column; width: 100%; gap: 40px; }
   [data-name="vertical-card"] > div > p:first-child { display: none; }
-  /* le titre collant (sticky) devient un simple titre au-dessus des étapes */
   [data-name="vertical-card"] > div > div.absolute { position: static; order: -1; width: 100%; height: auto; }
-  [data-name="vertical-card"] > div > div.absolute > div { position: static; width: 100%; height: auto; padding: 0; align-items: flex-start; }
-  [data-name="vertical-card"] > div > div.absolute p[class*="text-[40px]"] { font-size: 24px; line-height: 1.2; }
+  [data-name="vertical-card"] > div > div.absolute > div { position: static; width: 100%; height: auto; padding: 0; }
+  [data-name="vertical-card"] > div > div.absolute p[class*="text-[40px]"] { font-size: 32px; line-height: 1; text-align: center; }
   [data-name="vertical-card"] form { flex: none; width: 100%; }
   [data-name="vertical-card"] form .w-\[459px\] { width: 100%; }
-  [data-name="vertical-card"] > div > div:nth-child(2) { width: 100%; flex: none; gap: 32px; }
-  [data-name="vertical-card"] .size-\[459px\] { width: 100%; height: auto; aspect-ratio: 1; }
+  [data-name="vertical-card"] > div > div:nth-child(2) { width: 100%; flex: none; gap: 40px; }
+  [data-name="vertical-card"] .size-\[459px\] { width: 100%; height: auto; aspect-ratio: 1; border-radius: 4px; }
+  [data-name="vertical-card"] p[class*="text-[24px]"] { font-size: 20px; }
+  [data-name="vertical-card"] p[class*="text-[18px]"] { font-size: 16px; }
 
   /* ---------- push-project (maquette mobile 522:9380) ---------- */
   [data-name="push-project"] { padding: 80px 0; }
-  [data-name="push-project"] > div { width: 100%; padding: 0 8px; gap: 40px; }
-  [data-name="push-project"] > div > p { width: 100%; font-size: 24px; line-height: 1.2; }
+  [data-name="push-project"] > div { width: 100%; padding: 0 16px; gap: 40px; }
+  [data-name="push-project"] > div > p { width: 338px; font-size: 32px; line-height: 1; }
+  [data-name="push-project"] > div > div { gap: 24px; }
   [data-name="push-project"] > div > div > div:first-child { flex-direction: column; height: auto; gap: 8px; }
-  [data-name="push-project"] [data-name="Bouton"] { flex: none; width: 100%; height: 438px; }
+  [data-name="push-project"] [data-name="Bouton"] { flex: none; width: 100%; height: 422px; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="push-project"] [data-name="Bouton"] [data-name="image 13"], [data-name="push-project"] [data-name="Bouton"] [data-name="image 13"] > div { border-radius: 4px; }
+  [data-name="push-project"] [data-name="Bouton"] > div:last-child { height: auto; }
+  [data-name="push-project"] [data-name="Bouton"] > div:last-child > p { width: auto; }
   [data-name="push-project"] > div > div > [data-name="Cta"] { width: auto; }
 
-  /* ---------- points (sans maquette mobile, calqué sur push-contact) ---------- */
-  [data-name="points"], [data-name="push-contact"] { height: auto; min-height: 837px; }
-  [data-name="points"] > div, [data-name="push-contact"] > div { flex-direction: column; align-items: stretch; justify-content: space-between; padding: 16px; gap: 40px; }
+  /* ---------- points (maquette mobile 541:9503) et push-contact (522:9448) ---------- */
+  [data-name="points"], [data-name="push-contact"] { height: 837px; padding: 74px 16px 16px; }
+  [data-name="push-contact"] { padding-bottom: 8px; }
+  [data-name="points"] > div, [data-name="push-contact"] > div { flex-direction: column; align-items: stretch; justify-content: space-between; padding: 16px; gap: 24px; }
   :is([data-name="points"], [data-name="push-contact"]) > div > div.flex-col:not(.absolute) { width: 100%; }
-  :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] > div > :first-child { width: 100%; font-size: 40px; }
-  :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] .pl-\[120px\] { padding-left: 48px; }
-  :is([data-name="points"], [data-name="push-contact"]) p[class*="text-[18px]"][class*="w-[458px]"] { font-size: 16px; width: 100%; }
+  :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] > div > :first-child { width: 100%; font-size: 32px; }
+  :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] > div > :first-child p { line-height: 1; }
+  [data-name="points"] .w-\[703px\] .pl-\[120px\] { padding-left: 43px; }
+  [data-name="push-contact"] .w-\[703px\] .pl-\[120px\] { padding-left: 48px; }
+  :is([data-name="points"], [data-name="push-contact"]) p[class*="w-[458px]"] { width: 100%; }
+  [data-name="points"] p[class*="w-[458px]"], [data-name="points"] [data-name="Cta"] p { font-size: 16px; }
+  [data-name="points"] [data-name="Bouton"] { width: 100%; }
+  [data-name="points"] [data-name="Bouton"] p[class*="text-[18px]"] + p { width: 100%; }
 
   /* ---------- slider (maquette mobile 522:9403) ---------- */
   [data-name="slider"] { padding: 80px 8px; }
   [data-name="slider"] > div { width: 100%; gap: 24px; }
-  [data-name="slider"] > div > div:first-child { flex-direction: column; align-items: flex-end; gap: 16px; }
-  [data-name="slider"] > div > div:first-child > p { width: 100%; font-size: 24px; line-height: 1.2; }
+  [data-name="slider"] > div > div:first-child { flex-direction: column; align-items: flex-start; gap: 16px; }
+  [data-name="slider"] > div > div:first-child > p { width: 100%; font-size: 32px; line-height: 1; }
   [data-name="slider"] [data-slider-track] { gap: 8px; }
-  [data-name="slider"] .w-\[340px\] { width: 310px; }
+  [data-name="slider"] .w-\[340px\] { width: 310px; gap: 8px; }
   [data-name="slider"] [data-name="image 13"] { width: 310px; height: 400px; }
+  [data-name="slider"] p[class*="text-[24px]"] { font-size: 20px; }
+  [data-name="slider"] p[class*="text-[18px]"]:not([data-name="Cta"] p) { font-size: 16px; }
 
   /* ---------- footer (sans maquette mobile) ---------- */
   [data-name="footer"] { padding: 40px 16px; gap: 40px; }
@@ -104,10 +118,10 @@
   [data-name="image-text"] { flex-direction: column; height: auto; gap: 0; }
   [data-name="image-text"] > div { width: 100%; height: auto; }
   [data-name="image-text"] > .p-\[8px\] { order: -1; padding: 8px; flex: none; margin: 0; }
-  [data-name="image-text"] > .p-\[8px\] > div { flex: none; width: 100%; height: auto; aspect-ratio: 1; padding: 16px; }
+  [data-name="image-text"] > .p-\[8px\] > div { flex: none; width: 100%; height: auto; aspect-ratio: 1; padding: 16px; border-radius: 8px; }
   [data-name="image-text"] > .p-\[40px\] { flex: none; padding: 8px 8px 40px; }
   [data-name="image-text"] > .p-\[40px\] > div { width: 100%; }
-  [data-name="image-text"] p[class*="Bricolage"]:is([class*="text-[40px]"], [class*="text-[56px]"], [class*="text-[64px]"], [class*="text-[80px]"]) { font-size: 24px; line-height: 1.2; width: 100%; }
+  [data-name="image-text"] p[class*="Bricolage"]:is([class*="text-[40px]"], [class*="text-[56px]"], [class*="text-[64px]"], [class*="text-[80px]"]) { font-size: 32px; line-height: 1; width: 100%; }
   [data-name="image-text"] p[class*="text-[18px]"] { font-size: 16px; }
   [data-name="image-text"] p[class*="text-[18px]"]:not(.text-right):not([class*="whitespace-nowrap"]) { width: 100%; }
 }
@@ -115,14 +129,16 @@
 @media (max-width: 767.98px) {
   /* ---------- listes de tarifs (sans maquette mobile) ---------- */
   [data-name="image-text"] .pl-\[120px\]:has([data-name="Bouton"]) { padding-left: 0; }
-  [data-name="image-text"] [data-name="Bouton"] p.text-right { width: auto; max-width: 45%; flex: none; }
+  [data-name="image-text"] [data-name="Bouton"]:has(> p.text-right) { gap: 16px; }
+  [data-name="image-text"] [data-name="Bouton"] > p.text-right { width: auto; max-width: 40% !important; flex: none; white-space: normal; }
+  [data-name="image-text"] [data-name="Bouton"]:has(> p.text-right) > div { min-width: 0; }
   [data-name="4-cards"] [data-name="Bouton"] > div[class*="h-[348px]"] { height: auto; min-height: 0; }
 
   /* ---------- FAQ (sans maquette mobile) ---------- */
-  [data-name^="FAQ"] { flex-direction: column; padding: 80px 8px; gap: 24px; }
+  [data-name^="FAQ"] { flex-direction: column; padding: 80px 16px; gap: 24px; }
   [data-name^="FAQ"] > div { width: 100%; flex: none; }
   [data-name="Titre FAQ"] { align-items: flex-start; }
-  [data-name="Titre FAQ"] p { font-size: 24px; line-height: 1.2; }
+  [data-name="Titre FAQ"] p { font-size: 32px; line-height: 1; }
   [data-name^="FAQ"] .faq-q p { font-size: 18px; }
   [data-name^="FAQ"] .faq-a .pl-\[120px\] { padding-left: 0; }
   [data-name^="FAQ"] .faq-a p { font-size: 16px; width: 100%; }
@@ -130,19 +146,21 @@
 
 @media (max-width: 767.98px) {
   /* ---------- page Projets : en-tête + grille de cartes (sans maquette mobile) ---------- */
-  [data-name="text"]:has(> .grid) { padding: 120px 8px 80px; gap: 40px; }
+  [data-name="text"]:has(> .grid) { padding: 120px 16px 80px; gap: 40px; }
   [data-name="text"]:has(> .grid) > div:first-child { flex-direction: column; align-items: flex-start; gap: 16px; width: 100%; padding: 0; }
   [data-name="text"]:has(> .grid) > div:first-child > div { width: 100%; padding: 0; justify-content: flex-start; flex: none; }
-  [data-name="text"]:has(> .grid) > div:first-child > div:first-child { font-size: 24px; }
-  [data-name="text"]:has(> .grid) > div:first-child > div:first-child p { line-height: 1.2; }
+  [data-name="text"]:has(> .grid) > div:first-child > div:first-child { font-size: 32px; }
+  [data-name="text"]:has(> .grid) > div:first-child > div:first-child p { line-height: 1; }
   [data-name="text"]:has(> .grid) > div:first-child > div:last-child { padding-left: 64px; }
   [data-name="text"]:has(> .grid) > div:first-child > div:last-child > div { width: 100%; font-size: 16px; }
   [data-name="text"] > .grid { grid-template-columns: minmax(0, 1fr); gap: 8px; width: 100%; }
-  [data-name="text"] > .grid > [data-name="Bouton"] { height: 438px; }
+  [data-name="text"] > .grid > [data-name="Bouton"] { height: 422px; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"] { border-radius: 4px; }
 }
 
 @media (max-width: 767.98px) {
-  [data-name="image-text"] [class*="text-[40px]"], [data-name="image-text"] [class*="text-[80px]"] { font-size: 24px; line-height: 1.2; }
+  [data-name="image-text"] [class*="text-[40px]"], [data-name="image-text"] [class*="text-[80px]"] { font-size: 32px; line-height: 1; }
+  [data-name="image-text"] > .p-\[40px\] > div > div > div:first-child { width: 250px; max-width: 100%; }
   [data-name="image-text"] > .p-\[8px\] > div > .flex-none, [data-name="image-text"] > .p-\[8px\] > div > .flex-none > div { width: 100%; height: 100%; }
 }
 
