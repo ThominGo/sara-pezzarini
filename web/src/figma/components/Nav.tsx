@@ -18,8 +18,8 @@ const ctaText =
 
 export default function Nav() {
   return (
-    <div className="fixed content-stretch flex flex-col items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px] z-50 max-md:p-[8px] max-md:w-[390px]" data-name="nav">
-      <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px] max-md:w-[374px] max-md:p-[4px] max-md:pl-[8px]">
+    <div className="fixed content-stretch flex flex-col items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px] z-50 max-md:p-[16px] max-md:w-[390px]" data-name="nav">
+      <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px] max-md:w-[358px] max-md:p-[4px] max-md:pl-[8px]">
         <a href="/" className={`${link} max-md:text-[16px]`}>
           <p className="leading-[1.3] text-pretty">Sara Pezzarini</p>
         </a>
@@ -44,7 +44,7 @@ export default function Nav() {
         </button>
       </div>
       {/* Mobile : panneau des liens (sans maquette) */}
-      <div id="menu-mobile" className="menu-panel bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid flex-col gap-[24px] hidden mt-[8px] p-[16px] relative rounded-[8px] shrink-0 w-[374px]" data-menu-panel>
+      <div id="menu-mobile" className="menu-panel bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid flex-col gap-[24px] hidden mt-[8px] p-[16px] relative rounded-[8px] shrink-0 w-[358px]" data-menu-panel>
         <div className="flex flex-col gap-[16px]">
           {items.map((i) => (
             <a key={i.href} href={i.href} className="lien [word-break:break-word] block font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] text-[24px] text-[color:var(--black,#090f0c)]" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>

@@ -12,20 +12,20 @@
 }
 
 @media (max-width: 767.98px) {
-  /* ---------- hero (maquette mobile 522:9149) ---------- */
-  [data-hero] > div { justify-content: flex-end; gap: 24px; padding: 66px 8px 8px; }
-  [data-hero] > div > div:first-child { position: absolute; inset: 66px 8px 8px; width: auto; height: auto; }
-  [data-hero] > div > div:nth-child(2) { position: relative; left: auto; bottom: auto; order: 2; width: 100%; padding: 0 8px 8px; }
+  /* ---------- hero (maquette mobile 522:9149) : photo en haut à droite, texte en bas ---------- */
+  [data-hero] > div { padding: 66px 8px 8px; }
+  [data-hero] > div > div:nth-child(2) { left: 16px; bottom: 48px; width: calc(100% - 32px); }
   [data-hero] > div > div:nth-child(2) > div { width: 100%; gap: 24px; }
   [data-hero] > div > div:nth-child(2) > div > div:first-child p { font-size: 14px; }
   [data-hero] > div > div:nth-child(2) > div > div:first-child > p { font-size: 40px; line-height: 1; }
   [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) { padding-left: 64px; }
-  [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div { gap: 16px; }
+  [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div { gap: 24px; }
   [data-hero] > div > div:nth-child(2) > div > div:nth-child(2) > div > p { font-size: 16px; width: 100%; }
   [data-hero] [data-name="Actions principales"] { margin-left: -64px; width: calc(100% + 64px); gap: 8px; flex-wrap: wrap; overflow: visible; }
-  [data-hero] [data-name="Actions principales"] > * { flex: 1 1 auto; padding: 0 12px; }
+  /* deux boutons de même largeur (maquette) ; si un libellé est trop long, ils passent l'un sous l'autre */
+  [data-hero] [data-name="Actions principales"] > * { flex: 1 1 0; padding: 0 16px; min-width: max-content; }
   [data-hero] [data-name="Actions principales"] p { font-size: 16px; }
-  [data-hero] > div > div:nth-child(3) { position: relative; right: auto; bottom: auto; order: 1; align-self: flex-end; margin-right: 8px; width: 175px; height: 234px; }
+  [data-hero] > div > div:nth-child(3) { top: 74px; right: 16px; bottom: auto; width: 175px; height: 234px; }
   [data-hero] > div > div:nth-child(3) > div { width: 100%; height: 100%; }
   [data-hero] [data-name="image 13"] { width: 175px; height: 234px; }
 
@@ -51,7 +51,7 @@
   [data-name="4-cards"] > div > div:last-child > div { display: flex; flex-direction: column; gap: 8px; width: 100%; }
   [data-name="4-cards"] [data-name="Bouton"] { width: 100%; height: auto; }
   [data-name="4-cards"] [data-name="Bouton"] > div { flex: none; gap: 16px; }
-  [data-name="4-cards"] [data-name="Bouton"] p[class*="text-[24px]"] { font-size: 20px; width: 100%; }
+  [data-name="4-cards"] [data-name="Bouton"] p[class*="text-[24px]"] { font-size: 20px; }
   [data-name="4-cards"] [data-name="Bouton"] [class*="text-[18px]"] { font-size: 16px; }
 
   /* ---------- vertical-card (maquette mobile 541:9479) ---------- */
@@ -74,16 +74,15 @@
   [data-name="push-project"] > div > p { width: 338px; font-size: 32px; line-height: 1; }
   [data-name="push-project"] > div > div { gap: 24px; }
   [data-name="push-project"] > div > div > div:first-child { flex-direction: column; height: auto; gap: 8px; }
-  [data-name="push-project"] [data-name="Bouton"] { flex: none; width: 100%; height: 422px; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="push-project"] [data-name="Bouton"] { flex: none; width: 100%; height: auto; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="push-project"] [data-name="Bouton"] > div:first-child { flex: none; aspect-ratio: 1; }
   [data-name="push-project"] [data-name="Bouton"] [data-name="image 13"], [data-name="push-project"] [data-name="Bouton"] [data-name="image 13"] > div { border-radius: 4px; }
-  [data-name="push-project"] [data-name="Bouton"] > div:last-child { height: auto; }
-  [data-name="push-project"] [data-name="Bouton"] > div:last-child > p { width: auto; }
   [data-name="push-project"] > div > div > [data-name="Cta"] { width: auto; }
 
   /* ---------- points (maquette mobile 541:9503) et push-contact (522:9448) ---------- */
-  [data-name="points"], [data-name="push-contact"] { height: 837px; padding: 74px 16px 16px; }
+  [data-name="points"], [data-name="push-contact"] { height: auto; padding: 74px 16px 16px; }
   [data-name="push-contact"] { padding-bottom: 8px; }
-  [data-name="points"] > div, [data-name="push-contact"] > div { flex-direction: column; align-items: stretch; justify-content: space-between; padding: 16px; gap: 24px; }
+  [data-name="points"] > div, [data-name="push-contact"] > div { flex-direction: column; align-items: stretch; justify-content: flex-start; flex: none; padding: 16px; gap: 120px; }
   :is([data-name="points"], [data-name="push-contact"]) > div > div.flex-col:not(.absolute) { width: 100%; }
   :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] > div > :first-child { width: 100%; font-size: 32px; }
   :is([data-name="points"], [data-name="push-contact"]) .w-\[703px\] > div > :first-child p { line-height: 1; }
@@ -91,17 +90,19 @@
   [data-name="push-contact"] .w-\[703px\] .pl-\[120px\] { padding-left: 48px; }
   :is([data-name="points"], [data-name="push-contact"]) p[class*="w-[458px]"] { width: 100%; }
   [data-name="points"] p[class*="w-[458px]"], [data-name="points"] [data-name="Cta"] p { font-size: 16px; }
+  [data-name="push-contact"] [data-name="Bouton"] { width: 100%; }
+  [data-name="push-contact"] [data-name="Bouton"] p { width: 120px; }
   [data-name="points"] [data-name="Bouton"] { width: 100%; }
   [data-name="points"] [data-name="Bouton"] p[class*="text-[18px]"] + p { width: 100%; }
 
   /* ---------- slider (maquette mobile 522:9403) ---------- */
-  [data-name="slider"] { padding: 80px 8px; }
+  [data-name="slider"] { padding: 80px 16px; }
   [data-name="slider"] > div { width: 100%; gap: 24px; }
-  [data-name="slider"] > div > div:first-child { flex-direction: column; align-items: flex-start; gap: 16px; }
+  [data-name="slider"] > div > div:first-child { flex-direction: column; align-items: flex-end; gap: 16px; }
   [data-name="slider"] > div > div:first-child > p { width: 100%; font-size: 32px; line-height: 1; }
   [data-name="slider"] [data-slider-track] { gap: 8px; }
-  [data-name="slider"] .w-\[340px\] { width: 310px; gap: 8px; }
-  [data-name="slider"] [data-name="image 13"] { width: 310px; height: 400px; }
+  [data-name="slider"] .w-\[340px\] { width: 297px; gap: 16px; }
+  [data-name="slider"] [data-name="image 13"] { width: 297px; height: 383px; }
   [data-name="slider"] p[class*="text-[24px]"] { font-size: 20px; }
   [data-name="slider"] p[class*="text-[18px]"]:not([data-name="Cta"] p) { font-size: 16px; }
 
@@ -118,8 +119,10 @@
   [data-name="image-text"] { flex-direction: column; height: auto; gap: 0; }
   [data-name="image-text"] > div { width: 100%; height: auto; }
   [data-name="image-text"] > .p-\[8px\] { order: -1; padding: 8px; flex: none; margin: 0; }
-  [data-name="image-text"] > .p-\[8px\] > div { flex: none; width: 100%; height: auto; aspect-ratio: 1; padding: 16px; border-radius: 8px; }
-  [data-name="image-text"] > .p-\[40px\] { flex: none; padding: 8px 8px 40px; }
+  [data-name="image-text"] > .p-\[8px\] > div { flex: none; width: 100%; height: 480px; padding: 16px; border-radius: 8px; }
+  [data-name="image-text"] > .p-\[40px\] { flex: none; padding: 16px 8px 40px; }
+  [data-name="image-text"] > .p-\[40px\] .pl-\[120px\]:not(:has([data-name="Bouton"])) { padding-left: 69px; }
+  [data-name="image-text"] [data-name="Cta"] p { font-size: 16px; }
   [data-name="image-text"] > .p-\[40px\] > div { width: 100%; }
   [data-name="image-text"] p[class*="Bricolage"]:is([class*="text-[40px]"], [class*="text-[56px]"], [class*="text-[64px]"], [class*="text-[80px]"]) { font-size: 32px; line-height: 1; width: 100%; }
   [data-name="image-text"] p[class*="text-[18px]"]:not([class*="Bricolage"]) { font-size: 16px; }
@@ -154,11 +157,10 @@
   [data-name="text"]:has(> .grid) > div:first-child > div:last-child { padding-left: 64px; }
   [data-name="text"]:has(> .grid) > div:first-child > div:last-child > div { width: 100%; font-size: 16px; }
   [data-name="text"] > .grid { grid-template-columns: minmax(0, 1fr); gap: 8px; width: 100%; }
-  [data-name="text"] > .grid > [data-name="Bouton"] { height: 422px; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="text"] > .grid > [data-name="Bouton"] { height: auto; padding: 8px; gap: 4px; border-radius: 4px; }
+  [data-name="text"] > .grid > [data-name="Bouton"] > div:first-child { flex: none; aspect-ratio: 1; }
   [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"], [data-name="text"] > .grid > [data-name="Bouton"] [data-name="image 13"] > div { border-radius: 4px; }
-  /* mêmes vignettes que le push-project de l'accueil */
-  [data-name="text"] > .grid > [data-name="Bouton"] > div:last-child { height: auto; }
-  [data-name="text"] > .grid > [data-name="Bouton"] > div:last-child > p { width: auto; }
+
 }
 
 @media (max-width: 767.98px) {
