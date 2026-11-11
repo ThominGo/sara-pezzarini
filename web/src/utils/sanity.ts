@@ -27,10 +27,10 @@ export async function safeFetch<T>(query: string, params: Record<string, unknown
 
 export const SETTINGS_QUERY = defineQuery(`*[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials, formKey, analyticsToken }`);
 export const PROJECTS_QUERY = defineQuery(
-  `*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, "slug": slug.current, cover }`
+  `*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, cardTitle, "slug": slug.current, cover }`
 );
 export const PROJECT_QUERY = defineQuery(
-  `*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, cover, intro, contextTitle, contextText, steps[]{title, text, image}, blocks[]{title, text, image}, resultTitle, resultText, gallery }`
+  `*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, public, "with": with, duration, cover, intro, contextTitle, contextText, steps[]{title, text, image}, blocks[]{title, text, image}, resultTitle, resultText, citation, galleryTitle, gallery[]{image, title, text} }`
 );
 export const PAGES_QUERY = defineQuery(`*[_type in $types]`);
 

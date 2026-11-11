@@ -8,7 +8,7 @@ export async function getProjectCards(): Promise<ProjectCard[]> {
   return projects.length
     ? projects.map((p: any, i: number) => ({
         ...defaultCards[i % defaultCards.length],
-        title: p.title,
+        title: p.cardTitle || p.title,
         href: `/projets/${p.slug}`,
         image: p.cover ? urlFor(p.cover).width(1200).auto('format').url() : undefined,
       }))
