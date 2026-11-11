@@ -5,6 +5,7 @@ import { VisualEditing } from '@sanity/astro/visual-editing';
 import { PREVIEW } from '../utils/preview';
 import { ClientRouter } from 'astro:transitions';
 import { site as cfg } from '../utils/site';
+import A11yPanel from '../components/A11yPanel.astro';
 interface Props { title: string; description?: string; noindex?: boolean }
 const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure).", noindex = false } = Astro.props;
 // Tant que le site n'a pas son vrai domaine (PUBLIC_SITE_URL), il n'est pas indexé : textes provisoires
@@ -31,7 +32,17 @@ const token = cfg.settings.analyticsToken;
     <!-- Statistiques de visite sans cookie (Cloudflare Web Analytics), si un jeton est renseigné dans le Studio -->
     {token && !PREVIEW && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token })}></script>}
     <script is:inline>
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
+      // Réglages du panneau Accessibilité (posés avant l'affichage, et remis après chaque changement de page)
+      window.__a11y = function () {
+        var p = {}; try { p = JSON.parse(localStorage.getItem('a11y') || '{}'); } catch (e) {}
+        var h = document.documentElement;
+        ['spacing', 'font', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
+        h.dataset.a11ySize = String(p.size || 0);
+        return p;
+      };
+      window.__a11y();
+      window.__calm = function () { return matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm'); };
+      if (!window.__calm()) document.documentElement.classList.add('anim');
       // Mise à l'échelle de la maquette (1512 px ou 390 px) à la largeur de la fenêtre
       (function () {
         var html = document.documentElement;
@@ -46,7 +57,8 @@ const token = cfg.settings.analyticsToken;
         // .vt : arrivée par une transition, le dégradé du hero arrive déjà en couleur.
         document.addEventListener('astro:after-swap', function () {
           fit();
-          if (!matchMedia('(prefers-reduced-motion: reduce)').matches) html.classList.add('anim');
+          window.__a11y();
+          if (!window.__calm()) html.classList.add('anim');
           html.classList.add('vt');
         });
       })();
@@ -60,6 +72,7 @@ const token = cfg.settings.analyticsToken;
   <body>
     <a href="#page" class="skip-link">Aller au contenu</a>
     <div id="page" tabindex="-1"><slot /></div>
+    {!PREVIEW && <A11yPanel />}
     <VisualEditing enabled={PREVIEW} />
     <script>import '../scripts/interactions.ts';</script>
   </body>

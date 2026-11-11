@@ -383,7 +383,6 @@ export const pageContact = defineType({
     defineField({ name: 'besoin_option_2', title: "Besoin : choix 2", type: 'string', initialValue: "Projet ou programme", fieldset: 's1' }),
     defineField({ name: 'besoin_option_3', title: "Besoin : choix 3", type: 'string', initialValue: "Sensibilisation des équipes", fieldset: 's1' }),
     defineField({ name: 'besoin_option_4', title: "Besoin : choix 4", type: 'string', initialValue: "Autre demande", fieldset: 's1' }),
-    defineField({ name: 'mention_medicale', title: "Mention sous le message (pas d'informations médicales)", type: 'text', rows: 2, initialValue: "Merci de ne pas transmettre d'informations médicales via ce formulaire. Nous les aborderons ensemble lors d'un échange.", fieldset: 's1' }),
     defineField({ name: 'formulaire_succes', title: "Message après envoi réussi", type: 'text', rows: 3, initialValue: "Merci, votre message est bien envoyé. Je vous réponds au plus vite.", fieldset: 's1' }),
     defineField({ name: 'formulaire_erreur', title: "Message si l'envoi échoue", type: 'text', rows: 3, initialValue: "L’envoi n’a pas fonctionné. Vous pouvez m’écrire directement par e-mail.", fieldset: 's1' }),
     defineField({ name: 'vertical_card_9', title: "Titre : Parlons de votre projet", type: 'string', initialValue: "Parlons de votre projet", fieldset: 's1' }),

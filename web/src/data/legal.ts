@@ -28,8 +28,8 @@ export const mentions: Legal = {
       "texte": "Les textes, outils et visuels de ce site sont protégés par le droit de la propriété intellectuelle. Toute reproduction est interdite sans autorisation préalable."
     },
     {
-      "titre": "Crédits photos",
-      "texte": "Les crédits photos sont à venir."
+      "titre": "Crédits",
+      "texte": "Photos : crédits à venir.\nPolice Luciole (réglage d’accessibilité) : © Laurent Bourcellier et Jonathan Perez, licence Creative Commons Attribution 4.0."
     }
   ]
 };

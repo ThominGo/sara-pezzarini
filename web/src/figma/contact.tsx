@@ -106,7 +106,7 @@ export default function Contact() {
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_5")}>{t("pageContact", "vertical_card_5", "Message")} *</p>
                 <textarea name="message" required placeholder={t("pageContact", "vertical_card_6", "Votre Message")} data-sanity={ds("pageContact", "vertical_card_6")} className="champ bg-[var(--white,white)] border border-[#c2c2c2] border-solid font-['Lexend:Regular'] font-normal h-[220px] leading-[1.3] outline-none overflow-auto p-[16px] placeholder:text-[rgba(9,15,12,0.5)] relative resize-y rounded-[4px] min-h-[220px] shrink-0 text-[#090f0c] text-[18px] w-full focus:border-[#090f0c]" />
-                <p className="mention-medicale [word-break:break-word] bg-[var(--white,white)] border border-[var(--black-70\%,rgba(9,15,12,0.7))] border-solid font-['Lexend:Regular'] font-normal leading-[1.3] p-[16px] relative rounded-[4px] shrink-0 text-[16px] text-[#090f0c] text-pretty w-full" data-sanity={ds("pageContact", "mention_medicale")}>{t("pageContact", "mention_medicale", "Merci de ne pas transmettre d'informations médicales via ce formulaire. Nous les aborderons ensemble lors d'un échange.")}</p>
+              
               </div>
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">

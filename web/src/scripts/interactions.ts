@@ -1,7 +1,8 @@
 // Interactions du site : sliders, parallaxe des photos, FAQ, formulaire de contact.
 // Le style des états (hover, ouvert, inactif) est dans styles/global.css.
 
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// mouvement réduit : réglage du système, ou « mode calme » du panneau Accessibilité
+let reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm');
 // Écouteurs posés sur window pour la page en cours : retirés quand on change de page (navigation sans rechargement)
 let page = new AbortController();
 const zoom = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--zoom')) || 1;
@@ -336,16 +337,76 @@ function mobileMenu() {
     fit(open);
   };
   fit(false);
+  addEventListener('a11y-change', () => fit(panel.classList.contains('is-open')), { signal: page.signal });
   btn.addEventListener('click', () => set(!panel.classList.contains('is-open')), { signal: page.signal });
   panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false), { signal: page.signal }));
   addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); }, { signal: page.signal });
 }
 
 // Initialisation de chaque page : au premier chargement puis après chaque changement de page
+/* ---------------- Panneau Accessibilité ---------------- */
+const SIZES = [1, 1.15, 1.3];
+function prefs(): Record<string, any> {
+  try { return JSON.parse(localStorage.getItem('a11y') || '{}'); } catch { return {}; }
+}
+// taille du texte : chaque texte de la page est agrandi à partir de sa taille d'origine (maquette en px)
+function textSize() {
+  const f = SIZES[prefs().size || 0] ?? 1;
+  const els = Array.from(document.querySelectorAll<HTMLElement>('#page :is(p, a, span, label, li, button, input, select, textarea)'));
+  const orig = els.map((el) => {
+    if (!el.dataset.fs) el.dataset.fs = String(parseFloat(getComputedStyle(el).fontSize));
+    return parseFloat(el.dataset.fs);
+  });
+  els.forEach((el, i) => {
+    if (f === 1) { el.style.removeProperty('font-size'); delete el.dataset.f; return; }
+    // les grands titres (déjà lisibles) grossissent moins que le texte courant
+    const g = orig[i] >= 32 ? 1 + (f - 1) * 0.35 : f;
+    el.style.fontSize = `${(orig[i] * g).toFixed(2)}px`; el.dataset.f = String(g);
+  });
+  dispatchEvent(new Event('a11y-change'));
+}
+function a11yPanel() {
+  const root = document.querySelector<HTMLElement>('[data-a11y]');
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = '1'; // persistant entre les pages : on n'attache les écouteurs qu'une fois
+  const btn = root.querySelector<HTMLButtonElement>('[data-a11y-toggle]')!;
+  const panel = root.querySelector<HTMLElement>('[data-a11y-panel]')!;
+  const save = (p: Record<string, any>) => { try { localStorage.setItem('a11y', JSON.stringify(p)); } catch {} };
+  const sync = () => {
+    const p = (window as any).__a11y?.() ?? prefs();
+    root.querySelectorAll<HTMLElement>('[data-a11y-key]').forEach((b) => b.setAttribute('aria-checked', String(!!p[b.dataset.a11yKey!])));
+    root.querySelectorAll<HTMLElement>('[data-a11y-size]').forEach((b) => b.setAttribute('aria-pressed', String(String(p.size || 0) === b.dataset.a11ySize)));
+    textSize();
+  };
+  const open = (o: boolean) => {
+    panel.hidden = !o;
+    btn.setAttribute('aria-expanded', String(o));
+    if (o) panel.querySelector<HTMLElement>('[aria-pressed="true"], button')?.focus();
+  };
+  btn.addEventListener('click', () => open(panel.hidden));
+  root.querySelector('[data-a11y-close]')!.addEventListener('click', () => { open(false); btn.focus(); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
+  document.addEventListener('click', (e) => { if (!panel.hidden && !root.contains(e.target as Node)) open(false); });
+  root.querySelectorAll<HTMLElement>('[data-a11y-key]').forEach((b) => b.addEventListener('click', () => {
+    const p = prefs(); const k = b.dataset.a11yKey!; p[k] = !p[k]; save(p); sync();
+    if (k === 'calm') location.reload(); // les animations et la parallaxe se réinitialisent proprement
+  }));
+  root.querySelectorAll<HTMLElement>('[data-a11y-size]').forEach((b) => b.addEventListener('click', () => {
+    const p = prefs(); p.size = Number(b.dataset.a11ySize); save(p); sync();
+  }));
+  root.querySelector('[data-a11y-reset]')!.addEventListener('click', () => {
+    const calm = prefs().calm; save({}); sync(); if (calm) location.reload();
+  });
+  sync();
+}
+
 function init() {
+  reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm');
   page.abort();
   page = new AbortController();
   mobileMenu();
+  a11yPanel();
+  textSize();
   heroTexts();
   underlines();
   heroes();

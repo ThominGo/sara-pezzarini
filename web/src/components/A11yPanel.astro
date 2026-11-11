@@ -1,0 +1,44 @@
+---
+// Panneau « Accessibilité » (sans maquette, improvisé aux couleurs du site).
+// Réglages gardés dans le navigateur du visiteur (localStorage), aucun service tiers.
+// Hors de #page : il n'est pas mis à l'échelle avec la maquette. Persistant entre les pages.
+const toggles = [
+  { k: 'spacing', l: 'Espacer le texte', d: 'Plus d’espace entre les lettres, les mots et les lignes.' },
+  { k: 'font', l: 'Police lisible (Luciole)', d: 'Une police conçue pour les personnes malvoyantes.' },
+  { k: 'contrast', l: 'Contraste renforcé', d: 'Textes plus foncés, fonds colorés assombris.' },
+  { k: 'calm', l: 'Mode calme', d: 'Sans animations, sans effet de défilement.' },
+  { k: 'links', l: 'Souligner les liens', d: 'Tous les liens restent soulignés.' },
+];
+---
+<div class="a11y" transition:persist="a11y" data-a11y>
+  <button type="button" class="a11y-btn" aria-expanded="false" aria-controls="a11y-panel" data-a11y-toggle>
+    <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1" /><path d="m18 19 1-7-6 1" /><path d="m5 8 3-3 5.5 3-2.36 3.5" /><path d="M4.24 14.5a5 5 0 0 0 6.88 6" /><path d="M13.76 17.5a5 5 0 0 0-6.88-6" /></svg>
+    <span class="a11y-sr">Accessibilité</span>
+  </button>
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-modal="false" aria-labelledby="a11y-title" hidden data-a11y-panel>
+    <div class="a11y-head">
+      <p id="a11y-title" class="a11y-title">Accessibilité</p>
+      <button type="button" class="a11y-close" aria-label="Fermer le panneau" data-a11y-close>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" stroke="currentColor" stroke-width="1.2"><path d="M3 3l10 10M13 3L3 13" /></svg>
+      </button>
+    </div>
+    <p class="a11y-intro">Adaptez l’affichage du site. Vos réglages sont gardés sur cet appareil.</p>
+    <div class="a11y-group" role="group" aria-labelledby="a11y-size">
+      <p id="a11y-size" class="a11y-label">Taille du texte</p>
+      <div class="a11y-seg">
+        <button type="button" data-a11y-size="0" aria-pressed="true">Normale</button>
+        <button type="button" data-a11y-size="1" aria-pressed="false">Grande</button>
+        <button type="button" data-a11y-size="2" aria-pressed="false">Très grande</button>
+      </div>
+    </div>
+    <div class="a11y-list">
+      {toggles.map((t) => (
+        <button type="button" class="a11y-row" role="switch" aria-checked="false" data-a11y-key={t.k}>
+          <span class="a11y-row-txt"><span class="a11y-row-l">{t.l}</span><span class="a11y-row-d">{t.d}</span></span>
+          <span class="a11y-switch" aria-hidden="true"><span></span></span>
+        </button>
+      ))}
+    </div>
+    <button type="button" class="a11y-reset" data-a11y-reset>Tout réinitialiser</button>
+  </div>
+</div>
