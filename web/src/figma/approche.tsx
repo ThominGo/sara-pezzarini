@@ -88,7 +88,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4306">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4307">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4308" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_1")} src={img("pageApproche", "cartes_image_1", "/assets/icons/house-heart.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_1")} src={img("pageApproche", "cartes_image_1", "/assets/icons/house-heart.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4311">
@@ -103,7 +103,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4319">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4320">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4321" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_2")} src={img("pageApproche", "cartes_image_2", "/assets/icons/building-2.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_2")} src={img("pageApproche", "cartes_image_2", "/assets/icons/building-2.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4327">
@@ -118,7 +118,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4335">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4336">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4337" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_3")} src={img("pageApproche", "cartes_image_3", "/assets/icons/school.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_3")} src={img("pageApproche", "cartes_image_3", "/assets/icons/school.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4345">
@@ -133,7 +133,7 @@ export default function MonApproche() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4353">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="I414:6687;146:4354">
                       <div className="relative shrink-0 size-[40px]" data-node-id="I414:6687;146:4355" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_4")} src={img("pageApproche", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "cartes_image_4")} src={img("pageApproche", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:6687;146:4362">
@@ -149,7 +149,7 @@ export default function MonApproche() {
       </div>
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-[837px] items-start p-[8px] relative shrink-0 w-[1512px]" data-node-id="414:6688" data-name="points">
         <div className="content-stretch flex flex-[1_0_0] items-center justify-between min-h-px px-[32px] py-[40px] relative rounded-[8px] w-full" data-node-id="I414:6688;146:4414">
-          <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-points.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(132.33615182619312deg, rgb(184, 64, 31) 0%, rgb(232, 145, 58) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
+          <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img loading="lazy" decoding="async" alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-points.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(132.33615182619312deg, rgb(184, 64, 31) 0%, rgb(232, 145, 58) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-[703px]" data-node-id="I414:6688;146:4415">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6688;146:4416">
               <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--white,white)] text-balance w-[465px]" data-node-id="I414:6688;146:4417" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "points_1")}>{t("pageApproche", "points_1", "Mes outils")}</p>
@@ -196,7 +196,7 @@ export default function MonApproche() {
           <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative" data-node-id="414:6692">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6693">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6694">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_1")} src={img("pageApproche", "vertical_card_image_1", "/illustrations/approche-1.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_1")} src={img("pageApproche", "vertical_card_image_1", "/illustrations/approche-1.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6697">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6698" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_1")}>{t("pageApproche", "vertical_card_1", "1. Se rencontrer et comprendre vos besoins")}</p>
@@ -206,7 +206,7 @@ export default function MonApproche() {
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6700" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6701">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6702">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_2")} src={img("pageApproche", "vertical_card_image_2", "/illustrations/approche-2.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_2")} src={img("pageApproche", "vertical_card_image_2", "/illustrations/approche-2.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6704">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6705" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_3")}>{t("pageApproche", "vertical_card_3", "2. Découvrir le terrain et les équipes")}</p>
@@ -216,7 +216,7 @@ export default function MonApproche() {
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6707" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6708">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6709">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_3")} src={img("pageApproche", "vertical_card_image_3", "/illustrations/approche-3.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_3")} src={img("pageApproche", "vertical_card_image_3", "/illustrations/approche-3.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6716">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6717" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_5")}>{t("pageApproche", "vertical_card_5", "3. Construire et mettre en place l’accompagnement")}</p>
@@ -225,7 +225,7 @@ export default function MonApproche() {
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6719">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6720" data-name="5">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_4")} src={img("pageApproche", "vertical_card_image_4", "/illustrations/approche-4.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageApproche", "vertical_card_image_4")} src={img("pageApproche", "vertical_card_image_4", "/illustrations/approche-4.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6724">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6725" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_7")}>{t("pageApproche", "vertical_card_7", "4. Ajuster et faire le point régulièrement")}</p>
@@ -258,7 +258,7 @@ export default function MonApproche() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-center justify-center p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6739" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative w-full" data-node-id="414:6740" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_1")} src={img("pageApproche", "image_text_image_1", "/images/8076d6f385.webp")} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_1")} src={img("pageApproche", "image_text_image_1", "/images/8076d6f385.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6741">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6742" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-node-id="414:6743" data-sanity={ds("pageApproche", "image_text_3")}>{t("pageApproche", "image_text_3", "Bilans et compréhension des besoins")}</p>
@@ -279,7 +279,7 @@ export default function MonApproche() {
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6750" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6751" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative w-full" data-node-id="414:6752" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_2")} src={img("pageApproche", "image_text_image_2", "/images/a739a88dca.webp")} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pageApproche", "image_text_image_2")} src={img("pageApproche", "image_text_image_2", "/images/a739a88dca.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6753">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex items-center justify-center overflow-clip px-[8px] py-[16px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6754" data-name="Bouton">
                 <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal h-full leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance text-center w-[289px]" data-sanity={ds("pageApproche", "image_text_7")}>{t("pageApproche", "image_text_7", "Ateliers et programmes de prévention")}</p>

@@ -130,14 +130,14 @@ export default function TarifsEtFinancement() {
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6391" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:6392" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_1")} src={img("pageTarifs", "image_text_image_1", "/images/3045a0aeb8.webp")} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_1")} src={img("pageTarifs", "image_text_image_1", "/images/3045a0aeb8.webp")} />
           </div>
         </div>
       </div>
       <div id="organisations" className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-[1512px]" data-node-id="414:6393" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:6394" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:6395" data-name="bg">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_2")} src={img("pageTarifs", "image_text_image_2", "/images/9e02fa80b6.webp")} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "image_text_image_2")} src={img("pageTarifs", "image_text_image_2", "/images/9e02fa80b6.webp")} />
           </div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:6396">
@@ -206,7 +206,7 @@ export default function TarifsEtFinancement() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="414:6432">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="414:6433">
                       <div className="relative shrink-0 size-[40px]" data-node-id="414:6434" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_1")} src={img("pageTarifs", "cartes_image_1", "/assets/icons/house.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_1")} src={img("pageTarifs", "cartes_image_1", "/assets/icons/house.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6437">
@@ -221,7 +221,7 @@ export default function TarifsEtFinancement() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="414:6443">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="414:6444">
                       <div className="relative shrink-0 size-[40px]" data-node-id="414:6445" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_2")} src={img("pageTarifs", "cartes_image_2", "/assets/icons/user-round-group.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_2")} src={img("pageTarifs", "cartes_image_2", "/assets/icons/user-round-group.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6452">
@@ -236,7 +236,7 @@ export default function TarifsEtFinancement() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="414:6458">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="414:6459">
                       <div className="relative shrink-0 size-[40px]" data-node-id="414:6460" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_3")} src={img("pageTarifs", "cartes_image_3", "/assets/icons/archive.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_3")} src={img("pageTarifs", "cartes_image_3", "/assets/icons/archive.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6464">
@@ -251,7 +251,7 @@ export default function TarifsEtFinancement() {
                   <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="414:6470">
                     <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="414:6471">
                       <div className="relative shrink-0 size-[40px]" data-node-id="414:6472" data-name="Frame">
-                        <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_4")} src={img("pageTarifs", "cartes_image_4", "/assets/icons/hand-coins.svg")} />
+                        <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageTarifs", "cartes_image_4")} src={img("pageTarifs", "cartes_image_4", "/assets/icons/hand-coins.svg")} />
                       </div>
                     </div>
                     <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6478">

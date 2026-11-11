@@ -99,7 +99,7 @@ export default function Contact() {
                     ].map((o) => <option key={o} value={o}>{o}</option>)}
                   </select>
                   <div className="absolute h-[6px] pointer-events-none right-[16px] top-[17px] w-[12px]" data-name="Flèche de liste">
-                    <div className="absolute inset-[-8.84%_-4.42%_-17.68%_-4.42%]"><img alt="" className="block max-w-none size-full" src="/assets/select.svg" /></div>
+                    <div className="absolute inset-[-8.84%_-4.42%_-17.68%_-4.42%]"><img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src="/assets/select.svg" /></div>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Contact() {
               <div className="flex-none rotate-180">
                 <div className="h-[887px] relative rounded-[8px] w-[979px]" data-name="image 10">
                   <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                    <img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-zone.png" />
+                    <img loading="lazy" decoding="async" alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-zone.png" />
                     <div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(129.8873323028124deg, rgb(239, 125, 79) 0%, rgb(214, 60, 92) 83.333%)" }} />
                     <div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" />
                   </div>

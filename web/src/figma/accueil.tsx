@@ -26,7 +26,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4454">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4455" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_1")} src={img("pageAccueil", "slider_image_1", "/images/9bf7649c41.webp")} />
+                  <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_1")} src={img("pageAccueil", "slider_image_1", "/images/9bf7649c41.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4456">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4457" data-sanity={ds("pageAccueil", "slider_4")}>{t("pageAccueil", "slider_4", "2019")}</p>
@@ -42,7 +42,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4462">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4463" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_2")} src={img("pageAccueil", "slider_image_2", "/images/2dcedd3025.webp")} />
+                  <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_2")} src={img("pageAccueil", "slider_image_2", "/images/2dcedd3025.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4464">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4465" data-sanity={ds("pageAccueil", "slider_7")}>{t("pageAccueil", "slider_7", "2020")}</p>
@@ -58,7 +58,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4470">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4471" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_3")} src={img("pageAccueil", "slider_image_3", "/images/f858df2fd5.webp")} />
+                  <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_3")} src={img("pageAccueil", "slider_image_3", "/images/f858df2fd5.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4472">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4473" data-sanity={ds("pageAccueil", "slider_10")}>{t("pageAccueil", "slider_10", "2020 ▸ 2023")}</p>
@@ -74,7 +74,7 @@ function Slider({ className }: { className?: string }) {
             <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
               <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="146:4478">
                 <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="146:4479" data-name="image 13">
-                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_4")} src={img("pageAccueil", "slider_image_4", "/images/0bed7bf1e7.webp")} />
+                  <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "slider_image_4")} src={img("pageAccueil", "slider_image_4", "/images/0bed7bf1e7.webp")} />
                 </div>
                 <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1" data-node-id="146:4480">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="146:4481" data-sanity={ds("pageAccueil", "slider_13")}>{t("pageAccueil", "slider_13", "2023 ▸ 2026")}</p>
@@ -119,7 +119,7 @@ function Cta({ className, href, label = "button label", state = "default", varia
       {isTertiary && (
         <div className="h-[10px] relative shrink-0 w-[11px]" data-node-id="148:4908">
           <div className="absolute inset-[-4.95%_-9%_-4.95%_0]">
-            <img alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
+            <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
           </div>
         </div>
       )}
@@ -148,7 +148,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4306">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4307">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4308" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_1")} src={img("pageAccueil", "cartes_image_1", "/assets/icons/house-heart.svg")} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_1")} src={img("pageAccueil", "cartes_image_1", "/assets/icons/house-heart.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4311">
@@ -167,7 +167,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4319">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4320">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4321" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_2")} src={img("pageAccueil", "cartes_image_2", "/assets/icons/building-2.svg")} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_2")} src={img("pageAccueil", "cartes_image_2", "/assets/icons/building-2.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4327">
@@ -186,7 +186,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4335">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4336">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4337" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_3")} src={img("pageAccueil", "cartes_image_3", "/assets/icons/school.svg")} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_3")} src={img("pageAccueil", "cartes_image_3", "/assets/icons/school.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4345">
@@ -205,7 +205,7 @@ function Component4Cards({ className }: { className?: string }) {
                 <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-node-id="146:4353">
                   <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[4px] shrink-0 size-[80px]" data-node-id="146:4354">
                     <div className="relative shrink-0 size-[40px]" data-node-id="146:4355" data-name="Frame">
-                      <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_4")} src={img("pageAccueil", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "cartes_image_4")} src={img("pageAccueil", "cartes_image_4", "/assets/icons/user-round-group.svg")} />
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="146:4362">
@@ -291,7 +291,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
           <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative" data-node-id="414:6643">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6644">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6645" data-name="11">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_1")} src={img("pageAccueil", "vertical_card_image_1", "/illustrations/accueil-1.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_1")} src={img("pageAccueil", "vertical_card_image_1", "/illustrations/accueil-1.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6651">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6652" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_1")}>{t("pageAccueil", "vertical_card_1", "1. Accompagnement individuel")}</p>
@@ -301,7 +301,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6654" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6655">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6656" data-name="11">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_2")} src={img("pageAccueil", "vertical_card_image_2", "/illustrations/accueil-2.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_2")} src={img("pageAccueil", "vertical_card_image_2", "/illustrations/accueil-2.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6663">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6664" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_3")}>{t("pageAccueil", "vertical_card_3", "2. Projets et programmes")}</p>
@@ -311,7 +311,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:6666" />
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:6667">
               <div className="overflow-clip relative rounded-[8px] shrink-0 size-[459px]" data-node-id="414:6668" data-name="12">
-                <img alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_3")} src={img("pageAccueil", "vertical_card_image_3", "/illustrations/accueil-3.svg")} />
+                <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "vertical_card_image_3")} src={img("pageAccueil", "vertical_card_image_3", "/illustrations/accueil-3.svg")} />
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6674">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6675" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "vertical_card_5")}>{t("pageAccueil", "vertical_card_5", "3. Sensibilisation des équipes")}</p>
@@ -339,7 +339,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
       </div>
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col h-[837px] items-start p-[8px] relative shrink-0 w-[1512px]" data-node-id="414:6680" data-name="points">
         <div className="content-stretch flex flex-[1_0_0] items-center justify-between min-h-px p-[40px] relative rounded-[8px] w-full" data-node-id="I414:6680;146:4414">
-          <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-points.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(132.33615182619312deg, rgb(184, 64, 31) 0%, rgb(232, 145, 58) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
+          <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img loading="lazy" decoding="async" alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-points.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(132.33615182619312deg, rgb(184, 64, 31) 0%, rgb(232, 145, 58) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-[703px]" data-node-id="I414:6680;146:4415">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6680;146:4416">
               <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--white,white)] text-balance w-[465px]" data-node-id="I414:6680;146:4417" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "points_1")}>{t("pageAccueil", "points_1", "La personne est au centre")}</p>

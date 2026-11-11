@@ -30,7 +30,7 @@ function Item({ t, row = false, year }: { t: { image: string; title: string; tex
         {year && <p className="xp-year md:hidden">{year}</p>}
         <div className="-scale-y-100 flex-none rotate-180 w-full">
           <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", t.image)} />
+            <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", t.image)} />
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function Parcours() {
                 <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
                   <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
                     <div className="col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-name="image 13">
-                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "slider_image_1")} src={img("pageParcours", "slider_image_1", s.image)} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "slider_image_1")} src={img("pageParcours", "slider_image_1", s.image)} />
                     </div>
                     <div className="bg-[var(--white,white)] col-1 content-stretch flex items-center justify-center ml-[8px] mt-[8px] p-[8px] relative rounded-[4px] row-1">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{s.year}</p>

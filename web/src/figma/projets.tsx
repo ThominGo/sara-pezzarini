@@ -11,7 +11,7 @@ export type ProjectCard = { title: string; href: string; image?: string; differe
 const Arrow = () => (
   <div className="h-[10px] relative shrink-0 w-[11px]">
     <div className="absolute inset-[-4.95%_-9%_-4.95%_0]">
-      <img alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
+      <img loading="lazy" decoding="async" alt="" className="block max-w-none size-full" src="/assets/arrow.svg" />
     </div>
   </div>
 );
@@ -32,7 +32,7 @@ export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }:
         <div className={`${c.flip ? '-scale-y-100 ' : ''}flex-none rotate-180 size-full`}>
           <div className="relative rounded-[8px] size-full" data-name="image 13">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image ?? '/assets/placeholder.svg'} />
+              <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image ?? '/assets/placeholder.svg'} />
               {c.difference && <div className="absolute inset-0 mix-blend-difference rounded-[8px]" style={{ backgroundColor: c.difference }} />}
               <div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundColor: c.color }} />
             </div>

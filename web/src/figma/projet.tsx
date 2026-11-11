@@ -55,7 +55,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="relative rounded-[8px] size-full" data-name="image 10">
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
                   <div className="absolute inset-0 overflow-hidden rounded-[8px]">
-                    <img alt="" className="absolute h-[313.35%] left-[-18.09%] max-w-none top-[-120.81%] w-[216.62%]" src={p.coverUrl ?? "/images/f367c067a6.webp"} />
+                    <img fetchPriority="high" alt="" className="absolute h-[313.35%] left-[-18.09%] max-w-none top-[-120.81%] w-[216.62%]" src={p.coverUrl ?? "/images/f367c067a6.webp"} />
                   </div>
                   <div className="absolute bg-[#7e8195] inset-0 mix-blend-color rounded-[8px]" />
                 </div>
@@ -87,7 +87,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                 <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:6994">
                   <div className="-scale-y-100 flex-none rotate-180 w-full">
                     <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[0]?.imageUrl ?? "/images/22638ffa4c.webp"} />
+                      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[0]?.imageUrl ?? "/images/22638ffa4c.webp"} />
                     </div>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7003">
                 <div className="-scale-y-100 flex-none rotate-180 w-full">
                   <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[1]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
+                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[1]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7009">
                 <div className="-scale-y-100 flex-none rotate-180 w-full">
                   <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[2]?.imageUrl ?? "/images/8076d6f385.webp"} />
+                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[2]?.imageUrl ?? "/images/8076d6f385.webp"} />
                   </div>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7014">
                 <div className="-scale-y-100 flex-none rotate-180 w-full">
                   <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[3]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
+                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[3]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
                   </div>
                 </div>
               </div>
@@ -331,7 +331,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px mr-[-8px] p-[8px] relative" data-node-id="414:7056" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative rounded-[8px] w-full" data-node-id="414:7057" data-name="bg">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src="/images/a935537276.webp" />
+              <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src="/images/a935537276.webp" />
               <div className="absolute bg-[#958a7e] inset-0 mix-blend-color rounded-[8px]" />
             </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7058">
@@ -340,7 +340,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                   <div className="-scale-y-100 flex-none h-full rotate-180">
                     <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">
                       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[4px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[4px] size-full" src="/images/a935537276.webp" />
+                        <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[4px] size-full" src="/images/a935537276.webp" />
                         <div className="absolute bg-[#958a7e] inset-0 mix-blend-color rounded-[4px]" />
                       </div>
                     </div>
@@ -359,7 +359,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px p-[8px] relative" data-node-id="414:7064" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7065" data-name="bg">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              <img alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src="/images/61c0fecc5b.webp" />
+              <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src="/images/61c0fecc5b.webp" />
               <div className="absolute bg-[#788d9a] inset-0 mix-blend-color rounded-[8px]" />
             </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7066">
@@ -368,7 +368,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                   <div className="-scale-y-100 flex-none h-full rotate-180">
                     <div className="h-full relative rounded-[4px] w-[121px]" data-name="image 13">
                       <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[4px]">
-                        <img alt="" className="absolute max-w-none object-cover rounded-[4px] size-full" src="/images/61c0fecc5b.webp" />
+                        <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[4px] size-full" src="/images/61c0fecc5b.webp" />
                         <div className="absolute bg-[#788d9a] inset-0 mix-blend-color rounded-[4px]" />
                       </div>
                     </div>
