@@ -203,6 +203,27 @@ function contactForm() {
     status.hidden = false;
   };
 
+  // brouillon : ce qui est saisi est gardé sur l'appareil du visiteur et retrouvé au retour sur la page,
+  // effacé après un envoi réussi (rien n'est envoyé ailleurs)
+  const KEY = 'contact-brouillon';
+  const fields = () => Array.from(form.elements).filter((el): el is HTMLInputElement =>
+    'name' in el && !!(el as HTMLInputElement).name && !['botcheck', 'consentement'].includes((el as HTMLInputElement).name));
+  try {
+    const d = JSON.parse(localStorage.getItem(KEY) || '{}');
+    fields().forEach((el) => {
+      if (!(el.name in d)) return;
+      if (el.type === 'radio') el.checked = el.value === d[el.name];
+      else el.value = d[el.name];
+    });
+  } catch {}
+  const saveDraft = () => {
+    const d: Record<string, string> = {};
+    fields().forEach((el) => { if (el.type !== 'radio' || el.checked) d[el.name] = el.value; });
+    try { localStorage.setItem(KEY, JSON.stringify(d)); } catch {}
+  };
+  form.addEventListener('input', saveDraft, { signal: page.signal });
+  form.addEventListener('change', saveDraft, { signal: page.signal });
+
   // anti-spam : case piège invisible (botcheck) + envoi refusé moins de 3 s après l'affichage
   // (un robot remplit et envoie instantanément) ; on affiche « merci » sans rien envoyer
   const shownAt = Date.now();
@@ -244,6 +265,7 @@ function contactForm() {
       const json = await res.json().catch(() => ({}));
       if (!res.ok || json.success === false) throw new Error(json.message || res.statusText);
       form.reset();
+      try { localStorage.removeItem(KEY); } catch {}
       show(true);
     } catch {
       show(false);
