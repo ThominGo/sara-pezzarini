@@ -20,9 +20,10 @@ function asButton(el: HTMLElement, onClick: () => void) {
 function frame(im: HTMLImageElement) {
   const parent = im.parentElement!;
   parent.style.overflow = 'hidden';
-  // Safari (iOS) laisse dépasser une image transformée des coins arrondis : le masque force le découpage
-  parent.style.isolation = 'isolate';
-  parent.style.setProperty('-webkit-mask-image', '-webkit-radial-gradient(white, black)');
+  // Safari (iOS) laisse dépasser une image transformée des coins arrondis : clip-path force le découpage
+  // (un masque créait un calque qui passait au-dessus des étiquettes de date dans Safari)
+  const r = getComputedStyle(parent).borderTopLeftRadius || getComputedStyle(im).borderTopLeftRadius;
+  parent.style.clipPath = `inset(0 round ${r && r !== '0px' ? r : getComputedStyle(im).borderTopLeftRadius})`;
   const pr = getComputedStyle(parent).borderTopLeftRadius;
   const ir = getComputedStyle(im).borderTopLeftRadius;
   if (pr === '0px') parent.style.borderRadius = ir !== '0px' ? ir : '8px';

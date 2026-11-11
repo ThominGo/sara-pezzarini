@@ -204,7 +204,7 @@
   .xp-year { position: absolute; left: 8px; top: 8px; z-index: 1; background: #fff; border-radius: 4px; padding: 8px; font-family: 'Lexend:Regular'; font-size: 16px; line-height: 1.1; color: #090f0c; white-space: nowrap; }
 
   /* ---------- carte de la zone d'intervention : carte entière réduite, libellés agrandis ---------- */
-  .map-clip { --ms: .41; position: relative; width: 100%; height: calc(887px * var(--ms)) !important; overflow: hidden; border-radius: 8px; isolation: isolate; -webkit-mask-image: -webkit-radial-gradient(white, black); }
+  .map-clip { --ms: .41; position: relative; width: 100%; height: calc(887px * var(--ms)) !important; overflow: hidden; border-radius: 8px; clip-path: inset(0 round 8px); }
   [data-name="image-text"] > .p-\[8px\] > .map-clip { padding: 0; }
   .map-clip > .h-\[887px\] { position: absolute; left: 50%; top: 50%; width: 979px !important; height: 887px !important; transform: translate(-51%, -50%) scale(var(--ms)); }
   .map-clip .map-t { font-size: calc(var(--fs) * 1.35) !important; }
