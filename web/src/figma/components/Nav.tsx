@@ -20,7 +20,7 @@ const ctaText =
 
 export default function Nav() {
   return (
-    <div className="fixed content-stretch flex flex-col items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px] z-50 max-md:p-[16px] max-md:w-[390px]" data-name="nav">
+    <div className="fixed content-stretch flex flex-col items-center justify-between left-0 overflow-clip pb-[8px] pt-[16px] px-[40px] rounded-[4px] top-0 w-[1510px] z-50 max-md:p-[16px] max-md:w-[390px] max-md:overflow-visible" data-name="nav">
       <div className="bg-[var(--grey,#f2f2f2)] border border-[rgba(0,0,0,0.2)] border-solid content-stretch flex items-center justify-between pl-[16px] pr-[8px] py-[8px] relative rounded-[8px] shrink-0 w-[1432px] max-md:w-[358px] max-md:p-[4px] max-md:pl-[8px]">
         <a href="/" className={`${link} max-md:text-[16px]`}>
           <p className="leading-[1.3] text-pretty">Sara Pezzarini</p>
