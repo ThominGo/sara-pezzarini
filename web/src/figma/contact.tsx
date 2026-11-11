@@ -41,7 +41,7 @@ const Radio = ({ value, checked, children }: { value: string; checked?: boolean;
 );
 
 const MapText = ({ inset, size, color, children, center }: { inset: string; size: string; color: string; children: string; center?: boolean }) => (
-  <p className={`[word-break:break-word] absolute font-['Lexend:Regular'] font-normal leading-[1.3] text-pretty whitespace-nowrap ${center ? 'text-center ' : ''}`} style={{ inset, fontSize: size, color }}>{children}</p>
+  <p className={`map-t [word-break:break-word] absolute font-['Lexend:Regular'] font-normal leading-[1.3] text-pretty whitespace-nowrap ${center ? 'text-center ' : ''}`} style={{ inset, fontSize: size, color, '--fs': size } as any}>{children}</p>
 );
 const Img = ({ inset, src, pad }: { inset: string; src: string; pad?: string }) => (
   <div className="absolute" style={{ inset }} data-name="Vector">
@@ -172,6 +172,8 @@ export default function Contact() {
           </div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start p-[8px] relative shrink-0 w-[995px]">
+          {/* map-clip : sans effet en desktop ; en mobile, cadre qui recadre la carte réduite */}
+          <div className="map-clip w-full">
           <div className="h-[887px] overflow-clip relative shrink-0 w-full">
             <div className="absolute flex h-[887px] items-center justify-center left-0 top-0 w-[979px]">
               <div className="flex-none rotate-180">
@@ -206,6 +208,7 @@ export default function Contact() {
             <MapText inset="79.55% 10.36% 18.19% 85.76%" size="15.321px" color={K70} center>Paris</MapText>
             <MapText inset="81.68% 9.91% 16.07% 85.4%" size="15.321px" color="rgba(42,42,42,0.6)" center>40 km</MapText>
             <Img inset="74.64% 13.16% 21.78% 81.42%" pad="-2.78% -1.67%" src="/assets/map-paris-arrow.svg" />
+          </div>
           </div>
         </div>
       </div>

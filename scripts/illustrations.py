@@ -1,6 +1,6 @@
 """Génère web/public/illustrations/*.svg depuis les tracés exportés de Figma.
 
-Chaque forme = dégradé radial + calque soft light #FF9A4D 40 % + grain blanc 30 %
+Chaque forme = dégradé radial + calque soft light #FF9A4D 40 % (sans grain)
 + contour extérieur 2 px couleur du fond, le tout passé dans un léger déplacement (effet TEXTURE).
 """
 from pathlib import Path
@@ -100,7 +100,7 @@ DEFS_COMMON = """
 </filter>"""
 
 
-def build(name, shapes, grain=0.3, suffix=""):
+def build(name, shapes, grain=0, suffix=""):  # grain retiré à la demande de Thomas (11 nov.)
     defs, body = [DEFS_COMMON], []
     for i, (d, tr, pal) in enumerate(shapes):
         stops = PAL[pal].split(",")
@@ -115,8 +115,8 @@ def build(name, shapes, grain=0.3, suffix=""):
             f'<path d="{d}" fill="{BG}" stroke="{BG}" stroke-width="4" stroke-linejoin="round"/>'
             f'<path d="{d}" fill="url(#g{i})"/>'
             f'<path d="{d}" fill="#FF9A4D" fill-opacity="0.4" style="mix-blend-mode:soft-light"/>'
-            f'<path d="{d}" fill="#fff" opacity="{grain}" filter="url(#grain)"/>'
-            f"</g>"
+            + (f'<path d="{d}" fill="#fff" opacity="{grain}" filter="url(#grain)"/>' if grain else "")
+            + f"</g>"
         )
     svg = (
         '<svg width="459" height="459" viewBox="0 0 459 459" fill="none" xmlns="http://www.w3.org/2000/svg">'
@@ -131,5 +131,4 @@ def build(name, shapes, grain=0.3, suffix=""):
 OUT.mkdir(parents=True, exist_ok=True)
 for k, v in ILLUS.items():
     build(k, v)
-    build(k, v, grain=0.14, suffix="-m")  # version mobile : grain plus discret
 print("ok", len(ILLUS))

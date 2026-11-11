@@ -20,6 +20,9 @@ function asButton(el: HTMLElement, onClick: () => void) {
 function frame(im: HTMLImageElement) {
   const parent = im.parentElement!;
   parent.style.overflow = 'hidden';
+  // Safari (iOS) laisse dépasser une image transformée des coins arrondis : le masque force le découpage
+  parent.style.isolation = 'isolate';
+  parent.style.setProperty('-webkit-mask-image', '-webkit-radial-gradient(white, black)');
   const pr = getComputedStyle(parent).borderTopLeftRadius;
   const ir = getComputedStyle(im).borderTopLeftRadius;
   if (pr === '0px') parent.style.borderRadius = ir !== '0px' ? ir : '8px';
@@ -137,9 +140,12 @@ function parallax() {
   });
 
   let ticking = false;
+  // hauteur d'écran figée : sur mobile la barre d'adresse qui se replie change innerHeight
+  // pendant le défilement, ce qui faisait sauter les images
+  let vh = document.documentElement.clientHeight;
+  let vw = innerWidth;
   const update = () => {
     ticking = false;
-    const vh = innerHeight;
     visible.forEach((im) => {
       const r = im.parentElement!.getBoundingClientRect();
       // -1 quand le cadre entre par le bas, +1 quand il sort par le haut
@@ -149,7 +155,9 @@ function parallax() {
   };
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
   addEventListener('scroll', onScroll, { passive: true, signal: page.signal });
-  addEventListener('resize', onScroll, { signal: page.signal });
+  addEventListener('resize', () => {
+    if (innerWidth !== vw) { vw = innerWidth; vh = document.documentElement.clientHeight; onScroll(); }
+  }, { signal: page.signal });
   setTimeout(update, 50);
 }
 
@@ -302,38 +310,36 @@ function mobileMenu() {
   const panel = document.querySelector<HTMLElement>('[data-menu-panel]');
   if (!btn || !panel) return;
   const label = btn.querySelector<HTMLElement>('[data-menu-label]');
+  const words = label ? Array.from(label.children) as HTMLElement[] : [];
+  // page en cours repérée dans le menu
+  const here = location.pathname.replace(/\/+$/, '') || '/';
+  panel.querySelectorAll<HTMLAnchorElement>('.menu-link').forEach((a) => {
+    const p = new URL(a.href).pathname.replace(/\/+$/, '') || '/';
+    if (p === here || (p !== '/' && here.startsWith(p + '/'))) a.setAttribute('aria-current', 'page');
+  });
+  // largeur du libellé animée entre « Menu » et « Fermer »
+  const fit = (open: boolean) => {
+    if (!label || words.length < 2) return;
+    label.style.width = words[open ? 1 : 0].scrollWidth + 'px';
+  };
   const set = (open: boolean) => {
     panel.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', String(open));
     btn.classList.toggle('is-open', open);
-    if (label) label.textContent = open ? 'Fermer' : 'Menu';
+    panel.setAttribute('aria-hidden', String(!open));
+    fit(open);
   };
-  btn.addEventListener('click', () => set(!panel.classList.contains('is-open')));
-  panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false)));
+  fit(false);
+  btn.addEventListener('click', () => set(!panel.classList.contains('is-open')), { signal: page.signal });
+  panel.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => set(false), { signal: page.signal }));
   addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); }, { signal: page.signal });
 }
 
 // Initialisation de chaque page : au premier chargement puis après chaque changement de page
-/* ---------------- Illustrations : grain plus discret en mobile (fichiers *-m.svg) ---------------- */
-function illustrations() {
-  const mq = matchMedia('(max-width: 767.98px)');
-  const apply = () => {
-    document.querySelectorAll<HTMLImageElement>('img[src*="/illustrations/"]').forEach((im) => {
-      const src = im.getAttribute('src')!;
-      const base = src.replace(/-m\.svg$/, '.svg');
-      const want = mq.matches ? base.replace(/\.svg$/, '-m.svg') : base;
-      if (want !== src) im.setAttribute('src', want);
-    });
-  };
-  apply();
-  mq.addEventListener('change', apply, { signal: page.signal });
-}
-
 function init() {
   page.abort();
   page = new AbortController();
   mobileMenu();
-  illustrations();
   heroTexts();
   underlines();
   heroes();

@@ -22,10 +22,12 @@ const slides = () => [
   { image: '/images/0bed7bf1e7.webp', year: t("pageParcours", "carrousel_4_annee", "2023 ▸ 2026"), title: t("pageParcours", "carrousel_4_titre", "SAMSAH spécialisé TSA"), sub: t("pageParcours", "carrousel_4_texte", "SAMSAH spécialisé TSA") },
 ];
 
-function Item({ t, row = false }: { t: { image: string; title: string; text: string }; row?: boolean }) {
+function Item({ t, row = false, year }: { t: { image: string; title: string; text: string }; row?: boolean; year?: string }) {
   return (
     <div className={row ? 'content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative' : 'content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full'}>
       <div className="flex items-center justify-center relative shrink-0 w-full">
+        {/* mobile : la date passe en étiquette sur la photo */}
+        {year && <p className="xp-year md:hidden">{year}</p>}
         <div className="-scale-y-100 flex-none rotate-180 w-full">
           <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", t.image)} />
@@ -41,7 +43,7 @@ function Item({ t, row = false }: { t: { image: string; title: string; text: str
 }
 
 const Year = ({ y, top }: { y: string; top: number }) => (
-  <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right w-[226px]" style={{ ...FV, top }}>{y}</p>
+  <p className="max-md:hidden -translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right w-[226px]" style={{ ...FV, top }}>{y}</p>
 );
 const Sep = () => <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" />;
 
@@ -101,16 +103,16 @@ export default function Parcours() {
           <p className="[word-break:break-word] flex-[1_0_0] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-px relative text-[40px] text-[transparent] text-balance" style={FV}>Trois façons de travailler ensemble</p>
           <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative">
             <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
-              <Item t={timeline()[0]} row />
+              <Item t={timeline()[0]} row year={t("pageParcours", "annee_1", "2019")} />
               <Year y={t("pageParcours", "annee_1", "2019")} top={0} />
               <Year y={t("pageParcours", "annee_2", "2020")} top={637} />
               <Year y={t("pageParcours", "annee_3", "2023")} top={1274} />
             </div>
             <Sep />
-            <Item t={timeline()[1]} />
+            <Item t={timeline()[1]} year={t("pageParcours", "annee_2", "2020")} />
             <Sep />
-            <Item t={timeline()[2]} />
-            <Item t={timeline()[3]} />
+            <Item t={timeline()[2]} year={t("pageParcours", "annee_3", "2023")} />
+            <Item t={timeline()[3]} year={t("pageParcours", "vertical_card_3", "Maintenant")} />
           </div>
           <div className="absolute bottom-0 h-[2864px] left-[-123px] pointer-events-none top-[-400px]">
             <div className="content-stretch flex items-center justify-center pb-[112px] pointer-events-auto pt-[400px] sticky top-0 w-[561px]">
@@ -121,7 +123,7 @@ export default function Parcours() {
             </div>
           </div>
         </div>
-        <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV} data-sanity={ds("pageParcours", "vertical_card_3")}>{t("pageParcours", "vertical_card_3", "Maintenant")}</p>
+        <p className="max-md:hidden -translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV} data-sanity={ds("pageParcours", "vertical_card_3")}>{t("pageParcours", "vertical_card_3", "Maintenant")}</p>
       </div>
 
       {/* text : formation et mémoire */}
