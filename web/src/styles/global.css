@@ -50,10 +50,10 @@ html { scroll-behavior: smooth; }
 /* CTA : états de la page Composants (Cta 133:3438) */
 [data-name="Cta"] { transition: background-color .3s ease, border-color .3s ease, opacity .3s ease; }
 /* primary : hover = fond noir 72 % et bordure plus claire (plus visible que la maquette, demandé par Thomas), on-clic = 55 % */
-:is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { background-color: rgba(9, 15, 12, .72); border-color: rgba(255, 255, 255, .35); }
+@media (hover: hover) { :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { background-color: rgba(9, 15, 12, .72); border-color: rgba(255, 255, 255, .35); } }
 :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:active { background-color: rgba(9, 15, 12, .55); border-color: rgba(255, 255, 255, .35); }
 /* secondary : hover = fond gris 70 %, on-clic = fond gris */
-:is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:hover { background-color: rgba(242, 242, 242, .7); border-color: #f2f2f2; }
+@media (hover: hover) { :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:hover { background-color: rgba(242, 242, 242, .7); border-color: #f2f2f2; } }
 :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:active { background-color: #f2f2f2; border-color: #f2f2f2; }
 /* inactive : opacité 40 % */
 [data-name="Cta"][aria-disabled="true"], [data-name="Cta"]:disabled { opacity: .4; pointer-events: none; }
@@ -62,30 +62,30 @@ html { scroll-behavior: smooth; }
 /* Liens texte (nav, pied de page, contact, CTA tertiary) : gris + soulignement qui apparaît de gauche à droite.
    Le texte est enveloppé dans un <span class="u"> par interactions.ts */
 .lien, .lien p, a[data-name="Cta"]:not([class*="bg-"]) p, .faq-q p { transition: color .3s ease; }
-.lien:hover, .lien:hover p, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p { color: rgba(9, 15, 12, .7); }
+@media (hover: hover) { .lien:hover, .lien:hover p, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p { color: rgba(9, 15, 12, .7); } }
 .u {
   background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat;
   background-position: 0 100%; background-size: 0% 1px; padding-bottom: .06em;
   transition: background-size .45s cubic-bezier(.2, .7, .2, 1);
 }
-:is(.lien, a[data-name="Cta"], a[data-name="Bouton"], .faq-q, .credit):hover .u { background-size: 100% 1px; }
+@media (hover: hover) { :is(.lien, a[data-name="Cta"], a[data-name="Bouton"], .faq-q, .credit):hover .u { background-size: 100% 1px; } }
 
 /* Cards cliquables : fond gris + titre souligné */
 a[data-name="Bouton"] { transition: background-color .3s ease; }
-a[data-name="Bouton"]:not(:has([data-name="Cta"])):hover { background-color: var(--grey); }
+@media (hover: hover) { a[data-name="Bouton"]:not(:has([data-name="Cta"])):hover { background-color: var(--grey); } }
 /* Cards avec un CTA « En savoir plus » (4-cards) : seul le CTA se souligne, jamais le titre */
 a[data-name="Bouton"]:has([data-name="Cta"]) p[class*="Bricolage"] .u { background-size: 0 1px !important; }
 
 /* Cards avec flèche : la flèche se décale vers la gauche au survol */
 a[data-name="Bouton"] img[src$="/assets/arrow.svg"] { transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
-a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-4px); }
+@media (hover: hover) { a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-4px); } }
 
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }
 .credit > span { grid-area: 1 / 1; transition: opacity .3s ease; }
 .credit > span:last-child { opacity: 0; }
-.credit:hover > span:first-child { opacity: 0; }
-.credit:hover > span:last-child { opacity: 1; }
+@media (hover: hover) { .credit:hover > span:first-child { opacity: 0; } }
+@media (hover: hover) { .credit:hover > span:last-child { opacity: 1; } }
 
 /* FAQ : ouverture / fermeture animée */
 /* hauteur animée en JS (0 → hauteur du contenu → auto) : fonctionne dans tous les navigateurs */
@@ -96,6 +96,8 @@ a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translate
 /* Sliders : glisser + flèches (voir scripts/interactions.ts) */
 [data-slider-track] { transition: transform .6s cubic-bezier(.2, .7, .2, 1); touch-action: pan-y; cursor: grab; user-select: none; }
 [data-slider-track].is-dragging { transition: none; cursor: grabbing; }
+/* étiquettes de date au-dessus des photos (la photo masquée pour la parallaxe forme un calque à part) */
+[data-slider-track] [class*="row-1"]:not([data-name="image 13"]) { z-index: 2; }
 [data-slider-track] img { -webkit-user-drag: none; }
 /* parallaxe horizontale des photos quand les cartes défilent */
 img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0px), 0, 0) scale(1.3); transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
@@ -136,7 +138,7 @@ div[aria-hidden]:has(> .mix-blend-color) { isolation: isolate; transform: transl
 
 /* Formulaire : survol des champs */
 .champ { transition: border-color .3s ease; }
-.champ:hover { border-color: rgba(9, 15, 12, .4); }
+@media (hover: hover) { .champ:hover { border-color: rgba(9, 15, 12, .4); } }
 .champ:focus, .champ:focus-within { border-color: #090f0c; }
 
 /* FAQ : plus / moins */

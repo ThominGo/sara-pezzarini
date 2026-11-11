@@ -219,7 +219,7 @@
   .menu-link[aria-current] .menu-num { color: #d93f6b; }
   .menu-link[aria-current] .menu-lbl::after { content: ''; display: inline-block; width: 6px; height: 6px; margin-left: 8px; border-radius: 50%; background: #d93f6b; vertical-align: middle; }
   .menu-arrow { width: 11px; height: 10px; align-self: center; transition: transform .3s ease; }
-  .menu-link:active .menu-arrow, .menu-link:hover .menu-arrow { transform: translateX(-4px); }
+  .menu-link:active .menu-arrow { transform: translateX(-4px); }
   .menu-card { position: relative; margin-top: 16px; padding: 16px; border-radius: 4px; display: flex; flex-direction: column; gap: 40px; opacity: 0; transform: translateY(12px); transition: opacity .3s ease, transform .3s ease; }
   .menu-card-title { position: relative; font-family: 'Bricolage Grotesque:Regular'; font-size: 24px; line-height: 1; color: #fff; }
   .menu-card-row { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
