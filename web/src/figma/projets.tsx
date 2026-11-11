@@ -19,10 +19,10 @@ const Arrow = () => (
 export const defaultCards: ProjectCard[] = [
   { title: 'Découvrir mes projets', image: '/images/a935537276.webp', href: '/projets', color: '#958a7e', flip: true },
   { title: 'Jeu pour gamifier le quotidien', image: '/images/61c0fecc5b.webp', href: '/projets/exemple', color: '#788d9a' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/1553e744ae.webp', href: '/projets/exemple', difference: '#454545', color: '#181336' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/368c5e286a.webp', href: '/projets/exemple', difference: '#0c0c0c', color: '#957e7e' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/76cd837fbd.webp', href: '/projets/exemple', difference: '#444', color: '#957e8b' },
-  { title: "Site d'aide à l'autonomie pour personnes autistes", image: '/images/1fbf0de407.webp', href: '/projets/exemple', difference: '#474747', color: '#8e7e95' },
+  { title: "Répertoire d’outils d’autonomie TSA", image: '/images/1553e744ae.webp', href: '/projets/exemple', difference: '#454545', color: '#181336' },
+  { title: "Fiches d’autonomie illustrées", image: '/images/368c5e286a.webp', href: '/projets/exemple', difference: '#0c0c0c', color: '#957e7e' },
+  { title: "Plan 3D d’aménagement de chambre", image: '/images/76cd837fbd.webp', href: '/projets/exemple', difference: '#444', color: '#957e8b' },
+  { title: "Sensibilisation TSA en entreprise", image: '/images/1fbf0de407.webp', href: '/projets/exemple', difference: '#474747', color: '#8e7e95' },
 ];
 
 export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }: { c: ProjectCard; first: boolean; className?: string }) {
@@ -55,8 +55,8 @@ export default function Projets({ cards = defaultCards }: { cards?: ProjectCard[
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col gap-[64px] items-center justify-center overflow-clip pb-[120px] pt-[220px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex items-end justify-between relative shrink-0 w-[1190px]">
           <div className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] relative shrink-0 text-[40px] text-black w-[673px] whitespace-pre-wrap" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-            <p className="leading-none mb-0 text-balance" data-sanity={ds("pageProjets", "text_1")}>{t("pageProjets", "text_1", "Mes différents")}</p>
-            <p className="leading-none text-balance" data-sanity={ds("pageProjets", "text_2")}>{t("pageProjets", "text_2", "projets")}</p>
+            <p className="leading-none mb-0 text-balance" data-sanity={ds("pageProjets", "text_1")}>{t("pageProjets", "text_1", "Projets et")}</p>
+            <p className="leading-none text-balance" data-sanity={ds("pageProjets", "text_2")}>{t("pageProjets", "text_2", "réalisations")}</p>
           </div>
           <div className="content-stretch flex flex-[1_0_0] items-center justify-end min-w-px pr-[122px] relative">
             <div className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[0] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-[461px]">

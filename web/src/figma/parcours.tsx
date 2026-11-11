@@ -9,10 +9,10 @@ const FV = { fontVariationSettings: '"opsz" 14, "wdth" 100' };
 const black70 = 'text-[color:var(--black-70\\%,rgba(9,15,12,0.7))]';
 
 const timeline = () => [
-  { image: '/images/2dcedd3025.webp', title: t("pageParcours", "experiences_1_titre", "Stage"), text: t("pageParcours", "experiences_1_texte", "Bilans, suivis, stratégies sur mesure pour soutenir l’autonomie dans les activités du quotidien.") },
-  { image: '/images/f858df2fd5.webp', title: t("pageParcours", "experiences_2_titre", "Service de psychiatrie du GHNE"), text: t("pageParcours", "experiences_2_texte", "Ateliers, programme de prévention, outils adaptés : des projets construits au plus près des besoins.") },
-  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_3_titre", "Les amis de l’atelier"), text: t("pageParcours", "experiences_3_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
-  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_4_titre", "Libérale"), text: t("pageParcours", "experiences_4_texte", "Formations, conseils, co-construction pour faire évoluer ensemble les pratiques et les environnements.") },
+  { image: '/images/2dcedd3025.webp', title: t("pageParcours", "experiences_1_titre", "Stages en SAMSAH et en cabinet libéral"), text: t("pageParcours", "experiences_1_texte", "Au SAMSAH TC 40 et dans un cabinet libéral à Dax : accompagnement à domicile de personnes cérébrolésées et rééducation d’enfants en situation de handicap.") },
+  { image: '/images/f858df2fd5.webp', title: t("pageParcours", "experiences_2_titre", "Service de psychiatrie du GHNE"), text: t("pageParcours", "experiences_2_texte", "Ateliers thérapeutiques individuels et collectifs (cuisine, courses, jardinage, jeux, arts créatifs) pour soutenir l’autonomie et le rétablissement des patients.") },
+  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_3_titre", "SAMSAH Altitude TSA, Fondation des Amis de l’Atelier"), text: t("pageParcours", "experiences_3_texte", "Accompagnement des personnes autistes dans leur projet de vie : stratégies et outils adaptés à leur fonctionnement, en lien avec les acteurs du territoire.") },
+  { image: '/images/0bed7bf1e7.webp', title: t("pageParcours", "experiences_4_titre", "En libéral, à partir de mai 2027"), text: t("pageParcours", "experiences_4_texte", "Des accompagnements encore plus personnalisés, pour les personnes comme pour les organisations, autour de Mézy-sur-Seine.") },
 ];
 
 const slides = () => [
@@ -70,7 +70,7 @@ export default function Parcours() {
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-sanity={ds("pageParcours", "hero_1")}>{t("pageParcours", "hero_1", "Mon parcours")}</p>
                 </div>
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" style={FV} data-sanity={ds("pageParcours", "hero_2")}>{t("pageParcours", "hero_2", "Explication de ton parcours")}</p>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-full relative shrink-0 text-[80px] text-[color:var(--white,white)] text-balance w-[min-content]" style={FV} data-sanity={ds("pageParcours", "hero_2")}>{t("pageParcours", "hero_2", "Du soin à l’accompagnement au quotidien")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative">
@@ -90,7 +90,7 @@ export default function Parcours() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/images/3e60ebbcd7.webp")} />
+                <img alt="Sara Pezzarini en séance" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/images/3e60ebbcd7.webp")} />
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function Parcours() {
             <Item t={timeline()[1]} year={t("pageParcours", "annee_2", "2020")} />
             <Sep />
             <Item t={timeline()[2]} year={t("pageParcours", "annee_3", "2023")} />
-            <Item t={timeline()[3]} year={t("pageParcours", "vertical_card_3", "Maintenant")} />
+            <Item t={timeline()[3]} year={t("pageParcours", "vertical_card_3", "2027")} />
           </div>
           <div className="absolute bottom-0 h-[2864px] left-[-123px] pointer-events-none top-[-400px]">
             <div className="content-stretch flex items-center justify-center pb-[112px] pointer-events-auto pt-[400px] sticky top-0 w-[561px]">
@@ -123,19 +123,17 @@ export default function Parcours() {
             </div>
           </div>
         </div>
-        <p className="max-md:hidden -translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV} data-sanity={ds("pageParcours", "vertical_card_3")}>{t("pageParcours", "vertical_card_3", "Maintenant")}</p>
+        <p className="max-md:hidden -translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" style={FV} data-sanity={ds("pageParcours", "vertical_card_3")}>{t("pageParcours", "vertical_card_3", "2027")}</p>
       </div>
 
       {/* text : formation et mémoire */}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
-          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV} data-sanity={ds("pageParcours", "text_1")}>{t("pageParcours", "text_1", "Blabla Formation + cmémoire")}</p>
+          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV} data-sanity={ds("pageParcours", "text_1")}>{t("pageParcours", "text_1", "Formation et mémoire")}</p>
           <div className="content-stretch flex flex-col items-end justify-center pr-[122px] relative shrink-0 w-full">
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0">
-              <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-[461px]`} data-sanity={ds("pageParcours", "text_2")}>{t("pageParcours", "text_2", "Mushrooms chicken personal onions thin platter spinach Chicago parmesan. Lasagna pineapple pie hand pesto deep. Thin sautéed Hawaiian meat sauce white tomatoes style. Mayo bbq pesto Aussie pie green meatball.")}</p>
-              <div className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-name="Cta">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-sanity={ds("pageParcours", "text_3")}>{t("pageParcours", "text_3", "Télécharger mon mémoire")}</p>
-              </div>
+              <p className={`[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] ${black70} text-pretty w-[461px]`} data-sanity={ds("pageParcours", "text_2")}>{t("pageParcours", "text_2", "Diplômée d’État en 2020, j’ai consacré mon mémoire à l’impact de l’équilibre occupationnel sur les rechutes au sein d’une famille touchée par une dépendance. Il a été distingué lors d’un concours national de mémoires.")}</p>
+              {/* bouton « Télécharger mon mémoire » retiré : le mémoire ne se télécharge pas (décision du 8 nov.) */}
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default function MonApproche() {
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6686;146:4280">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="I414:6686;146:4281">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6686;146:4282" data-sanity={ds("pageApproche", "hero_3")}>{t("pageApproche", "hero_3", "Avec elle, son entourage et les équipes, je co-construis des pistes adaptées aux besoins du quotidien, pour une inclusion concrète, au-delà du soin.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[rgba(255,255,255,0.7)] text-pretty w-[458px]" data-node-id="I414:6686;146:4282" data-sanity={ds("pageApproche", "hero_3")}>{t("pageApproche", "hero_3", "Avec la personne, son entourage et les équipes, je co-construis des pistes adaptées aux besoins du quotidien, pour une inclusion concrète, au-delà du soin.")}</p>
                   <div className="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="I414:6686;146:4283" data-name="Actions principales">
                     <a href="#collaboration" className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:6686;148:4594" data-name="Cta">
                       <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--grey,#f2f2f2)] text-pretty whitespace-nowrap" data-node-id="I414:6686;148:4594;133:3431" data-sanity={ds("pageApproche", "hero_4")}>{t("pageApproche", "hero_4", "Comment ça se passe ?")}</p>
@@ -63,7 +63,7 @@ export default function MonApproche() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6686;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageApproche", "hero_image_1")} src={img("pageApproche", "hero_image_1", "/images/8076d6f385.webp")} />
+                <img alt="Séance d’ergothérapie" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageApproche", "hero_image_1")} src={img("pageApproche", "hero_image_1", "/images/8076d6f385.webp")} />
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function MonApproche() {
               <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="I414:6687;146:4298" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "cartes_1")}>{t("pageApproche", "cartes_1", "Ce qui guide ma pratique")}</p>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6687;146:4299">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="I414:6687;146:4300">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-node-id="I414:6687;146:4301" data-sanity={ds("pageApproche", "cartes_2")}>{t("pageApproche", "cartes_2", "lorem ipsum")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-node-id="I414:6687;146:4301" data-sanity={ds("pageApproche", "cartes_2")}>{t("pageApproche", "cartes_2", "Quatre principes qui guident chacun de mes accompagnements.")}</p>
                 </div>
               </div>
             </div>
@@ -164,25 +164,25 @@ export default function MonApproche() {
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip p-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6688;146:4425" data-name="Bouton">
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6688;146:4427">
                 <p className="font-['Bricolage_Grotesque:Regular'] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] w-full" data-node-id="I414:6688;146:4428" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "points_3")}>{t("pageApproche", "points_3", "CAA")}</p>
-                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4429" data-sanity={ds("pageApproche", "points_4")}>{t("pageApproche", "points_4", "En respectant ses choix et son rythme.")}</p>
+                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4429" data-sanity={ds("pageApproche", "points_4")}>{t("pageApproche", "points_4", "Des supports visuels pour se comprendre et s’exprimer.")}</p>
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip p-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6688;146:4430" data-name="Bouton">
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6688;146:4432">
                 <p className="font-['Bricolage_Grotesque:Regular'] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] w-full" data-node-id="I414:6688;146:4433" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "points_5")}>{t("pageApproche", "points_5", "Entretien motivationnel")}</p>
-                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4434" data-sanity={ds("pageApproche", "points_6")}>{t("pageApproche", "points_6", "Pour construire des pistes adaptées au terrain.")}</p>
+                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4434" data-sanity={ds("pageApproche", "points_6")}>{t("pageApproche", "points_6", "Faire émerger les envies de changement, sans les imposer.")}</p>
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip p-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6688;146:4435" data-name="Bouton">
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6688;146:4437">
                 <p className="font-['Bricolage_Grotesque:Regular'] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] w-full" data-node-id="I414:6688;146:4438" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "points_7")}>{t("pageApproche", "points_7", "MCRO")}</p>
-                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4439" data-sanity={ds("pageApproche", "points_8")}>{t("pageApproche", "points_8", "Pour identifier les besoins et les obstacles.")}</p>
+                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4439" data-sanity={ds("pageApproche", "points_8")}>{t("pageApproche", "points_8", "Repérer avec la personne les activités qui comptent pour elle.")}</p>
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip p-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6688;146:4440" data-name="Bouton">
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6688;146:4442">
                 <p className="font-['Bricolage_Grotesque:Regular'] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] w-full" data-node-id="I414:6688;146:4443" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "points_9")}>{t("pageApproche", "points_9", "ELADEB")}</p>
-                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4444" data-sanity={ds("pageApproche", "points_10")}>{t("pageApproche", "points_10", "Ajuster les stratégies au fil des usages")}</p>
+                <p className="font-['Lexend:Regular'] relative shrink-0 text-[14px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] w-full" data-node-id="I414:6688;146:4444" data-sanity={ds("pageApproche", "points_10")}>{t("pageApproche", "points_10", "Évaluer les difficultés et les besoins d’aide, de son point de vue.")}</p>
               </div>
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function MonApproche() {
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6724">
                 <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6725" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageApproche", "vertical_card_7")}>{t("pageApproche", "vertical_card_7", "4. Ajuster et faire le point régulièrement")}</p>
-                <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:6726" data-sanity={ds("pageApproche", "vertical_card_8")}>{t("pageApproche", "vertical_card_8", "Définir ensemble les objectifs, choisir les stratégies et les outils, puis les mettre à l’essai dans les situations du quotidien.")}</p>
+                <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:6726" data-sanity={ds("pageApproche", "vertical_card_8")}>{t("pageApproche", "vertical_card_8", "Faire le point régulièrement avec vous et les équipes, mesurer ce qui fonctionne et ajuster les stratégies au fil du temps.")}</p>
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@ export default function MonApproche() {
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:6767">
                 <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6768">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6769" data-sanity={ds("pageApproche", "image_text_12")}>{t("pageApproche", "image_text_12", "Équipes éducatives, bibliothèques, musées et lieux culturels : je vous propose de penser l’accès aux apprentissages, aux loisirs et à la culture à partir des besoins des publics et des réalités de vos espaces.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:6769" data-sanity={ds("pageApproche", "image_text_12")}>{t("pageApproche", "image_text_12", "Établissements, entreprises, collectivités et lieux culturels : je vous accompagne pour rendre vos activités, vos espaces et vos pratiques plus accessibles, avec vos équipes et les personnes concernées.")}</p>
                   <Cta href={site.settings.calendly || "/contact"} className="bg-[var(--black,#090f0c)] border border-[#3a3f3d] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0" label="Réserver un appel" />
                 </div>
               </div>

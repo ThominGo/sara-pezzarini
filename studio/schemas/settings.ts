@@ -13,6 +13,10 @@ export default defineType({
       name: 'formKey', title: 'Clé du formulaire de contact (Web3Forms)', type: 'string',
       description: "Clé gratuite à créer sur web3forms.com avec l'adresse qui doit recevoir les messages. Sans clé, le formulaire ouvre la messagerie du visiteur.",
     }),
+    defineField({
+      name: 'analyticsToken', title: 'Statistiques de visite (jeton Cloudflare Web Analytics)', type: 'string',
+      description: "Statistiques gratuites, sans cookie (pas de bandeau à afficher). Jeton à copier depuis Cloudflare : Analytics & Logs, Web Analytics, Add a site. Laisser vide pour ne rien mesurer.",
+    }),
     defineField({ name: 'zone', title: "Zone d'intervention", type: 'string', initialValue: 'Autour de Mézy-sur-Seine, Yvelines, Val-d’Oise, Eure' }),
     defineField({
       name: 'socials', title: 'Réseaux', type: 'array',

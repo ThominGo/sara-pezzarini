@@ -22,4 +22,4 @@ const p = data
     }
   : {};
 ---
-<Layout title={`${p.title ?? 'Projet'} · Sara Pezzarini`}><Page p={p} /></Layout>
+<Layout title={`${p.title ?? 'Projet'} · Sara Pezzarini`} description={((p as any).intro ?? `Projet mené par Sara Pezzarini, ergothérapeute.`).slice(0, 160)}><Page p={p} /></Layout>

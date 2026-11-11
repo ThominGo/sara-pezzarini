@@ -63,7 +63,7 @@ export default function PourQui() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6775;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pagePourQui", "hero_image_1")} src={img("pagePourQui", "hero_image_1", "/images/3e60ebbcd7.webp")} />
+                <img alt="Séance d’ergothérapie" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pagePourQui", "hero_image_1")} src={img("pagePourQui", "hero_image_1", "/images/3e60ebbcd7.webp")} />
               </div>
             </div>
           </div>

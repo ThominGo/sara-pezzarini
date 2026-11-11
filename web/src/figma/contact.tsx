@@ -3,6 +3,7 @@ import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import { site } from '../utils/site';
+import Faq from './components/Faq';
 
 // Page Contact (Figma 414:6512). Classes copiées de Figma.
 const FV = { fontVariationSettings: '"opsz" 14, "wdth" 100' };
@@ -22,11 +23,11 @@ const Field = ({ l, p, first, name, type = 'text', required, auto }: { l: string
     </label>
   );
   return first ? (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[459px]">
+    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[459px]" data-field={name}>
       <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0 w-full">{field}</div>
     </div>
   ) : (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">{field}</div>
+    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-field={name}>{field}</div>
   );
 };
 
@@ -88,7 +89,7 @@ export default function Contact() {
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_3")}>{t("pageContact", "vertical_card_3", "Votre besoin")}</p>
                 <div className="relative shrink-0 w-full">
-                  <select name="besoin" defaultValue="" className={`${box} font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] champ appearance-none cursor-pointer outline-none pr-[40px] focus:border-[#090f0c]`} data-sanity={ds("pageContact", "vertical_card_4")}>
+                  <select name="besoin" aria-label={t("pageContact", "champ_besoin", "Votre besoin")} defaultValue="" className={`${box} font-['Lexend:Regular'] font-normal leading-[1.3] text-[#090f0c] text-[18px] champ appearance-none cursor-pointer outline-none pr-[40px] focus:border-[#090f0c]`} data-sanity={ds("pageContact", "vertical_card_4")}>
                     <option value="" disabled>{t("pageContact", "vertical_card_4", "Sélectionnez votre besoin")}</option>
                     {[
                       t("pageContact", "besoin_option_1", "Accompagnement individuel"),
@@ -105,6 +106,7 @@ export default function Contact() {
               <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
                 <p className={label} style={FV} data-sanity={ds("pageContact", "vertical_card_5")}>{t("pageContact", "vertical_card_5", "Message")} *</p>
                 <textarea name="message" required placeholder={t("pageContact", "vertical_card_6", "Votre Message")} data-sanity={ds("pageContact", "vertical_card_6")} className="champ bg-[var(--white,white)] border border-[#c2c2c2] border-solid font-['Lexend:Regular'] font-normal h-[220px] leading-[1.3] outline-none overflow-auto p-[16px] placeholder:text-[rgba(9,15,12,0.5)] relative resize-y rounded-[4px] min-h-[220px] shrink-0 text-[#090f0c] text-[18px] w-full focus:border-[#090f0c]" />
+                <p className="mention-medicale [word-break:break-word] bg-[var(--white,white)] border border-[var(--black-70\%,rgba(9,15,12,0.7))] border-solid font-['Lexend:Regular'] font-normal leading-[1.3] p-[16px] relative rounded-[4px] shrink-0 text-[16px] text-[#090f0c] text-pretty w-full" data-sanity={ds("pageContact", "mention_medicale")}>{t("pageContact", "mention_medicale", "Merci de ne pas transmettre d'informations médicales via ce formulaire. Nous les aborderons ensemble lors d'un échange.")}</p>
               </div>
             </div>
             <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
@@ -135,6 +137,8 @@ export default function Contact() {
       </div>
 
       {/* text : me contacter autrement */}
+      {/* FAQ : mêmes questions que la page Tarifs */}
+      <Faq cta={false} />
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
           <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" style={FV} data-sanity={ds("pageContact", "text_1")}>{t("pageContact", "text_1", "Me contacter autrement")}</p>

@@ -10,7 +10,7 @@ export default function PushContact() {
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6682;146:4489">
               <div className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[0] relative shrink-0 text-[40px] text-[color:var(--white,white)] w-[465px]" data-node-id="I414:6682;146:4490" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
                 <p className="leading-none mb-0 text-balance" data-sanity={ds("commun", "push_contact_1")}>{t("commun", "push_contact_1", "Un projet,")}</p>
-                <p className="leading-none text-balance" data-sanity={ds("commun", "push_contact_2")}>{t("commun", "push_contact_2", "Une situation, Une question ?")}</p>
+                <p className="leading-none text-balance" data-sanity={ds("commun", "push_contact_2")}>{t("commun", "push_contact_2", "une situation, une question ?").replace("Une situation, Une question ?", "une situation, une question ?")}</p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6682;146:4491">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="I414:6682;146:4492">

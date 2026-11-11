@@ -25,7 +25,7 @@ export async function safeFetch<T>(query: string, params: Record<string, unknown
   }
 }
 
-export const SETTINGS_QUERY = defineQuery(`*[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials, formKey }`);
+export const SETTINGS_QUERY = defineQuery(`*[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials, formKey, analyticsToken }`);
 export const PROJECTS_QUERY = defineQuery(
   `*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, "slug": slug.current, cover }`
 );
@@ -34,7 +34,7 @@ export const PROJECT_QUERY = defineQuery(
 );
 export const PAGES_QUERY = defineQuery(`*[_type in $types]`);
 
-export type Settings = { email?: string; phone?: string; calendly?: string; doctolib?: string; zone?: string; socials?: { label?: string; url?: string }[]; formKey?: string };
+export type Settings = { email?: string; phone?: string; calendly?: string; doctolib?: string; zone?: string; socials?: { label?: string; url?: string }[]; formKey?: string; analyticsToken?: string };
 
 export const getSettings = () => safeFetch<Settings>(SETTINGS_QUERY);
 export const getProjects = () => safeFetch<any[]>(PROJECTS_QUERY);

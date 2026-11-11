@@ -4,8 +4,13 @@ import '../styles/mobile.css';
 import { VisualEditing } from '@sanity/astro/visual-editing';
 import { PREVIEW } from '../utils/preview';
 import { ClientRouter } from 'astro:transitions';
-interface Props { title: string; description?: string }
-const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure)." } = Astro.props;
+import { site as cfg } from '../utils/site';
+interface Props { title: string; description?: string; noindex?: boolean }
+const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine (Yvelines, Val-d'Oise, Eure).", noindex = false } = Astro.props;
+// Tant que le site n'a pas son vrai domaine (PUBLIC_SITE_URL), il n'est pas indexé : textes provisoires
+const LIVE = !!import.meta.env.PUBLIC_SITE_URL;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const token = cfg.settings.analyticsToken;
 ---
 <!doctype html>
 <html lang="fr">
@@ -14,6 +19,17 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {(noindex || !LIVE) && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Sara Pezzarini, ergothérapeute" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- Statistiques de visite sans cookie (Cloudflare Web Analytics), si un jeton est renseigné dans le Studio -->
+    {token && !PREVIEW && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token })}></script>}
     <script is:inline>
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('anim');
       // Mise à l'échelle de la maquette (1512 px ou 390 px) à la largeur de la fenêtre
@@ -42,7 +58,8 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
     <link rel="preload" href="/fonts/BricolageGrotesque-Variable.ttf" as="font" type="font/ttf" crossorigin />
   </head>
   <body>
-    <div id="page"><slot /></div>
+    <a href="#page" class="skip-link">Aller au contenu</a>
+    <div id="page" tabindex="-1"><slot /></div>
     <VisualEditing enabled={PREVIEW} />
     <script>import '../scripts/interactions.ts';</script>
   </body>

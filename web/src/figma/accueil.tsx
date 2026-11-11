@@ -136,7 +136,7 @@ function Component4Cards({ className }: { className?: string }) {
             <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="146:4298" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "cartes_1")}>{t("pageAccueil", "cartes_1", "Avec qui je travaille")}</p>
             <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="146:4299">
               <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="146:4300">
-                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-node-id="146:4301" data-sanity={ds("pageAccueil", "cartes_2")}>{t("pageAccueil", "cartes_2", "Ergothérapeute en libéral, j'accompagne les personnes et les organisations vers une inclusion concrète, au-delà du soin.")}</p>
+                <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[458px]" data-node-id="146:4301" data-sanity={ds("pageAccueil", "cartes_2")}>{t("pageAccueil", "cartes_2", "Personnes, familles, établissements, entreprises ou lieux culturels : j’interviens là où le quotidien pose question, sur place, à domicile ou en visio.")}</p>
               </div>
             </div>
           </div>
@@ -230,9 +230,9 @@ function Text({ className }: { className?: string }) {
   return (
     <div className={className || "bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative w-[1512px]"} data-node-id="148:4601" data-name="text">
       <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]" data-node-id="146:4290">
-        <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "text_1")}>{t("pageAccueil", "text_1", "Ergothérapeute en libéral, j'accompagne les personnes et les organisations vers une inclusion concrète, au-delà du soin.")}</p>
+        <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds("pageAccueil", "text_1")}>{t("pageAccueil", "text_1", "Comprendre ce qui fait obstacle au quotidien, et construire avec vous des solutions qui tiennent dans la durée.")}</p>
         <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full" data-node-id="146:4292">
-          <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="146:4293" data-sanity={ds("pageAccueil", "text_2")}>{t("pageAccueil", "text_2", "Mushrooms chicken personal onions thin platter spinach Chicago parmesan. Lasagna pineapple pie hand pesto deep. Thin sautéed Hawaiian meat sauce white tomatoes style. Mayo bbq pesto Aussie pie green meatball.")}</p>
+          <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="146:4293" data-sanity={ds("pageAccueil", "text_2")}>{t("pageAccueil", "text_2", "Ergothérapeute diplômée d’État, j’ai travaillé en psychiatrie, en EHPAD puis en SAMSAH spécialisé TSA. Bilans, mises en situation, entretiens : je prends le temps de comprendre le fonctionnement de chaque personne. Nous construisons ensuite, avec elle, son entourage et les équipes, des stratégies, des outils et des aménagements adaptés.")}</p>
         </div>
       </div>
     </div>
@@ -275,7 +275,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6637;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "hero_image_1")} src={img("pageAccueil", "hero_image_1", "/images/22638ffa4c.webp")} />
+                <img alt="Sara Pezzarini à son bureau" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "hero_image_1")} src={img("pageAccueil", "hero_image_1", "/images/22638ffa4c.webp")} />
               </div>
             </div>
           </div>

@@ -202,13 +202,18 @@ function contactForm() {
     status.hidden = false;
   };
 
+  // anti-spam : case piège invisible (botcheck) + envoi refusé moins de 3 s après l'affichage
+  // (un robot remplit et envoie instantanément) ; on affiche « merci » sans rien envoyer
+  const shownAt = Date.now();
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
     const fd = new FormData(form);
-    if (fd.get('botcheck')) return;
+    if (fd.get('botcheck') || Date.now() - shownAt < 3000) { form.reset(); show(true); return; }
     const data: Record<string, string> = {};
     fd.forEach((v, k) => { if (k !== 'botcheck' && k !== 'consentement') data[k] = String(v); });
+    // champs réservés aux organisations
+    if (data.profil !== 'organisation') { delete data.organisation; delete data.fonction; }
     const profil = data.profil === 'organisation' ? 'Organisation' : 'Personne ou proche';
     const subject = `Nouveau message de ${data.nom || 'quelqu’un'} depuis le site`;
     const key = form.dataset.key;

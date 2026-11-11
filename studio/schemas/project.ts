@@ -10,6 +10,11 @@ export default defineType({
     defineField({ name: 'title', title: 'Titre', type: 'string', validation: (r) => r.required() }),
     defineField({ name: 'slug', title: 'Adresse de la page', type: 'slug', options: { source: 'title' }, validation: (r) => r.required() }),
     defineField({ name: 'order', title: 'Ordre dans la liste', type: 'number' }),
+    defineField({
+      name: 'public', title: 'Public concerné', type: 'array', of: [{ type: 'string' }],
+      options: { list: ['Structures médico-sociales', 'Entreprises et collectivités', 'Écoles et lieux culturels', 'Personnes et familles'], layout: 'grid' },
+      description: "Pas encore affiché sur le site (en attente d'un emplacement dans la maquette).",
+    }),
     defineField({ name: 'cover', title: 'Image de couverture', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'intro', title: 'Besoin de départ (texte du haut)', type: 'text', rows: 4 }),
     defineField({ name: 'contextTitle', title: 'Titre du contexte', type: 'string' }),
@@ -32,6 +37,14 @@ export default defineType({
     }),
     defineField({ name: 'resultTitle', title: 'Résultat : titre', type: 'string' }),
     defineField({ name: 'resultText', title: 'Résultat : texte', type: 'text', rows: 5 }),
+    defineField({
+      name: 'citation', title: 'Citation (retour anonymisé)', type: 'object',
+      description: "Pas encore affichée sur le site (en attente d'un emplacement dans la maquette).",
+      fields: [
+        defineField({ name: 'texte', title: 'Citation', type: 'text', rows: 3 }),
+        defineField({ name: 'auteur', title: 'Qui parle (ex. « Une participante »)', type: 'string' }),
+      ],
+    }),
     defineField({ name: 'gallery', title: "Photos de l'outil", type: 'array', of: [{ type: 'image', options: { hotspot: true } }] }),
   ],
   preview: { select: { title: 'title', media: 'cover' } },

@@ -1,0 +1,29 @@
+# Déploie le Studio Sanity (sara-pezzarini.sanity.studio) à chaque modification du dossier studio/.
+# Le site, lui, est redéployé par Cloudflare à chaque push.
+# Prérequis (une seule fois) : un jeton « Deploy Studio » créé sur sanity.io/manage (projet h4rgggeo, API, Tokens),
+# enregistré dans GitHub : Settings, Secrets and variables, Actions, secret SANITY_AUTH_TOKEN.
+name: Déployer le Studio
+
+on:
+  push:
+    branches: [main]
+    paths: ['studio/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - run: npm ci
+      - run: npx sanity deploy -y
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}

@@ -80,6 +80,19 @@ a[data-name="Bouton"]:has([data-name="Cta"]) p[class*="Bricolage"] .u { backgrou
 a[data-name="Bouton"] img[src$="/assets/arrow.svg"] { transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
 @media (hover: hover) { a[data-name="Bouton"]:hover img[src$="/assets/arrow.svg"] { transform: translateX(-4px); } }
 
+/* Accessibilité (contraste AA) : le blanc à 70 % des heros ne suffisait pas sur les zones claires des dégradés */
+[data-hero] p[class*="rgba(255,255,255,0.7)"] { color: #fff; }
+
+/* Accessibilité clavier : contour visible au focus clavier uniquement, lien d'évitement */
+:focus-visible { outline: 2px solid #090f0c; outline-offset: 3px; border-radius: 4px; }
+[class*="bg-[var(--black"]:focus-visible, [data-hero] :focus-visible, [data-name="points"] :focus-visible, [data-name="push-contact"] :focus-visible { outline-color: #fff; }
+#page:focus { outline: none; }
+.skip-link { position: fixed; left: 16px; top: 16px; z-index: 100; padding: 8px 16px; border-radius: 4px; background: #090f0c; color: #f2f2f2; font-family: 'Lexend:Regular', sans-serif; font-size: 16px; transform: translateY(-200%); transition: transform .2s ease; }
+.skip-link:focus { transform: none; }
+
+/* Formulaire : Organisation et Fonction seulement pour une organisation */
+[data-contact-form]:has(input[name="profil"][value="personne"]:checked) :is([data-field="organisation"], [data-field="fonction"]) { display: none; }
+
 /* Crédit : « Thomas Marilleau » au survol */
 .credit { display: grid; }
 .credit > span { grid-area: 1 / 1; transition: opacity .3s ease; }
