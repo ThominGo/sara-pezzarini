@@ -1,5 +1,5 @@
 import { ds } from '../utils/preview';
-import { t, img } from '../utils/content';
+import { t, img, srcset } from '../utils/content';
 import { site } from '../utils/site';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -35,7 +35,7 @@ export default function TarifsEtFinancement() {
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6356;146:4272">
             <div className="flex-none rotate-180 size-full">
               <div className="relative rounded-[8px] size-full" data-name="image 10">
-                <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-tarifs.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(129.8873323028124deg, rgb(232, 145, 58) 0%, rgb(210, 80, 46) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
+                <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]"><img alt="" fetchPriority="high" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-tarifs.png" /><div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundImage: "linear-gradient(129.8873323028124deg, rgb(232, 145, 58) 0%, rgb(210, 80, 46) 83.333%)" }} /><div className="absolute bg-[rgba(255,154,77,0.45)] inset-0 mix-blend-soft-light rounded-[8px]" /></div>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function TarifsEtFinancement() {
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6356;146:4288">
             <div className="-scale-y-100 flex-none rotate-180">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
-                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "tarifs_image_1")} src={img("pageTarifs", "tarifs_image_1", "/images/153b127964.webp")} />
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageTarifs", "tarifs_image_1")} src={img("pageTarifs", "tarifs_image_1", "/images/153b127964.webp")} srcSet={srcset(img("pageTarifs", "tarifs_image_1", "/images/153b127964.webp"))} sizes="(max-width: 767px) 260px, 330px" />
               </div>
             </div>
           </div>

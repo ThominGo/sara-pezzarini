@@ -60,3 +60,9 @@ export function img(page: string, key: string, fallback: string): string {
   const v = content[page]?.[key];
   return v?.asset ? urlFor(v).width(2000).auto('format').url() : fallback;
 }
+
+// srcset des photos locales : variante 800 px (générée par scripts/images-800.py) + originale
+export function srcset(src: string): string | undefined {
+  if (!src.startsWith('/images/') || !src.endsWith('.webp')) return undefined;
+  return `${src.replace(/\.webp$/, '-800.webp')} 800w, ${src} 1400w`;
+}

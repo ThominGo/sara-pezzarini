@@ -15,7 +15,7 @@ export default function Erreur404() {
             <div className="flex-none rotate-180 size-full">
               <div className="relative rounded-[8px] size-full" data-name="image 10">
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-                  <img alt="" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-push.png" />
+                  <img alt="" fetchPriority="high" className="gshape absolute inset-0 max-w-none size-full" src="/gradients/shape-push.png" />
                   <div className="absolute bg-[#917e95] inset-0 mix-blend-color rounded-[8px]" />
                 </div>
               </div>

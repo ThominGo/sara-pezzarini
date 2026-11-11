@@ -22,6 +22,8 @@ export default defineConfig({
   adapter: PREVIEW ? cloudflare({ imageService: 'passthrough', imagesBindingName: false, configPath: 'wrangler.preview.jsonc' }) : undefined,
   // Pas de sessions utilisées : stockage en mémoire, aucun KV à créer chez Cloudflare
   session: { driver: sessionDrivers.lruCache() },
+  // CSS intégré au HTML : pas de requête bloquante avant l'affichage
+  build: { inlineStylesheets: 'always' },
   integrations: [
     sanity({
       projectId: PROJECT_ID,
