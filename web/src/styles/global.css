@@ -328,6 +328,9 @@ html.a11y-calm::view-transition-group(*), html.a11y-calm::view-transition-old(*)
 .a11y-reset { align-self: flex-start; padding: 0; border: 0; background: none; font: inherit; font-size: 14px; color: #090f0c; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 @media (max-width: 767.98px) {
   .a11y { right: 16px; bottom: 16px; }
+  /* mobile : icône seule (le nom reste lu par les lecteurs d'écran via aria-label) */
+  .a11y-btn { width: 44px; padding: 0; justify-content: center; }
+  .a11y-btn-l { display: none; }
   .a11y-panel { position: fixed; left: 16px; right: 16px; bottom: 72px; width: auto; }
 }
 
