@@ -160,45 +160,46 @@ export default function Projets({ p = {} }: { p?: any }) {
           </div>
         </div>
       </div>
-      {blocks[0] && (
+      {blocks.map((b: any, i: number) => (
+      <Fragment key={b._key ?? i}>
+      {i % 2 === 0 ? (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7024" data-name="image-text">
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7025">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7026">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7027">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7028">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].title`, "project")}>
-                  {blocks[0].title}
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${b._key}"].title`, "project")}>
+                  {b.title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7030">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7031">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].text`, "project")}>{blocks[0].text}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].text`, "project")}>{b.text}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7033" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].image`, "project")}>{blocks[0].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[0].imageUrl} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} />}</div>
         </div>
       </div>
-      )}
-      {blocks[1] && (
+      ) : (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7035" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7036" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].image`, "project")}>{blocks[1].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[1].imageUrl} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} />}</div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7038">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7039">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7040">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7041">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].title`, "project")}>
-                  {blocks[1].title}
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${b._key}"].title`, "project")}>
+                  {b.title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7043">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7044">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].text`, "project")}>{blocks[1].text}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].text`, "project")}>{b.text}</p>
                 </div>
               </div>
             </div>
@@ -206,6 +207,8 @@ export default function Projets({ p = {} }: { p?: any }) {
         </div>
       </div>
       )}
+      </Fragment>
+      ))}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-node-id="414:7046" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]" data-node-id="414:7047">
           <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0" data-node-id="414:7048">
