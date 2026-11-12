@@ -39,11 +39,14 @@ const token = cfg.settings.analyticsToken;
       window.__a11y = function () {
         var p = {}; try { p = JSON.parse(localStorage.getItem('a11y') || '{}'); } catch (e) {}
         var h = document.documentElement;
+        // Mode sombre : celui du navigateur tant que le visiteur ne l'a pas choisi dans le panneau
+        if (typeof p.dark !== 'boolean') p.dark = matchMedia('(prefers-color-scheme: dark)').matches;
         ['dark', 'spacing', 'font', 'dys', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
         h.dataset.a11ySize = String(p.size || 0);
         return p;
       };
       window.__a11y();
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { window.__a11y(); document.dispatchEvent(new Event('a11y-sync')); });
       window.__calm = function () { return matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm'); };
       if (!window.__calm()) document.documentElement.classList.add('anim');
       // Mise à l'échelle de la maquette (1512 px ou 390 px) à la largeur de la fenêtre

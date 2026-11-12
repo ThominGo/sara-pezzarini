@@ -411,7 +411,10 @@ function a11yPanel() {
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
   document.addEventListener('click', (e) => { if (!panel.hidden && !root.contains(e.target as Node)) open(false); });
   root.querySelectorAll<HTMLElement>('[data-a11y-key]').forEach((b) => b.addEventListener('click', () => {
-    const p = prefs(); const k = b.dataset.a11yKey!; p[k] = !p[k];
+    const p = prefs(); const k = b.dataset.a11yKey!;
+    // valeur affichée (le mode sombre peut venir du navigateur sans être enregistré)
+    const cur = (window as any).__a11y?.() ?? p;
+    p[k] = !cur[k];
     // une seule police d'accessibilité à la fois
     if (p[k] && k === 'font') p.dys = false;
     if (p[k] && k === 'dys') p.font = false;
@@ -424,6 +427,7 @@ function a11yPanel() {
   root.querySelector('[data-a11y-reset]')!.addEventListener('click', () => {
     const calm = prefs().calm; save({}); sync(); if (calm) location.reload();
   });
+  document.addEventListener('a11y-sync', sync, { signal: page.signal });
   sync();
 }
 
