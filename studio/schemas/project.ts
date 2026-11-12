@@ -14,7 +14,7 @@ export default defineType({
     defineField({
       name: 'public', title: 'Public concerné', type: 'array', of: [{ type: 'string' }],
       options: { list: ['Structures médico-sociales', 'Entreprises et collectivités', 'Écoles et lieux culturels', 'Personnes et familles'], layout: 'grid' },
-      description: "Pas encore affiché sur le site (en attente d'un emplacement dans la maquette).",
+      description: "Affiché dans la fiche sous le haut de page.",
     }),
     defineField({ name: 'with', title: 'Avec qui', type: 'string', description: "Affiché dans la fiche sous le haut de page. Ne nommez une personne ou une structure qu'avec son accord." }),
     defineField({ name: 'duration', title: 'Durée', type: 'string', description: 'Ex. « 6 mois de préparation ». Laissez vide si inconnue : la case disparaît.' }),
