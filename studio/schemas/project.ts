@@ -32,7 +32,7 @@ export default defineType({
     }),
     defineField({
       name: 'blocks', title: 'Blocs image et texte (0, 1 ou 2)', type: 'array', validation: (r) => r.max(2),
-      of: [defineArrayMember({ type: 'object', name: 'block', fields: [
+      of: [defineArrayMember({ type: 'object', name: 'textBlock', fields: [
         defineField({ name: 'title', title: 'Titre', type: 'string' }),
         defineField({ name: 'text', title: 'Texte', type: 'text', rows: 5 }),
         defineField({ name: 'image', title: 'Image', type: 'image', options: { hotspot: true } }),

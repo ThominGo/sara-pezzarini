@@ -185,7 +185,7 @@ def to_doc(p):
             {"_type": "step", "_key": f"s{i+1}", "title": t, "text": x} for i, (t, x) in enumerate(p["steps"])
         ],
         "blocks": [
-            {"_type": "block", "_key": f"b{i+1}", "title": t, "text": x} for i, (t, x) in enumerate(p["blocks"])
+            {"_type": "textBlock", "_key": f"b{i+1}", "title": t, "text": x} for i, (t, x) in enumerate(p["blocks"])
         ],
         "resultTitle": p["resultTitle"],
         "resultText": p["resultText"],
