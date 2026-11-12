@@ -30,7 +30,7 @@ export const PROJECTS_QUERY = defineQuery(
   `*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, cardTitle, "slug": slug.current, cover }`
 );
 export const PROJECT_QUERY = defineQuery(
-  `*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, public, "with": with, duration, cover, intro, contextTitle, contextText, steps[]{title, text, image}, blocks[]{title, text, image}, resultTitle, resultText, citation, galleryTitle, gallery[]{image, title, text} }`
+  `*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, public, "with": with, duration, cover, intro, contextTitle, contextText, steps[]{_key, title, text, image}, blocks[]{_key, title, text, image}, resultTitle, resultText, citation, galleryTitle, gallery[]{_key, image, title, text} }`
 );
 export const PAGES_QUERY = defineQuery(`*[_type in $types]`);
 

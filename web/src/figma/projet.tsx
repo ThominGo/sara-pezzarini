@@ -60,7 +60,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px p-[40px] relative" data-node-id="I414:6986;196:5463">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I414:6986;196:5464">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6986;196:5465">
-              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="I414:6986;196:5466" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="I414:6986;196:5466" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "title", "project")}>
                 {p.title ?? "Répertoire d’outils d’autonomie pour adultes ayant un TSA"}
               </p>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6986;196:5467">
@@ -74,7 +74,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-col h-full items-start p-[8px] relative shrink-0 w-[995px]" data-node-id="I414:6986;196:5471">
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6986;196:5472">
             <div className="flex-none rotate-180 size-full">
-              <div className="relative rounded-[8px] size-full" data-name="image 10">
+              <div className="relative rounded-[8px] size-full" data-name="image 10" data-sanity={ds(p._id, "cover", "project")}>
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
                   <div className="absolute inset-0 overflow-hidden rounded-[8px]">
                     <img fetchPriority="high" alt="" className="absolute h-[313.35%] left-[-18.09%] max-w-none top-[-120.81%] w-[216.62%]" src={p.coverUrl ?? "/images/f367c067a6.webp"} />
@@ -90,7 +90,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center py-[56px] relative shrink-0 w-[1512px]" data-name="fiche">
           <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[1190px]">
             {fiche.map(([label, value]) => (
-              <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative">
+              <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative" data-sanity={ds(p._id, label === "Public" ? "public" : label === "Avec qui" ? "with" : "duration", "project")}>
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{label}</p>
                 </div>
@@ -102,11 +102,11 @@ export default function Projets({ p = {} }: { p?: any }) {
       )}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-node-id="414:6987" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]" data-node-id="I414:6987;146:4290">
-          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="I414:6987;146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="I414:6987;146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "contextTitle", "project")}>
             {p.contextTitle ?? "Rendre les séances de psychoéducation plus concrètes"}
           </p>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full" data-node-id="I414:6987;146:4292">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="I414:6987;146:4293">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="I414:6987;146:4293" data-sanity={ds(p._id, "contextText", "project")}>
               {p.contextText ?? "Dans le cadre de séances de psychoéducation menées en collaboration avec le centre expert TSA de l’hôpital André-Mignot, j’ai conçu, avec un psychologue du centre expert, un répertoire thématique et cliquable : chaque difficulté renvoie à des outils concrets (stratégies, applications, méthodes d’organisation) testés avec le public accompagné en SAMSAH ou créés pour l’occasion."}
             </p>
           </div>
@@ -123,16 +123,16 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative">
                 <div className="flex items-center justify-center relative shrink-0 w-full">
                   <div className="-scale-y-100 flex-none rotate-180 w-full">
-                    <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
+                    <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13" data-sanity={ds(p._id, `steps[_key=="${s._key}"].image`, "project")}>
                       <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={s.imageUrl ?? fallbackImages[i % fallbackImages.length]} />
                     </div>
                   </div>
                 </div>
                 <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `steps[_key=="${s._key}"].title`, "project")}>
                     {s.title}
                   </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full">
+                  <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-sanity={ds(p._id, `steps[_key=="${s._key}"].text`, "project")}>
                     {s.text}
                   </p>
                 </div>
@@ -166,39 +166,39 @@ export default function Projets({ p = {} }: { p?: any }) {
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7026">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7027">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7028">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].title`, "project")}>
                   {blocks[0].title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7030">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7031">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032">{blocks[0].text}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].text`, "project")}>{blocks[0].text}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7033" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg">{blocks[0].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[0].imageUrl} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].image`, "project")}>{blocks[0].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[0].imageUrl} />}</div>
         </div>
       </div>
       )}
       {blocks[1] && (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7035" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7036" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg">{blocks[1].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[1].imageUrl} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].image`, "project")}>{blocks[1].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[1].imageUrl} />}</div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7038">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7039">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7040">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7041">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].title`, "project")}>
                   {blocks[1].title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7043">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7044">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045">{blocks[1].text}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].text`, "project")}>{blocks[1].text}</p>
                 </div>
               </div>
             </div>
@@ -214,12 +214,12 @@ export default function Projets({ p = {} }: { p?: any }) {
                 Résultat
               </p>
             </div>
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="414:7051" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="414:7051" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "resultTitle", "project")}>
               {p.resultTitle ?? "Un outil apprécié des participants et utilisé au-delà des séances prévues"}
             </p>
           </div>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full" data-node-id="414:7052">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="414:7053">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="414:7053" data-sanity={ds(p._id, "resultText", "project")}>
               {p.resultText ?? "Plusieurs retours par mail soulignent son usage concret face à des situations du quotidien, comme la fatigue. D’après les retours, il leur permet de pouvoir trouver des outils ou des stratégies en fonction de certaines problématiques spécifiques sans se perdre dans les distractions que peut proposer internet. Certains se disent soulagés d’avoir cet outil dans leur téléphone en cas de besoin."}
             </p>
           </div>
@@ -234,12 +234,12 @@ export default function Projets({ p = {} }: { p?: any }) {
                 Retour
               </p>
             </div>
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[900px]" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[900px]" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "citation.texte", "project")}>
               « {p.citation.texte} »
             </p>
           </div>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-sanity={ds(p._id, "citation.auteur", "project")}>
               {p.citation.auteur}
             </p>
           </div>
@@ -250,7 +250,7 @@ export default function Projets({ p = {} }: { p?: any }) {
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-node-id="414:7054" data-name="slider">
         <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-[1190px]" data-node-id="I414:7054;146:4446">
           <div className="content-stretch flex items-end justify-between relative shrink-0 w-full" data-node-id="I414:7054;146:4447">
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" data-node-id="I414:7054;146:4448" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" data-node-id="I414:7054;146:4448" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "galleryTitle", "project")}>
               {p.galleryTitle ?? "Captures et photos"}
             </p>
             <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="I414:7054;146:4449">
@@ -272,13 +272,13 @@ export default function Projets({ p = {} }: { p?: any }) {
             <div className="flex flex-row items-center self-stretch">
               <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
                 <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative overflow-clip rounded-[8px] row-1 w-[340px]" data-name="image 13">{g.imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={g.imageUrl} />}</div>
+                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative overflow-clip rounded-[8px] row-1 w-[340px]" data-name="image 13" data-sanity={ds(p._id, `gallery[_key=="${g._key}"].image`, "project")}>{g.imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={g.imageUrl} />}</div>
                 </div>
                 <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `gallery[_key=="${g._key}"].title`, "project")}>
                     {g.title}
                   </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]">
+                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-sanity={ds(p._id, `gallery[_key=="${g._key}"].text`, "project")}>
                     {g.text}
                   </p>
                 </div>
