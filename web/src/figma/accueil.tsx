@@ -355,9 +355,9 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
           </div>
           <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="I414:6680;146:4424">
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4425" data-name="Bouton">
-              <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4426">
-                <div className="flex-none">
-                  <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+              <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="I414:6680;146:4426">
+                <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                  <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "points_image_1")} src={img("pageAccueil", "points_image_1", "/assets/icons/handshake.svg")} />
                 </div>
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6680;146:4427">
@@ -366,9 +366,9 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4430" data-name="Bouton">
-              <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4431">
-                <div className="flex-none">
-                  <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+              <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="I414:6680;146:4431">
+                <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                  <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "points_image_2")} src={img("pageAccueil", "points_image_2", "/assets/icons/lightbulb.svg")} />
                 </div>
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6680;146:4432">
@@ -377,9 +377,9 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4435" data-name="Bouton">
-              <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4436">
-                <div className="flex-none">
-                  <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+              <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="I414:6680;146:4436">
+                <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                  <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "points_image_3")} src={img("pageAccueil", "points_image_3", "/assets/icons/ear.svg")} />
                 </div>
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6680;146:4437">
@@ -388,9 +388,9 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
               </div>
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4440" data-name="Bouton">
-              <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4441">
-                <div className="flex-none">
-                  <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+              <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="I414:6680;146:4441">
+                <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                  <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pageAccueil", "points_image_4")} src={img("pageAccueil", "points_image_4", "/assets/icons/calendar-sync.svg")} />
                 </div>
               </div>
               <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col font-normal items-start leading-[1.2] min-w-px p-[8px] relative text-balance" data-node-id="I414:6680;146:4442">

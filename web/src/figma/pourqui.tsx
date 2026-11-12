@@ -129,33 +129,33 @@ export default function PourQui() {
             <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_5")} src={img("pagePourQui", "image_text_image_5", "/images/9e02fa80b6.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6817">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6818" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6819">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6819">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_1")} src={img("pagePourQui", "image_text_icon_1", "/assets/icons/armchair.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6820">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6821" data-sanity={ds("pagePourQui", "image_text_6")}>{t("pagePourQui", "image_text_6", "Des conseils pour adapter les espaces et les activités.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6821" data-sanity={ds("pagePourQui", "image_text_6")}>{t("pagePourQui", "image_text_6", "Des conseils pour adapter les espaces et les activités.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6822" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6823">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6823">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_2")} src={img("pagePourQui", "image_text_icon_2", "/assets/icons/shield-check.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6824">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6825" data-sanity={ds("pagePourQui", "image_text_7")}>{t("pagePourQui", "image_text_7", "Des ateliers et programmes de prévention adaptés.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6825" data-sanity={ds("pagePourQui", "image_text_7")}>{t("pagePourQui", "image_text_7", "Des ateliers et programmes de prévention adaptés.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6826" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6827">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6827">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_3")} src={img("pagePourQui", "image_text_icon_3", "/assets/icons/megaphone.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6828">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6829" data-sanity={ds("pagePourQui", "image_text_8")}>{t("pagePourQui", "image_text_8", "Des sensibilisations pour construire des pratiques inclusives.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6829" data-sanity={ds("pagePourQui", "image_text_8")}>{t("pagePourQui", "image_text_8", "Des sensibilisations pour construire des pratiques inclusives.")}</p>
                 </div>
               </div>
             </div>
@@ -201,33 +201,33 @@ export default function PourQui() {
             <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_6")} src={img("pagePourQui", "image_text_image_6", "/images/4a0b9d7ee1.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6851">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6852" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6853">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6853">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_4")} src={img("pagePourQui", "image_text_icon_4", "/assets/icons/layout-template.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6854">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6855" data-sanity={ds("pagePourQui", "image_text_14")}>{t("pagePourQui", "image_text_14", "Des conseils sur l’organisation des espaces et des activités.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6855" data-sanity={ds("pagePourQui", "image_text_14")}>{t("pagePourQui", "image_text_14", "Des conseils sur l’organisation des espaces et des activités.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6856" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6857">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6857">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_5")} src={img("pagePourQui", "image_text_icon_5", "/assets/icons/signpost.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6858">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6859" data-sanity={ds("pagePourQui", "image_text_15")}>{t("pagePourQui", "image_text_15", "Des supports adaptés pour se repérer et participer.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6859" data-sanity={ds("pagePourQui", "image_text_15")}>{t("pagePourQui", "image_text_15", "Des supports adaptés pour se repérer et participer.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6860" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6861">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6861">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_6")} src={img("pagePourQui", "image_text_icon_6", "/assets/icons/puzzle.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6862">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6863" data-sanity={ds("pagePourQui", "image_text_16")}>{t("pagePourQui", "image_text_16", "Des sensibilisations et des projets co-construits avec l’équipe.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6863" data-sanity={ds("pagePourQui", "image_text_16")}>{t("pagePourQui", "image_text_16", "Des sensibilisations et des projets co-construits avec l’équipe.")}</p>
                 </div>
               </div>
             </div>
@@ -240,33 +240,33 @@ export default function PourQui() {
             <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" data-sanity={ds("pagePourQui", "image_text_image_7")} src={img("pagePourQui", "image_text_image_7", "/images/3045a0aeb8.webp")} />
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6867">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6868" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6869">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6869">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_7")} src={img("pagePourQui", "image_text_icon_7", "/assets/icons/clipboard-list.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6870">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6871" data-sanity={ds("pagePourQui", "image_text_17")}>{t("pagePourQui", "image_text_17", "Un bilan centré sur vos activités, vos besoins et vos choix.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6871" data-sanity={ds("pagePourQui", "image_text_17")}>{t("pagePourQui", "image_text_17", "Un bilan centré sur vos activités, vos besoins et vos choix.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6872" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6873">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6873">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_8")} src={img("pagePourQui", "image_text_icon_8", "/assets/icons/route.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6874">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6875" data-sanity={ds("pagePourQui", "image_text_18")}>{t("pagePourQui", "image_text_18", "Un suivi, des stratégies et des outils sur mesure.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6875" data-sanity={ds("pagePourQui", "image_text_18")}>{t("pagePourQui", "image_text_18", "Un suivi, des stratégies et des outils sur mesure.")}</p>
                 </div>
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6876" data-name="Bouton">
-                <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6877">
-                  <div className="flex-none">
-                    <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
+                <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex items-center justify-center overflow-clip p-[18px] relative rounded-[2px] shrink-0 size-[80px]" data-node-id="414:6877">
+                  <div className="relative shrink-0 size-[24px]" data-name="Frame">
+                    <img loading="lazy" decoding="async" alt="" className="absolute block inset-0 max-w-none size-full" data-sanity={ds("pagePourQui", "image_text_icon_9")} src={img("pagePourQui", "image_text_icon_9", "/assets/icons/house-heart.svg")} />
                   </div>
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px p-[8px] relative self-stretch" data-node-id="414:6878">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-balance w-full" data-node-id="414:6879" data-sanity={ds("pagePourQui", "image_text_19")}>{t("pagePourQui", "image_text_19", "Des adaptations du quotidien, construites avec l’entourage.")}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6879" data-sanity={ds("pagePourQui", "image_text_19")}>{t("pagePourQui", "image_text_19", "Des adaptations du quotidien, construites avec l’entourage.")}</p>
                 </div>
               </div>
             </div>
