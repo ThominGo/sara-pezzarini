@@ -1,0 +1,89 @@
+/* Thème sombre (réglage « Mode sombre » du panneau Accessibilité, classe a11y-dark sur <html>).
+   Pas de maquette : on inverse les variables Figma (fond, cartes, texte) et on corrige les couleurs écrites en dur.
+   Les blocs en dégradé (heros, points, push-contact, carte du menu) gardent leurs couleurs d'origine. */
+
+html.a11y-dark {
+  color-scheme: dark;
+  --black: #ecedeb;
+  --black-70\%: rgba(236, 237, 235, 0.72);
+  --white: #1b211e;
+  --grey: #0f1412;
+  --line: #343b37;
+}
+
+/* Blocs colorés : variables d'origine (textes blancs, boutons noirs et blancs) */
+html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"], .menu-card) {
+  --black: #090f0c;
+  --black-70\%: rgba(9, 15, 12, 0.7);
+  --white: #ffffff;
+  --grey: #f2f2f2;
+  color-scheme: light;
+}
+
+/* Couleurs écrites en dur dans les composants */
+html.a11y-dark #page [class*="border-[#ccc]"],
+html.a11y-dark #page [class*="border-[#c2c2c2]"],
+html.a11y-dark #page [class*="border-[rgba(0,0,0,0.2)]"] { border-color: var(--line); }
+html.a11y-dark #page [class*="bg-[#f2f2f2]"] { background-color: var(--grey); }
+html.a11y-dark #page [class*="bg-[#d9d9d9]"] { background-color: #2a312d; }
+html.a11y-dark #page [class*="bg-[rgba(0,0,0,0.1)]"] { background-color: rgba(255, 255, 255, .1); }
+html.a11y-dark #page [class*="text-[#090f0c]"] { color: var(--black); }
+html.a11y-dark #page [class*="text-[rgba(9,15,12,0.7)]"] { color: rgba(236, 237, 235, .72); }
+html.a11y-dark #page [class*="text-[rgba(9,15,12,0.5)]"] { color: rgba(236, 237, 235, .55); }
+html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) [class*="border-[#ccc]"] { border-color: #ccc; }
+html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) [class*="text-[#090f0c]"] { color: #090f0c; }
+
+/* Icônes et flèches dessinées en noir : passées en clair (hors blocs colorés) */
+html.a11y-dark #page img:is([src$="/assets/arrow.svg"], [src*="/assets/icons/"], [src$="/assets/select.svg"], [src$="/assets/radio-off.svg"], [src$="/assets/radio-on.svg"]) { filter: invert(1) hue-rotate(180deg); }
+html.a11y-dark #page :is([data-hero], [data-name="points"], [data-name="push-contact"]) img[src*="/assets/"] { filter: none; }
+
+/* Photos : un peu moins lumineuses sur fond sombre (les illustrations ont leur version -dark.svg, voir interactions.ts) */
+html.a11y-dark #page img[src*="/images/"] { filter: brightness(.9); }
+html.a11y-dark #page [data-name="points"] img[src*="/images/"], html.a11y-dark #page [data-hero] img[src*="/images/"] { filter: none; }
+
+/* Éléments stylés dans global.css et mobile.css */
+html.a11y-dark :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:active { background-color: rgba(236, 237, 235, .7); }
+@media (hover: hover) {
+  html.a11y-dark #page :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { background-color: rgba(236, 237, 235, .8); }
+  html.a11y-dark #page :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:hover { background-color: #262d29; }
+  html.a11y-dark #page :is(.lien:hover, .lien:hover p, a[data-name="Cta"]:not([class*="bg-"]):hover p, .faq-q:hover p) { color: rgba(236, 237, 235, .7); }
+  html.a11y-dark .champ:hover { border-color: rgba(236, 237, 235, .4); }
+  html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) :is(a, button, [role="button"])[data-name="Cta"][class*="bg-[var(--black"]:hover { background-color: rgba(9, 15, 12, .72); }
+  html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) :is(a, button, label, [role="button"])[data-name="Cta"][class*="bg-[var(--white"]:hover { background-color: rgba(242, 242, 242, .9); }
+}
+html.a11y-dark :focus-visible { outline-color: #ecedeb; }
+html.a11y-dark .champ:focus, html.a11y-dark .champ:focus-within { border-color: #ecedeb; }
+html.a11y-dark .faq-bar { background: #ecedeb; }
+html.a11y-dark .hero-veil { background: #0f1412; }
+html.a11y-dark::view-transition { background: #0f1412; }
+html.a11y-dark .skip-link { background: #ecedeb; color: #0f1412; }
+html.a11y-dark .xp-year { background: #1b211e; color: #ecedeb; }
+html.a11y-dark .menu-link { color: #ecedeb; border-bottom-color: rgba(236, 237, 235, .12); }
+html.a11y-dark .menu-num { color: rgba(236, 237, 235, .55); }
+html.a11y-dark.a11y-contrast #page [class*="black-70"], html.a11y-dark.a11y-contrast #page [class*="rgba(9,15,12,0.7)"] { color: #fff !important; }
+html.a11y-dark.a11y-contrast #page :is(.champ, [class*="border-[#c2c2c2]"], [class*="border-[#ccc]"]) { border-color: #ecedeb !important; }
+
+/* Panneau Accessibilité */
+html.a11y-dark .a11y { color: #ecedeb; }
+html.a11y-dark .a11y-btn { background: #ecedeb; color: #0f1412; border-color: #ecedeb; }
+@media (hover: hover) { html.a11y-dark .a11y-btn:hover { background: rgba(236, 237, 235, .8); } }
+html.a11y-dark .a11y-btn[aria-expanded="true"] { background: #1b211e; color: #ecedeb; border-color: var(--line); }
+html.a11y-dark .a11y-panel { background: #1b211e; border-color: var(--line); color: #ecedeb; }
+html.a11y-dark .a11y-close { color: #ecedeb; }
+@media (hover: hover) { html.a11y-dark .a11y-close:hover { background: rgba(236, 237, 235, .08); } }
+html.a11y-dark :is(.a11y-intro, .a11y-row-d) { color: rgba(236, 237, 235, .72); }
+html.a11y-dark .a11y-seg button { background: #0f1412; border-color: var(--line); color: #ecedeb; }
+html.a11y-dark .a11y-seg button[aria-pressed="true"] { background: #ecedeb; border-color: #ecedeb; color: #0f1412; }
+html.a11y-dark .a11y-row { background: #0f1412; border-color: var(--line); color: #ecedeb; }
+html.a11y-dark .a11y-switch { background: #4a524e; }
+html.a11y-dark .a11y-switch span { background: #ecedeb; }
+html.a11y-dark .a11y-row[aria-checked="true"] .a11y-switch { background: #ecedeb; }
+html.a11y-dark .a11y-row[aria-checked="true"] .a11y-switch span { background: #0f1412; }
+html.a11y-dark .a11y-reset { color: #ecedeb; }
+
+/* Le conteneur du bloc coloré garde le fond de la page (seul l'intérieur reprend les couleurs d'origine) */
+html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) { background-color: #0f1412; }
+/* Textes d'exemple du formulaire */
+html.a11y-dark #page .champ::placeholder, html.a11y-dark #page .champ ::placeholder { color: rgba(236, 237, 235, .5); }
+html.a11y-dark #page .text-black { color: var(--black); }
+html.a11y-dark :is([data-hero], [data-name="points"], [data-name="push-contact"]) .text-black { color: #000; }

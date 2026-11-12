@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/mobile.css';
+import '../styles/dark.css';
 import { VisualEditing } from '@sanity/astro/visual-editing';
 import { PREVIEW } from '../utils/preview';
 import { ClientRouter } from 'astro:transitions';
@@ -38,7 +39,7 @@ const token = cfg.settings.analyticsToken;
       window.__a11y = function () {
         var p = {}; try { p = JSON.parse(localStorage.getItem('a11y') || '{}'); } catch (e) {}
         var h = document.documentElement;
-        ['spacing', 'font', 'dys', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
+        ['dark', 'spacing', 'font', 'dys', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
         h.dataset.a11ySize = String(p.size || 0);
         return p;
       };

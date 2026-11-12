@@ -399,6 +399,7 @@ function a11yPanel() {
     root.querySelectorAll<HTMLElement>('[data-a11y-key]').forEach((b) => b.setAttribute('aria-checked', String(!!p[b.dataset.a11yKey!])));
     root.querySelectorAll<HTMLElement>('[data-a11y-size]').forEach((b) => b.setAttribute('aria-pressed', String(String(p.size || 0) === b.dataset.a11ySize)));
     textSize();
+    darkIllustrations();
   };
   const open = (o: boolean) => {
     panel.hidden = !o;
@@ -426,12 +427,23 @@ function a11yPanel() {
   sync();
 }
 
+/* ---------------- Mode sombre : illustrations avec un fond foncé (fichiers -dark.svg) ---------------- */
+function darkIllustrations() {
+  const dark = document.documentElement.classList.contains('a11y-dark');
+  document.querySelectorAll<HTMLImageElement>('img[src^="/illustrations/"]').forEach((im) => {
+    const src = im.getAttribute('src')!;
+    const next = dark ? src.replace(/(-dark)?\.svg$/, '-dark.svg') : src.replace(/-dark\.svg$/, '.svg');
+    if (next !== src) im.setAttribute('src', next);
+  });
+}
+
 function init() {
   reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm');
   page.abort();
   page = new AbortController();
   mobileMenu();
   a11yPanel();
+  darkIllustrations();
   textSize();
   heroTexts();
   underlines();
