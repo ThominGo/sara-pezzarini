@@ -15,6 +15,51 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type Page404 = {
+  _id: string;
+  _type: "page404";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  titre_1?: string;
+  titre_2?: string;
+  bouton?: string;
+};
+
+export type PageConfidentialite = {
+  _id: string;
+  _type: "pageConfidentialite";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  titre?: string;
+  date?: string;
+  rubriques?: Array<{
+    titre?: string;
+    texte?: string;
+    encadre?: string;
+    _type: "rubrique";
+    _key: string;
+  }>;
+};
+
+export type PageMentions = {
+  _id: string;
+  _type: "pageMentions";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  titre?: string;
+  date?: string;
+  rubriques?: Array<{
+    titre?: string;
+    texte?: string;
+    encadre?: string;
+    _type: "rubrique";
+    _key: string;
+  }>;
+};
+
 export type SanityImageAssetReference = {
   _ref: string;
   _type: "reference";
@@ -120,6 +165,12 @@ export type PageContact = {
   vertical_card_6?: string;
   vertical_card_7?: string;
   vertical_card_8?: string;
+  besoin_option_1?: string;
+  besoin_option_2?: string;
+  besoin_option_3?: string;
+  besoin_option_4?: string;
+  formulaire_succes?: string;
+  formulaire_erreur?: string;
   vertical_card_9?: string;
   vertical_card_10?: string;
   text_1?: string;
@@ -309,6 +360,9 @@ export type PageTarifs = {
   faq_accord_on_statique_ouvert_4?: string;
   faq_accord_on_statique_ouvert_5?: string;
   faq_accord_on_statique_ouvert_6?: string;
+  faq_reponse_2?: string;
+  faq_reponse_3?: string;
+  faq_cta?: string;
   faq_accord_on_statique_ouvert_7?: string;
   faq_accord_on_statique_ouvert_8?: string;
   faq_accord_on_statique_ouvert_9?: string;
@@ -420,6 +474,69 @@ export type PagePourQui = {
     _type: "image";
   };
   image_text_image_7?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_5?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_6?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_7?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_8?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  image_text_icon_9?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
     hotspot?: SanityImageHotspot;
@@ -684,6 +801,34 @@ export type PageAccueil = {
   points_9?: string;
   points_10?: string;
   points_11?: string;
+  points_image_1?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  points_image_2?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  points_image_3?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  points_image_4?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   slider_1?: string;
   slider_2?: string;
   slider_3?: string;
@@ -737,7 +882,11 @@ export type Project = {
   _rev: string;
   title?: string;
   slug?: Slug;
+  cardTitle?: string;
   order?: number;
+  public?: Array<string>;
+  with?: string;
+  duration?: string;
   cover?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -758,6 +907,7 @@ export type Project = {
       crop?: SanityImageCrop;
       _type: "image";
     };
+    _type: "step";
     _key: string;
   }>;
   blocks?: Array<{
@@ -770,18 +920,30 @@ export type Project = {
       crop?: SanityImageCrop;
       _type: "image";
     };
+    _type: "textBlock";
     _key: string;
   }>;
   resultTitle?: string;
   resultText?: string;
+  citation?: {
+    texte?: string;
+    auteur?: string;
+  };
+  galleryTitle?: string;
   gallery?: Array<{
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
+    image?: {
+      asset?: SanityImageAssetReference;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    };
+    title?: string;
+    text?: string;
+    _type: "shot";
     _key: string;
   }>;
+  todo?: string;
 };
 
 export type Slug = {
@@ -800,6 +962,8 @@ export type Settings = {
   phone?: string;
   calendly?: string;
   doctolib?: string;
+  formKey?: string;
+  analyticsToken?: string;
   zone?: string;
   socials?: Array<{
     label?: string;
@@ -906,6 +1070,9 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | Page404
+  | PageConfidentialite
+  | PageMentions
   | SanityImageAssetReference
   | Commun
   | SanityImageCrop
@@ -931,7 +1098,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../web/src/utils/sanity.ts
 // Variable: SETTINGS_QUERY
-// Query: *[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials }
+// Query: *[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials, formKey, analyticsToken }
 export type SETTINGS_QUERY_RESULT = {
   email: string | null;
   phone: string | null;
@@ -943,14 +1110,17 @@ export type SETTINGS_QUERY_RESULT = {
     url?: string;
     _key: string;
   }> | null;
+  formKey: string | null;
+  analyticsToken: string | null;
 } | null;
 
 // Source: ../web/src/utils/sanity.ts
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, "slug": slug.current, cover }
+// Query: *[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, cardTitle, "slug": slug.current, cover }
 export type PROJECTS_QUERY_RESULT = Array<{
   _id: string;
   title: string | null;
+  cardTitle: string | null;
   slug: string | null;
   cover: {
     asset?: SanityImageAssetReference;
@@ -963,11 +1133,14 @@ export type PROJECTS_QUERY_RESULT = Array<{
 
 // Source: ../web/src/utils/sanity.ts
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0]{ _id, _type, title, cover, intro, contextTitle, contextText, steps[]{title, text, image}, blocks[]{title, text, image}, resultTitle, resultText, gallery }
+// Query: *[_type == "project" && slug.current == $slug][0]{ _id, _type, title, public, "with": with, duration, cover, intro, contextTitle, contextText, steps[]{_key, title, text, image}, blocks[]{_key, title, text, image}, resultTitle, resultText, citation, galleryTitle, gallery[]{_key, image, title, text} }
 export type PROJECT_QUERY_RESULT = {
   _id: string;
   _type: "project";
   title: string | null;
+  public: Array<string> | null;
+  with: string | null;
+  duration: string | null;
   cover: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -979,6 +1152,7 @@ export type PROJECT_QUERY_RESULT = {
   contextTitle: string | null;
   contextText: string | null;
   steps: Array<{
+    _key: string;
     title: string | null;
     text: string | null;
     image: {
@@ -990,6 +1164,7 @@ export type PROJECT_QUERY_RESULT = {
     } | null;
   }> | null;
   blocks: Array<{
+    _key: string;
     title: string | null;
     text: string | null;
     image: {
@@ -1002,13 +1177,22 @@ export type PROJECT_QUERY_RESULT = {
   }> | null;
   resultTitle: string | null;
   resultText: string | null;
+  citation: {
+    texte?: string;
+    auteur?: string;
+  } | null;
+  galleryTitle: string | null;
   gallery: Array<{
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
     _key: string;
+    image: {
+      asset?: SanityImageAssetReference;
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+    title: string | null;
+    text: string | null;
   }> | null;
 } | null;
 
@@ -1060,6 +1244,16 @@ export type PAGES_QUERY_RESULT = Array<
       footer_17?: string;
       footer_18?: string;
       footer_19?: string;
+    }
+  | {
+      _id: string;
+      _type: "page404";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      titre_1?: string;
+      titre_2?: string;
+      bouton?: string;
     }
   | {
       _id: string;
@@ -1186,6 +1380,34 @@ export type PAGES_QUERY_RESULT = Array<
       points_9?: string;
       points_10?: string;
       points_11?: string;
+      points_image_1?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      points_image_2?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      points_image_3?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      points_image_4?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
       slider_1?: string;
       slider_2?: string;
       slider_3?: string;
@@ -1362,6 +1584,22 @@ export type PAGES_QUERY_RESULT = Array<
     }
   | {
       _id: string;
+      _type: "pageConfidentialite";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      titre?: string;
+      date?: string;
+      rubriques?: Array<{
+        titre?: string;
+        texte?: string;
+        encadre?: string;
+        _type: "rubrique";
+        _key: string;
+      }>;
+    }
+  | {
+      _id: string;
       _type: "pageContact";
       _createdAt: string;
       _updatedAt: string;
@@ -1384,6 +1622,12 @@ export type PAGES_QUERY_RESULT = Array<
       vertical_card_6?: string;
       vertical_card_7?: string;
       vertical_card_8?: string;
+      besoin_option_1?: string;
+      besoin_option_2?: string;
+      besoin_option_3?: string;
+      besoin_option_4?: string;
+      formulaire_succes?: string;
+      formulaire_erreur?: string;
       vertical_card_9?: string;
       vertical_card_10?: string;
       text_1?: string;
@@ -1401,6 +1645,22 @@ export type PAGES_QUERY_RESULT = Array<
         crop?: SanityImageCrop;
         _type: "image";
       };
+    }
+  | {
+      _id: string;
+      _type: "pageMentions";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      titre?: string;
+      date?: string;
+      rubriques?: Array<{
+        titre?: string;
+        texte?: string;
+        encadre?: string;
+        _type: "rubrique";
+        _key: string;
+      }>;
     }
   | {
       _id: string;
@@ -1554,6 +1814,69 @@ export type PAGES_QUERY_RESULT = Array<
         crop?: SanityImageCrop;
         _type: "image";
       };
+      image_text_icon_1?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_2?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_3?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_4?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_5?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_6?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_7?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_8?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
+      image_text_icon_9?: {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+      };
     }
   | {
       _id: string;
@@ -1670,6 +1993,9 @@ export type PAGES_QUERY_RESULT = Array<
       faq_accord_on_statique_ouvert_4?: string;
       faq_accord_on_statique_ouvert_5?: string;
       faq_accord_on_statique_ouvert_6?: string;
+      faq_reponse_2?: string;
+      faq_reponse_3?: string;
+      faq_cta?: string;
       faq_accord_on_statique_ouvert_7?: string;
       faq_accord_on_statique_ouvert_8?: string;
       faq_accord_on_statique_ouvert_9?: string;
@@ -1707,7 +2033,11 @@ export type PAGES_QUERY_RESULT = Array<
       _rev: string;
       title?: string;
       slug?: Slug;
+      cardTitle?: string;
       order?: number;
+      public?: Array<string>;
+      with?: string;
+      duration?: string;
       cover?: {
         asset?: SanityImageAssetReference;
         media?: unknown;
@@ -1728,6 +2058,7 @@ export type PAGES_QUERY_RESULT = Array<
           crop?: SanityImageCrop;
           _type: "image";
         };
+        _type: "step";
         _key: string;
       }>;
       blocks?: Array<{
@@ -1740,18 +2071,30 @@ export type PAGES_QUERY_RESULT = Array<
           crop?: SanityImageCrop;
           _type: "image";
         };
+        _type: "textBlock";
         _key: string;
       }>;
       resultTitle?: string;
       resultText?: string;
+      citation?: {
+        texte?: string;
+        auteur?: string;
+      };
+      galleryTitle?: string;
       gallery?: Array<{
-        asset?: SanityImageAssetReference;
-        media?: unknown;
-        hotspot?: SanityImageHotspot;
-        crop?: SanityImageCrop;
-        _type: "image";
+        image?: {
+          asset?: SanityImageAssetReference;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          _type: "image";
+        };
+        title?: string;
+        text?: string;
+        _type: "shot";
         _key: string;
       }>;
+      todo?: string;
     }
   | {
       _id: string;
@@ -1806,6 +2149,8 @@ export type PAGES_QUERY_RESULT = Array<
       phone?: string;
       calendly?: string;
       doctolib?: string;
+      formKey?: string;
+      analyticsToken?: string;
       zone?: string;
       socials?: Array<{
         label?: string;
@@ -1818,9 +2163,9 @@ export type PAGES_QUERY_RESULT = Array<
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '*[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials }': SETTINGS_QUERY_RESULT;
-    '*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, "slug": slug.current, cover }': PROJECTS_QUERY_RESULT;
-    '*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, cover, intro, contextTitle, contextText, steps[]{title, text, image}, blocks[]{title, text, image}, resultTitle, resultText, gallery }': PROJECT_QUERY_RESULT;
+    '*[_type == "settings"][0]{ email, phone, calendly, doctolib, zone, socials, formKey, analyticsToken }': SETTINGS_QUERY_RESULT;
+    '*[_type == "project" && defined(slug.current)] | order(order asc, _createdAt asc){ _id, title, cardTitle, "slug": slug.current, cover }': PROJECTS_QUERY_RESULT;
+    '*[_type == "project" && slug.current == $slug][0]{ _id, _type, title, public, "with": with, duration, cover, intro, contextTitle, contextText, steps[]{_key, title, text, image}, blocks[]{_key, title, text, image}, resultTitle, resultText, citation, galleryTitle, gallery[]{_key, image, title, text} }': PROJECT_QUERY_RESULT;
     "*[_type in $types]": PAGES_QUERY_RESULT;
   }
 }
