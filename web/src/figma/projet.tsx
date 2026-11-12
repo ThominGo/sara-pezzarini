@@ -90,7 +90,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center py-[56px] relative shrink-0 w-[1512px]" data-name="fiche">
           <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[1190px]">
             {fiche.map(([label, value]) => (
-              <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative" data-sanity={ds(p._id, label === "Public" ? "public" : label === "Avec qui" ? "with" : "duration", "project")}>
+              <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative" style={{ maxWidth: "calc((100% - 48px) / 3)" }} data-sanity={ds(p._id, label === "Public" ? "public" : label === "Avec qui" ? "with" : "duration", "project")}>
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{label}</p>
                 </div>
@@ -144,7 +144,7 @@ export default function Projets({ p = {} }: { p?: any }) {
               </Fragment>
             ))}
           </div>
-          <div className="absolute bottom-0 h-[2795px] left-[-123px] pointer-events-none top-[-400px]" data-node-id="414:7018">
+          <div className="absolute bottom-0 left-[-123px] pointer-events-none top-[-400px]" data-node-id="414:7018">
             <div className="content-stretch flex flex-col gap-[8px] items-center justify-center pb-[112px] pointer-events-auto pr-[40px] pt-[400px] sticky top-0 w-[561px]">
               <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7019" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
                 La démarche
