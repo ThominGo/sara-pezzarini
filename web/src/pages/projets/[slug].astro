@@ -15,10 +15,15 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const data = slug === 'exemple' ? null : await getProject(slug!);
-const img = (s: any, w = 1600) => (s ? urlFor(s).width(w).auto('format').url() : undefined);
+// Tolérant : une image vide ou d'un ancien format ne doit jamais faire échouer la génération des pages
+const img = (s: any, w = 1600) => {
+  if (!s?.asset) return undefined;
+  try { return urlFor(s).width(w).auto('format').url(); } catch { return undefined; }
+};
+const arr = (v: any) => (Array.isArray(v) ? v : []);
 
 // Deux autres projets, proposés en bas de page : les deux suivants dans l'ordre de la liste
-const all = ((await getProjects()) ?? []) as any[];
+const all = (((await getProjects()) ?? []) as any[]).filter((x) => x?.slug);
 const at = all.findIndex((x) => x.slug === slug);
 const others = all.length >= 3 && at >= 0
   ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}` }))
@@ -28,9 +33,9 @@ const p = data
   ? {
       ...data,
       coverUrl: img(data.cover),
-      steps: data.steps?.map((s: any) => ({ ...s, imageUrl: img(s.image) })),
-      blocks: data.blocks?.map((b: any) => ({ ...b, imageUrl: img(b.image) })),
-      gallery: data.gallery?.map((g: any) => ({ ...g, imageUrl: img(g.image, 1000) })),
+      steps: arr(data.steps).filter((s: any) => s && typeof s === 'object').map((s: any) => ({ ...s, imageUrl: img(s.image) })),
+      blocks: arr(data.blocks).filter((b: any) => b && typeof b === 'object').map((b: any) => ({ ...b, imageUrl: img(b.image) })),
+      gallery: arr(data.gallery).filter((g: any) => g && typeof g === 'object').map((g: any) => ({ ...g, imageUrl: img(g.image, 1000) })),
       others,
     }
   : {};

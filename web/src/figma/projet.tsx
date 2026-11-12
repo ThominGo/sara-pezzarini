@@ -49,7 +49,7 @@ export default function Projets({ p = {} }: { p?: any }) {
   const lower = (s: string, i: number) => (i ? s.charAt(0).toLowerCase() + s.slice(1) : s);
   const fiche: [string, string][] = hasData
     ? ([
-        p.public?.length ? ["Public", p.public.map(lower).join(", ")] : null,
+        Array.isArray(p.public) && p.public.length ? ["Public", p.public.filter((x: any) => typeof x === "string").map(lower).join(", ")] : null,
         p.with ? ["Avec qui", p.with] : null,
         p.duration ? ["Durée", p.duration] : null,
       ].filter(Boolean) as [string, string][])
