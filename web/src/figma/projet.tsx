@@ -79,7 +79,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                   <div className="absolute inset-0 overflow-hidden rounded-[8px]">
                     <img fetchPriority="high" alt="" className={p.coverUrl ? "absolute inset-0 max-w-none object-cover size-full" : "absolute h-[313.35%] left-[-18.09%] max-w-none top-[-120.81%] w-[216.62%]"} src={p.coverUrl ?? "/images/f367c067a6.webp"} />
                   </div>
-                  <div className="absolute bg-[#7e8195] inset-0 mix-blend-color rounded-[8px]" />
+                  {!p.coverUrl && <div className="absolute bg-[#7e8195] inset-0 mix-blend-color rounded-[8px]" />}
                 </div>
               </div>
             </div>
