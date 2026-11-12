@@ -28,7 +28,7 @@ function Item({ t, row = false, year }: { t: { image: string; title: string; tex
       <div className="flex items-center justify-center relative shrink-0 w-full">
         {/* mobile : la date passe en étiquette sur la photo */}
         {year && <p className="xp-year md:hidden">{year}</p>}
-        <div className="-scale-y-100 flex-none rotate-180 w-full">
+        <div className="flex-none w-full">
           <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
             <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "contenu_image_1")} src={img("pageParcours", "contenu_image_1", t.image)} />
           </div>
@@ -88,7 +88,7 @@ export default function Parcours() {
             </div>
           </div>
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]">
-            <div className="-scale-y-100 flex-none rotate-180">
+            <div className="flex-none">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
                 <img alt="Sara Pezzarini en séance" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageParcours", "hero_image_1")} src={img("pageParcours", "hero_image_1", "/images/3e60ebbcd7.webp")} srcSet={srcset(img("pageParcours", "hero_image_1", "/images/3e60ebbcd7.webp"))} sizes="(max-width: 767px) 260px, 330px" />
               </div>
