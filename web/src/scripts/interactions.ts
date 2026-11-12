@@ -441,6 +441,28 @@ function darkIllustrations() {
   });
 }
 
+/* ---------------- Mini-cartes de texte : apparition l'une après l'autre à l'arrivée du scroll ---------------- */
+function miniCards() {
+  if (reduce) return;
+  const cards = document.querySelectorAll<HTMLElement>('#page div[data-name="Bouton"][class*="w-[321px]"]');
+  const groups = new Set<HTMLElement>();
+  cards.forEach((c) => {
+    const g = c.parentElement!;
+    c.classList.add('mc');
+    c.style.setProperty('--i', String([...g.children].filter((e) => e.classList.contains('mc') || e === c).indexOf(c)));
+    groups.add(g);
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('mc-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.15 });
+  groups.forEach((g) => { g.classList.add('mc-group'); io.observe(g); });
+  page.signal.addEventListener('abort', () => io.disconnect());
+}
+
 function init() {
   reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-calm');
   page.abort();
@@ -452,6 +474,7 @@ function init() {
   heroTexts();
   underlines();
   heroes();
+  miniCards();
   sliders();
   parallax();
   faq();
