@@ -61,7 +61,7 @@ export default function MonApproche() {
             </div>
           </div>
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6686;146:4288">
-            <div className="-scale-y-100 flex-none rotate-180">
+            <div className="flex-none">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
                 <img alt="Séance d’ergothérapie" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageApproche", "hero_image_1")} src={img("pageApproche", "hero_image_1", "/images/8076d6f385.webp")} srcSet={srcset(img("pageApproche", "hero_image_1", "/images/8076d6f385.webp"))} sizes="(max-width: 767px) 260px, 330px" />
               </div>

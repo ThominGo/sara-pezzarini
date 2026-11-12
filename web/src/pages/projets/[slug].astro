@@ -26,7 +26,7 @@ const arr = (v: any) => (Array.isArray(v) ? v : []);
 const all = (((await getProjects()) ?? []) as any[]).filter((x) => x?.slug);
 const at = all.findIndex((x) => x.slug === slug);
 const others = all.length >= 3 && at >= 0
-  ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}` }))
+  ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}`, image: img(x.cover, 1200) }))
   : [];
 
 const p = data

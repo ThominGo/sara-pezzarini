@@ -61,7 +61,7 @@ export default function PourQui() {
             </div>
           </div>
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6775;146:4288">
-            <div className="-scale-y-100 flex-none rotate-180">
+            <div className="flex-none">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
                 <img alt="Séance d’ergothérapie" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pagePourQui", "hero_image_1")} src={img("pagePourQui", "hero_image_1", "/images/3e60ebbcd7.webp")} srcSet={srcset(img("pagePourQui", "hero_image_1", "/images/3e60ebbcd7.webp"))} sizes="(max-width: 767px) 260px, 330px" />
               </div>
@@ -130,7 +130,7 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6817">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6818" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6819">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6822" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6823">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6826" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6827">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6851">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6852" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6853">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6856" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6857">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -222,7 +222,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6860" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6861">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -241,7 +241,7 @@ export default function PourQui() {
             <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="414:6867">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6868" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6869">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6872" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6873">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function PourQui() {
               </div>
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="414:6876" data-name="Bouton">
                 <div className="flex items-center justify-center relative shrink-0" data-node-id="414:6877">
-                  <div className="-scale-y-100 flex-none rotate-180">
+                  <div className="flex-none">
                     <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                   </div>
                 </div>

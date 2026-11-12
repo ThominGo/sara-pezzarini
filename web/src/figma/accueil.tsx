@@ -273,7 +273,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             </div>
           </div>
           <div className="absolute bottom-[40px] flex h-[331px] items-center justify-center right-[40px] w-[248px]" data-node-id="I414:6637;146:4288">
-            <div className="-scale-y-100 flex-none rotate-180">
+            <div className="flex-none">
               <div className="h-[331px] relative rounded-[8px] w-[248px]" data-name="image 13">
                 <img alt="Sara Pezzarini à son bureau" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" data-sanity={ds("pageAccueil", "hero_image_1")} src={img("pageAccueil", "hero_image_1", "/images/22638ffa4c.webp")} srcSet={srcset(img("pageAccueil", "hero_image_1", "/images/22638ffa4c.webp"))} sizes="(max-width: 767px) 260px, 330px" />
               </div>
@@ -356,7 +356,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
           <div className="content-stretch flex flex-col gap-[8px] items-start justify-center relative shrink-0" data-node-id="I414:6680;146:4424">
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4425" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4426">
-                <div className="-scale-y-100 flex-none rotate-180">
+                <div className="flex-none">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                 </div>
               </div>
@@ -367,7 +367,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4430" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4431">
-                <div className="-scale-y-100 flex-none rotate-180">
+                <div className="flex-none">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                 </div>
               </div>
@@ -378,7 +378,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4435" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4436">
-                <div className="-scale-y-100 flex-none rotate-180">
+                <div className="flex-none">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                 </div>
               </div>
@@ -389,7 +389,7 @@ export default function SaraPezzarini({ cards = defaultCards }: { cards?: Projec
             </div>
             <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[321px]" data-node-id="I414:6680;146:4440" data-name="Bouton">
               <div className="flex items-center justify-center relative shrink-0" data-node-id="I414:6680;146:4441">
-                <div className="-scale-y-100 flex-none rotate-180">
+                <div className="flex-none">
                   <div className="bg-[#d9d9d9] relative rounded-[4px] size-[80px]" data-name="image 13" />
                 </div>
               </div>

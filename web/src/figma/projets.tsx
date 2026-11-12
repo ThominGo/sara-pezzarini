@@ -29,13 +29,11 @@ export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }:
   return (
     <a href={c.href} className={`${className} bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex flex-col gap-[4px] items-start overflow-clip p-[8px] relative rounded-[8px] shrink-0`} data-name="Bouton">
       <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full">
-        <div className={`${c.flip ? '-scale-y-100 ' : ''}flex-none rotate-180 size-full`}>
+        <div className="flex-none size-full">
           <div className="relative rounded-[8px] size-full" data-name="image 13">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image ?? '/assets/placeholder.svg'} />
-              {c.difference && <div className="absolute inset-0 mix-blend-difference rounded-[8px]" style={{ backgroundColor: c.difference }} />}
-              <div className="absolute inset-0 mix-blend-color rounded-[8px]" style={{ backgroundColor: c.color }} />
-            </div>
+              {c.image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image} /> : <div className="absolute inset-0 rounded-[8px]" style={{ backgroundColor: c.color }} />}
+              </div>
           </div>
         </div>
       </div>
