@@ -23,7 +23,7 @@ export default defineType({
     defineField({ name: 'contextTitle', title: 'Titre du contexte', type: 'string' }),
     defineField({ name: 'contextText', title: 'Texte du contexte', type: 'text', rows: 6 }),
     defineField({
-      name: 'steps', title: 'La démarche (3 ou 4 étapes)', type: 'array', validation: (r) => r.max(4),
+      name: 'steps', title: 'La démarche (2 à 10 étapes)', type: 'array', validation: (r) => r.min(2).max(10),
       of: [defineArrayMember({ type: 'object', name: 'step', fields: [
         defineField({ name: 'title', title: 'Titre', type: 'string' }),
         defineField({ name: 'text', title: 'Texte', type: 'text', rows: 3 }),
@@ -31,7 +31,7 @@ export default defineType({
       ] })],
     }),
     defineField({
-      name: 'blocks', title: 'Blocs image et texte (0, 1 ou 2)', type: 'array', validation: (r) => r.max(2),
+      name: 'blocks', title: 'Blocs image et texte (0 à 10)', type: 'array', validation: (r) => r.max(10),
       of: [defineArrayMember({ type: 'object', name: 'textBlock', fields: [
         defineField({ name: 'title', title: 'Titre', type: 'string' }),
         defineField({ name: 'text', title: 'Texte', type: 'text', rows: 5 }),
