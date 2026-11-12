@@ -1,0 +1,36 @@
+# Sauvegarde hebdomadaire du contenu Sanity (dataset production, sans les fichiers images, qui restent sur le CDN Sanity).
+# Chaque lundi vers 05h (heure de Paris). Le fichier est conservé 90 jours : GitHub, onglet Actions,
+# « Sauvegarde du contenu », puis le run voulu, section Artifacts.
+# Prérequis (une seule fois) : un jeton au rôle « Viewer » créé sur sanity.io/manage (projet h4rgggeo, API, Tokens),
+# enregistré dans GitHub : Settings, Secrets and variables, Actions, secret SANITY_READ_TOKEN.
+# Restauration : npx sanity dataset import sauvegarde.tar.gz production --replace (depuis le dossier studio).
+name: Sauvegarde du contenu
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - run: npm ci
+      - name: Exporter le dataset
+        run: npx sanity dataset export production sauvegarde.tar.gz --no-assets --overwrite
+        env:
+          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sauvegarde-sanity-${{ github.run_number }}
+          path: studio/sauvegarde.tar.gz
+          retention-days: 90
