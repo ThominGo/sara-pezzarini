@@ -18,6 +18,8 @@ const token = cfg.settings.analyticsToken;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Le site n'a qu'un thème clair : on empêche le navigateur de l'assombrir lui-même (icônes et illustrations disparaissaient) -->
+    <meta name="color-scheme" content="only light" />
     <title>{title}</title>
     <meta name="description" content={description} />
     {(noindex || !LIVE) && <meta name="robots" content="noindex, nofollow" />}
@@ -36,7 +38,7 @@ const token = cfg.settings.analyticsToken;
       window.__a11y = function () {
         var p = {}; try { p = JSON.parse(localStorage.getItem('a11y') || '{}'); } catch (e) {}
         var h = document.documentElement;
-        ['spacing', 'font', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
+        ['spacing', 'font', 'dys', 'contrast', 'calm', 'links'].forEach(function (k) { h.classList.toggle('a11y-' + k, !!p[k]); });
         h.dataset.a11ySize = String(p.size || 0);
         return p;
       };

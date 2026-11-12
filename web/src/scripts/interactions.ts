@@ -410,7 +410,11 @@ function a11yPanel() {
   addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { open(false); btn.focus(); } });
   document.addEventListener('click', (e) => { if (!panel.hidden && !root.contains(e.target as Node)) open(false); });
   root.querySelectorAll<HTMLElement>('[data-a11y-key]').forEach((b) => b.addEventListener('click', () => {
-    const p = prefs(); const k = b.dataset.a11yKey!; p[k] = !p[k]; save(p); sync();
+    const p = prefs(); const k = b.dataset.a11yKey!; p[k] = !p[k];
+    // une seule police d'accessibilité à la fois
+    if (p[k] && k === 'font') p.dys = false;
+    if (p[k] && k === 'dys') p.font = false;
+    save(p); sync();
     if (k === 'calm') location.reload(); // les animations et la parallaxe se réinitialisent proprement
   }));
   root.querySelectorAll<HTMLElement>('[data-a11y-size]').forEach((b) => b.addEventListener('click', () => {

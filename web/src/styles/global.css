@@ -6,7 +6,7 @@
 @font-face { font-family: "Inter:Regular"; src: local("Inter"), local("Inter Regular"); }
 
 /* Variables Figma */
-:root {
+:root { color-scheme: only light;
   --black: #090f0c;
   --black-70\%: rgba(9, 15, 12, 0.7);
   --white: #ffffff;
@@ -295,6 +295,7 @@ html.a11y-calm::view-transition-group(*), html.a11y-calm::view-transition-old(*)
 }
 
 /* ================= Panneau Accessibilité (improvisé, hors maquette) ================= */
+@font-face { font-family: "OpenDyslexic"; src: url("/fonts/OpenDyslexic-Regular.woff2") format("woff2"); font-display: swap; size-adjust: 85%; }
 @font-face { font-family: "Luciole"; src: url("/fonts/Luciole-Regular.woff2") format("woff2"); font-display: swap; }
 .a11y { position: fixed; right: 16px; bottom: 16px; z-index: 60; font-family: 'Lexend:Regular', sans-serif; color: #090f0c; }
 .a11y-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -338,6 +339,9 @@ html.a11y-calm::view-transition-group(*), html.a11y-calm::view-transition-old(*)
 html.a11y-spacing #page :is(p, a, span, label, li, button, input, select, textarea) { letter-spacing: .06em !important; word-spacing: .14em !important; line-height: 1.6 !important; }
 html.a11y-spacing #page [class*="leading-none"] p, html.a11y-spacing #page p[class*="leading-none"] { line-height: 1.15 !important; }
 html.a11y-font #page :is(p, a, span, label, li, button, input, select, textarea, h1) { font-family: 'Luciole', sans-serif !important; font-variation-settings: normal !important; }
+/* Dyslexie : OpenDyslexic, texte aligné à gauche, sans italique ; la police est plus large, les textes peuvent passer à la ligne */
+html.a11y-dys #page :is(p, a, span, label, li, button, input, select, textarea, h1) { font-family: 'OpenDyslexic', sans-serif !important; font-variation-settings: normal !important; font-style: normal !important; text-align: left; letter-spacing: -.02em; hyphens: auto; }
+html.a11y-dys #page :is(p, span)[class*="text-center"] { text-align: center; }
 html.a11y-contrast #page [class*="black-70"], html.a11y-contrast #page [class*="rgba(9,15,12,0.7)"] { color: #090f0c !important; }
 html.a11y-contrast #page [class*="rgba(255,255,255,0.7)"] { color: #fff !important; }
 html.a11y-contrast #page :is(.champ, [class*="border-[#c2c2c2]"], [class*="border-[#ccc]"]) { border-color: #090f0c !important; }
@@ -345,6 +349,6 @@ html.a11y-contrast #page :is([data-hero] [data-name="image 10"], [data-name="poi
 html.a11y-links #page a .u { background-size: 100% 1px !important; }
 html.a11y-links #page a:not([data-name]):not(:has(.u)) { text-decoration: underline; text-underline-offset: 3px; }
 /* texte agrandi : le pied de page peut passer à la ligne */
-html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing) #page [data-name="footer"] :is(p, a, span) { white-space: normal !important; overflow-wrap: anywhere; }
-html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing) #page [data-name="Cta"] { height: auto; min-height: 40px; padding-top: 6px; padding-bottom: 6px; max-width: 100%; }
-html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing) #page [data-name="Cta"] p { white-space: normal !important; text-align: center; }
+html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing, .a11y-dys, .a11y-font) #page [data-name="footer"] :is(p, a, span) { white-space: normal !important; overflow-wrap: break-word; }
+html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing, .a11y-dys, .a11y-font) #page [data-name="Cta"] { height: auto; min-height: 40px; padding-top: 6px; padding-bottom: 6px; max-width: 100%; }
+html:is([data-a11y-size="1"], [data-a11y-size="2"], .a11y-spacing, .a11y-dys, .a11y-font) #page [data-name="Cta"] p { white-space: normal !important; text-align: center; }

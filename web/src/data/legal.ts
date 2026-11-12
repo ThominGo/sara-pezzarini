@@ -29,7 +29,7 @@ export const mentions: Legal = {
     },
     {
       "titre": "Crédits",
-      "texte": "Photos : crédits à venir.\nPolice Luciole (réglage d’accessibilité) : © Laurent Bourcellier et Jonathan Perez, licence Creative Commons Attribution 4.0."
+      "texte": "Photos : crédits à venir.\nPolice Luciole (réglage d’accessibilité) : © Laurent Bourcellier et Jonathan Perez, licence Creative Commons Attribution 4.0.\nPolice OpenDyslexic (réglage d’accessibilité) : © Abbie Gonzalez, licence SIL Open Font License 1.1."
     }
   ]
 };
