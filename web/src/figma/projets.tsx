@@ -37,8 +37,8 @@ export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }:
           </div>
         </div>
       </div>
-      <div className={`content-stretch flex ${first ? '' : 'h-[60px] '}items-start justify-between p-[8px] relative shrink-0 w-full`}>
-        <p className={`[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance ${first ? 'w-[120px]' : c.title.length > 32 ? 'w-[240px]' : 'w-[172px]'}`} style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+      <div className={`content-stretch flex h-[60px] items-start justify-between p-[8px] relative shrink-0 w-full`}>
+        <p className={`[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative min-w-0 flex-1 pr-[16px] line-clamp-2 text-[18px] text-[color:var(--black,#090f0c)] text-balance`} style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
           {c.title}
         </p>
         <Arrow />

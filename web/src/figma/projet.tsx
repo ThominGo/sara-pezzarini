@@ -55,8 +55,8 @@ export default function Projets({ p = {} }: { p?: any }) {
       ].filter(Boolean) as [string, string][])
     : [];
   return (
-    <div className="content-stretch flex flex-col items-start pt-[98px] relative size-full" data-node-id="414:6985" data-name="Projets">
-      <div className="bg-[#f2f2f2] content-stretch flex gap-[24px] h-[862px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6986" data-name="image-text">
+    <div className="content-stretch flex flex-col items-start pt-[82px] relative size-full" data-node-id="414:6985" data-name="Projets">
+      <div className="bg-[#f2f2f2] content-stretch flex gap-[24px] h-[calc(100svh-82px)] min-h-[560px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6986" data-name="image-text">
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px p-[40px] relative" data-node-id="I414:6986;196:5463">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I414:6986;196:5464">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6986;196:5465">
@@ -71,7 +71,7 @@ export default function Projets({ p = {} }: { p?: any }) {
             </div>
           </div>
         </div>
-        <div className="content-stretch flex flex-col h-full items-start p-[8px] relative shrink-0 w-[995px]" data-node-id="I414:6986;196:5471">
+        <div className="content-stretch flex flex-col h-full items-start p-[8px] pb-[16px] relative shrink-0 w-[995px]" data-node-id="I414:6986;196:5471">
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6986;196:5472">
             <div className="flex-none size-full">
               <div className="relative rounded-[8px] size-full" data-name="image 10" data-sanity={ds(p._id, "cover", "project")}>
