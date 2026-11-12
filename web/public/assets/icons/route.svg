@@ -11,9 +11,7 @@
   stroke-linecap="round"
   stroke-linejoin="round"
 >
-  <g transform="translate(12 12) scale(1.0047) translate(-12.000 -12.000)" stroke-width="1.493">
-    <path d="M9 5h8.5a1 1 0 010 7h-11a1 1 0 000 7H15" />
-    <circle cx="18" cy="19" r="3" />
-    <circle cx="6" cy="5" r="3" />
-  </g>
+  <path d="M9 5h8.5a1 1 0 010 7h-11a1 1 0 000 7H15" />
+  <circle cx="18" cy="19" r="3" />
+  <circle cx="6" cy="5" r="3" />
 </svg>
