@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { ds } from '../utils/preview';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -32,13 +33,34 @@ function Cta({ className, href, label = "button label", state = "default", varia
 }
 
 export default function Projets({ p = {} }: { p?: any }) {
+  const hasData = !!p.title;
+  const fallbackImages = ["/images/22638ffa4c.webp", "/images/3e60ebbcd7.webp", "/images/8076d6f385.webp", "/images/3e60ebbcd7.webp"];
+  const mockSteps = [
+    { title: "Comprendre le besoin", text: "Recueillir les difficultés rencontrées au quotidien par les participants et ce qu’ils attendent d’un outil." },
+    { title: "Concevoir le support", text: "Choisir un format simple à prendre en main, puis classer les outils par difficulté." },
+    { title: "Essayer et ajuster", text: "Tester le support en séance avec le public accompagné, recueillir les retours et ajuster." },
+    { title: "Partager et accompagner", text: "Présenter l’outil lors d’une séance dédiée et accompagner chacun dans son usage." },
+  ];
+  // Sections facultatives : elles n'apparaissent que si le projet les renseigne (études de cas incomplètes possibles)
+  const steps: any[] = hasData ? (p.steps ?? []).filter((s: any) => s?.title || s?.text) : mockSteps;
+  const blocks: any[] = hasData ? (p.blocks ?? []).filter((b: any) => b?.title || b?.text) : [];
+  const gallery: any[] = hasData ? (p.gallery ?? []).filter((g: any) => g?.imageUrl) : [];
+  const others: any[] = p.others ?? [];
+  const lower = (s: string, i: number) => (i ? s.charAt(0).toLowerCase() + s.slice(1) : s);
+  const fiche: [string, string][] = hasData
+    ? ([
+        Array.isArray(p.public) && p.public.length ? ["Public", p.public.filter((x: any) => typeof x === "string").map(lower).join(", ")] : null,
+        p.with ? ["Avec qui", p.with] : null,
+        p.duration ? ["Durée", p.duration] : null,
+      ].filter(Boolean) as [string, string][])
+    : [];
   return (
     <div className="content-stretch flex flex-col items-start pt-[48px] relative size-full" data-node-id="414:6985" data-name="Projets">
       <div className="bg-[#f2f2f2] content-stretch flex gap-[24px] h-[862px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:6986" data-name="image-text">
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-center min-w-px p-[40px] relative" data-node-id="I414:6986;196:5463">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="I414:6986;196:5464">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="I414:6986;196:5465">
-              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="I414:6986;196:5466" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+              <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="I414:6986;196:5466" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "title", "project")}>
                 {p.title ?? "Répertoire d’outils d’autonomie pour adultes ayant un TSA"}
               </p>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="I414:6986;196:5467">
@@ -52,7 +74,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-col h-full items-start p-[8px] relative shrink-0 w-[995px]" data-node-id="I414:6986;196:5471">
           <div className="flex flex-[1_0_0] items-center justify-center min-h-px relative w-full" data-node-id="I414:6986;196:5472">
             <div className="flex-none rotate-180 size-full">
-              <div className="relative rounded-[8px] size-full" data-name="image 10">
+              <div className="relative rounded-[8px] size-full" data-name="image 10" data-sanity={ds(p._id, "cover", "project")}>
                 <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
                   <div className="absolute inset-0 overflow-hidden rounded-[8px]">
                     <img fetchPriority="high" alt="" className="absolute h-[313.35%] left-[-18.09%] max-w-none top-[-120.81%] w-[216.62%]" src={p.coverUrl ?? "/images/f367c067a6.webp"} />
@@ -64,13 +86,27 @@ export default function Projets({ p = {} }: { p?: any }) {
           </div>
         </div>
       </div>
+      {fiche.length > 0 && (
+        <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center py-[56px] relative shrink-0 w-[1512px]" data-name="fiche">
+          <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[1190px]">
+            {fiche.map(([label, value]) => (
+              <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative" data-sanity={ds(p._id, label === "Public" ? "public" : label === "Avec qui" ? "with" : "duration", "project")}>
+                <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">{label}</p>
+                </div>
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>{value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-node-id="414:6987" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]" data-node-id="I414:6987;146:4290">
-          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="I414:6987;146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+          <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="I414:6987;146:4291" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "contextTitle", "project")}>
             {p.contextTitle ?? "Rendre les séances de psychoéducation plus concrètes"}
           </p>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full" data-node-id="I414:6987;146:4292">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="I414:6987;146:4293">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="I414:6987;146:4293" data-sanity={ds(p._id, "contextText", "project")}>
               {p.contextText ?? "Dans le cadre de séances de psychoéducation menées en collaboration avec le centre expert TSA de l’hôpital André-Mignot, j’ai conçu, avec un psychologue du centre expert, un répertoire thématique et cliquable : chaque difficulté renvoie à des outils concrets (stratégies, applications, méthodes d’organisation) testés avec le public accompagné en SAMSAH ou créés pour l’occasion."}
             </p>
           </div>
@@ -78,91 +114,35 @@ export default function Projets({ p = {} }: { p?: any }) {
       </div>
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col gap-[8px] items-center justify-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-node-id="414:6988" data-name="vertical-card">
         <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[942px]" data-node-id="414:6989">
-          <p className="[word-break:break-word] flex-[1_0_0] font-['Bricolage_Grotesque:Regular'] font-normal leading-none min-w-px relative text-[40px] text-[transparent] text-balance" data-node-id="414:6990" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-            Trois façons de travailler ensemble
-          </p>
-          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative" data-node-id="414:6991">
-            <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full" data-node-id="414:6992">
-              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative" data-node-id="414:6993">
-                <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:6994">
+          <div aria-hidden className="flex-[1_0_0] min-w-px" />
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start justify-center min-w-px relative">
+            {steps.map((s: any, i: number) => (
+              <Fragment key={i}>
+                {i > 0 && <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" />}
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0 w-full">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[16px] items-start justify-center min-w-px relative">
+                <div className="flex items-center justify-center relative shrink-0 w-full">
                   <div className="-scale-y-100 flex-none rotate-180 w-full">
-                    <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[0]?.imageUrl ?? "/images/22638ffa4c.webp"} />
+                    <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13" data-sanity={ds(p._id, `steps[_key=="${s._key}"].image`, "project")}>
+                      <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={s.imageUrl ?? fallbackImages[i % fallbackImages.length]} />
                     </div>
                   </div>
                 </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:6995">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:6996" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    {p.steps?.[0]?.title ?? "Comprendre le besoin"}
+                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full">
+                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `steps[_key=="${s._key}"].title`, "project")}>
+                    {s.title}
                   </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:6997">
-                    {p.steps?.[0]?.text ?? "Recueillir les difficultés rencontrées au quotidien par les participants et ce qu’ils attendent d’un outil."}
+                  <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-sanity={ds(p._id, `steps[_key=="${s._key}"].text`, "project")}>
+                    {s.text}
                   </p>
                 </div>
               </div>
-              <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-0 w-[226px]" data-node-id="414:6998" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                01
-              </p>
-              <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[637px] w-[226px]" data-node-id="414:6999" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                02
-              </p>
-              <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[1274px] w-[226px]" data-node-id="414:7000" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                03
-              </p>
-            </div>
-            <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:7001" />
-            <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7002">
-              <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7003">
-                <div className="-scale-y-100 flex-none rotate-180 w-full">
-                  <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[1]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
-                  </div>
+              <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[-24px] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-0 w-[226px]" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </p>
                 </div>
-              </div>
-              <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:7004">
-                <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7005" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  {p.steps?.[1]?.title ?? "Concevoir le support"}
-                </p>
-                <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:7006">
-                  {p.steps?.[1]?.text ?? "Choisir un format simple à prendre en main, puis classer les outils par difficulté avec le psychologue du centre expert."}
-                </p>
-              </div>
-            </div>
-            <div className="bg-[rgba(0,0,0,0.1)] h-px relative shrink-0 w-full" data-node-id="414:7007" />
-            <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7008">
-              <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7009">
-                <div className="-scale-y-100 flex-none rotate-180 w-full">
-                  <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[2]?.imageUrl ?? "/images/8076d6f385.webp"} />
-                  </div>
-                </div>
-              </div>
-              <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:7010">
-                <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7011" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  {p.steps?.[2]?.title ?? "Essayer et ajuster"}
-                </p>
-                <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:7012">
-                  {p.steps?.[2]?.text ?? "Tester le répertoire en séance avec le public accompagné, recueillir les retours et ajuster les contenus."}
-                </p>
-              </div>
-            </div>
-            <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7013">
-              <div className="flex items-center justify-center relative shrink-0 w-full" data-node-id="414:7014">
-                <div className="-scale-y-100 flex-none rotate-180 w-full">
-                  <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13">
-                    <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={p.steps?.[3]?.imageUrl ?? "/images/3e60ebbcd7.webp"} />
-                  </div>
-                </div>
-              </div>
-              <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="414:7015">
-                <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7016" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  {p.steps?.[3]?.title ?? "Partager et accompagner"}
-                </p>
-                <p className="font-['Lexend:Regular'] leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:7017">
-                  {p.steps?.[3]?.text ?? "Présenter l’outil lors d’une séance dédiée et accompagner chacun pour l’installer sur son téléphone."}
-                </p>
-              </div>
-            </div>
+              </Fragment>
+            ))}
           </div>
           <div className="absolute bottom-0 h-[2795px] left-[-123px] pointer-events-none top-[-400px]" data-node-id="414:7018">
             <div className="content-stretch flex flex-col gap-[8px] items-center justify-center pb-[112px] pointer-events-auto pr-[40px] pt-[400px] sticky top-0 w-[561px]">
@@ -172,59 +152,60 @@ export default function Projets({ p = {} }: { p?: any }) {
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7020">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7021">
                   <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-full" data-node-id="414:7022">
-                    Trame d’étude de cas à renseigner : ces étapes ne décrivent pas encore le déroulement réel du projet.
+                    Comment le projet s’est déroulé, étape par étape.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <p className="-translate-x-full [word-break:break-word] absolute font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] left-[calc(33.33%+240px)] text-[24px] text-[color:var(--black,#090f0c)] text-balance text-right top-[2007px] w-[226px]" data-node-id="414:7023" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-          04
-        </p>
       </div>
+      {blocks[0] && (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7024" data-name="image-text">
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7025">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7026">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7027">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7028">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  {p.blocks?.[0]?.title ?? "Un jeu qui permet de pouvoir exprimer ses difficultés et trouver des solutions"}
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7029" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].title`, "project")}>
+                  {blocks[0].title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7030">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7031">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032">{p.blocks?.[0]?.text ?? `Ce répertoire est présenté lors d’une séance de psychoéducation nommée : comment gérer mon fonctionnement au quotidien. Pour rendre cette séance dynamique et permettre aux participants d’être acteurs, nous avons créé un jeu qui permet à chacun de pouvoir exprimer ses difficultés et pouvoir trouver des solutions grâce aux autres ou aux outils créés (répertoire d’outils, classeurs mis à disposition pour inspirer des réponses). `}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7032" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].text`, "project")}>{blocks[0].text}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7033" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" />
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[0]._key}"].image`, "project")}>{blocks[0].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[0].imageUrl} />}</div>
         </div>
       </div>
+      )}
+      {blocks[1] && (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7035" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7036" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" />
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].image`, "project")}>{blocks[1].imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={blocks[1].imageUrl} />}</div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7038">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7039">
             <div className="content-stretch flex flex-col gap-[16px] items-start justify-center relative shrink-0 w-full" data-node-id="414:7040">
               <div className="content-stretch flex flex-col items-start relative shrink-0" data-node-id="414:7041">
-                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                  {p.blocks?.[1]?.title ?? "Construction de séance sur l’insertion professionnelle"}
+                <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[465px]" data-node-id="414:7042" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].title`, "project")}>
+                  {blocks[1].title}
                 </p>
               </div>
               <div className="content-stretch flex items-start pl-[120px] relative shrink-0 w-full" data-node-id="414:7043">
                 <div className="content-stretch flex flex-[1_0_0] flex-col items-start justify-center min-w-px relative" data-node-id="414:7044">
-                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045">{p.blocks?.[1]?.text ?? `Six mois de préparation, puis trois sessions de psychoéducation pour 8 adultes par sessions. J’ai pu également participer à la construction d’une autre séance en lien avec une psychiatre sur le thème de l’insertion professionnelle. `}</p>
+                  <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[535px]" data-node-id="414:7045" data-sanity={ds(p._id, `blocks[_key=="${blocks[1]._key}"].text`, "project")}>{blocks[1].text}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      )}
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-node-id="414:7046" data-name="text">
         <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]" data-node-id="414:7047">
           <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0" data-node-id="414:7048">
@@ -233,22 +214,44 @@ export default function Projets({ p = {} }: { p?: any }) {
                 Résultat
               </p>
             </div>
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="414:7051" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[673px]" data-node-id="414:7051" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "resultTitle", "project")}>
               {p.resultTitle ?? "Un outil apprécié des participants et utilisé au-delà des séances prévues"}
             </p>
           </div>
           <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full" data-node-id="414:7052">
-            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="414:7053">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-node-id="414:7053" data-sanity={ds(p._id, "resultText", "project")}>
               {p.resultText ?? "Plusieurs retours par mail soulignent son usage concret face à des situations du quotidien, comme la fatigue. D’après les retours, il leur permet de pouvoir trouver des outils ou des stratégies en fonction de certaines problématiques spécifiques sans se perdre dans les distractions que peut proposer internet. Certains se disent soulagés d’avoir cet outil dans leur téléphone en cas de besoin."}
             </p>
           </div>
         </div>
       </div>
+      {p.citation?.texte && (
+      <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[140px] relative shrink-0 w-[1512px]" data-name="text">
+        <div className="content-stretch flex flex-col gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
+          <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0">
+            <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
+              <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.1] relative shrink-0 text-[16px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap">
+                Retour
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[900px]" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "citation.texte", "project")}>
+              « {p.citation.texte} »
+            </p>
+          </div>
+          <div className="content-stretch flex items-center justify-end pr-[122px] relative shrink-0 w-full">
+            <p className="[word-break:break-word] font-['Lexend:Regular'] font-normal leading-[1.3] relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[461px]" data-sanity={ds(p._id, "citation.auteur", "project")}>
+              {p.citation.auteur}
+            </p>
+          </div>
+        </div>
+      </div>
+      )}
+      {gallery.length > 0 && (
       <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center justify-center overflow-clip py-[120px] relative shrink-0 w-[1512px]" data-node-id="414:7054" data-name="slider">
         <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0 w-[1190px]" data-node-id="I414:7054;146:4446">
           <div className="content-stretch flex items-end justify-between relative shrink-0 w-full" data-node-id="I414:7054;146:4447">
-            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" data-node-id="I414:7054;146:4448" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-              Photos de l’outil
+            <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-none relative shrink-0 text-[40px] text-[color:var(--black,#090f0c)] text-balance w-[440px]" data-node-id="I414:7054;146:4448" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, "galleryTitle", "project")}>
+              {p.galleryTitle ?? "Captures et photos"}
             </p>
             <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="I414:7054;146:4449">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex h-[40px] items-center justify-center opacity-40 overflow-clip px-[24px] relative rounded-[4px] shrink-0" data-node-id="I414:7054;146:4450" data-name="Cta">
@@ -264,69 +267,30 @@ export default function Projets({ p = {} }: { p?: any }) {
             </div>
           </div>
           <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-node-id="I414:7054;146:4452">
-            <div className="flex flex-row items-center self-stretch" data-node-id="I414:7054;146:4453">
+            {gallery.map((g: any, i: number) => (
+              <Fragment key={i}>
+            <div className="flex flex-row items-center self-stretch">
               <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
-                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I414:7054;146:4454">
-                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="I414:7054;146:4455" data-name="image 13" />
+                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
+                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative overflow-clip rounded-[8px] row-1 w-[340px]" data-name="image 13" data-sanity={ds(p._id, `gallery[_key=="${g._key}"].image`, "project")}>{g.imageUrl && <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={g.imageUrl} />}</div>
                 </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:7054;146:4458">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:7054;146:4459" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    Stages
+                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full">
+                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }} data-sanity={ds(p._id, `gallery[_key=="${g._key}"].title`, "project")}>
+                    {g.title}
                   </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:7054;146:4460">
-                    SAMSAH TC 40
+                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-sanity={ds(p._id, `gallery[_key=="${g._key}"].text`, "project")}>
+                    {g.text}
                   </p>
                 </div>
               </div>
             </div>
-            <div className="flex flex-row items-center self-stretch" data-node-id="I414:7054;146:4461">
-              <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
-                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I414:7054;146:4462">
-                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="I414:7054;146:4463" data-name="image 13" />
-                </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:7054;146:4466">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:7054;146:4467" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    EHPAD
-                  </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:7054;146:4468">
-                    Jeanne Mauléon
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row items-center self-stretch" data-node-id="I414:7054;146:4469">
-              <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
-                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I414:7054;146:4470">
-                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="I414:7054;146:4471" data-name="image 13" />
-                </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:7054;146:4474">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:7054;146:4475" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    Psychiatrie GHNE
-                  </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:7054;146:4476">
-                    Service de psychiatrie du GHNE
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row items-center self-stretch" data-node-id="I414:7054;146:4477">
-              <div className="content-stretch flex flex-col gap-[16px] h-full items-start justify-center relative shrink-0 w-[340px]">
-                <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I414:7054;146:4478">
-                  <div className="bg-[#d9d9d9] col-1 h-[425px] ml-0 mt-0 relative rounded-[8px] row-1 w-[340px]" data-node-id="I414:7054;146:4479" data-name="image 13" />
-                </div>
-                <div className="[word-break:break-word] content-stretch flex flex-col font-normal gap-[4px] items-start relative shrink-0 w-full" data-node-id="I414:7054;146:4482">
-                  <p className="font-['Bricolage_Grotesque:Regular'] leading-[1.2] relative shrink-0 text-[24px] text-[color:var(--black,#090f0c)] text-balance whitespace-nowrap" data-node-id="I414:7054;146:4483" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    SAMSAH spécialisé TSA
-                  </p>
-                  <p className="font-['Lexend:Regular'] leading-[1.3] min-w-full relative shrink-0 text-[18px] text-[color:var(--black-70\%,rgba(9,15,12,0.7))] text-pretty w-[min-content]" data-node-id="I414:7054;146:4484">
-                    SAMSAH spécialisé TSA
-                  </p>
-                </div>
-              </div>
-            </div>
+              </Fragment>
+            ))}
           </div>
         </div>
       </div>
+      )}
+      {others.length >= 2 && (
       <div className="bg-[#f2f2f2] content-stretch flex h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7055" data-name="image-text">
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px mr-[-8px] p-[8px] relative" data-node-id="414:7056" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative rounded-[8px] w-full" data-node-id="414:7057" data-name="bg">
@@ -348,11 +312,11 @@ export default function Projets({ p = {} }: { p?: any }) {
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-between min-w-px p-[8px] relative" data-node-id="414:7061">
                   <p className="[word-break:break-word] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] relative shrink-0 text-[18px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7062" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    Plan 3D d’aménagement de chambre pour une personne autiste
+                    {others[0].title}
                   </p>
                 </div>
               </div>
-              <Cta href="/projets/exemple" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
+              <Cta href={others[0].href} className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
             </div>
           </div>
         </div>
@@ -376,15 +340,16 @@ export default function Projets({ p = {} }: { p?: any }) {
                 </div>
                 <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-between min-w-px p-[8px] relative" data-node-id="414:7069">
                   <p className="[word-break:break-word] flex-[1_0_0] font-['Bricolage_Grotesque:Regular'] font-normal leading-[1.2] min-h-px relative text-[18px] text-[color:var(--black,#090f0c)] text-balance w-full" data-node-id="414:7070" style={{ fontVariationSettings: '"opsz" 14, "wdth" 100' }}>
-                    Sensibilisation au TSA en milieu professionnel
+                    {others[1].title}
                   </p>
                 </div>
               </div>
-              <Cta href="/projets/exemple" className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
+              <Cta href={others[1].href} className="bg-[var(--white,white)] border border-[#c2c2c2] border-solid content-stretch flex h-[40px] items-center justify-center overflow-clip px-[24px] relative rounded-[4px] shrink-0 w-full" label="Voir le projet" variants="secondary" />
             </div>
           </div>
         </div>
       </div>
+      )}
       <PushContact />
       <Footer />
       <Nav />

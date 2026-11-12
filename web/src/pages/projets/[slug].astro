@@ -7,18 +7,36 @@ import { getProjects, getProject, urlFor } from '../../utils/sanity';
 
 export async function getStaticPaths() {
   const projects = (await getProjects()) ?? [];
-  // « exemple » : page de la maquette, gardée tant qu'aucun projet n'est publié
-  return [{ params: { slug: 'exemple' } }, ...projects.filter((p) => p.slug !== 'exemple').map((p) => ({ params: { slug: p.slug } }))];
+  // « exemple » : page de la maquette, gardée seulement tant qu'aucun projet n'est publié
+  return projects.length
+    ? projects.map((p) => ({ params: { slug: p.slug } }))
+    : [{ params: { slug: 'exemple' } }];
 }
 
 const { slug } = Astro.params;
 const data = slug === 'exemple' ? null : await getProject(slug!);
-const img = (s: any) => (s ? urlFor(s).width(1600).auto('format').url() : undefined);
+// Tolérant : une image vide ou d'un ancien format ne doit jamais faire échouer la génération des pages
+const img = (s: any, w = 1600) => {
+  if (!s?.asset) return undefined;
+  try { return urlFor(s).width(w).auto('format').url(); } catch { return undefined; }
+};
+const arr = (v: any) => (Array.isArray(v) ? v : []);
+
+// Deux autres projets, proposés en bas de page : les deux suivants dans l'ordre de la liste
+const all = (((await getProjects()) ?? []) as any[]).filter((x) => x?.slug);
+const at = all.findIndex((x) => x.slug === slug);
+const others = all.length >= 3 && at >= 0
+  ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}` }))
+  : [];
+
 const p = data
   ? {
       ...data,
       coverUrl: img(data.cover),
-      steps: data.steps?.map((s: any) => ({ ...s, imageUrl: img(s.image) })),
+      steps: arr(data.steps).filter((s: any) => s && typeof s === 'object').map((s: any) => ({ ...s, imageUrl: img(s.image) })),
+      blocks: arr(data.blocks).filter((b: any) => b && typeof b === 'object').map((b: any) => ({ ...b, imageUrl: img(b.image) })),
+      gallery: arr(data.gallery).filter((g: any) => g && typeof g === 'object').map((g: any) => ({ ...g, imageUrl: img(g.image, 1000) })),
+      others,
     }
   : {};
 ---
