@@ -1,6 +1,5 @@
 import { defaultCards, type ProjectCard } from '../figma/projets';
 import { getProjects, urlFor } from './sanity';
-import { forceVisual } from './projectThemes';
 import { nbsp } from './typo';
 
 // Vignettes des projets (page Projets et push-project de l'accueil) : mêmes données partout.
@@ -18,7 +17,7 @@ export async function getProjectCards(): Promise<ProjectCard[]> {
         ...defaultCards[i % defaultCards.length],
         title: nbsp(p.cardTitle || p.title),
         href: `/projets/${p.slug}`,
-        image: forceVisual(p.slug) ? undefined : coverUrl(p.cover),
+        image: coverUrl(p.cover),
         slug: p.slug,
         theme: p.theme,
       }))
