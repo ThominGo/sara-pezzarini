@@ -18,6 +18,14 @@ export default defineType({
     }),
     defineField({ name: 'with', title: 'Avec qui', type: 'string', description: "Affiché dans la fiche sous le haut de page. Ne nommez une personne ou une structure qu'avec son accord." }),
     defineField({ name: 'duration', title: 'Durée', type: 'string', description: 'Ex. « 6 mois de préparation ». Laissez vide si inconnue : la case disparaît.' }),
+    defineField({
+      name: 'theme', title: 'Couleur du projet (quand il n’y a pas d’image de couverture)', type: 'string',
+      options: { list: [
+        { title: 'Framboise', value: 'repertoire' }, { title: 'Ambre', value: 'sensibilisation' }, { title: 'Prune', value: 'plan3d' },
+        { title: 'Terracotta', value: 'cuisine' }, { title: 'Rose pêche', value: 'quete' }, { title: 'Vieux rose', value: 'ressources' },
+      ] },
+      description: 'Sans image de couverture, le projet affiche un dégradé de cette couleur avec une illustration. Si vide, une couleur est choisie automatiquement.',
+    }),
     defineField({ name: 'cover', title: 'Image de couverture', type: 'image', options: { hotspot: true } }),
     defineField({ name: 'intro', title: 'Besoin de départ (texte du haut)', type: 'text', rows: 4 }),
     defineField({ name: 'contextTitle', title: 'Titre du contexte', type: 'string' }),

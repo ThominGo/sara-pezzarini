@@ -17,6 +17,8 @@ export async function getProjectCards(): Promise<ProjectCard[]> {
         title: p.cardTitle || p.title,
         href: `/projets/${p.slug}`,
         image: coverUrl(p.cover),
+        slug: p.slug,
+        theme: p.theme,
       }))
     : defaultCards;
 }
