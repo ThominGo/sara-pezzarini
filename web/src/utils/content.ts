@@ -1,3 +1,4 @@
+import { nbsp } from './typo';
 import { urlFor, getSettings, safeFetch, PAGES_QUERY } from './sanity';
 import { site } from './site';
 import { PREVIEW } from './preview';
@@ -53,7 +54,7 @@ const STALE = new Set<string>([
 
 export function t(page: string, key: string, fallback: string): string {
   const v = content[page]?.[key];
-  return typeof v === 'string' && v.trim() && !STALE.has(v.trim()) ? v : fallback;
+  return nbsp(typeof v === 'string' && v.trim() && !STALE.has(v.trim()) ? v : fallback);
 }
 
 export function img(page: string, key: string, fallback: string): string {
