@@ -4,6 +4,7 @@ await loadContent();
 import Layout from '../../layouts/Layout.astro';
 import Page from '../../figma/projet';
 import { getProjects, getProject, urlFor } from '../../utils/sanity';
+import { forceVisual } from '../../utils/projectThemes';
 // Description de 160 caractères au plus, coupée à la fin d'un mot
 const court = (t: string) => (t.length <= 160 ? t : t.slice(0, 157).replace(/[\s,;:.]+\S*$/, '') + '…');
 
@@ -28,15 +29,15 @@ const arr = (v: any) => (Array.isArray(v) ? v : []);
 const all = (((await getProjects()) ?? []) as any[]).filter((x) => x?.slug);
 const at = all.findIndex((x) => x.slug === slug);
 const others = all.length >= 3 && at >= 0
-  ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}`, image: img(x.cover, 1200), slug: x.slug, theme: x.theme }))
+  ? [1, 2].map((n) => all[(at + n) % all.length]).map((x) => ({ title: x.cardTitle || x.title, href: `/projets/${x.slug}`, image: forceVisual(x.slug) ? undefined : img(x.cover, 1200), slug: x.slug, theme: x.theme }))
   : [];
 
 const p = data
   ? {
       ...data,
-      coverUrl: img(data.cover),
-      steps: arr(data.steps).filter((s: any) => s && typeof s === 'object').map((s: any) => ({ ...s, imageUrl: img(s.image) })),
-      blocks: arr(data.blocks).filter((b: any) => b && typeof b === 'object').map((b: any) => ({ ...b, imageUrl: img(b.image) })),
+      coverUrl: forceVisual(slug) ? undefined : img(data.cover),
+      steps: arr(data.steps).filter((s: any) => s && typeof s === 'object').map((s: any) => ({ ...s, imageUrl: forceVisual(slug) ? undefined : img(s.image) })),
+      blocks: arr(data.blocks).filter((b: any) => b && typeof b === 'object').map((b: any) => ({ ...b, imageUrl: forceVisual(slug) ? undefined : img(b.image) })),
       gallery: arr(data.gallery).filter((g: any) => g && typeof g === 'object').map((g: any) => ({ ...g, imageUrl: img(g.image, 1000) })),
       others,
     }

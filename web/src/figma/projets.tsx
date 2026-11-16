@@ -33,7 +33,7 @@ export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }:
         <div className="flex-none size-full">
           <div className="relative rounded-[8px] size-full" data-name="image 13">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              {c.image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image} /> : <ProjectVisual slug={c.slug} theme={c.theme} />}
+              {c.image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image} /> : <ProjectVisual slug={c.slug} theme={c.theme} icon />}
               </div>
           </div>
         </div>
