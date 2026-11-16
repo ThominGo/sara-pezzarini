@@ -3,10 +3,11 @@ import { t, img } from '../utils/content';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
+import ProjectVisual from './components/ProjectVisual';
 
 // Page Projets (Figma 414:6898). Classes copiées de Figma.
 // Les vignettes sont des emplacements : image + calque Différence + calque Color, comme dans la maquette.
-export type ProjectCard = { title: string; href: string; image?: string; difference?: string; color: string; flip?: boolean };
+export type ProjectCard = { title: string; href: string; image?: string; difference?: string; color: string; flip?: boolean; slug?: string; theme?: string };
 
 const Arrow = () => (
   <div className="h-[10px] relative shrink-0 w-[11px]">
@@ -32,7 +33,7 @@ export function Card({ c, first, className = 'justify-self-stretch h-[480px]' }:
         <div className="flex-none size-full">
           <div className="relative rounded-[8px] size-full" data-name="image 13">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              {c.image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image} /> : <div className="absolute inset-0 rounded-[8px]" style={{ backgroundColor: c.color }} />}
+              {c.image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={c.image} /> : <ProjectVisual slug={c.slug} theme={c.theme} />}
               </div>
           </div>
         </div>
