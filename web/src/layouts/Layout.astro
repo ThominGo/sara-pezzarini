@@ -13,6 +13,8 @@ const { title, description = "Sara Pezzarini, ergothérapeute en libéral autour
 const LIVE = !!import.meta.env.PUBLIC_SITE_URL;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const token = cfg.settings.analyticsToken;
+// Image de partage (réseaux, messageries) : adresse complète obligatoire
+const ogImage = new URL('/og.jpg', Astro.site ?? 'https://sara-pezzarini.thomas-marilleau.workers.dev').href;
 ---
 <!doctype html>
 <html lang="fr">
@@ -31,6 +33,22 @@ const token = cfg.settings.analyticsToken;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sara Pezzarini, ergothérapeute en libéral autour de Mézy-sur-Seine" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <!-- Icônes : onglet (svg + ico), écran d'accueil iPhone, Android (manifest) -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1412" media="(prefers-color-scheme: dark)" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <!-- Statistiques de visite sans cookie (Cloudflare Web Analytics), si un jeton est renseigné dans le Studio -->
     {token && !PREVIEW && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token })}></script>}

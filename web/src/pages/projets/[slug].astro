@@ -4,6 +4,8 @@ await loadContent();
 import Layout from '../../layouts/Layout.astro';
 import Page from '../../figma/projet';
 import { getProjects, getProject, urlFor } from '../../utils/sanity';
+// Description de 160 caractères au plus, coupée à la fin d'un mot
+const court = (t: string) => (t.length <= 160 ? t : t.slice(0, 157).replace(/[\s,;:.]+\S*$/, '') + '…');
 
 export async function getStaticPaths() {
   const projects = (await getProjects()) ?? [];
@@ -40,4 +42,4 @@ const p = data
     }
   : {};
 ---
-<Layout title={`${p.title ?? 'Projet'} · Sara Pezzarini`} description={((p as any).intro ?? `Projet mené par Sara Pezzarini, ergothérapeute.`).slice(0, 160)}><Page p={p} /></Layout>
+<Layout title={`${p.title ?? 'Projet'} · Sara Pezzarini`} description={court((p as any).intro ?? `Projet mené par Sara Pezzarini, ergothérapeute.`)}><Page p={p} /></Layout>
