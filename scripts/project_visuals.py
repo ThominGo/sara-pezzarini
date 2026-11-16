@@ -90,6 +90,34 @@ def rough(pts, rnd, amp=2.1):
         out.append((pts[i][0] + nx / L * off, pts[i][1] + ny / L * off))
     return out
 
+def poly_path(pts):
+    f = lambda v: f"{v:.1f}".rstrip("0").rstrip(".")
+    return "M" + "L".join(f"{f(x)} {f(y)}" for x, y in pts) + "Z"
+
+def hand(pts, rnd):
+    """Tracé à la plume : petits segments droits, sommets décalés au hasard, quelques crans. Vraie géométrie, pas un filtre."""
+    base, per = resample(pts, 3)
+    n = len(base)
+    # sommets espacés de 13 à 30 px, selon la taille de la forme
+    lo = 13 if per > 260 else 9
+    keep, acc, last = [0], 0.0, 0
+    step = rnd.uniform(lo, lo + 17)
+    for i in range(1, n):
+        acc += _d(base[i - 1], base[i])
+        if acc >= step and (n - i) > 3:
+            keep.append(i); acc = 0.0; step = rnd.uniform(lo, lo + 17)
+    if len(keep) < 6:
+        keep = list(range(0, n, max(1, n // 6)))
+    amp = min(2.6, 0.6 + per / 160)
+    out = []
+    for j, i in enumerate(keep):
+        a, b = base[i - 1], base[(i + 1) % n]
+        nx, ny = (b[1] - a[1]), -(b[0] - a[0]); L = math.hypot(nx, ny) or 1
+        off = rnd.uniform(-amp, amp)
+        if rnd.random() < 0.13: off += rnd.choice((-1, 1)) * rnd.uniform(2.2, 4.0)  # petit cran
+        out.append((base[i][0] + nx / L * off + rnd.uniform(-0.8, 0.8), base[i][1] + ny / L * off + rnd.uniform(-0.8, 0.8)))
+    return out
+
 def smooth_path(pts):
     n = len(pts); f = lambda v: f"{v:.1f}".rstrip("0").rstrip(".")
     d = f"M{f(pts[0][0])} {f(pts[0][1])}"
@@ -104,10 +132,11 @@ def smooth_path(pts):
 class Art:
     def __init__(self, seed=0):
         self.items = []
+        self.rnd = random.Random(seed)
 
     def _d(self, contours):
         if contours and isinstance(contours[0], tuple): contours = [contours]
-        return "".join(smooth_path(resample(c)[0]) for c in contours)
+        return "".join(poly_path(hand(c, self.rnd)) for c in contours)
 
     def add(self, contours, pal):
         """Forme pleine. Elle découpe un vide autour d'elle dans les formes déjà dessinées qu'elle recouvre."""
@@ -126,7 +155,7 @@ class Art:
             stops = "".join(f'<stop offset="{o}" stop-color="{c}"/>' for o, c in zip(("0", "0.45", "0.8", "1"), PAL[pal].split(",")))
             defs.append(f'<radialGradient id="g{i}" cx="0.3" cy="0.15" r="1.1">{stops}</radialGradient>')
             cuts = "".join(
-                f'<use href="#s{j}" fill="#000" stroke="#000" stroke-width="{GAP}" stroke-linejoin="round"/>' if items[j][0] == "shape"
+                f'<use href="#s{j}" fill="#000" stroke="#000" stroke-width="{GAP}" stroke-linejoin="miter"/>' if items[j][0] == "shape"
                 else f'<use href="#s{j}" fill="#000"/>' for j in range(i + 1, len(items)))
             if cuts:
                 defs.append(f'<mask id="m{i}" maskUnits="userSpaceOnUse" x="0" y="0" width="459" height="459"><rect width="459" height="459" fill="#fff"/>{cuts}</mask>')
