@@ -33,5 +33,32 @@ export function themeFor(slug?: string, explicit?: string): Theme {
   return THEMES[KEYS[h % KEYS.length]];
 }
 
-export const themeGradient = ([a, b, c]: [string, string, string]) =>
-  `radial-gradient(120% 90% at 12% 8%, ${a}, transparent 62%), radial-gradient(110% 100% at 92% 96%, ${b}, transparent 58%), ${c}`;
+// Variantes de position du dégradé : les étapes d'un même projet gardent la même couleur mais ne se ressemblent pas.
+const POS = [['12% 8%', '92% 96%'], ['88% 10%', '10% 94%'], ['20% 92%', '86% 12%'], ['94% 70%', '14% 20%']];
+export const themeGradient = ([a, b, c]: [string, string, string], variant = 0) => {
+  const [p1, p2] = POS[variant % POS.length];
+  return `radial-gradient(120% 90% at ${p1}, ${a}, transparent 62%), radial-gradient(110% 100% at ${p2}, ${b}, transparent 58%), ${c}`;
+};
+
+// Ces projets affichent toujours leur visuel en dégradé, même si une photo est enregistrée dans le Studio.
+// Pour montrer une vraie photo plus tard, retirer l'adresse du projet de cette liste.
+const ALWAYS_VISUAL = new Set(['repertoire-outils-autonomie-tsa']);
+export const forceVisual = (slug?: string) => !!slug && ALWAYS_VISUAL.has(slug);
+
+// Illustration d'une étape ou d'un bloc, choisie d'après son titre (sinon une illustration stable selon sa place).
+const MOTIF_RULES: [RegExp, string][] = [
+  [/relev|difficult|observ/, 'loupe'], [/concev|repertoire|fiche/, 'fiches'], [/test|public|essai/, 'groupe'],
+  [/diaporama|construire/, 'diapos'], [/present|seance/, 'ecran'], [/insertion|travail|entreprise|metier/, 'mallette'],
+  [/jeu|jouer|exerc/, 'jeu'], [/evalu|bilan|analys/, 'checklist'], [/valid|accord|ensemble/, 'poignee'],
+  [/ressent|comprendre|experience/, 'oeil'], [/capacit|avant|force|autonom/, 'marches'], [/reprodui|chambre|plan/, 'piece'],
+  [/deplac/, 'deplacer'], [/vraie|changer|chez|visite|domicile|maison/, 'maison'], [/atelier|cuisine|groupe/, 'marmite'],
+  [/individuel|accompagn|duo/, 'duo'], [/univers|choisir|carte/, 'carte'], [/quete|creer|cree/, 'parchemin'],
+  [/recens|existant|liste/, 'pile'], [/rapide|acces|simple/, 'eclair'], [/ebauche|maquette|prototype|realiser/, 'ebauche'],
+  [/echange|dialogue|parler|discut/, 'bulles'],
+];
+const ALL_MOTIFS = ['loupe', 'fiches', 'groupe', 'ecran', 'mallette', 'jeu', 'checklist', 'poignee', 'oeil', 'marches', 'piece', 'maison', 'marmite', 'duo', 'carte', 'parchemin', 'pile', 'eclair', 'ebauche', 'bulles', 'diapos', 'deplacer', 'fenetre'];
+export function motifFor(title?: string, index = 0): string {
+  const t = (title ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  for (const [re, m] of MOTIF_RULES) if (re.test(t)) return m;
+  return ALL_MOTIFS[index % ALL_MOTIFS.length];
+}
