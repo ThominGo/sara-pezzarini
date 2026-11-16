@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { ds } from '../utils/preview';
 import ProjectVisual from './components/ProjectVisual';
-import { motifFor } from '../utils/projectThemes';
+import { assignMotifs, themeFor } from '../utils/projectThemes';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PushContact from './components/PushContact';
@@ -46,6 +46,7 @@ export default function Projets({ p = {} }: { p?: any }) {
   // Sections facultatives : elles n'apparaissent que si le projet les renseigne (études de cas incomplètes possibles)
   const steps: any[] = hasData ? (p.steps ?? []).filter((s: any) => s?.title || s?.text) : mockSteps;
   const blocks: any[] = hasData ? (p.blocks ?? []).filter((b: any) => b?.title || b?.text) : [];
+  const motifs = assignMotifs([...steps.map((x: any) => x.title), ...blocks.map((x: any) => x.title)], [themeFor(p.slug, p.theme).motif]);
   const gallery: any[] = hasData ? (p.gallery ?? []).filter((g: any) => g?.imageUrl) : [];
   const others: any[] = p.others ?? [];
   const lower = (s: string, i: number) => (i ? s.charAt(0).toLowerCase() + s.slice(1) : s);
@@ -90,7 +91,7 @@ export default function Projets({ p = {} }: { p?: any }) {
       </div>
       {fiche.length > 0 && (
         <div className="bg-[var(--grey,#f2f2f2)] content-stretch flex flex-col items-center py-[56px] relative shrink-0 w-[1512px]" data-name="fiche">
-          <div className="content-stretch flex gap-[24px] items-start relative shrink-0 w-[1190px]">
+          <div className="content-stretch flex gap-[24px] items-start justify-center relative shrink-0 w-[1190px]">
             {fiche.map(([label, value]) => (
               <div key={label} className="content-stretch flex flex-[1_0_0] flex-col gap-[12px] items-start min-w-px relative" style={{ maxWidth: "calc((100% - 48px) / 3)" }} data-sanity={ds(p._id, label === "Public" ? "public" : label === "Avec qui" ? "with" : "duration", "project")}>
                 <div className="bg-[var(--white,white)] content-stretch flex items-center justify-center p-[8px] relative rounded-[4px] shrink-0">
@@ -126,7 +127,7 @@ export default function Projets({ p = {} }: { p?: any }) {
                 <div className="flex items-center justify-center relative shrink-0 w-full">
                   <div className="flex-none w-full">
                     <div className="aspect-[459/459] relative rounded-[8px] size-full" data-name="image 13" data-sanity={ds(p._id, `steps[_key=="${s._key}"].image`, "project")}>
-                      {s.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={s.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifFor(s.title, i)} variant={i} />}
+                      {s.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={s.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifs[i]} variant={i} />}
                     </div>
                   </div>
                 </div>
@@ -183,13 +184,13 @@ export default function Projets({ p = {} }: { p?: any }) {
           </div>
         </div>
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7033" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifFor(b.title, i + steps.length)} variant={i + 1} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7034" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifs[steps.length + i]} variant={i + 1} />}</div>
         </div>
       </div>
       ) : (
       <div className="bg-[#f2f2f2] content-stretch flex gap-[16px] h-[903px] items-center overflow-clip relative shrink-0 w-full" data-node-id="414:7035" data-name="image-text">
         <div className="content-stretch flex flex-col h-[903px] items-start p-[8px] relative shrink-0 w-[753px]" data-node-id="414:7036" data-name="wrapper">
-          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifFor(b.title, i + steps.length)} variant={i + 1} />}</div>
+          <div className="bg-[#d9d9d9] content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7037" data-name="bg" data-sanity={ds(p._id, `blocks[_key=="${b._key}"].image`, "project")}>{b.imageUrl ? <img loading="lazy" decoding="async" alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[8px] size-full" src={b.imageUrl} /> : <ProjectVisual slug={p.slug} theme={p.theme} motif={motifs[steps.length + i]} variant={i + 1} />}</div>
         </div>
         <div className="content-stretch flex flex-col h-full items-start justify-center p-[40px] relative shrink-0 w-[744px]" data-node-id="414:7038">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="414:7039">
