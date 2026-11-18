@@ -299,7 +299,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px mr-[-8px] p-[8px] relative" data-node-id="414:7056" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip p-[40px] relative rounded-[8px] w-full" data-node-id="414:7057" data-name="bg">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              {others[0].image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={others[0].image} /> : <ProjectVisual size="bare" slug={others[0].slug} theme={others[0].theme} />}
+              {/* fond : dégradé du projet (la photo reste dans la miniature) */}<ProjectVisual size="bare" slug={others[0].slug} theme={others[0].theme} />
                           </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7058">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[320px]" data-node-id="414:7059" data-name="Bouton">
@@ -325,7 +325,7 @@ export default function Projets({ p = {} }: { p?: any }) {
         <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px p-[8px] relative" data-node-id="414:7064" data-name="wrapper">
           <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px overflow-clip px-[120px] py-[40px] relative rounded-[8px] w-full" data-node-id="414:7065" data-name="bg">
             <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[8px]">
-              {others[1].image ? <img loading="lazy" decoding="async" alt="" className="absolute max-w-none object-cover rounded-[8px] size-full" src={others[1].image} /> : <ProjectVisual size="bare" slug={others[1].slug} theme={others[1].theme} />}
+              {/* fond : dégradé du projet (la photo reste dans la miniature) */}<ProjectVisual size="bare" slug={others[1].slug} theme={others[1].theme} />
                           </div>
             <div className="content-stretch flex flex-col gap-[4px] items-start relative shrink-0" data-node-id="414:7066">
               <div className="bg-[var(--white,white)] border border-[#ccc] border-solid content-stretch flex gap-[4px] h-[144px] items-start overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shrink-0 w-[320px]" data-node-id="414:7067" data-name="Bouton">

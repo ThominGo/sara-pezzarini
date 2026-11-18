@@ -160,7 +160,11 @@ function parallax() {
   addEventListener('resize', () => {
     if (innerWidth !== vw) { vw = innerWidth; vh = document.documentElement.clientHeight; onScroll(); }
   }, { signal: page.signal });
-  setTimeout(update, 50);
+  // première position tout de suite (et non après un délai), avec un court glissement
+  imgs.forEach((im) => { im.classList.add('px-in'); visible.add(im); });
+  update();
+  visible.clear();
+  setTimeout(() => imgs.forEach((im) => im.classList.remove('px-in')), 900);
 }
 
 /* ---------------- FAQ ---------------- */

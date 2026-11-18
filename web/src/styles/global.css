@@ -120,6 +120,11 @@ img[data-hparallax] { will-change: transform; transform: translate3d(var(--px, 0
 [data-hero] [data-name="image 10"], [data-hero] [data-name="image 10"] > div { border-radius: 8px; overflow: hidden; clip-path: inset(0 round 8px); }
 
 /* Photos : parallaxe au scroll */
+/* État de départ posé dès le premier affichage (avant le script) : sinon les photos s'affichaient à taille normale puis sautaient à 130 % */
+html.anim :is(img[src*="/images/"], img[src*="cdn.sanity.io"]):not([src$=".svg"], [data-no-parallax], .size-\[459px\] img) { transform: scale(1.3); }
+html.anim :has(> :is(img[src*="/images/"], img[src*="cdn.sanity.io"]):not([src$=".svg"], [data-no-parallax])) { overflow: hidden; }
+/* première position calculée : glissement doux plutôt qu'un saut */
+img[data-parallax].px-in { transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
 img[data-parallax] { will-change: transform; transform: translate3d(0, var(--py, 0%), 0) scale(1.3); }
 
 /* Apparition des dégradés des heros : depuis le gris clair du fond.
